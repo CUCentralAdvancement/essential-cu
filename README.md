@@ -2,6 +2,8 @@
 
 This project handles routing and renders all content visible at https://essential.cu.edu. It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that runs on Heroku.
 
+Hosted at: https://essential-cu.herokuapp.com/
+
 ## Development Workflow
 
 This project uses a version of GitFlow. Each issue has a feature branch attached to it based on the issue number. For "Issue #10" it would be, `git checkout -b feature/10` to create the corresponding branch. Once a pull request is created against the master branch, Heroku builds a review app and shows you the URL.
