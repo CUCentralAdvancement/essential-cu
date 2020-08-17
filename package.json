@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js -p $PORT",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js -p $PORT"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
