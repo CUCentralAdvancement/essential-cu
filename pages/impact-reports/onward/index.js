@@ -8,7 +8,9 @@ export default function Home() {
         <title>Onward</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Welcome to IR20!</h1>
+      <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
+        <h1>Welcome to IR20!</h1>
+      </div>
     </Layout>
   );
 }
