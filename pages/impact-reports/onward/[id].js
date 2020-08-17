@@ -3,6 +3,10 @@ import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 
 export default function Story({ story }) {
+  if (!story) {
+    return null;
+  }
+
   return (
     <>
       <Head>
