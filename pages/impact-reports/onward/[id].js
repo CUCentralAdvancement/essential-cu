@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
   const story = await res.json();
 
   // Data comes back in array so first result is the story.
-  return { props: { story: story[0] }, revalidate: 600 };
+  return { props: { story: story[0] }, revalidate: 60 };
 }
 
 export async function getStaticPaths() {
@@ -47,6 +47,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   };
 }
