@@ -3,8 +3,8 @@ import '../styles/globals.css'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-  id: 'GTM-KFCM644'
-}
+  gtmId: "GTM-KFCM644",
+};
 
 class MyApp extends App {
   componentDidMount() {
