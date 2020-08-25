@@ -57,7 +57,7 @@ Here are notes about the special files in the repo but will not cover the standa
 - `pages/` - Where Next.js loads routes. Any file in here is treated as a distinct route and can use dynamic parameters.
   - `pages/_app.js` - Default component for Next.js application. This is a good place to set up anything needed for all components, like React Contexts, or a place to put a modal Portal that sits outside all the  other DOM nodes.
   - `pages/api/*` - A place to put any needed server-side code, like an AJAX request to an API where you want to manupulate the data and cache the result.
-- `public` - Used for any static assets like the favicon. Files are accessed from the docroot so `public/image1.jpg` would be accessible at https://essential.cu.edu/image1.jpg`.
+- `public` - Used for any static assets like the favicon. Files are accessed from the docroot so `public/image1.jpg` would be accessible at https://essential.cu.edu/image1.jpg.
 - `styles` - I'm not sure it makes sense to have this directory since styles will relate to individual components and can be stored alongside the components or even added in the component files themselves as JS.
 
 ### IR20 Files
