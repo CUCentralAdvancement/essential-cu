@@ -44,3 +44,14 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+## Repo Structure
+
+Here are notes about the special files in the repo but will not cover the standard ones.
+
+- `.env` - Holds environmental variables for things like API endpoint URL. Potentially, there could be a `.env.local` for secrets. Next.js makes them available for both server-side and client-side by using a prefix of `NEXT_PUBLIC_` hence the `NEXT_PUBLIC_API_URL` variable name instead of `API_URL`.
+- `app.json` - Heroku-specific configuration regarding things like addon services, environmental variables, and language buildpacks.
+- `next.config.js` - Next.js-specific configuration. Currently only holds redirect rules.
+- `server.js` - Express server in front of Next.js. Useful for adding middlewares and handling redirects...before Next.js added better redirect support. This is where SSL support is added for local dev. 
+- 
+- 
