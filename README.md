@@ -53,5 +53,14 @@ Here are notes about the special files in the repo but will not cover the standa
 - `app.json` - Heroku-specific configuration regarding things like addon services, environmental variables, and language buildpacks.
 - `next.config.js` - Next.js-specific configuration. Currently only holds redirect rules.
 - `server.js` - Express server in front of Next.js. Useful for adding middlewares and handling redirects...before Next.js added better redirect support. This is where SSL support is added for local dev. 
-- 
-- 
+- `components/impact-reports/onward/` - where the components go that are used in the 2020 Impact Report. Path-based organization made sense to keep track of what components belong to which project since this app is supposed to host multiple different projects.
+-- `components/impact-reports/onward/global` - The header and footer for the 2020 Impact Report remain consistent across the 2020 subsections. The `Layout` component combines the header, footer, and is used on the homepage, story, and financials routes.
+- `pages/` - Where Next.js loads routes. Any file in here is treated as a distinct route and can use dynamic parameters.
+-- `pages/_app.js` - Default component for Next.js application. This is a good place to set up anything needed for all components, like React Contexts, or a place to put a modal Portal that sits outside all the  other DOM nodes.
+-- `pages/api/*` - A place to put any needed server-side code, like an AJAX request to an API where you want to manupulate the data and cache the result.
+-- `pages/impact-reports/onward/index.js` - Homepage for the 2020 Impact Report.
+-- `pages/impact-reports/onward/[id].js` - Individual story pages for the 2020 Impact Report.
+-- `pages/impact-reports/onward/financials.js` - Financials page for 2020 Impact Report.
+- `public` - Used for any static assets like the favicon. Files are accessed from the docroot so `public/image1.jpg` would be accessible at https://essential.cu.edu/image1.jpg`.
+- `styles` - I'm not sure it makes sense to have this directory since styles will relate to individual components and can be stored alongside the components or even added in the component files themselves as JS.
+
