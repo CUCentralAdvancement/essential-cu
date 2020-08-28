@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node server.js -p $PORT",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js -p $PORT"
+    "start": "NODE_ENV=production node server.js -p $PORT",
+    "capture": "node ./data/capture-data.js"
   },
   "dependencies": {
     "express": "^4.17.1",
