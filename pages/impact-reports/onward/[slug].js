@@ -108,15 +108,41 @@ const imageDefinition = {
 
 Story.PropTypes = {
   /**
+   * This is the text of the story. It appears only on the story page. It may be broken up by images placed throughout the story.
+   *
    * Will have paragraph separators and includes all WYSIWYG markup by default. This can be changed.
+   * This also can hold images listed in "images" key below.
    */
   body: PropTypes.string.isRequired,
+  /**
+   * This is a tag that designates the campus associated with the story. It also describes potential uses throughout the site,
+   * like for visible labels on stories, or for invisible things like  sorting/ordering/filtering tools.
+   */
   campus_tag: PropTypes.oneOf("Anschutz", "Boulder", "Denver", "UCCS")
     .isRequired,
+  /**
+   * Main image used at the top of the story.
+   */
   image_main: PropTypes.shape(imageDefinition),
+  /**
+   * Optional images that can be used in the body of the story or SEO images.
+   * In the CMS, the SEO field only takes a URL string so it is easy to upload them in this other field.
+   */
   images: PropTypes.arrayOf(PropTypes.shape(imageDefinition)),
+  /**
+   * This is a tag that designates the interest and subject matter associated with the story, like "student success" or "research."
+   * It also describes potential uses throughout the site, like for visible labels on stories, or for invisible things like
+   * sorting/ordering/filtering tools.
+   */
   interest_tag: PropTypes.oneOf("Research", "Society", "Students").isRequired,
+  /**
+   * This is a tag that designates the story's priority. It is used to order stories in the cards module for certain types of user visits.
+   */
   priority: PropTypes.number.isRequired,
+  /**
+   * Related stories in cards at the bottom of the story module.
+   * The slug can be used to generate links to other stories on the site.
+   */
   related_stories: PropTypes.arrayOf(
     PropTypes.shape({
       image_card: imageDefinition,
@@ -124,8 +150,19 @@ Story.PropTypes = {
       title: PropTypes.string.isRequired,
     })
   ),
+  /**
+   * String used to createthe canonical link that is generated for the story.
+   */
   slug: PropTypes.string.isRequired,
+  /**
+   * This is the subheadline for the story.  It appears on the story-detail page below the headline.
+   * It is also used as the "description" text on the story cards.
+   */
   subtitle: PropTypes.string.isRequired,
+  /**
+   * This is the headline for the story. It appears on the story-detail page.
+   * It also appears in the cards and in the related content module at the bottom of the story.
+   */
   title: PropTypes.string.isRequired,
 };
 
