@@ -1,15 +1,15 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoryData } from "../../../data/helpers";
 
-export default function Story({ story, rawStory }) {
+export default function Story({ story }) {
   if (!story) {
     return null;
   }
 
-  // console.log(story);
-  // console.log(rawStory);
+  console.log(story);
 
   return (
     <>
@@ -81,6 +81,52 @@ export default function Story({ story, rawStory }) {
 
 const PaddedDiv = ({ children }) => {
   return <div style={{ padding: "1rem" }}>{children}</div>;
+};
+
+const imageDefinition = {
+  /**
+   * Standard alt tag needed for accessibility.
+   */
+  alt: PropTypes.string.isRequired,
+  /**
+   * Absolute URL to the file hostes on S3 but served via Drupal.
+   */
+  url: PropTypes.string.isRequired,
+  /**
+   * Optional caption placed by photo or tooltip.
+   */
+  caption: PropTypes.string,
+  /**
+   * Given in pixels without the unit, e.g. {width: 480}
+   */
+  width: PropTypes.string,
+  /**
+   * Given in pixels without the unit, e.g. {height: 640}
+   */
+  height: PropTypes.string,
+};
+
+Story.PropTypes = {
+  /**
+   * Will have paragraph separators and includes all WYSIWYG markup by default. This can be changed.
+   */
+  body: PropTypes.string.isRequired,
+  campus_tag: PropTypes.oneOf("Anschutz", "Boulder", "Denver", "UCCS")
+    .isRequired,
+  image_main: PropTypes.shape(imageDefinition),
+  images: PropTypes.arrayOf(PropTypes.shape(imageDefinition)),
+  interest_tag: PropTypes.oneOf("Research", "Society", "Students").isRequired,
+  priority: PropTypes.number.isRequired,
+  related_stories: PropTypes.arrayOf(
+    PropTypes.shape({
+      image_card: imageDefinition,
+      slug: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+  slug: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export async function getStaticProps({ params }) {

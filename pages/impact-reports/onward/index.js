@@ -4,7 +4,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
 
 export default function Home({ stories, rawStoryData }) {
-  // console.log(stories, "stories");
+  console.log(stories, "stories");
   // console.log(rawStoryData, "raw");
   return (
     <>
