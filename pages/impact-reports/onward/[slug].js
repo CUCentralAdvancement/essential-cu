@@ -3,13 +3,18 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoryData } from "../../../data/helpers";
+import { storyDefinition } from "../../../data/types";
+
+Story.PropTypes = {
+  story: storyDefinition,
+};
 
 export default function Story({ story }) {
+  // A ghost story slug or something tries to run on build casuing errors.
+  // This is a stopgap until that is figured out but impacts nothing if left in.
   if (!story) {
     return null;
   }
-
-  console.log(story);
 
   return (
     <>
@@ -79,93 +84,17 @@ export default function Story({ story }) {
   );
 }
 
-const PaddedDiv = ({ children }) => {
-  return <div style={{ padding: "1rem" }}>{children}</div>;
-};
+const PaddedDiv = ({ children }) => (
+  <div style={{ padding: "1rem" }}>{children}</div>
+);
 
-const imageDefinition = {
-  /**
-   * Standard alt tag needed for accessibility.
-   */
-  alt: PropTypes.string.isRequired,
-  /**
-   * Absolute URL to the file hostes on S3 but served via Drupal.
-   */
-  url: PropTypes.string.isRequired,
-  /**
-   * Optional caption placed by photo or tooltip.
-   */
-  caption: PropTypes.string,
-  /**
-   * Given in pixels without the unit, e.g. {width: 480}
-   */
-  width: PropTypes.string,
-  /**
-   * Given in pixels without the unit, e.g. {height: 640}
-   */
-  height: PropTypes.string,
-};
+// Add default props.
 
-Story.PropTypes = {
-  /**
-   * This is the text of the story. It appears only on the story page. It may be broken up by images placed throughout the story.
-   *
-   * Will have paragraph separators and includes all WYSIWYG markup by default. This can be changed.
-   * This also can hold images listed in "images" key below.
-   */
-  body: PropTypes.string.isRequired,
-  /**
-   * This is a tag that designates the campus associated with the story. It also describes potential uses throughout the site,
-   * like for visible labels on stories, or for invisible things like  sorting/ordering/filtering tools.
-   */
-  campus_tag: PropTypes.oneOf("Anschutz", "Boulder", "Denver", "UCCS")
-    .isRequired,
-  /**
-   * Main image used at the top of the story.
-   */
-  image_main: PropTypes.shape(imageDefinition),
-  /**
-   * Optional images that can be used in the body of the story or SEO images.
-   * In the CMS, the SEO field only takes a URL string so it is easy to upload them in this other field.
-   */
-  images: PropTypes.arrayOf(PropTypes.shape(imageDefinition)),
-  /**
-   * This is a tag that designates the interest and subject matter associated with the story, like "student success" or "research."
-   * It also describes potential uses throughout the site, like for visible labels on stories, or for invisible things like
-   * sorting/ordering/filtering tools.
-   */
-  interest_tag: PropTypes.oneOf("Research", "Society", "Students").isRequired,
-  /**
-   * This is a tag that designates the story's priority. It is used to order stories in the cards module for certain types of user visits.
-   */
-  priority: PropTypes.number.isRequired,
-  /**
-   * Related stories in cards at the bottom of the story module.
-   * The slug can be used to generate links to other stories on the site.
-   */
-  related_stories: PropTypes.arrayOf(
-    PropTypes.shape({
-      image_card: imageDefinition,
-      slug: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ),
-  /**
-   * String used to createthe canonical link that is generated for the story.
-   */
-  slug: PropTypes.string.isRequired,
-  /**
-   * This is the subheadline for the story.  It appears on the story-detail page below the headline.
-   * It is also used as the "description" text on the story cards.
-   */
-  subtitle: PropTypes.string.isRequired,
-  /**
-   * This is the headline for the story. It appears on the story-detail page.
-   * It also appears in the cards and in the related content module at the bottom of the story.
-   */
-  title: PropTypes.string.isRequired,
-};
-
+/**
+ * Gathers all data needed for props.
+ *
+ * @param {array} params
+ */
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
   // const res = await fetch(
@@ -173,13 +102,16 @@ export async function getStaticProps({ params }) {
   // );
   // const rawStoryData = await res.json();
 
-  const rawStoryData = require(`../../../data/${slug}.json`);
+  const rawStoryData = require(`../../../data/stories/${slug}.json`);
   const stories = formatStoryData(rawStoryData);
 
-  // Data comes back in array so first result is the story.
   return {
-    props: { story: stories[0], rawStory: rawStoryData },
-    revalidate: 60,
+    props: {
+      // Data comes back in array so first result is the story.
+      story: stories[0],
+    },
+    // Only need to revalidate if data changes after deployments.
+    // revalidate: 60,
   };
 }
 
@@ -189,7 +121,7 @@ export async function getStaticPaths() {
   // );
   // const rawStoryData = await res.json();
 
-  const rawStoryData = require("../../../data/stories.json");
+  const rawStoryData = require("../../../data/stories/stories.json");
   const stories = formatStoryData(rawStoryData);
 
   const paths = stories.map((el) => ({
