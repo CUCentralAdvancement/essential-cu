@@ -19,12 +19,14 @@ export default function Home({ storyData }) {
 
   // Set the initial filters for stories.
   useEffect(() => {
+    // Only do this client-side so SSG content is full for SEO.
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get("campus")) {
         setStories(
           stories.filter(
-            (el) => el.campus_tag.toLocaleLowerCase() == urlParams.get("campus")
+            (el) =>
+              el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")
           )
         );
       }
