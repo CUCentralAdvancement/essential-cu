@@ -6,7 +6,7 @@ import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
 
 Story.PropTypes = {
-  story: storyDefinition,
+  story: PropTypes.shape(storyDefinition),
 };
 
 export default function Story({ story }) {
