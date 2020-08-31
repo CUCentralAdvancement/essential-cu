@@ -13,7 +13,7 @@ https.get(`${baseURL}/jsonapi/node/story?sort=created`, (res) => {
   res.on("end", () => {
     // console.log(body);
 
-    fs.writeFile("./data/stories.json", body, (err) => {
+    fs.writeFile("./data/stories/stories.json", body, (err) => {
       if (err) console.log(err);
       else {
         console.log("File written successfully\n");
@@ -38,7 +38,7 @@ https.get(`${baseURL}/jsonapi/node/story?sort=created`, (res) => {
           res.on("end", () => {
             // console.log(body2);
 
-            fs.writeFile(`./data/${slug}.json`, body2, (err) => {
+            fs.writeFile(`./data/stories/${slug}.json`, body2, (err) => {
               if (err) console.log(err);
               else {
                 console.log("File written successfully\n");
