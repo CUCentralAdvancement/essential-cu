@@ -1,15 +1,20 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoryData } from "../../../data/helpers";
+import { storyDefinition } from "../../../data/types";
 
-export default function Story({ story, rawStory }) {
+Story.PropTypes = {
+  story: PropTypes.shape(storyDefinition),
+};
+
+export default function Story({ story }) {
+  // A ghost story slug or something tries to run on build casuing errors.
+  // This is a stopgap until that is figured out but impacts nothing if left in.
   if (!story) {
     return null;
   }
-
-  // console.log(story);
-  // console.log(rawStory);
 
   return (
     <>
@@ -79,10 +84,17 @@ export default function Story({ story, rawStory }) {
   );
 }
 
-const PaddedDiv = ({ children }) => {
-  return <div style={{ padding: "1rem" }}>{children}</div>;
-};
+const PaddedDiv = ({ children }) => (
+  <div style={{ padding: "1rem" }}>{children}</div>
+);
 
+// Add default props.
+
+/**
+ * Gathers all data needed for props.
+ *
+ * @param {array} params
+ */
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
   // const res = await fetch(
@@ -90,13 +102,16 @@ export async function getStaticProps({ params }) {
   // );
   // const rawStoryData = await res.json();
 
-  const rawStoryData = require(`../../../data/${slug}.json`);
+  const rawStoryData = require(`../../../data/stories/${slug}.json`);
   const stories = formatStoryData(rawStoryData);
 
-  // Data comes back in array so first result is the story.
   return {
-    props: { story: stories[0], rawStory: rawStoryData },
-    revalidate: 60,
+    props: {
+      // Data comes back in array so first result is the story.
+      story: stories[0],
+    },
+    // Only need to revalidate if data changes after deployments.
+    // revalidate: 60,
   };
 }
 
@@ -106,7 +121,7 @@ export async function getStaticPaths() {
   // );
   // const rawStoryData = await res.json();
 
-  const rawStoryData = require("../../../data/stories.json");
+  const rawStoryData = require("../../../data/stories/stories.json");
   const stories = formatStoryData(rawStoryData);
 
   const paths = stories.map((el) => ({

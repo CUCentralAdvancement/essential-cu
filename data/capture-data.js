@@ -18,7 +18,7 @@ https.get(`${baseURL}/jsonapi/node/story?sort=created`, (res) => {
       else {
         console.log("File written successfully\n");
         console.log("The written has the following contents:");
-        console.log(fs.readFileSync("./data/stories.json", "utf8"));
+        console.log(fs.readFileSync("./data/stories/stories.json", "utf8"));
       }
     });
 
@@ -43,7 +43,9 @@ https.get(`${baseURL}/jsonapi/node/story?sort=created`, (res) => {
               else {
                 console.log("File written successfully\n");
                 console.log("The written has the following contents:");
-                console.log(fs.readFileSync(`./data/${slug}.json`, "utf8"));
+                console.log(
+                  fs.readFileSync(`./data/stories/${slug}.json`, "utf8")
+                );
               }
             });
           });

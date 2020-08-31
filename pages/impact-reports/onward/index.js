@@ -1,11 +1,38 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
+import { storiesDefinition, storyDefinition } from "../../../data/types";
+import { useState, useEffect } from "react";
 
-export default function Home({ stories, rawStoryData }) {
-  // console.log(stories, "stories");
-  // console.log(rawStoryData, "raw");
+Home.propTypes = {
+  stories: PropTypes.shape(storiesDefinition),
+};
+
+// @todo Add default props.
+
+export default function Home({ storyData }) {
+  const router = useRouter();
+  const [stories, setStories] = useState(storyData);
+
+  // Set the initial filters for stories.
+  useEffect(() => {
+    // Only do this client-side so SSG content is full for SEO.
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("campus")) {
+        setStories(
+          stories.filter(
+            (el) =>
+              el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")
+          )
+        );
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,7 +44,7 @@ export default function Home({ stories, rawStoryData }) {
           <h1>Welcome to IR20!</h1>
           <ul>
             {stories.map((el, index) => (
-              <li>
+              <li key={el.slug}>
                 <PaddedDiv>
                   <img
                     style={{ display: "block" }}
@@ -62,9 +89,15 @@ export async function getStaticProps(context) {
   // const rawStoryData = await res.json();
 
   // Sample data.
-  const rawStoryData = require("../../../data/stories.json");
+  const rawStoryData = require("../../../data/stories/stories.json");
 
   const stories = formatStoriesData(rawStoryData);
 
-  return { props: { stories, rawStoryData }, revalidate: 600 };
+  return {
+    props: {
+      storyData: stories,
+    },
+    // No need to revalidate data at this point.
+    // revalidate: 600,
+  };
 }
