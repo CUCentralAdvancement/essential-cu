@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
@@ -65,7 +66,7 @@ export default function Story({ story }) {
             <h2>Related Stories</h2>
             <ul>
               {story.related_stories.map((el, index) => (
-                <li>
+                <li key={el.slug}>
                   <PaddedDiv>
                     <Link
                       href="/impact-reports/onward/[slug]"
