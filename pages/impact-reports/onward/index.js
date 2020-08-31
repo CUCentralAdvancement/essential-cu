@@ -1,20 +1,19 @@
+import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
 
 Home.propTypes = {
-  stories: PropTypes.shape(storiesDefinition),
+  storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
 };
 
 // @todo Add default props.
 
 export default function Home({ storyData }) {
-  const router = useRouter();
   const [stories, setStories] = useState(storyData);
 
   // Set the initial filters for stories.
@@ -43,7 +42,7 @@ export default function Home({ storyData }) {
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
           <h1>Welcome to IR20!</h1>
           <ul>
-            {stories.map((el, index) => (
+            {stories.map((el) => (
               <li key={el.slug}>
                 <PaddedDiv>
                   <img
@@ -80,8 +79,9 @@ export default function Home({ storyData }) {
 const PaddedDiv = ({ children }) => {
   return <div style={{ padding: "1rem" }}>{children}</div>;
 };
+PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   // Real data from API.
   // const res = await fetch(
   //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`

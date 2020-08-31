@@ -1,22 +1,23 @@
-import App, { Container } from 'next/app'
-import '../styles/globals.css'
-import TagManager from 'react-gtm-module'
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import "../styles/globals.css";
+import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {
   gtmId: "GTM-KFCM644",
 };
 
-class MyApp extends App {
-  componentDidMount() {
-    TagManager.initialize(tagManagerArgs)
-  }
+function EssentialCU({ Component, pageProps }) {
+  useEffect(() => {
+    TagManager.initialize(tagManagerArgs);
+  }, []);
 
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-      <Component {...pageProps} />
-    )
-  }
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+EssentialCU.propTypes = {
+  Component: PropTypes.element,
+  pageProps: PropTypes.any,
+};
+
+export default EssentialCU;

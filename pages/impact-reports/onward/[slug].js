@@ -6,7 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
 
-Story.PropTypes = {
+Story.propTypes = {
   story: PropTypes.shape(storyDefinition),
 };
 
@@ -65,7 +65,7 @@ export default function Story({ story }) {
           <PaddedDiv>
             <h2>Related Stories</h2>
             <ul>
-              {story.related_stories.map((el, index) => (
+              {story.related_stories.map((el) => (
                 <li key={el.slug}>
                   <PaddedDiv>
                     <Link
