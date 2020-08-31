@@ -54,6 +54,8 @@ Here are notes about the special files in the repo but will not cover the standa
 - `next.config.js` - Next.js-specific configuration. Currently only holds redirect rules.
 - `server.js` - Express server in front of Next.js. Useful for adding middlewares and handling redirects...before Next.js added better redirect support. This is where SSL support is added for local dev. 
 - `components/` - Not prescribed by Next.js at all but where all components live. Directory structure mirrors `pages/` tying components to routes.
+- `data/` - Stores sample data, data transformations, and variable type definitions.
+  - `data/types.js` - Type information for props.
 - `pages/` - Where Next.js loads routes. Any file in here is treated as a distinct route and can use dynamic parameters.
   - `pages/_app.js` - Default component for Next.js application. This is a good place to set up anything needed for all components, like React Contexts, or a place to put a modal Portal that sits outside all the  other DOM nodes.
   - `pages/api/*` - A place to put any needed server-side code, like an AJAX request to an API where you want to manupulate the data and cache the result.
@@ -64,10 +66,31 @@ Here are notes about the special files in the repo but will not cover the standa
 
 - `components/impact-reports/onward/` - where the components go that are used in the 2020 Impact Report. Path-based organization made sense to keep track of what components belong to which project since this app is supposed to host multiple different projects.
   - `components/impact-reports/onward/global` - The header and footer for the 2020 Impact Report remain consistent across the 2020 subsections. The `Layout` component combines the header, footer, and is used on the homepage, story, and financials routes.
+- `data/stories/` - Story data captured from the API.
+- `data/helpers.js` - Data formatting helpers for story API responses.
+- `data/capture-data.js` - Runs through all API routes needed and saves them as JSON files.
 - `pages/impact-reports/onward` - Pages related to the IR20 project.
   - `pages/impact-reports/onward/index.js` - Homepage for the 2020 Impact Report.
   - `pages/impact-reports/onward/[slug].js` - Individual story pages for the 2020 Impact Report. `slug` is a dynamic parameter that will use a field from the API to craft human-readable URLs. 
   - `pages/impact-reports/onward/financials.js` - Financials page for 2020 Impact Report.
+
+## IR20 Data
+
+Next.js loads an `.env` file that has the API base URL included as `NEXT_PUBLIC_API_URL`. Both `pages/impact-reports/onward/index.js` and `pages/impact-reports/onward/[slug].js` use that URL when requesting data from the CMS API. JSON:API is the format the API uses to generate responses and filter GET requests.
+
+During development of the IR20 project, all data will de loaded from `data/stories/` so that the API response can never go down or impact frontend development. Any change to the actual API response will be merged into `data/stories/*.json` files, and you can assume the hard-coded JSON files provide the same response as JSON:API.
+
+Furthermore, `data/helpers.js` contains formatting functions to make the data returnd by JSON:API more developer-friendly. Rather than have to change field names in the CMS as development continues, any variable name or definition can be changed easily within those formatting functions.
+
+If you have any questions on the individual fields for the story and stories props, look in `data/types.js` for the corresponding PropTypes definition. PropTypes has documentation specifically for React listed at: https://reactjs.org/docs/typechecking-with-proptypes.html 
+
+```js
+import { storiesDefinition } from "../../../data/types";
+
+Home.propTypes = {
+  storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
+};
+```
 
 ## Development Philosophy
 
