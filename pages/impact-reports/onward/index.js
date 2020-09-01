@@ -22,12 +22,16 @@ export default function Home({ storyData }) {
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get("campus")) {
-        setStories(
-          stories.filter(
-            (el) =>
-              el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")
-          )
-        );
+        let first = [];
+        let second = [];
+        stories.forEach((el) => {
+          if (el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")) {
+            first.push(el);
+          } else {
+            second.push(el);
+          }
+        });
+        setStories([...first, ...second]);
       }
     }
   }, []);
