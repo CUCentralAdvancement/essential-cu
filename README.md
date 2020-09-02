@@ -8,14 +8,6 @@ Hosted at: https://essential-cu.herokuapp.com/
 
 This project uses a version of GitFlow. Each issue has a feature branch attached to it based on the issue number. For "Issue #10" it would be, `git checkout -b feature/10` to create the corresponding branch. Once a pull request is created against the master branch, Heroku builds a review app and shows you the URL.
 
-1. Verify issue has proper acceptance criteria.
-2. Create branch tied to issue number.
-3. Complete acceptance criteria with code.
-4. Create PR against master branch and request reviewer.
-5. Incoprorate feedback from reviewer and go back to step #3.
-6. If no more actionable feedback, merge code into master branch.
-7. Spot check the staging app works as expected.
-
 ## Local Development Setup
 
 Heroku is all SSL traffic so to simulate that locally, you can create certs.
