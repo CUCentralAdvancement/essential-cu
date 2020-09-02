@@ -52,6 +52,8 @@ import Link from "next/link";
 </Link>
 ```
 
+See https://nextjs.org/docs/api-reference/next/link for more link creation context.
+
 ## Repo Structure
 
 Here are notes about the special files in the repo but will not cover the standard ones.
