@@ -37,6 +37,21 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+### Link Component
+
+In order to fully utilize Next.js' client-side routing, all `<a>` links need to be wrapped in a `<Link>` component. The `href` prop needs to match the file path in `pages/` and the `as` prop is what URI renders for the user, the actual "link".
+
+```jsx
+import Link from "next/link";
+
+<Link
+  href="/impact-reports/onward/[slug]"
+  as={`/impact-reports/onward/${el.slug}`}
+>
+  <a>{el.title}</a>
+</Link>
+```
+
 ## Repo Structure
 
 Here are notes about the special files in the repo but will not cover the standard ones.
