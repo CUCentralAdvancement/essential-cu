@@ -1,9 +1,8 @@
-/* CSS VARS
-  https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-*/
+/* CSS VARS */
 
 :root {
   --text-color: #14171A;
+  --black: #000;
   --white: #fff;
   --link-color: #2479B3;
   --gold-color: #CFB87C;
@@ -33,7 +32,7 @@
   https://material.io/design/layout/responsive-layout-grid.html#breakpoints
 */
 
-/* BASE STYLES */
+/* BASE ELEMENT AND TEXT STYLES */
 
 html {
   font-size: 62.5%; /* 2em = 20px, etc */
@@ -51,6 +50,10 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+*:focus {
+  outline: solid 1px var(--link-color);
 }
 
 h1, .h1 {
@@ -133,12 +136,115 @@ hr {
   max-width: 296px;
   height: 10px;
   border-radius: 5px;
+  border: none;
   background-color: var(--gold-color);
 }
 
 .hr-left {
   margin-left: 0;
   margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* BUTTONS */
+
+button {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+	display: inline-block;
+	-webkit-appearance: none;
+	outline: none;
+}
+
+.btn, .btn-md, .btn-sm {
+  position: relative;
+  display: inline-block;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  font-weight: 700;
+  color: var(--black);
+  transition: color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  overflow: hidden;
+}
+
+.btn {
+  padding: 12px 27px;
+  min-height: 48px;
+  border-radius: 24px;
+  font-size: var(--label-size);
+  line-height: 1;
+}
+
+.btn-md {
+  padding: 9px 21px;
+  min-height: 38px;
+  border-radius: 19px;
+  font-size: var(--body-size-sm);
+}
+
+.btn-sm {
+  padding: 9px 19px;
+  min-height: 34px;
+  border-radius: 17px;
+  font-size: var(--label-size-sm);
+}
+
+.btn::before, .btn-md::before, .btn-sm::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: var(--gold-grad);
+  opacity: 1;
+  transition: opacity .2s ease;
+}
+
+.btn::after, .btn-md::after, .btn-sm::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, #FFF 0%, #D6CCA6 100%);
+}
+
+.btn:hover, .btn-md:hover, .btn-sm:hover {
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+}
+
+.btn:hover::before, .btn-md:hover::before, .btn-sm:hover::before {
+  opacity: 0;
+}
+
+.btn:active, .btn-md:active, .btn-sm:active {
+  background-color:  #7B6F4B;
+  box-shadow: none;
+  color: var(--white);
+}
+
+/* UTILITY CLASSES */
+
+.visually-hidden {
+  border: 0;
+  clip: rect( 0 0 0 0 );
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .gold-grad {

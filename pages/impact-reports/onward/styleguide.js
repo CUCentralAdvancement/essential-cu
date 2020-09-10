@@ -43,8 +43,7 @@ export default function StyleGuide({ storyData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        /* WIP random HTML elements to test styles: */
-        <div>
+        <div className="">
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
             <h3>Heading 3</h3>
@@ -60,7 +59,17 @@ export default function StyleGuide({ storyData }) {
             <hr />
             <hr className="hr-left" />
             <div className="gold-grad" style={{ height: "200px", width: "200px"}}>gold grad</div>
+            <br />
             Test text not in element.
+            <br />
+            <br />
+            <button>Default Button</button>
+            <br />
+            <button className="btn">Button btn</button>
+            <br />
+            <button className="btn-md">Button btn btn-md</button>
+            <br />
+            <button className="btn-sm">Button btn btn-sm</button>
         </div>
 
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
