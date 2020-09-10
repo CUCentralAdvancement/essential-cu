@@ -51,14 +51,14 @@ export default function StyleGuide({ storyData }) {
             <h4>Heading 4</h4>
             <h5>Heading 5 </h5>
             <p>This is text</p>
-            <p class="body-text-lg">This is text</p>
-            <p class="body-text-sm">This is text</p>
+            <p className="body-text-lg">This is text</p>
+            <p className="body-text-sm">This is text</p>
             <p>This is text <a href="#">with an inline link</a></p>
-            <p class="caption-text">This is text</p>
-            <p class="label-text">This is text</p>
-            <p class="label-text-sm">This is text</p>
+            <p className="caption-text">This is text</p>
+            <p className="label-text">This is text</p>
+            <p className="label-text-sm">This is text</p>
             <hr />
-            <hr class="hr-left" />
+            <hr className="hr-left" />
         </div>
 
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
