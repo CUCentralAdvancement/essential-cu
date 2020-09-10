@@ -59,6 +59,8 @@ export default function StyleGuide({ storyData }) {
             <p className="label-text-sm">This is text</p>
             <hr />
             <hr className="hr-left" />
+            <div className="gold-grad" style={{ height: "200px", width: "200px"}}>gold grad</div>
+            Test text not in element.
         </div>
 
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
