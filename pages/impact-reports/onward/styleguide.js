@@ -43,33 +43,35 @@ export default function StyleGuide({ storyData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
+      {/* generic StyleGuide content to develop styles */}
         <div className="">
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
             <h3>Heading 3</h3>
             <h4>Heading 4</h4>
             <h5>Heading 5 </h5>
-            <p>This is text</p>
-            <p className="body-text-lg">This is text</p>
-            <p className="body-text-sm">This is text</p>
-            <p>This is text <a href="#">with an inline link</a></p>
-            <p className="caption-text">This is text</p>
-            <p className="label-text">This is text</p>
-            <p className="label-text-sm">This is text</p>
+            <p>This is text p</p>
+            <p className="body-text-lg">This is text p.body-text-lg</p>
+            <p className="body-text-sm">This is text p.body-text-sm</p>
+            <p>This is text p <a href="#">with an inline link</a></p>
+            <p className="caption-text">This is text p.caption-tex</p>
+            <p className="label-text">This is text p.label-text</p>
+            <p className="label-text-sm">This is text p.label-text-sm</p>
             <hr />
+            hr.left:<br />
             <hr className="hr-left" />
             <div className="gold-grad" style={{ height: "200px", width: "200px"}}>gold grad</div>
             <br />
             Test text not in element.
             <br />
             <br />
-            <button>Default Button</button>
+            <button>Default Button</button> Text after
             <br />
-            <button className="btn">Button btn</button>
+            <button className="btn">Button.btn</button> Text after
             <br />
-            <button className="btn-md">Button btn btn-md</button>
+            <button className="btn-md">Button.btn-md</button> Text after
             <br />
-            <button className="btn-sm">Button btn btn-sm</button>
+            <button className="btn-sm">Button.btn-sm</button> Text after
         </div>
 
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
