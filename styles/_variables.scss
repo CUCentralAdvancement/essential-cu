@@ -22,9 +22,28 @@ $label-size-sm: 1.4em;
 
 /* BREAKPOINTS reference:
 https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+359
+399
+479
+599
+719
+839
+959
+1023
+1279
+1439
+1599
+1919
 */
+$break-xxxs: 359px;
+$break-xxs: 399px;
+$break-xs: 479px;
+$break-ssm: 599px;
 $break-sm: 719px;
+$break-mmmd: 839px;
+$break-mmd: 959px;
+$break-md: 1023px;
+$break-lg: 1279px;
 
-$container-max: 1279px;
-$container-gutter: 24px;
-$container-gutter-sm: 16px;
+$container-max: 1255px;
+$container-gutter: 30px;

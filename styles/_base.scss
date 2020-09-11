@@ -144,14 +144,9 @@ img {
 
 /* LAYOUT */
 .container {
-  max-width: $container-max + ( $container-gutter * 2 ) ;
+  max-width: $container-max + ( $container-gutter * 2 );
   margin-left: auto;
   margin-right: auto;
   padding-left: $container-gutter;
   padding-right: $container-gutter;
-
-  @media screen and (max-width: $break-sm){
-    padding-left: $container-gutter-sm;
-    padding-right: $container-gutter-sm;
-  }
 }
