@@ -58,6 +58,7 @@ export default function Home({ storyData }) {
                   />
                 </PaddedDiv>
                 <PaddedDiv>
+                  {/* @see https://nextjs.org/docs/api-reference/next/link for more link creation context. */}
                   <Link
                     href="/impact-reports/onward/[slug]"
                     as={`/impact-reports/onward/${el.slug}`}
