@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import "../styles/globals.css";
-import "../styles/header.css";
+import "../styles/styles.scss";
+
 import TagManager from "react-gtm-module";
 
 const tagManagerArgs = {

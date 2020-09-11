@@ -1,0 +1,27 @@
+.site-header {
+  background-color: var(--white);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site-logo {
+  width: 224px;
+}
+
+.site-title {
+  font-size: 4em;
+  display: inline-block;
+}
+
+.nav-desktop {
+  display: inline-block;
+}
+
+.nav-desktop--label {
+  display: inline-block;
+  font-size: 1.6em;
+  font-weight: 700;
+}

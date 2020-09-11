@@ -1,0 +1,94 @@
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  -webkit-appearance: none;
+  outline: none;
+  font-family: 'Roboto', sans-serif; /* FF bug */
+}
+
+.btn,
+.btn-md,
+.btn-sm {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+  font-weight: 700;
+  color: $black;
+  transition: color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  overflow: hidden;
+  margin: 0 0.25em 0.25em;
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    z-index: -1;
+    background-image: $gold-grad;
+    opacity: 1;
+    transition: opacity .2s ease;
+  }
+
+  &::after {
+    z-index: -2;
+    background-image: radial-gradient(circle, #FFF 0%, #D6CCA6 100%);
+    opacity: 1;
+    transition: opacity .2s ease;
+  }
+
+  &:hover {
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    background-color:  #7B6F4B;
+    box-shadow: none;
+    color: $white;
+
+    &::before,
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+// size-specific styles:
+.btn {
+  padding: 12px 27px;
+  min-height: 48px;
+  border-radius: 24px;
+  font-size: $label-size;
+  line-height: $label-size;
+}
+
+.btn-md {
+  padding: 9px 21px;
+  min-height: 38px;
+  border-radius: 19px;
+  font-size: $body-size-sm;
+  line-height: $body-size-sm;
+}
+
+.btn-sm {
+  padding: 9px 19px;
+  min-height: 34px;
+  border-radius: 17px;
+  font-size: $label-size-sm;
+  line-height: $label-size-sm;
+}
