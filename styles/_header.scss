@@ -3,18 +3,15 @@ $break-mobilenav: $break-sm;
 .site-header {
   background-color: $white;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+  position: sticky;
+  z-index: 1;
+  top: 0;
 
   @media screen and (max-width: $break-mobilenav){
     background-color: transparent;
     box-shadow: none;
+    position: relative;
   }
-
-  //WIP
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // z-index: 1;
 
   .site-header-container {
     display: flex;
@@ -27,7 +24,6 @@ $break-mobilenav: $break-sm;
       padding-right: 5px;
     }
 
-    //WIP
     @media screen and (max-width: $break-mobilenav){
       height: auto;
       padding: 0;
@@ -39,18 +35,39 @@ $break-mobilenav: $break-sm;
 .site-logo-container {
   width: 224px;
 
-  //WIP
   @media screen and (max-width: $break-mobilenav){
     order: 3;
-
-    // WIP no worky because of containment:
-    // position: sticky;
-    // top: 0;
+    width: 100%;
+    border-radius: 0 0 25px 0;
+    background-image: linear-gradient($off-white, #D6CCA6);
   }
 }
 
-//WIP
+.site-logo-img {
+  width: 100%;
+  display: block;
+
+  @media screen and (max-width: $break-mobilenav){
+    width: 224px;
+    margin: 8px auto 10px;
+  }
+}
+
+.mobile-logo-container {
+  display: none;
+
+  @media screen and (max-width: $break-mobilenav){
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 224px;
+    margin: 0 auto;
+  }
+}
+
 .site-header-inner {
+
   @media screen and (max-width: $break-mobilenav){
     order: 1;
     width: 100%;
@@ -59,6 +76,7 @@ $break-mobilenav: $break-sm;
     text-align: center;
     padding-left: 50px;
   }
+
   @media screen and (max-width: $break-xxs){
     padding-left: 0;
   }
@@ -78,14 +96,12 @@ $break-mobilenav: $break-sm;
     font-size: 2.5em;
   }
 
-  //WIP
   @media screen and (max-width: $break-mobilenav){
     font-size: 2.3em;
     line-height: 2.3em;
   }
 }
 
-//WIP
 .site-nav-mobile-trigger {
   display: none;
   
@@ -106,6 +122,21 @@ $break-mobilenav: $break-sm;
 .site-nav {
   display: inline-block;
 
+  @media screen and (max-width: $break-mobilenav){
+    order: 2;
+    width: 100%;
+    background-color: $off-white;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+    padding: 8px 0 4px;
+  }
+
+  &-inner {
+    @media screen and (max-width: $break-mobilenav){
+      max-width: 224px;
+      margin: 0 auto;
+    }
+  }
+
   &-label {
     display: inline-block;
     font-size: 1.6em;
@@ -119,25 +150,9 @@ $break-mobilenav: $break-sm;
 
   .btn-sm {
     margin-left: 12px;
-  }
 
-  //WIP
-  @media screen and (max-width: $break-mobilenav){
-    order: 2;
-    width: 100%;
-    background-color: $off-white;
-    text-align: center; 
-    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
-
-    transition: max-height 0.2s ease;
-    overflow: hidden;
-    // max-height: 0;
-    //TODO initial state
-    max-height: 100px;
-
-    .btn-sm {
-      margin: 25px 18px;
+    @media screen and (max-width: $break-mobilenav){
+      margin: 8px 100% 8px 0;
     }
-
   }
 }

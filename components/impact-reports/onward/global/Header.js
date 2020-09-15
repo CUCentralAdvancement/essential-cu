@@ -18,9 +18,11 @@ export default function Header() {
         </div>
 
         <nav className="site-nav">
-          <span className="site-nav-label">Explore our:</span>
-          <a href="/#stories" className="btn-sm">Stories</a>
-          <a href="/financials" className="btn-sm">Financials</a>
+          <div className="site-nav-inner">
+            <span className="site-nav-label">Explore our:</span>
+            <a href="/#stories" className="btn-sm">Stories</a>
+            <a href="/financials" className="btn-sm">Financials</a>
+          </div>
         </nav>
 
       </div>
