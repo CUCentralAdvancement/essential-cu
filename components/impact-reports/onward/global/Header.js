@@ -25,7 +25,7 @@ export default function Header() {
         <nav className="site-nav">
           <div className="site-nav-inner">
             <span className="site-nav-label">Explore our:</span>
-            <Link href="/impact-reports/onward/#stories" scroll={false}>
+            <Link href="/impact-reports/onward/#stories">
               <a className="btn-sm">Stories</a>
             </Link>
             <Link href="/impact-reports/onward/financials">
