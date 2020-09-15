@@ -1,19 +1,44 @@
+// local breakpoint var to control ALL desktop > mobile header styles
 $break-mobilenav: $break-sm;
+
+// Create space for abs pos site-header to sit
+@media screen and (max-width: $break-mobilenav){
+  body {
+    padding-top: 56px;
+  }
+}
 
 .site-header {
   background-color: $white;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
   position: sticky;
-  z-index: 1;
+  z-index: 100;
   top: 0;
 
   @media screen and (max-width: $break-mobilenav){
     background-color: transparent;
     box-shadow: none;
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    &.js-active {
+
+      .site-header-inner {
+        box-shadow: none;
+      }
+
+      .site-nav {
+        display: block;
+      }
+
+      .site-logo-container {
+        display: block;
+      }
+    }
   }
 
-  .site-header-container {
+  &-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,10 +61,28 @@ $break-mobilenav: $break-sm;
   width: 224px;
 
   @media screen and (max-width: $break-mobilenav){
+    display: none;
     order: 3;
     width: 100%;
     border-radius: 0 0 25px 0;
     background-image: linear-gradient($off-white, #D6CCA6);
+  }
+}
+
+.mobile-logo-container {
+  display: none;
+
+  .site-logo-img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $break-mobilenav){
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 224px;
+    margin: 0 auto;
   }
 }
 
@@ -53,21 +96,7 @@ $break-mobilenav: $break-sm;
   }
 }
 
-.mobile-logo-container {
-  display: none;
-
-  @media screen and (max-width: $break-mobilenav){
-    display: block;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    width: 224px;
-    margin: 0 auto;
-  }
-}
-
 .site-header-inner {
-
   @media screen and (max-width: $break-mobilenav){
     order: 1;
     width: 100%;
@@ -114,19 +143,21 @@ $break-mobilenav: $break-sm;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px 24px;
-  }
 
-  //hover, on/off TODO
+    .js-active & {
+      background-image: url("/icon-all-close menu2x.png");
+    }
+  }
 }
 
 .site-nav {
   display: inline-block;
 
   @media screen and (max-width: $break-mobilenav){
+    display: none;
     order: 2;
     width: 100%;
     background-color: $off-white;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
     padding: 8px 0 4px;
   }
 
