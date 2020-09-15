@@ -8,14 +8,6 @@ Hosted at: https://essential-cu.herokuapp.com/
 
 This project uses a version of GitFlow. Each issue has a feature branch attached to it based on the issue number. For "Issue #10" it would be, `git checkout -b feature/10` to create the corresponding branch. Once a pull request is created against the master branch, Heroku builds a review app and shows you the URL.
 
-1. Verify issue has proper acceptance criteria.
-2. Create branch tied to issue number.
-3. Complete acceptance criteria with code.
-4. Create PR against master branch and request reviewer.
-5. Incoprorate feedback from reviewer and go back to step #3.
-6. If no more actionable feedback, merge code into master branch.
-7. Spot check the staging app works as expected.
-
 ## Local Development Setup
 
 Heroku is all SSL traffic so to simulate that locally, you can create certs.
@@ -44,6 +36,23 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+### Link Component
+
+In order to fully utilize Next.js' client-side routing, all `<a>` links need to be wrapped in a `<Link>` component. The `href` prop needs to match the file path in `pages/` and the `as` prop is what URI renders for the user, the actual "link".
+
+```jsx
+import Link from "next/link";
+
+<Link
+  href="/impact-reports/onward/[slug]"
+  as={`/impact-reports/onward/${el.slug}`}
+>
+  <a>{el.title}</a>
+</Link>
+```
+
+See https://nextjs.org/docs/api-reference/next/link for more link creation context.
 
 ## Repo Structure
 

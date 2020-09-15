@@ -68,6 +68,7 @@ export default function Story({ story }) {
               {story.related_stories.map((el) => (
                 <li key={el.slug}>
                   <PaddedDiv>
+                    {/* @see https://nextjs.org/docs/api-reference/next/link for more link creation context. */}
                     <Link
                       href="/impact-reports/onward/[slug]"
                       as={`/impact-reports/onward/${el.slug}`}
