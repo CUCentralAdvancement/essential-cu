@@ -1,8 +1,22 @@
+$break-mobilenav: $break-sm;
+
 .site-header {
-  background-color: var(--white);
+  background-color: $white;
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
 
-  .container {
+  @media screen and (max-width: $break-mobilenav){
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  //WIP
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // z-index: 1;
+
+  .site-header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,11 +26,42 @@
       padding-left: 5px;
       padding-right: 5px;
     }
+
+    //WIP
+    @media screen and (max-width: $break-mobilenav){
+      height: auto;
+      padding: 0;
+      flex-direction: column;
+    }
   }
 }
 
-.site-logo {
+.site-logo-container {
   width: 224px;
+
+  //WIP
+  @media screen and (max-width: $break-mobilenav){
+    order: 3;
+
+    // WIP no worky because of containment:
+    // position: sticky;
+    // top: 0;
+  }
+}
+
+//WIP
+.site-header-inner {
+  @media screen and (max-width: $break-mobilenav){
+    order: 1;
+    width: 100%;
+    background-color: $off-white;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+    text-align: center;
+    padding-left: 50px;
+  }
+  @media screen and (max-width: $break-xxs){
+    padding-left: 0;
+  }
 }
 
 .site-title {
@@ -32,12 +77,36 @@
   @media screen and (max-width: $break-mmmd){
     font-size: 2.5em;
   }
+
+  //WIP
+  @media screen and (max-width: $break-mobilenav){
+    font-size: 2.3em;
+    line-height: 2.3em;
+  }
 }
 
-.nav-desktop {
+//WIP
+.site-nav-mobile-trigger {
+  display: none;
+  
+  @media screen and (max-width: $break-mobilenav){
+    display: block;
+    float: right;
+    height: 56px;
+    width: 50px;
+    background-image: url("/icon-all-menu2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px 24px;
+  }
+
+  //hover, on/off TODO
+}
+
+.site-nav {
   display: inline-block;
 
-  &--label {
+  &-label {
     display: inline-block;
     font-size: 1.6em;
     font-weight: 700;
@@ -50,5 +119,25 @@
 
   .btn-sm {
     margin-left: 12px;
+  }
+
+  //WIP
+  @media screen and (max-width: $break-mobilenav){
+    order: 2;
+    width: 100%;
+    background-color: $off-white;
+    text-align: center; 
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+
+    transition: max-height 0.2s ease;
+    overflow: hidden;
+    // max-height: 0;
+    //TODO initial state
+    max-height: 100px;
+
+    .btn-sm {
+      margin: 25px 18px;
+    }
+
   }
 }
