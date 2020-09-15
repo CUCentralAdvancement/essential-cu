@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [menuActive, setMenuState] = useState(false);
@@ -9,9 +10,11 @@ export default function Header() {
       <div className="container site-header-container">
 
         <span className="site-logo-container">
-          <a href="/">
-            <img src="/logo-cu-png-default2x.png" alt="University of Colorado - Advancement | CU Foundation - Boulder, Colorado Springs, Denver, Anschutz Medical Campus" className="site-logo-img" />
-          </a>
+          <Link href="/impact-reports/onward/">
+            <a>
+              <img src="/logo-cu-png-default2x.png" alt="University of Colorado - Advancement | CU Foundation - Boulder, Colorado Springs, Denver, Anschutz Medical Campus" className="site-logo-img" />
+            </a>
+          </Link>
         </span>
 
         <div className="site-header-inner">
@@ -22,9 +25,13 @@ export default function Header() {
         <nav className="site-nav">
           <div className="site-nav-inner">
             <span className="site-nav-label">Explore our:</span>
-            <a href="/#stories" className="btn-sm">Stories</a>
-            <a href="/financials" className="btn-sm">Financials</a>
-          </div>
+            <Link href="/impact-reports/onward/#stories" scroll={false}>
+              <a className="btn-sm">Stories</a>
+            </Link>
+            <Link href="/impact-reports/onward/financials">
+              <a className="btn-sm">Financials</a>
+            </Link>
+            </div>
         </nav>
 
       </div>
