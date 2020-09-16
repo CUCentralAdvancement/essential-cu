@@ -1,6 +1,3 @@
-// local breakpoint var to control ALL desktop > mobile header styles
-$break-mobilenav: $break-sm;
-
 // Create space for abs pos site-header to sit
 @media screen and (max-width: $break-mobilenav){
   body {
