@@ -1,0 +1,50 @@
+
+$text-color: #14171A;
+$black: #000;
+$white: #fff;
+$off-white: #F5F5F5;
+$link-color: #2479B3;
+$gold: #CFB87C;
+$gold-grad: linear-gradient(#e3dbbf, #cfb87c);
+
+$h1-size: 5.5em;
+$h1-size-sm: 3em;
+$h2-size: 3.6em;
+$h2-size-sm: 2.2em;
+$h3-size: 3.2em;
+$h4-size: 2.4em;
+$h5-size: 2em;
+$body-size: 1.8em;
+$body-size-lg: 2.5em;
+$body-size-sm: 1.6em;
+$caption-size: 1.4em;
+$label-size: 1.6em;
+$label-size-sm: 1.4em;
+
+/* BREAKPOINTS reference:
+https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+359
+399
+479
+599
+719
+839
+959
+1023
+1279
+1439
+1599
+1919
+*/
+$break-xxxs: 359px;
+$break-xxs: 399px;
+$break-xs: 479px;
+$break-ssm: 599px;
+$break-sm: 719px;
+$break-mmmd: 839px;
+$break-mmd: 959px;
+$break-md: 1023px;
+$break-lg: 1279px;
+
+$container-max: 1255px;
+$container-gutter: 30px;

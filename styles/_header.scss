@@ -1,0 +1,189 @@
+// local breakpoint var to control ALL desktop > mobile header styles
+$break-mobilenav: $break-sm;
+
+// Create space for abs pos site-header to sit
+@media screen and (max-width: $break-mobilenav){
+  body {
+    padding-top: 56px;
+  }
+}
+
+.site-header {
+  background-color: $white;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  @media screen and (max-width: $break-mobilenav){
+    background-color: transparent;
+    box-shadow: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    &.js-active {
+
+      .site-header-inner {
+        box-shadow: none;
+      }
+
+      .site-nav {
+        display: block;
+      }
+
+      .site-logo-container {
+        display: block;
+      }
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    @media screen and (max-width: $break-mmmd){
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    @media screen and (max-width: $break-mobilenav){
+      height: auto;
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+}
+
+.site-logo-container {
+  width: 224px;
+
+  @media screen and (max-width: $break-mobilenav){
+    display: none;
+    order: 3;
+    width: 100%;
+    border-radius: 0 0 25px 0;
+    background-image: linear-gradient($off-white, #D6CCA6);
+  }
+}
+
+.mobile-logo-container {
+  display: none;
+
+  .site-logo-img {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $break-mobilenav){
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 224px;
+    margin: 0 auto;
+  }
+}
+
+.site-logo-img {
+  width: 100%;
+  display: block;
+
+  @media screen and (max-width: $break-mobilenav){
+    width: 224px;
+    margin: 8px auto 10px;
+  }
+}
+
+.site-header-inner {
+  @media screen and (max-width: $break-mobilenav){
+    order: 1;
+    width: 100%;
+    background-color: $off-white;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.15), 0 4px 4px 0 rgba(0,0,0,0.25);
+    text-align: center;
+    padding-left: 50px;
+  }
+
+  @media screen and (max-width: $break-xxs){
+    padding-left: 0;
+  }
+}
+
+.site-title {
+  font-size: 4em;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  margin: 0;
+
+  @media screen and (max-width: $break-md){
+    font-size: 3em;
+  }
+
+  @media screen and (max-width: $break-mmmd){
+    font-size: 2.5em;
+  }
+
+  @media screen and (max-width: $break-mobilenav){
+    font-size: 2.3em;
+    line-height: 2.3em;
+  }
+}
+
+.site-nav-mobile-trigger {
+  display: none;
+  
+  @media screen and (max-width: $break-mobilenav){
+    display: block;
+    float: right;
+    height: 56px;
+    width: 50px;
+    background-image: url("/icon-all-menu2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 24px 24px;
+
+    .js-active & {
+      background-image: url("/icon-all-close menu2x.png");
+    }
+  }
+}
+
+.site-nav {
+  display: inline-block;
+
+  @media screen and (max-width: $break-mobilenav){
+    display: none;
+    order: 2;
+    width: 100%;
+    background-color: $off-white;
+    padding: 8px 0 4px;
+  }
+
+  &-inner {
+    @media screen and (max-width: $break-mobilenav){
+      max-width: 224px;
+      margin: 0 auto;
+    }
+  }
+
+  &-label {
+    display: inline-block;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-right: 6px;
+
+    @media screen and (max-width: $break-mmd){
+      display: none;
+    }
+  }
+
+  .btn-sm {
+    margin-left: 12px;
+
+    @media screen and (max-width: $break-mobilenav){
+      margin: 8px 100% 8px 0;
+    }
+  }
+}

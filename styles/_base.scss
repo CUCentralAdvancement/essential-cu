@@ -1,0 +1,157 @@
+/* BASE ELEMENT AND TEXT STYLES */
+
+html {
+  font-size: 62.5%; /* 2em = 20px, etc */
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $white;
+  color: $text-color;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+main {
+  position: relative;
+  z-index: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: solid 1px $link-color;
+}
+
+h1, .h1 {
+  font-size: $h1-size;
+  line-height: 1.2;
+  font-weight: 900;
+
+  @media screen and (max-width: $break-sm){
+    font-size: $h1-size-sm;
+  }
+}
+
+h2, .h2 {
+  font-size: $h2-size;
+  line-height: 1.39;
+  font-weight: 300;
+
+  @media screen and (max-width: $break-sm){
+    font-size: $h2-size-sm;
+  }
+}
+
+h3, .h3 {
+  font-size: $h3-size;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+h4, .h4 {
+  font-size: $h4-size;
+  line-height: 1.33;
+  font-weight: 300;
+}
+
+h5, .h5 {
+  font-size: $h5-size;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+p, .body-text {
+  font-size: $body-size;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.body-text-lg {
+  font-size: $body-size-lg;
+  line-height: 1.68;
+  font-weight: 300;
+}
+
+.body-text-sm {
+  font-size: $body-size-sm;
+  line-height: 1.625;
+  font-weight: 400;
+}
+
+.caption-text {
+  font-size: $caption-size;
+  line-height: 1.43;
+  font-weight: 700;
+}
+
+.label-text {
+  font-size: $label-size;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.label-text-sm {
+  font-size: $label-size-sm;
+  line-height: 1.71;
+  font-weight: 700;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+p a, .link-inline {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+hr {
+  width: 100%;
+  max-width: 296px;
+  height: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: $gold;
+}
+
+.hr-left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* UTILITY CLASSES */
+
+.visually-hidden {
+  border: 0;
+  clip: rect( 0 0 0 0 );
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.gold-grad {
+  background-image: $gold-grad;
+}
+
+/* LAYOUT */
+.container {
+  max-width: $container-max + ( $container-gutter * 2 );
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-gutter;
+  padding-right: $container-gutter;
+}
