@@ -51,6 +51,16 @@ main {
   outline: solid 1px $link-color;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: $break-sm){
+    margin-top: 10px;
+    margin-bottom: 10px;  
+  }
+}
+
 h1, .h1 {
   font-size: $h1-size;
   line-height: 1.2;
@@ -142,6 +152,12 @@ hr {
   border-radius: 5px;
   border: none;
   background-color: $gold;
+
+  @media screen and (max-width: $break-sm){
+    height: 4px;
+    max-width: 140px;
+    border-radius: 2px;
+  }
 }
 
 .hr-left {
@@ -150,6 +166,7 @@ hr {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }

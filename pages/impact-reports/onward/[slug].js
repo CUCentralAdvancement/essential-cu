@@ -24,7 +24,28 @@ export default function Story({ story }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
+        <div className="container">
+
+          <div className="story-title">
+            <div className="story-title-content">
+              <h1>{story.title}</h1>
+              <hr className="hr-left" />
+              {/*
+                <h2>{story.subtitle}</h2>
+              */}
+              <h2>test subtitle blah blah blah blah blah blah blah blah blah </h2>
+            </div>
+            <div className="story-title-image">
+              <img
+                style={{ display: "block" }}
+                src={story.image_main.url}
+                alt={story.image_main.alt}
+                height={story.image_main.height}
+                width={story.image_main.width}
+              />
+            </div>
+          </div>
+{/*
           <PaddedDiv>
             <img
               style={{ display: "block" }}
@@ -42,6 +63,10 @@ export default function Story({ story }) {
               <a>{`<-- Back To Homepage`}</a>
             </Link>
           </PaddedDiv>
+
+*/}
+
+
           <PaddedDiv>
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
           </PaddedDiv>

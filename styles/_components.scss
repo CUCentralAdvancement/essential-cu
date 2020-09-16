@@ -1,1 +1,33 @@
-/* COMPONENTS USED STORY AND HOME PAGE */
+/* COMPONENTS USED ON STORY AND HOME PAGE */
+
+.story-title {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    
+    @media screen and (max-width: $break-mmmd){
+        flex-direction: column;
+        margin-top: 30px;
+        align-items: flex-start;
+    }
+
+    &-content {
+        flex: 0 1 50%;
+        padding-right: 15px;
+
+        @media screen and (max-width: $break-mmmd){
+            padding-right: 0;
+        }
+    }
+
+    &-image {
+        flex: 0 1 50%;
+        padding-left: 15px;
+
+        @media screen and (max-width: $break-mmmd){
+            order: -1;
+            padding-left: 0;
+        }
+    }
+
+}
