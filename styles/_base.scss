@@ -109,6 +109,11 @@ p, .body-text {
   font-size: $body-size-lg;
   line-height: 1.68;
   font-weight: 300;
+
+  @media screen and (max-width: $break-sm){
+    font-size: $body-size;
+    font-weight: 400;
+  }
 }
 
 .body-text-sm {
@@ -143,6 +148,10 @@ a {
 p a, .link-inline {
   font-style: italic;
   text-decoration: underline;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 hr {
@@ -195,4 +204,10 @@ img {
   margin-right: auto;
   padding-left: $container-gutter;
   padding-right: $container-gutter;
+
+  .container {
+    max-width: $container-max;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

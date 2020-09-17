@@ -20,7 +20,7 @@ export default function Story({ story }) {
   return (
     <>
       <Head>
-        <title>Title</title>
+        <title>{story.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
@@ -30,10 +30,7 @@ export default function Story({ story }) {
             <div className="story-title-content">
               <h1>{story.title}</h1>
               <hr className="hr-left" />
-              {/*
-                <h2>{story.subtitle}</h2>
-              */}
-              <h2>test subtitle blah blah blah blah blah blah blah blah blah </h2>
+              <h2>{story.subtitle}</h2>
             </div>
             <div className="story-title-image">
               <img
@@ -45,48 +42,30 @@ export default function Story({ story }) {
               />
             </div>
           </div>
-{/*
-          <PaddedDiv>
-            <img
-              style={{ display: "block" }}
-              src={story.image_main.url}
-              alt={story.image_main.alt}
-              height={story.image_main.height}
-              width={story.image_main.width}
-            />
-          </PaddedDiv>
-          <PaddedDiv>
-            <h1>{story.title}</h1>
-          </PaddedDiv>
-          <PaddedDiv>
-            <Link href="/impact-reports/onward">
-              <a>{`<-- Back To Homepage`}</a>
-            </Link>
-          </PaddedDiv>
 
-*/}
+          {/*
+            SOCIAL MODULE TODO
+          */}
 
-
-          <PaddedDiv>
+          <div className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
-          </PaddedDiv>
-          <PaddedDiv>
-            <h2>Other Images</h2>
-            {story.images.map((el) => {
-              return (
-                <>
-                  <img
-                    style={{ display: "inline-block" }}
-                    src={el.url}
-                    alt={el.alt}
-                    height={el.height}
-                    width={el.width}
-                  />
-                  <p>{el.caption}</p>
-                </>
-              );
-            })}
-          </PaddedDiv>
+          </div>
+
+          {story.images.map((el) => {
+            return (
+              <div className="container story-image-container">
+                <img
+                  src={el.url}
+                  alt={el.alt}
+                  height={el.height}
+                  width={el.width}
+                  className="story-image"
+                />
+                <p className="caption-text">{el.caption}</p>
+              </div>            
+            );
+          })}
+
           <PaddedDiv>
             <h2>Related Stories</h2>
             <ul>
