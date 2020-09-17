@@ -39,42 +39,52 @@ export default function Home({ storyData }) {
   return (
     <>
       <Head>
-        <title>Onward</title>
+        <title>University of Colorado 2020 Donor Impact Report</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
           <h1>Welcome to IR20!</h1>
-          <ul>
+
+          <ul className="story-cards">
             {stories.map((el) => (
-              <li key={el.slug}>
-                <PaddedDiv>
-                  <img
-                    style={{ display: "block" }}
-                    src={el.image_card.url}
-                    alt={el.image_card.alt}
-                    height={el.image_card.height}
-                    width={el.image_card.width}
-                  />
-                </PaddedDiv>
-                <PaddedDiv>
-                  {/* @see https://nextjs.org/docs/api-reference/next/link for more link creation context. */}
-                  <Link
-                    href="/impact-reports/onward/[slug]"
-                    as={`/impact-reports/onward/${el.slug}`}
-                  >
-                    <a>{el.title}</a>
-                  </Link>
-                </PaddedDiv>
-                <PaddedDiv>
-                  <div style={{ display: "block" }}>{el.subtitle}</div>
-                </PaddedDiv>
-                <PaddedDiv>{`Campus Tag: ${el.campus_tag}`}</PaddedDiv>
-                <PaddedDiv>{`Interest Tag: ${el.interest_tag}`}</PaddedDiv>
-                <PaddedDiv>{`Priority: ${el.priority}`}</PaddedDiv>
+              <li key={el.slug} className="storycard">
+                <Link
+                  href="/impact-reports/onward/[slug]"
+                  as={`/impact-reports/onward/${el.slug}`}
+                >
+                  <a className="storycard-link">
+                    <img
+                      style={{ display: "block" }}
+                      src={el.image_card.url}
+                      alt={el.image_card.alt}
+                      height={el.image_card.height}
+                      width={el.image_card.width}
+                      className="storycard-image"
+                    />
+                    <h5 className="storycard-title">
+                      {el.title}
+                    </h5>
+                    <hr className="storycard-hr" />
+
+                    {/*
+                      TOO LONG FOR DEV:
+                      {el.subtitle}
+                    */}
+
+                    Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder. 
+
+                    <span>
+                      {`Campus Tag: ${el.campus_tag}`}<br />
+                      {`Interest Tag: ${el.interest_tag}`}<br />
+                      {`Priority: ${el.priority}`}
+                    </span>
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
+
         </div>
       </Layout>
     </>

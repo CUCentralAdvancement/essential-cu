@@ -66,3 +66,121 @@
     margin-right: -$container-gutter;
   }
 }
+
+.story-cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  list-style: none;
+  margin: 0 -12px;
+  padding: 0;
+}
+
+.storycard {
+  flex: 0 1 25%;
+  padding: 24px 12px;
+
+  @media screen and (max-width: $break-md){
+    flex: 0 1 33.33%;
+  }
+
+  @media screen and (max-width: $break-sm){
+    flex: 0 1 50%;
+  }
+
+  @media screen and (max-width: $break-xs){
+    flex: 0 1 100%;
+  }
+
+  .storycard-link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $white;
+    border: 2px solid #D6CCA6;
+    border-radius: 0 45px 0 0;
+    box-shadow: 0 -2px 4px 3px rgba(0,0,0,0.2);
+    overflow: hidden;
+    color: $text-color;
+    padding-bottom: 16px;
+
+    @media screen and (max-width: $break-sm){
+      padding-bottom: 12px;
+    }
+  }
+
+  .storycard-title,
+  .storycard-hr,
+  .storycard-subtitle {
+    margin-left: 20px;
+
+    @media screen and (max-width: $break-sm){
+      margin-left: 18px;
+    }
+  }
+
+  .storycard-title {
+    margin-right: 20px;
+  }
+
+  .storycard-hr {
+    height: 4px;
+    max-width: 60%;
+    border-radius: 2px;
+  }
+
+  .storycard-subtitle {
+    max-width: 80%;
+
+    @media screen and (max-width: $break-sm){
+      display: none;      
+    }
+  }
+
+  .storycard-readmore {
+    display: block;
+    text-align: right;
+
+    &-text {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: $gold;
+        border-radius: 2px;
+        bottom: -3px;
+      }
+    }
+
+    @media screen and (max-width: $break-sm){
+      display: none;      
+    }
+  }
+
+  .storycard-arrow {
+    display: none;
+
+    @media screen and (max-width: $break-sm){
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background-image: url("/icon-arrows-arrow-right2x.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+  }
+
+}

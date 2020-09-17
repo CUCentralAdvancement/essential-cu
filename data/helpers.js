@@ -123,6 +123,7 @@ module.exports = {
           return {
             slug: a_story.attributes.slug,
             title: a_story.attributes.title,
+            subtitle: a_story.attributes.body.summary,
             image_card: {
               url: `https://source.unsplash.com/featured?${
                 keywords[randomNumber(1, 12)]
