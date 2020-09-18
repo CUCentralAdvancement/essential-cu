@@ -40,7 +40,8 @@ main {
   background-image: url("/bkgd-goldwash.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: 100% auto; 
+  background-size: 100% auto;
+  padding: 1px 0;
 }
 
 * {
@@ -195,6 +196,10 @@ img {
 
 .gold-grad {
   background-image: $gold-grad;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* LAYOUT */

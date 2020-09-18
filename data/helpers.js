@@ -133,6 +133,7 @@ module.exports = {
               height: a_story.relationships.image_card.data.meta.height,
               width: a_story.relationships.image_card.data.meta.width,
             },
+            interest_tag: "TESTING", // ALEX - I can't get the interest_tag for the related story through to this on the [slug].js view?
           };
         }
       );

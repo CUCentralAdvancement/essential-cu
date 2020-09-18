@@ -3,11 +3,11 @@
 .story-title {
   display: flex;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 45px;
   
   @media screen and (max-width: $break-mmmd){
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
     align-items: flex-start;
   }
 
@@ -67,6 +67,10 @@
   }
 }
 
+.story-related {
+  margin: 50px 0;
+}
+
 .story-cards {
   display: flex;
   flex-flow: row wrap;
@@ -86,7 +90,7 @@
     flex: 0 1 33.33%;
   }
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     flex: 0 1 50%;
   }
 
@@ -97,13 +101,13 @@
 
 @keyframes storyeffect {
   25% {
-    transform: rotateX(-3deg) translateZ(10px);
+    transform: rotateX(-3deg) translateZ(5px);
   }
   50% {
-    transform: rotateX(0) translateZ(20px);
+    transform: rotateX(0) translateZ(10px);
   }
   75% {
-    transform: rotateX(3deg) translateZ(10px);
+    transform: rotateX(3deg) translateZ(5px);
   }
   100% {
     background-color: rgba( 255, 255, 255, 0 );
@@ -123,12 +127,12 @@
   color: $text-color;
   padding-bottom: 50px;
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     padding-bottom: 12px;
     background-color: $white;
   }
 
-  @media screen and (min-width: $break-sm + 1){
+  @media screen and (min-width: $break-mmmd + 1){
     &:hover,
     &:focus {
       animation: storyeffect 0.4s forwards ease;
@@ -136,12 +140,15 @@
   }
 
   &.students {
-    .storycard-hr,
-    .storycard-readmore-text::after {
-      background-color: #D94F2A;
-    }
-    .storycard-bg{
+    .storycard-bg {
       background-image: linear-gradient(#FFF, #FFB69F);
+    }
+
+    &:hover {
+      .storycard-hr,
+      .storycard-readmore-text::after {
+        background-color: #D94F2A;
+      }
     }
   }
 
@@ -149,10 +156,12 @@
     .storycard-bg{
       background-image: linear-gradient(#FFF, #BCEAE7);
     }
-      
-    .storycard-hr,
-    .storycard-readmore-text::after {
-      background-color: #065E62;
+    
+    &:hover {
+      .storycard-hr,
+      .storycard-readmore-text::after {
+        background-color: #065E62;
+      }
     }
   }
 
@@ -160,10 +169,12 @@
     .storycard-bg{
       background-image: linear-gradient(#FFF, #C7BDE3);
     }
-  
-    .storycard-hr,
-    .storycard-readmore-text::after {
-      background-color: #544181;
+
+    &:hover {
+      .storycard-hr,
+      .storycard-readmore-text::after {
+        background-color: #544181;
+      }
     }
   }
 }
@@ -182,7 +193,7 @@
 .storycard-title {
   margin: 10px 20px 2px;
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     max-width: 65%;
     font-size: 1.6em;
     line-height: 1.4;
@@ -194,9 +205,10 @@
   max-width: 50%;
   border-radius: 2px;
   margin-left: 20px;
+  background-color: $gold;
   transition: background-color 0.4s ease;
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     max-width: 65%;
   }
 }
@@ -206,7 +218,7 @@
   margin: 5px 20px;
   font-size: 1.6em;
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     display: none;      
   }
 }
@@ -235,7 +247,7 @@
     }
   }
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     display: none;      
   }
 }
@@ -243,7 +255,7 @@
 .storycard-arrow {
   display: none;
 
-  @media screen and (max-width: $break-sm){
+  @media screen and (max-width: $break-mmmd){
     display: block;
     width: 43px;
     height: 43px;
@@ -255,4 +267,12 @@
     background-position: center center;
     background-size: contain;
   }
+}
+
+// WIP FOR DEBUGGING
+.storycard-temptags {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: rgba( 255,255,255,0.75);
 }

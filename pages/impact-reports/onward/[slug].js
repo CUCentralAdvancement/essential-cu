@@ -6,7 +6,6 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
 
-
 Story.propTypes = {
   story: PropTypes.shape(storyDefinition),
 };
@@ -26,14 +25,12 @@ export default function Story({ story }) {
       </Head>
       <Layout>
         <div className="container">
-          {/*
 
           <div className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
               <hr className="hr-left" />
               <h2>{story.subtitle}</h2>
-
             </div>
             <div className="story-title-image">
               <img
@@ -45,13 +42,10 @@ export default function Story({ story }) {
               />
             </div>
           </div>
-          */}
 
           {/*
             SOCIAL MODULE TODO
           */}
-
-          {/*
 
           <div className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
@@ -72,11 +66,9 @@ export default function Story({ story }) {
             );
           })}
 
-
-          */}
-
-          <div className="story-related">
-            <h5>Read related stories</h5>
+          <div className="container story-related">
+          
+            <h5 className="text-center">Read related stories</h5>
 
             <ul className="story-cards">
               {story.related_stories.map((el) => (
@@ -103,11 +95,7 @@ export default function Story({ story }) {
                       <hr className="storycard-hr" />
                       
                       <p className="storycard-subtitle">
-                        {/*
-                          TOO LONG FOR DEV:
-                          {el.subtitle}
-                        */}
-                        Static su btitle place holder. Static sub title pla eholder. Static subtitle plac eholder. Static su bt itle pl aceholder.
+                        {el.subtitle}
                       </p>
                       
                       <span className="storycard-readmore">
@@ -115,13 +103,12 @@ export default function Story({ story }) {
                       </span>
 
                       <span className="storycard-arrow"></span>
-                      {/*
-                      <span>
+
+                      <span className="storycard-temptags">
                         {`Campus Tag: ${el.campus_tag}`}<br />
                         {`Interest Tag: ${el.interest_tag}`}<br />
                         {`Priority: ${el.priority}`}
                       </span>
-                      */}
 
                       <span className="storycard-bg"></span>
                     </a>

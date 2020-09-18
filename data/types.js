@@ -83,6 +83,8 @@ export const storyDefinition = {
       image_card: imageDefinition,
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      interest_tag: PropTypes.oneOf(["Research", "Society", "Students"]).isRequired,
     })
   ),
 };

@@ -70,11 +70,7 @@ export default function Home({ storyData }) {
                     <hr className="storycard-hr" />
 
                     <p className="storycard-subtitle">
-                    {/*
-                      TOO LONG FOR DEV:
                       {el.subtitle}
-                    */}
-                      Static su btitle place holder. Static sub title pla eholder. Static subtitle plac eholder. Static su bt itle pl aceholder.
                     </p>
                     
                     <span className="storycard-readmore">
@@ -83,8 +79,7 @@ export default function Home({ storyData }) {
 
                     <span className="storycard-arrow"></span>
                     
-                    <span>
-
+                    <span className="storycard-temptags">
                       {`Campus Tag: ${el.campus_tag}`}<br />
                       {`Interest Tag: ${el.interest_tag}`}<br />
                       {`Priority: ${el.priority}`}
