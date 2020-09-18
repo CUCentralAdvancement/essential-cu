@@ -106,7 +106,7 @@ export default function Story({ story }) {
                           TOO LONG FOR DEV:
                           {el.subtitle}
                         */}
-                        Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder.
+                        Static su btitle place holder. Static sub title pla eholder. Static subtitle plac eholder. Static su bt itle pl aceholder.
                       </p>
                       
                       <span className="storycard-readmore">

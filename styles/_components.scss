@@ -104,35 +104,38 @@
     box-shadow: 0 -2px 4px 3px rgba(0,0,0,0.2);
     overflow: hidden;
     color: $text-color;
-    padding-bottom: 16px;
+    padding-bottom: 50px;
 
     @media screen and (max-width: $break-sm){
       padding-bottom: 12px;
     }
   }
 
-  .storycard-title,
-  .storycard-hr,
-  .storycard-subtitle {
-    margin-left: 20px;
+  .storycard-title {
+    margin: 10px 20px 2px;
 
     @media screen and (max-width: $break-sm){
-      margin-left: 18px;
+      max-width: 65%;
+      font-size: 1.6em;
+      line-height: 1.4;
     }
-  }
-
-  .storycard-title {
-    margin-right: 20px;
   }
 
   .storycard-hr {
     height: 4px;
-    max-width: 60%;
+    max-width: 50%;
     border-radius: 2px;
+    margin-left: 20px;
+
+    @media screen and (max-width: $break-sm){
+      max-width: 65%;
+    }
   }
 
   .storycard-subtitle {
-    max-width: 80%;
+    max-width: 70%;
+    margin: 5px 20px;
+    font-size: 1.6em;
 
     @media screen and (max-width: $break-sm){
       display: none;      
@@ -141,12 +144,13 @@
 
   .storycard-readmore {
     display: block;
-    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 
     &-text {
       position: relative;
       display: inline-block;
-      margin-right: 20px;
 
       &::after {
         content: "";
@@ -171,12 +175,12 @@
 
     @media screen and (max-width: $break-sm){
       display: block;
-      width: 20px;
-      height: 20px;
+      width: 43px;
+      height: 43px;
       position: absolute;
       bottom: 5px;
       right: 5px;
-      background-image: url("/icon-arrows-arrow-right2x.png");
+      background-image: url("/icon-arrow-right-default2x.png");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;

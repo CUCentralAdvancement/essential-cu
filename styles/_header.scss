@@ -11,6 +11,7 @@
   position: sticky;
   z-index: 100;
   top: 0;
+  overflow: hidden;
 
   @media screen and (max-width: $break-mobilenav){
     background-color: transparent;
