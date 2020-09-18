@@ -80,6 +80,7 @@
 .storycard {
   flex: 0 1 25%;
   padding: 24px 12px;
+  perspective: 1000px;
 
   @media screen and (max-width: $break-md){
     flex: 0 1 33.33%;
@@ -92,99 +93,166 @@
   @media screen and (max-width: $break-xs){
     flex: 0 1 100%;
   }
+}
 
-  .storycard-link {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+@keyframes storyeffect {
+  25% {
+    transform: rotateX(-3deg) translateZ(10px);
+  }
+  50% {
+    transform: rotateX(0) translateZ(20px);
+  }
+  75% {
+    transform: rotateX(3deg) translateZ(10px);
+  }
+  100% {
+    background-color: rgba( 255, 255, 255, 0 );
+  }
+}
+
+.storycard-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid #D6CCA6;
+  border-radius: 0 45px 0 0;
+  background-color: $white;
+  box-shadow: 0 -2px 4px 3px rgba(0,0,0,0.2);
+  overflow: hidden;
+  color: $text-color;
+  padding-bottom: 50px;
+
+  @media screen and (max-width: $break-sm){
+    padding-bottom: 12px;
     background-color: $white;
-    border: 2px solid #D6CCA6;
-    border-radius: 0 45px 0 0;
-    box-shadow: 0 -2px 4px 3px rgba(0,0,0,0.2);
-    overflow: hidden;
-    color: $text-color;
-    padding-bottom: 50px;
+  }
 
-    @media screen and (max-width: $break-sm){
-      padding-bottom: 12px;
+  @media screen and (min-width: $break-sm + 1){
+    &:hover,
+    &:focus {
+      animation: storyeffect 0.4s forwards ease;
     }
   }
 
-  .storycard-title {
-    margin: 10px 20px 2px;
-
-    @media screen and (max-width: $break-sm){
-      max-width: 65%;
-      font-size: 1.6em;
-      line-height: 1.4;
+  &.students {
+    .storycard-hr,
+    .storycard-readmore-text::after {
+      background-color: #D94F2A;
+    }
+    .storycard-bg{
+      background-image: linear-gradient(#FFF, #FFB69F);
     }
   }
 
-  .storycard-hr {
-    height: 4px;
-    max-width: 50%;
-    border-radius: 2px;
-    margin-left: 20px;
-
-    @media screen and (max-width: $break-sm){
-      max-width: 65%;
+  &.research {
+    .storycard-bg{
+      background-image: linear-gradient(#FFF, #BCEAE7);
+    }
+      
+    .storycard-hr,
+    .storycard-readmore-text::after {
+      background-color: #065E62;
     }
   }
 
-  .storycard-subtitle {
-    max-width: 70%;
-    margin: 5px 20px;
+  &.society {
+    .storycard-bg{
+      background-image: linear-gradient(#FFF, #C7BDE3);
+    }
+  
+    .storycard-hr,
+    .storycard-readmore-text::after {
+      background-color: #544181;
+    }
+  }
+}
+
+.storycard-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  background-color: $white;
+}
+
+.storycard-title {
+  margin: 10px 20px 2px;
+
+  @media screen and (max-width: $break-sm){
+    max-width: 65%;
     font-size: 1.6em;
-
-    @media screen and (max-width: $break-sm){
-      display: none;      
-    }
+    line-height: 1.4;
   }
+}
 
-  .storycard-readmore {
-    display: block;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.storycard-hr {
+  height: 4px;
+  max-width: 50%;
+  border-radius: 2px;
+  margin-left: 20px;
+  transition: background-color 0.4s ease;
 
-    &-text {
-      position: relative;
-      display: inline-block;
-
-      &::after {
-        content: "";
-        position: absolute;
-        display: inline-block;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background-color: $gold;
-        border-radius: 2px;
-        bottom: -3px;
-      }
-    }
-
-    @media screen and (max-width: $break-sm){
-      display: none;      
-    }
+  @media screen and (max-width: $break-sm){
+    max-width: 65%;
   }
+}
 
-  .storycard-arrow {
-    display: none;
+.storycard-subtitle {
+  max-width: 70%;
+  margin: 5px 20px;
+  font-size: 1.6em;
 
-    @media screen and (max-width: $break-sm){
-      display: block;
-      width: 43px;
-      height: 43px;
+  @media screen and (max-width: $break-sm){
+    display: none;      
+  }
+}
+
+.storycard-readmore {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  &-text {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
       position: absolute;
-      bottom: 5px;
-      right: 5px;
-      background-image: url("/icon-arrow-right-default2x.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
+      display: inline-block;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: $gold;
+      border-radius: 2px;
+      bottom: -3px;
+      transition: background-color 0.4s ease;
     }
   }
 
+  @media screen and (max-width: $break-sm){
+    display: none;      
+  }
+}
+
+.storycard-arrow {
+  display: none;
+
+  @media screen and (max-width: $break-sm){
+    display: block;
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-image: url("/icon-arrow-right-default2x.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
 }

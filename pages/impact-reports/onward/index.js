@@ -53,7 +53,7 @@ export default function Home({ storyData }) {
                   href="/impact-reports/onward/[slug]"
                   as={`/impact-reports/onward/${el.slug}`}
                 >
-                  <a className="storycard-link">
+                  <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
                     <img
                       style={{ display: "block" }}
                       src={el.image_card.url}
@@ -62,23 +62,35 @@ export default function Home({ storyData }) {
                       width={el.image_card.width}
                       className="storycard-image"
                     />
+
                     <h5 className="storycard-title">
                       {el.title}
                     </h5>
+
                     <hr className="storycard-hr" />
 
+                    <p className="storycard-subtitle">
                     {/*
                       TOO LONG FOR DEV:
                       {el.subtitle}
                     */}
+                      Static su btitle place holder. Static sub title pla eholder. Static subtitle plac eholder. Static su bt itle pl aceholder.
+                    </p>
+                    
+                    <span className="storycard-readmore">
+                      <span className="storycard-readmore-text label-text">Read More</span>
+                    </span>
 
-                    Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder. Static subtitle placeholder. 
-
+                    <span className="storycard-arrow"></span>
+                    
                     <span>
+
                       {`Campus Tag: ${el.campus_tag}`}<br />
                       {`Interest Tag: ${el.interest_tag}`}<br />
                       {`Priority: ${el.priority}`}
                     </span>
+
+                    <span className="storycard-bg"></span>
                   </a>
                 </Link>
               </li>
