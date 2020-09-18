@@ -75,9 +75,6 @@
 
   @media screen and (max-width: $break-mobilenav){
     display: block;
-    position: sticky;
-    top: 0;
-    z-index: 1;
     width: 224px;
     margin: 0 auto;
   }
@@ -140,6 +137,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px 24px;
+    outline-offset: -1px;
 
     .js-active & {
       background-image: url("/icon-all-close menu2x.png");
