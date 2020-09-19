@@ -41,6 +41,11 @@ export default function Home({ storyData }) {
       <Head>
         <title>University of Colorado 2020 Donor Impact Report</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:url" content={ window.location.href } />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
       </Head>
       <Layout>
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>

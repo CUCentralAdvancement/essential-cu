@@ -269,6 +269,16 @@
   }
 }
 
+.story-social {
+  text-align: center;
+  margin: 30px 0;
+
+  @media screen and (max-width: $break-mmmd){
+    margin: 10px 0
+  }
+}
+
+
 // WIP FOR DEBUGGING
 .storycard-temptags {
   position: absolute;

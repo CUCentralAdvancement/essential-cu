@@ -92,3 +92,27 @@ button {
   font-size: $label-size-sm;
   line-height: $label-size-sm;
 }
+
+// SOCIAL
+
+.btn-social {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 32px 32px;
+
+  &-fb {
+    background-image: url("/icon-social-fb-gold2x.png")
+  }
+
+  &-tw {
+    background-image: url("/icon-social-tw-gold2x.png")
+  }
+
+  &-li {
+    background-image: url("/icon-social-in-gold2x.png")
+  }
+}

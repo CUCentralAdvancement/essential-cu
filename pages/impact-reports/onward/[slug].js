@@ -22,10 +22,15 @@ export default function Story({ story }) {
       <Head>
         <title>{story.title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:url" content={ window.location.href } />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={story.title} />
+        <meta property="og:description" content={story.subtitle} />
+        <meta property="og:image" content={story.image_main.url} />
       </Head>
       <Layout>
         <div className="container">
-
+{/*
           <div className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
@@ -42,10 +47,18 @@ export default function Story({ story }) {
               />
             </div>
           </div>
-
-          {/*
-            SOCIAL MODULE TODO
-          */}
+*/}
+          <div className="story-social">
+            <button className="btn-social btn-social-fb">
+              <span className="visually-hidden">Share on Facebook</span>
+            </button>
+            <button className="btn-social btn-social-tw">
+              <span className="visually-hidden">Share on Twitter</span>
+            </button>
+            <button className="btn-social btn-social-li">
+              <span className="visually-hidden">Share on LinkedIn</span>
+            </button>
+          </div>
 
           <div className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
