@@ -73,11 +73,8 @@ export default function Story({ story }) {
           <hr />
           
           <div className="story-social-bottom">
-          
             <h5 className="text-center">Share this story</h5>
-            
             <StorySocial shareUrl={story.share_url} />
-
           </div>
 
           <div className="container story-related">
@@ -128,10 +125,6 @@ export default function Story({ story }) {
     </>
   );
 }
-
-const PaddedDiv = ({ children }) => (
-  <div style={{ padding: "1rem" }}>{children}</div>
-);
 
 // Add default props.
 
