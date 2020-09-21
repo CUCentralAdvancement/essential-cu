@@ -113,6 +113,14 @@ module.exports = {
         (rs, index) => {
           const a_story = relationships.find((rel) => rel.id === rs.id);
 
+          const an_interest_tag = relationships.find(
+            (rel) => rel.id === a_story.relationships.interest_tag.data.id
+          );
+
+          const a_campus_tag = relationships.find(
+            (rel) => rel.id === a_story.relationships.campus_tag.data.id
+          );
+
           const imageCardURL = relationships.find(
             (rel) => rel.id === a_story.relationships.image_card.data.id
           );
@@ -132,6 +140,10 @@ module.exports = {
               height: a_story.relationships.image_card.data.meta.height,
               width: a_story.relationships.image_card.data.meta.width,
             },
+            interest_tag: an_interest_tag
+              ? an_interest_tag.attributes.name
+              : "missing",
+            campus_tag: a_campus_tag ? a_campus_tag.attributes.name : "missing",
           };
         }
       );
