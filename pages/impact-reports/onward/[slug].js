@@ -17,14 +17,11 @@ export default function Story({ story }) {
   if (!story) {
     return null;
   }
-  
-  // const shareUrl = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
-
+ 
   return (
     <>
       <Head>
         <title>{story.title}</title>
-        <link rel="icon" href="/favicon.ico" />
         <meta property="og:url" content={story.share_url} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={story.title} />
@@ -32,8 +29,9 @@ export default function Story({ story }) {
         <meta property="og:image" content={story.image_main.url} />
       </Head>
       <Layout>
+
         <div className="container">
-{/*
+  
           <div className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
@@ -50,29 +48,8 @@ export default function Story({ story }) {
               />
             </div>
           </div>
-*/}
-{/*
-          <div className="story-social">
 
-            <button className="btn-social btn-social-fb">
-              <span className="visually-hidden">Share on Facebook</span>
-            </button>
-            <FacebookShareButton 
-              className="btn-social btn-social-fb"
-              url={shareUrl} 
-            />
-            <button className="btn-social btn-social-tw">
-              <span className="visually-hidden">Share on Twitter</span>
-            </button>
-            <button className="btn-social btn-social-li">
-              <span className="visually-hidden">Share on LinkedIn</span>
-            </button>
-
-
-
-          </div>
-        */}
-          <StorySocial />
+          <StorySocial shareUrl={story.share_url} />
 
           <div className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
@@ -92,6 +69,16 @@ export default function Story({ story }) {
               </div>            
             );
           })}
+
+          <hr />
+          
+          <div className="story-social-bottom">
+          
+            <h5 className="text-center">Share this story</h5>
+            
+            <StorySocial shareUrl={story.share_url} />
+
+          </div>
 
           <div className="container story-related">
           

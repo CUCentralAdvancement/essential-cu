@@ -65,7 +65,10 @@ module.exports = {
       story.subtitle = el.attributes.body.summary;
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
-      story.share_url = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
+      // PRODUCTION SHARE URL:
+      // story.share_url = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
+      // STAGING SHARE URL:
+      story.share_url = `https://essential-stage.cu.edu/impact-reports/onward/${story.slug}`;
 
       story.body = el.attributes.body.processed.replace(
         'src="/_flysystem/s3/inline-images/',

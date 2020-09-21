@@ -103,6 +103,11 @@ button {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 32px 32px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &-fb {
     background-image: url("/icon-social-fb-gold2x.png")

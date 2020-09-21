@@ -276,13 +276,17 @@
   @media screen and (max-width: $break-mmmd){
     margin: 10px 0
   }
-}
 
-// .react-share__ShareButton {
-//   width: 40px;
-//   height: 40px;
-//   background: #00f !important;
-// }
+  &-bottom {
+    h5 {
+      margin: 10px 0 5px;
+    }
+
+    .story-social {
+      margin-top: 0;
+    }
+  }
+}
 
 
 // WIP FOR DEBUGGING

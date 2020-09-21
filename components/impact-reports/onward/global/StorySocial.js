@@ -1,31 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { FacebookShareButton } from "react-share";
-import { formatStoryData } from "../../../../data/helpers";
-import { storyDefinition } from "../../../../data/types";
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from "react-share";
 
-StorySocial.propTypes = {
-    story: PropTypes.shape(storyDefinition),
-};
-
-export default function StorySocial({ story }) {
+export default function StorySocial({ shareUrl }) {
   return (
     <div className="story-social">
-    {/*
-        <button className="btn-social btn-social-fb">
-            <span className="visually-hidden">Share on Facebook</span>
-        </button>
-    */}
         <FacebookShareButton 
             className="btn-social btn-social-fb"
-            // url={story.share_url}
+            url={shareUrl}
         />
-        <button className="btn-social btn-social-tw">
-            <span className="visually-hidden">Share on Twitter</span>
-        </button>
-        <button className="btn-social btn-social-li">
-            <span className="visually-hidden">Share on LinkedIn</span>
-        </button>
+        <TwitterShareButton 
+            className="btn-social btn-social-tw"
+            url={shareUrl}
+        />
+        <LinkedinShareButton
+            className="btn-social btn-social-li"
+            url={shareUrl}
+        />
     </div>
   );
 }
