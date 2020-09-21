@@ -85,10 +85,12 @@ export const storyDefinition = {
       title: PropTypes.string.isRequired,
       subtitle: PropTypes.string.isRequired,
       interest_tag: PropTypes.oneOf(["Research", "Society", "Students"]).isRequired,
+      campus_tag: PropTypes.oneOf(["Anschutz", "Boulder", "Denver", "UCCS"])
+      .isRequired,
     })
   ),
   /**
-   * URL for sharing
+   * URL for social sharing and OG tag
    */
   share_url: PropTypes.string.isRequired,
 };

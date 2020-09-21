@@ -104,9 +104,7 @@ export default function Story({ story }) {
                     href="/impact-reports/onward/[slug]"
                     as={`/impact-reports/onward/${el.slug}`}
                   >
-
-                  <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                      
+                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
                       <img
                         src={el.image_card.url}
                         alt={el.image_card.alt}
@@ -114,33 +112,25 @@ export default function Story({ story }) {
                         width={el.image_card.width}
                         className="storycard-image"
                       />
-                      
                       <h5 className="storycard-title">
                         {el.title}
                       </h5>
-                      
                       <hr className="storycard-hr" />
-                      
                       <p className="storycard-subtitle">
                         {el.subtitle}
                       </p>
-                      
                       <span className="storycard-readmore">
                         <span className="storycard-readmore-text label-text">Read More</span>
                       </span>
-
                       <span className="storycard-arrow"></span>
-
                       <span className="storycard-temptags">
                         {`Campus Tag: ${el.campus_tag}`}<br />
                         {`Interest Tag: ${el.interest_tag}`}<br />
                         {`Priority: ${el.priority}`}
                       </span>
-
                       <span className="storycard-bg"></span>
                     </a>
                   </Link>
-
                 </li>
               ))}
             </ul>
