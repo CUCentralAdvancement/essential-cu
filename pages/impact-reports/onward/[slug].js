@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
+import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
 
@@ -16,13 +17,15 @@ export default function Story({ story }) {
   if (!story) {
     return null;
   }
+  
+  // const shareUrl = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
 
   return (
     <>
       <Head>
         <title>{story.title}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:url" content={ window.location.href } />
+        <meta property="og:url" content={story.share_url} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content={story.title} />
         <meta property="og:description" content={story.subtitle} />
@@ -48,17 +51,28 @@ export default function Story({ story }) {
             </div>
           </div>
 */}
+{/*
           <div className="story-social">
+
             <button className="btn-social btn-social-fb">
               <span className="visually-hidden">Share on Facebook</span>
             </button>
+            <FacebookShareButton 
+              className="btn-social btn-social-fb"
+              url={shareUrl} 
+            />
             <button className="btn-social btn-social-tw">
               <span className="visually-hidden">Share on Twitter</span>
             </button>
             <button className="btn-social btn-social-li">
               <span className="visually-hidden">Share on LinkedIn</span>
             </button>
+
+
+
           </div>
+        */}
+          <StorySocial />
 
           <div className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>

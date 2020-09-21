@@ -87,6 +87,10 @@ export const storyDefinition = {
       interest_tag: PropTypes.oneOf(["Research", "Society", "Students"]).isRequired,
     })
   ),
+  /**
+   * URL for sharing
+   */
+  share_url: PropTypes.string.isRequired,
 };
 
 export const storiesDefinition = {

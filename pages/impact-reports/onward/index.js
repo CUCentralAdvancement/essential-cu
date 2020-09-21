@@ -16,6 +16,8 @@ Home.propTypes = {
 export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
 
+  const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
+
   // Set the initial filters for stories.
   useEffect(() => {
     // Only do this client-side so SSG content is full for SEO.
@@ -41,7 +43,7 @@ export default function Home({ storyData }) {
       <Head>
         <title>University of Colorado 2020 Donor Impact Report</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:url" content={ window.location.href } />
+        <meta property="og:url" content={shareUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="og:description" content="" />
