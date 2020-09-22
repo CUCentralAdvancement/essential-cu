@@ -1,1 +1,38 @@
 /* HOME PAGE */
+
+.home-title {
+  padding: 40px 0 60px;
+  text-align: center;
+
+  @media screen and (max-width: $break-sm){
+    padding: 5px 0 20px;
+  }
+  
+  h1 {
+    margin: 0 0 60px;
+      
+    @media screen and (max-width: $break-sm){
+      margin: 0 0 20px;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  h2 {
+    font-size: 2.5em;
+    margin: 0 0 50px;
+
+    @media screen and (max-width: $break-sm){
+      font-weight: 400;
+      font-size: 1.8em;
+      line-height: 1.78;
+      margin: 0 0 20px;
+    }
+  }
+
+  &-hrimg {
+    max-width: 189px;
+  }
+}
