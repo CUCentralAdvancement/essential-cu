@@ -50,8 +50,16 @@ export default function Home({ storyData }) {
         <meta property="og:image" content="" />
       </Head>
       <Layout>
-        <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
-          <h1>Welcome to IR20!</h1>
+        <div className="container">
+          <div className="home-title">
+            <h1>
+              <span className="visually-hidden">Onward</span>
+              <img className="image" src="http://fpoimg.com/1181x485?text=FPO" alt="Onward" />
+            </h1>
+            <h2 className="home-subtitle">
+              Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
+            </h2>
+          </div>
 
           <ul className="story-cards">
             {stories.map((el) => (
@@ -77,7 +85,10 @@ export default function Home({ storyData }) {
                     <hr className="storycard-hr" />
 
                     <p className="storycard-subtitle">
+                      static subtitle for dev static subtitle for dev static subtitle for dev 
+                    {/*
                       {el.subtitle}
+                    */}
                     </p>
                     
                     <span className="storycard-readmore">
