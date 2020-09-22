@@ -40,6 +40,10 @@
 .home-financials {
   padding: 60px 0;
 
+  @media screen and (max-width: $break-mmmd){
+    padding: 45px 0;
+  }
+
   h2 {
     text-align: center;
     margin: 0 0 5px;
@@ -102,6 +106,49 @@
       width: 100%;
       max-width: none;
       display: block;
+    }
+  }
+}
+
+.home-mission {
+  padding: 60px 0;
+  
+  @media screen and (max-width: $break-mmmd){
+    padding: 45px 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0 0 45px;
+
+    @media screen and (max-width: $break-mmmd){
+      margin: 0 0 20px;
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    
+    @media screen and (max-width: $break-mmmd){
+      flex-direction: column;
+    }
+  }
+  
+  &-content {
+    flex: 0 1 44%;
+
+    a {
+      color: inherit;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $link-color;
+      }
+    }
+
+    h3 {
+      text-align: center;
     }
   }
 }

@@ -52,7 +52,7 @@ export default function Home({ storyData }) {
       <Layout>
         <div className="container">
 
-          <div className="home-title">
+          <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
               <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" />
@@ -61,7 +61,7 @@ export default function Home({ storyData }) {
               Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
             </h2>
             <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" alt="divider graphic" />
-          </div>
+          </section>
 
           <ul className="story-cards">
             {stories.map((el) => (
@@ -112,7 +112,7 @@ export default function Home({ storyData }) {
             ))}
           </ul>
 
-          <div className="home-financials">
+          <section className="home-financials">
             {/* TODO: 
               order this section here by default, or before story cards dependent upon "entry into the site" ?? 
             */}
@@ -135,7 +135,33 @@ export default function Home({ storyData }) {
                 <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
               </div>
             </div>
-          </div>
+          </section>
+
+          <section className="home-mission">
+            <h2 className="h1">Our Mission</h2>
+            <div className="home-mission-container">
+              <div className="home-mission-content">
+                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
+                  <a>
+                    <h3 className="h2">CU Foundation</h3>  
+                    <p className="body-text-lg">
+                      We receive, manage and prudently invest private support for the benefit of the University of Colorado and support the university’s philanthropic endeavors through donor stewardship.
+                    </p>
+                  </a>
+                </Link>
+              </div>
+              <div className="home-mission-content">
+                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
+                  <a>
+                    <h3 className="h2">CU Advancement</h3>  
+                    <p className="body-text-lg">
+                      We aspire to unite donor with their passions, elevate grand ideas and prudently manage philanthropy—all to spark enduring support of a university that creates transformative impact in our communities and around the world.
+                    </p>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </section>
 
         </div>
       </Layout>

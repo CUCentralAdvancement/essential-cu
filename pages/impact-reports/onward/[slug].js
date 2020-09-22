@@ -32,7 +32,7 @@ export default function Story({ story }) {
 
         <div className="container">
   
-          <div className="story-title">
+          <section className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
               <hr className="hr-left" />
@@ -47,13 +47,13 @@ export default function Story({ story }) {
                 width={story.image_main.width}
               />
             </div>
-          </div>
+          </section>
 
           <StorySocial shareUrl={story.share_url} />
 
-          <div className="story-container body-text-lg">
+          <article className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
-          </div>
+          </article>
 
           {story.images.map((el) => {
             return (
@@ -77,7 +77,7 @@ export default function Story({ story }) {
             <StorySocial shareUrl={story.share_url} />
           </div>
 
-          <div className="container story-related">
+          <section className="container story-related">
           
             <h5 className="text-center">Read related stories</h5>
 
@@ -118,7 +118,7 @@ export default function Story({ story }) {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
         </div>
       </Layout>
