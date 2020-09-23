@@ -87,14 +87,13 @@ const PaddedDiv = ({ children }) => {
 PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
 export async function getStaticProps() {
-  // Real data from API.
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`
+  );
+  const rawStoryData = await res.json();
 
   // Sample data.
-  const rawStoryData = require("../../../data/stories/stories.json");
+  // const rawStoryData = require("../../../data/stories/stories.json");
 
   const stories = formatStoriesData(rawStoryData);
 

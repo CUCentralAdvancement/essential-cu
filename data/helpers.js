@@ -20,20 +20,31 @@ module.exports = {
     const data = rawStoryData.data;
     const relationships = rawStoryData.included;
 
+    // console.log(data, "data");
+    // console.log(relationships, "rels");
+
     const formattedData = data.map((el, index) => {
       const story = {};
 
       const imageCardURL = relationships.find(
         (rel) => rel.id === el.relationships.image_card.data.id
-      ).attributes.uri.url;
+      );
+      // .attributes.uri.url
+
+      const imageCardURL2 = relationships.find(
+        (rel) => rel.id === imageCardURL.relationships.field_media_image.data.id
+      );
+
+      console.log(imageCardURL2, "element");
+
       story.image_card = {
-        url: `https://source.unsplash.com/featured?${keywords[index]}`,
-        // url: `${process.env.NEXT_PUBLIC_API_URL}${imageCardURL}`,
+        // url: `https://source.unsplash.com/featured?${keywords[index]}`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}${imageCardURL}`,
         alt: el.relationships.image_card.data.meta.alt,
-        // height: el.relationships.image_card.data.meta.height,
-        height: "720px",
-        // width: el.relationships.image_card.data.meta.width,
-        width: "1080px",
+        height: el.relationships.image_card.data.meta.height,
+        // height: "720px",
+        width: el.relationships.image_card.data.meta.width,
+        // width: "1080px",
       };
 
       story.title = el.attributes.title;
@@ -66,11 +77,11 @@ module.exports = {
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
 
-      story.body = el.attributes.body.processed.replace(
-        'src="/_flysystem/s3/inline-images/',
-        // `class="body-inline-image" src="${process.env.NEXT_PUBLIC_API_URL}/_flysystem/s3/inline-images/`
-        `class="body-inline-image" src="https://source.unsplash.com/random`
-      );
+      // story.body = el.attributes.body.processed.replace(
+      //   'src="/_flysystem/s3/inline-images/',
+      //   // `class="body-inline-image" src="${process.env.NEXT_PUBLIC_API_URL}/_flysystem/s3/inline-images/`
+      //   `class="body-inline-image" src="https://source.unsplash.com/random`
+      // );
 
       story.campus_tag = relationships.find(
         (rel) => rel.id === el.relationships.campus_tag.data.id
@@ -84,27 +95,27 @@ module.exports = {
         (rel) => rel.id === el.relationships.image_main.data.id
       ).attributes.uri.url;
       story.image_main = {
-        url: `https://source.unsplash.com/featured?${
-          keywords[randomNumber(0, 13)]
-        }`,
-        // url: `${process.env.NEXT_PUBLIC_API_URL}${mainImageURL}`,
+        // url: `https://source.unsplash.com/featured?${
+        //   keywords[randomNumber(0, 13)]
+        // }`,
+        url: `${process.env.NEXT_PUBLIC_API_URL}${mainImageURL}`,
         alt: el.relationships.image_main.data.meta.alt,
-        // height: el.relationships.image_main.data.meta.height,
-        // width: el.relationships.image_main.data.meta.width,
-        width: "1080px",
+        height: el.relationships.image_main.data.meta.height,
+        width: el.relationships.image_main.data.meta.width,
+        // width: "1080px",
       };
 
       story.images = el.relationships.story_images.data.map((img) => {
         const imageURL = relationships.find((rel) => rel.id === img.id)
           .attributes.uri.url;
         return {
-          url: `https://source.unsplash.com/featured?${
-            keywords[randomNumber(0, 13)]
-          }`,
-          // url: `${process.env.NEXT_PUBLIC_API_URL}${imageURL}`,
+          // url: `https://source.unsplash.com/featured?${
+          //   keywords[randomNumber(0, 13)]
+          // }`,
+          url: `${process.env.NEXT_PUBLIC_API_URL}${imageURL}`,
           alt: img.meta.alt,
-          // height: img.meta.height,
-          // width: img.meta.width,
+          height: img.meta.height,
+          width: img.meta.width,
           caption: img.meta.title,
         };
       });
@@ -132,10 +143,10 @@ module.exports = {
             slug: a_story.attributes.slug,
             title: a_story.attributes.title,
             image_card: {
-              url: `https://source.unsplash.com/featured?${
-                keywords[randomNumber(1, 12)]
-              }`,
-              // url: `${process.env.NEXT_PUBLIC_API_URL}${url}`,
+              //   url: `https://source.unsplash.com/featured?${
+              //     keywords[randomNumber(1, 12)]
+              //   }`,
+              url: `${process.env.NEXT_PUBLIC_API_URL}${url}`,
               alt: a_story.relationships.image_card.data.meta.alt,
               height: a_story.relationships.image_card.data.meta.height,
               width: a_story.relationships.image_card.data.meta.width,

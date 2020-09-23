@@ -99,12 +99,13 @@ const PaddedDiv = ({ children }) => (
  */
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?filter[field_story_slug]=${slug}`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?filter[field_story_slug]=${slug}`
+  );
+  const rawStoryData = await res.json();
 
-  const rawStoryData = require(`../../../data/stories/${slug}.json`);
+  // const rawStoryData = require(`../../../data/stories/${slug}.json`);
+
   const stories = formatStoryData(rawStoryData);
 
   return {
@@ -118,12 +119,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story`
+  );
+  const rawStoryData = await res.json();
 
-  const rawStoryData = require("../../../data/stories/stories.json");
+  // const rawStoryData = require("../../../data/stories/stories.json");
+
   const stories = formatStoryData(rawStoryData);
 
   const paths = stories.map((el) => ({
