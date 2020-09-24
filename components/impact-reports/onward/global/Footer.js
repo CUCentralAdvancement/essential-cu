@@ -6,7 +6,8 @@ import {
   Flex,
   theme,
   Grid,
-  LinkButton,
+  Button,
+  Link,
   Menu,
   Text,
 } from "@cu-advancement/component-library";
@@ -32,24 +33,47 @@ export default function Footer() {
               color="#000"
               fontWeight="light"
             >
-              <LinkButton
-                variant="primary"
-                sx={{
-                  px: 4,
-                  color: "text",
-                  fontSize: 3,
-                  mb: 2,
-                  fontWeight: 300,
-                }}
-              >
-                Give Now
-              </LinkButton>
-              <PaddedText>CU Advancement | CU Foundation</PaddedText>
+              <Link url="https://giving.cu.edu/fund-search">
+                <Button
+                  variant="primary"
+                  sx={{
+                    px: 4,
+                    color: "text",
+                    fontSize: 3,
+                    mb: 2,
+                    fontWeight: 300,
+                  }}
+                >
+                  Give Now
+                </Button>
+              </Link>
               <PaddedText>CU Advancement | CU Foundation</PaddedText>
               <PaddedText>1800 Grant Street | Denver, CO 80203</PaddedText>
-              <PaddedText>303-541-1290</PaddedText>
-              <PaddedText>giving@cu.edu</PaddedText>
-              <PaddedText>Privacy Policy | Terms of Service</PaddedText>
+              <PaddedText>
+                <Link sx={plainLinkStyles} url="tel:3035411290">
+                  303-541-1290
+                </Link>
+              </PaddedText>
+              <PaddedText>
+                <Link sx={plainLinkStyles} url="mailto:giving@cu.edu">
+                  giving@cu.edu
+                </Link>
+              </PaddedText>
+              <PaddedText>
+                <Link
+                  sx={plainLinkStyles}
+                  url="https://www.cu.edu/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>{" "}
+                |{" "}
+                <Link
+                  sx={plainLinkStyles}
+                  url="https://www.cu.edu/terms-service"
+                >
+                  Terms of Service{" "}
+                </Link>
+              </PaddedText>
             </Flex>
             <Box>
               <Menu
@@ -81,6 +105,14 @@ export default function Footer() {
     </ThemeProvider>
   );
 }
+
+const plainLinkStyles = {
+  color: "black",
+  textDecoration: "none",
+  ":hover": {
+    textDecoration: "underline",
+  },
+};
 
 const PaddedText = ({ children }) => (
   <Text sx={{ pl: [1, 0], pb: 1 }}>{children}</Text>
