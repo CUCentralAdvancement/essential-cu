@@ -31,11 +31,7 @@ export default function Story({ story }) {
       <Layout>
 
         <div className="container">
-<<<<<<< HEAD
-  
-=======
     
->>>>>>> feature/story
           <section className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
