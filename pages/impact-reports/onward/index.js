@@ -64,7 +64,10 @@ export default function Home({ storyData }) {
           </section>
 
           <ul className="story-cards">
-            {stories.map((el) => (
+          {stories
+              // default SORT by priority
+              .sort((el1, el2) => el1.priority - el2.priority )
+              .map((el) => (
               <li key={el.slug} className="storycard">
                 <Link
                   href="/impact-reports/onward/[slug]"
