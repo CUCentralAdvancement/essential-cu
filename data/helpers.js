@@ -37,7 +37,10 @@ module.exports = {
       };
 
       story.title = el.attributes.title;
-      story.subtitle = el.attributes.body.summary;
+      story.subtitle = el.attributes.body.summary.substring(
+        0,
+        randomNumber(60, 80)
+      );
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
 
@@ -62,7 +65,10 @@ module.exports = {
       const story = {};
 
       story.title = el.attributes.title;
-      story.subtitle = el.attributes.body.summary;
+      story.subtitle = el.attributes.body.summary.substring(
+        0,
+        randomNumber(60, 80)
+      );
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
       // PRODUCTION SHARE URL:
@@ -129,12 +135,17 @@ module.exports = {
             (rel) => rel.id === a_story.relationships.image_card.data.id
           );
 
-          const url = imageCardURL ? imageCardURL.attributes.uri.url : "missing";
+          const url = imageCardURL
+            ? imageCardURL.attributes.uri.url
+            : "missing";
 
           return {
             slug: a_story.attributes.slug,
             title: a_story.attributes.title,
-            subtitle: a_story.attributes.body.summary,
+            subtitle: a_story.attributes.body.summary.substring(
+              0,
+              randomNumber(60, 80)
+            ),
             image_card: {
               url: `https://source.unsplash.com/featured?${
                 keywords[randomNumber(1, 12)]
@@ -144,7 +155,9 @@ module.exports = {
               height: a_story.relationships.image_card.data.meta.height,
               width: a_story.relationships.image_card.data.meta.width,
             },
-            interest_tag: an_interest_tag ? an_interest_tag.attributes.name : "missing",
+            interest_tag: an_interest_tag
+              ? an_interest_tag.attributes.name
+              : "missing",
             campus_tag: a_campus_tag ? a_campus_tag.attributes.name : "missing",
           };
         }
