@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
+import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
 
@@ -16,79 +17,115 @@ export default function Story({ story }) {
   if (!story) {
     return null;
   }
-
+ 
   return (
     <>
       <Head>
-        <title>Title</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{story.title}</title>
+        <meta property="og:url" content={story.share_url} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={story.title} />
+        <meta property="og:description" content={story.subtitle} />
+        <meta property="og:image" content={story.image_main.url} />
       </Head>
       <Layout>
-        <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
-          <PaddedDiv>
-            <img
-              style={{ display: "block" }}
-              src={story.image_main.url}
-              alt={story.image_main.alt}
-              height={story.image_main.height}
-              width={story.image_main.width}
-            />
-          </PaddedDiv>
-          <PaddedDiv>
-            <h1>{story.title}</h1>
-          </PaddedDiv>
-          <PaddedDiv>
-            <Link href="/impact-reports/onward">
-              <a>{`<-- Back To Homepage`}</a>
-            </Link>
-          </PaddedDiv>
-          <PaddedDiv>
+
+        <div className="container">
+    
+          <section className="story-title">
+            <div className="story-title-content">
+              <h1>{story.title}</h1>
+              <hr className="hr-left" />
+              <h2>{story.subtitle}</h2>
+            </div>
+            <div className="story-title-image">
+              <img
+                style={{ display: "block" }}
+                src={story.image_main.url}
+                alt={story.image_main.alt}
+                height={story.image_main.height}
+                width={story.image_main.width}
+              />
+            </div>
+          </section>
+
+          <StorySocial shareUrl={story.share_url} />
+
+          <article className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
-          </PaddedDiv>
-          <PaddedDiv>
-            <h2>Other Images</h2>
-            {story.images.map((el) => {
-              return (
-                <>
-                  <img
-                    style={{ display: "inline-block" }}
-                    src={el.url}
-                    alt={el.alt}
-                    height={el.height}
-                    width={el.width}
-                  />
-                  <p>{el.caption}</p>
-                </>
-              );
-            })}
-          </PaddedDiv>
-          <PaddedDiv>
-            <h2>Related Stories</h2>
-            <ul>
+          </article>
+
+          {story.images.map((el) => {
+            return (
+              <div className="container story-image-container">
+                <img
+                  src={el.url}
+                  alt={el.alt}
+                  height={el.height}
+                  width={el.width}
+                  className="story-image"
+                />
+                <p className="caption-text">{el.caption}</p>
+              </div>            
+            );
+          })}
+
+          <hr />
+          
+          <div className="story-social-bottom">
+            <h5 className="text-center">Share this story</h5>
+            <StorySocial shareUrl={story.share_url} />
+          </div>
+
+          <section className="container story-related">
+          
+            <h5 className="text-center">Read related stories</h5>
+
+            <ul className="story-cards">
               {story.related_stories.map((el) => (
-                <li key={el.slug}>
-                  <PaddedDiv>
-                    {/* @see https://nextjs.org/docs/api-reference/next/link for more link creation context. */}
-                    <Link
-                      href="/impact-reports/onward/[slug]"
-                      as={`/impact-reports/onward/${el.slug}`}
-                    >
-                      <a>{el.title}</a>
-                    </Link>
-                  </PaddedDiv>
+                <li key={el.slug} className="storycard">
+                  <Link
+                    href="/impact-reports/onward/[slug]"
+                    as={`/impact-reports/onward/${el.slug}`}
+                  >
+                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                      <img
+                        src={el.image_card.url}
+                        alt={el.image_card.alt}
+                        height={el.image_card.height}
+                        width={el.image_card.width}
+                        className="storycard-image"
+                      />
+                      <h5 className="storycard-title">
+                        {el.title}
+                      </h5>
+                      <hr className="storycard-hr" />
+                      <p className="storycard-subtitle">
+                        {el.subtitle}
+                      </p>
+                      <span className="storycard-readmore">
+                        <span className="storycard-readmore-text label-text">Read More</span>
+                      </span>
+                      <span className="storycard-arrow"></span>
+                      <span className="storycard-temptags">
+                        {`Campus Tag: ${el.campus_tag}`}<br />
+                        {`Interest Tag: ${el.interest_tag}`}<br />
+                        {`Priority: ${el.priority}`}
+                      </span>
+                      <span className="storycard-bg"></span>
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-          </PaddedDiv>
+          </section>
+
         </div>
+        
       </Layout>
     </>
   );
 }
-
-const PaddedDiv = ({ children }) => (
-  <div style={{ padding: "1rem" }}>{children}</div>
-);
 
 // Add default props.
 

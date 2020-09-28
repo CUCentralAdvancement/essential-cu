@@ -37,7 +37,10 @@ module.exports = {
       };
 
       story.title = el.attributes.title;
-      story.subtitle = el.attributes.body.summary;
+      story.subtitle = el.attributes.body.summary.substring(
+        0,
+        randomNumber(60, 80)
+      );
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
 
@@ -62,9 +65,16 @@ module.exports = {
       const story = {};
 
       story.title = el.attributes.title;
-      story.subtitle = el.attributes.body.summary;
+      story.subtitle = el.attributes.body.summary.substring(
+        0,
+        randomNumber(60, 80)
+      );
       story.slug = el.attributes.slug;
       story.priority = el.attributes.priority;
+      // PRODUCTION SHARE URL:
+      // story.share_url = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
+      // STAGING SHARE URL:
+      story.share_url = `https://essential-stage.cu.edu/impact-reports/onward/${story.slug}`;
 
       story.body = el.attributes.body.processed.replace(
         'src="/_flysystem/s3/inline-images/',
@@ -124,6 +134,7 @@ module.exports = {
           const imageCardURL = relationships.find(
             (rel) => rel.id === a_story.relationships.image_card.data.id
           );
+
           const url = imageCardURL
             ? imageCardURL.attributes.uri.url
             : "missing";
@@ -131,6 +142,10 @@ module.exports = {
           return {
             slug: a_story.attributes.slug,
             title: a_story.attributes.title,
+            subtitle: a_story.attributes.body.summary.substring(
+              0,
+              randomNumber(60, 80)
+            ),
             image_card: {
               url: `https://source.unsplash.com/featured?${
                 keywords[randomNumber(1, 12)]

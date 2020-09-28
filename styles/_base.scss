@@ -10,13 +10,38 @@ body {
   margin: 0;
   background-color: $white;
   color: $text-color;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding-top: 56.25%;
+    background-image: url("/bkgd-goldwash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    transform: rotate(180deg);
+    
+    @media screen and (max-width: $break-mobilenav){
+      top: 56px;
+    }
+  }
 }
 
 main {
   position: relative;
   z-index: 0;
+  background-image: url("/bkgd-goldwash.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  padding: 1px 0;
 }
 
 * {
@@ -25,6 +50,16 @@ main {
 
 *:focus {
   outline: solid 1px $link-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: $break-sm){
+    margin-top: 10px;
+    margin-bottom: 10px;  
+  }
 }
 
 h1, .h1 {
@@ -75,6 +110,11 @@ p, .body-text {
   font-size: $body-size-lg;
   line-height: 1.68;
   font-weight: 300;
+
+  @media screen and (max-width: $break-sm){
+    font-size: $body-size;
+    font-weight: 400;
+  }
 }
 
 .body-text-sm {
@@ -109,6 +149,10 @@ a {
 p a, .link-inline {
   font-style: italic;
   text-decoration: underline;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 hr {
@@ -118,6 +162,12 @@ hr {
   border-radius: 5px;
   border: none;
   background-color: $gold;
+
+  @media screen and (max-width: $break-sm){
+    height: 4px;
+    max-width: 140px;
+    border-radius: 2px;
+  }
 }
 
 .hr-left {
@@ -126,6 +176,7 @@ hr {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -147,6 +198,10 @@ img {
   background-image: $gold-grad;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* LAYOUT */
 .container {
   max-width: $container-max + ( $container-gutter * 2 );
@@ -154,4 +209,10 @@ img {
   margin-right: auto;
   padding-left: $container-gutter;
   padding-right: $container-gutter;
+
+  .container {
+    max-width: $container-max;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
