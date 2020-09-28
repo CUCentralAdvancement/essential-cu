@@ -31,7 +31,7 @@ export default function Story({ story }) {
       <Layout>
 
         <div className="container">
-  
+    
           <section className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
@@ -121,6 +121,7 @@ export default function Story({ story }) {
           </section>
 
         </div>
+        
       </Layout>
     </>
   );
