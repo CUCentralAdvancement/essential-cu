@@ -45,6 +45,9 @@ $break-mmmd: 839px;
 $break-mmd: 959px;
 $break-md: 1023px;
 $break-lg: 1279px;
+// to collect ALL desktop > mobile header styles:
+$break-mobilenav: $break-sm;
 
 $container-max: 1255px;
 $container-gutter: 30px;
+$story-container-max: 827px;
