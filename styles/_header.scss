@@ -1,6 +1,3 @@
-// local breakpoint var to control ALL desktop > mobile header styles
-$break-mobilenav: $break-sm;
-
 // Create space for abs pos site-header to sit
 @media screen and (max-width: $break-mobilenav){
   body {
@@ -14,6 +11,7 @@ $break-mobilenav: $break-sm;
   position: sticky;
   z-index: 100;
   top: 0;
+  overflow: hidden;
 
   @media screen and (max-width: $break-mobilenav){
     background-color: transparent;
@@ -78,9 +76,6 @@ $break-mobilenav: $break-sm;
 
   @media screen and (max-width: $break-mobilenav){
     display: block;
-    position: sticky;
-    top: 0;
-    z-index: 1;
     width: 224px;
     margin: 0 auto;
   }
@@ -143,6 +138,7 @@ $break-mobilenav: $break-sm;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 24px 24px;
+    outline-offset: -1px;
 
     .js-active & {
       background-image: url("/icon-all-close menu2x.png");

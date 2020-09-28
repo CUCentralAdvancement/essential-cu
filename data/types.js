@@ -16,11 +16,11 @@ const imageDefinition = {
   /**
    * Given in pixels without the unit, e.g. {width: 480}
    */
-  width: PropTypes.string,
+  width: PropTypes.number,
   /**
    * Given in pixels without the unit, e.g. {height: 640}
    */
-  height: PropTypes.string,
+  height: PropTypes.number,
 };
 
 const storyBase = {
@@ -83,8 +83,17 @@ export const storyDefinition = {
       image_card: imageDefinition,
       slug: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
+      subtitle: PropTypes.string.isRequired,
+      interest_tag: PropTypes.oneOf(["Research", "Society", "Students"])
+        .isRequired,
+      campus_tag: PropTypes.oneOf(["Anschutz", "Boulder", "Denver", "UCCS"])
+        .isRequired,
     })
   ),
+  /**
+   * URL for social sharing and OG tag
+   */
+  share_url: PropTypes.string.isRequired,
 };
 
 export const storiesDefinition = {
