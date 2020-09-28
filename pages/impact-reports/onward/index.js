@@ -6,6 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
+import { URL } from "whatwg-url";
 
 Home.propTypes = {
   storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
@@ -87,9 +88,7 @@ const PaddedDiv = ({ children }) => {
 PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/stories`);
   const rawStoryData = await res.json();
 
   // Sample data.

@@ -46,23 +46,6 @@ export default function Story({ story }) {
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
           </PaddedDiv>
           <PaddedDiv>
-            <h2>Other Images</h2>
-            {story.images.map((el) => {
-              return (
-                <>
-                  <img
-                    style={{ display: "inline-block" }}
-                    src={el.url}
-                    alt={el.alt}
-                    height={el.height}
-                    width={el.width}
-                  />
-                  <p>{el.caption}</p>
-                </>
-              );
-            })}
-          </PaddedDiv>
-          <PaddedDiv>
             <h2>Related Stories</h2>
             <ul>
               {story.related_stories.map((el) => (
@@ -100,18 +83,18 @@ const PaddedDiv = ({ children }) => (
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?filter[field_story_slug]=${slug}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/story/${slug}`
   );
   const rawStoryData = await res.json();
 
   // const rawStoryData = require(`../../../data/stories/${slug}.json`);
 
-  const stories = formatStoryData(rawStoryData);
+  const story = formatStoryData(rawStoryData);
 
   return {
     props: {
       // Data comes back in array so first result is the story.
-      story: stories[0],
+      story: story,
     },
     // Only need to revalidate if data changes after deployments.
     // revalidate: 60,
@@ -120,17 +103,17 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/stories/paths`
   );
-  const rawStoryData = await res.json();
+  const data = await res.json();
 
   // const rawStoryData = require("../../../data/stories/stories.json");
 
-  const stories = formatStoryData(rawStoryData);
+  // const stories = formatStoryData(rawStoryData);
 
-  const paths = stories.map((el) => ({
+  const paths = data.map((path) => ({
     params: {
-      slug: el.slug,
+      slug: path,
     },
   }));
 
