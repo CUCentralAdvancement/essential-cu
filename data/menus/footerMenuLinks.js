@@ -23,10 +23,14 @@ export const menuLinks = {
       title: "Guide to Giving",
       url: "https://giving.cu.edu/guide-giving",
     },
-    { id: 2, title: "Impact", url: "https://essential.cu.edu" },
-    { id: 3, title: "FAQs", url: "https://giving.cu.edu/faq" },
-    { id: 4, title: "Careers", url: "https://giving.cu.edu/about-us/careers" },
-    { id: 5, title: "Beta Access", url: "https://giving.cu.edu/user" },
+    { 
+      id: 2,
+      title: "Give by Mail/Check",
+      url: "https://giving.cu.edu/make-gift-mail"
+    },
+    { id: 3, title: "Impact", url: "https://essential.cu.edu" },
+    { id: 4, title: "FAQs", url: "https://giving.cu.edu/faq" },
+    { id: 5, title: "Careers", url: "https://giving.cu.edu/about-us/careers" },
   ],
   campuses: [
     { id: 1, title: "Anschutz", url: "http://supportcuanschutz.ucdenver.edu" },
