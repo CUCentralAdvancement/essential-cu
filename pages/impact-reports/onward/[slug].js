@@ -55,21 +55,6 @@ export default function Story({ story }) {
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
           </article>
 
-          {story.images.map((el) => {
-            return (
-              <div className="container story-image-container">
-                <img
-                  src={el.url}
-                  alt={el.alt}
-                  height={el.height}
-                  width={el.width}
-                  className="story-image"
-                />
-                <p className="caption-text">{el.caption}</p>
-              </div>            
-            );
-          })}
-
           <hr />
           
           <div className="story-social-bottom">
