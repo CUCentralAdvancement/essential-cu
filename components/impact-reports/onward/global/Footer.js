@@ -1,31 +1,30 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { menuLinks } from "../../../../data/menus/footerMenuLinks";
 
 export default function Footer() {
   return (
-    <footer>
-      <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
-        <div style={{ display: "inline-block", padding: "1rem" }}>
-          <a href="https://giving.cu.edu/fund-search">
-            <button>Give Now</button>
+    <footer className="site-footer">
+      <div className="container site-footer-container">
+
+        <div className="site-footer-col">
+          <a className="btn site-footer-btn" href="https://giving.cu.edu/fund-search">
+            Give Now
           </a>
-          <PaddedText>CU Advancement | CU Foundation</PaddedText>
-          <PaddedText>1800 Grant Street | Denver, CO 80203</PaddedText>
-          <PaddedText>
-            <a href="tel:3035411290">303-541-1290</a>
-          </PaddedText>
-          <PaddedText>
-            <a href="mailto:giving@cu.edu">giving@cu.edu</a>
-          </PaddedText>
-          <PaddedText>
+          <p className="contact-text">
+            CU Advancement<br />
+            CU Foundation<br />
+            1800 Grant Street, Suite 725<br />
+            Denver, CO 80203<br />
+            <a href="tel:3035411290">303-541-1290</a><br />
+            <a href="mailto:giving@cu.edu">giving@cu.edu</a><br />
             <a href="https://www.cu.edu/privacy-policy">Privacy Policy</a> |{" "}
             <a href="https://www.cu.edu/terms-service">Terms of Service </a>
-          </PaddedText>
+          </p>
         </div>
-        <div style={{ display: "inline-block", padding: "2rem" }}>
-          <h2>About</h2>
-          <ul>
+
+        <div className="site-footer-col">
+          <h3>About Us</h3>
+          <ul className="site-footer-links">
             {menuLinks.about.map((link) => {
               return (
                 <li key={link.id}>
@@ -35,9 +34,10 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <div style={{ display: "inline-block", padding: "2rem" }}>
-          <h2>Quicklinks</h2>
-          <ul>
+
+        <div className="site-footer-col">
+          <h3>Quicklinks</h3>
+          <ul className="site-footer-links">
             {menuLinks.quicklinks.map((link) => {
               return (
                 <li key={link.id}>
@@ -47,9 +47,10 @@ export default function Footer() {
             })}
           </ul>
         </div>
-        <div style={{ display: "inline-block", padding: "2rem" }}>
-          <h2>Campuses</h2>
-          <ul>
+
+        <div className="site-footer-col">
+          <h3>Campus Offices</h3>
+          <ul className="site-footer-links">
             {menuLinks.campuses.map((link) => {
               return (
                 <li key={link.id}>
@@ -59,12 +60,8 @@ export default function Footer() {
             })}
           </ul>
         </div>
+
       </div>
     </footer>
   );
 }
-
-const PaddedText = ({ children }) => (
-  <div style={{ paddingBottom: "1rem" }}>{children}</div>
-);
-PaddedText.propTypes = { children: PropTypes.any.isRequired };
