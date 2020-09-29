@@ -1,0 +1,100 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.5);
+  padding: 69px 0 125px;
+
+  @media screen and (max-width: $break-ssm){
+    padding: 25px 0 40px;
+  }
+
+  &-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 1070px;
+
+    @media screen and (max-width: $break-ssm){
+      flex-direction: column;
+    }
+  }
+
+  &-col {
+    flex: 0 1 25%;
+    padding: 0 10px 25px;
+    
+    @media screen and (max-width: 1080px){
+      flex: 0 1 50%;
+      padding: 0 10px 25px;
+    }
+
+    @media screen and (max-width: $break-ssm){
+      padding: 0 0 15px;
+    }
+  }
+
+  .site-footer-btn {
+    font-size: 2em;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 0;
+
+    @media screen and (max-width: $break-ssm){
+      font-size: 1.4em;
+      line-height: 1.4em;
+      min-height: 34px;
+    }
+  }
+
+  h3 {
+    margin: 0 0 22px;
+
+    @media screen and (max-width: $break-ssm){
+      font-size: 1.6em;
+      margin: 0 0 4px;
+    }
+  }
+
+  .contact-text {
+    font-size: 1.6em;
+    line-height: 1.5;
+    margin: 9px 0 0;
+
+    a {
+      font-style: normal;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media screen and (max-width: $break-ssm){
+      font-size: 1.2em;
+    }
+  }
+
+  .site-footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      font-size: 1.6em;
+      line-height: 1.5;
+      font-style: normal;
+      text-decoration: none;
+      color: inherit;
+ 
+      &:hover {
+        text-decoration: underline;
+      }
+      
+      @media screen and (max-width: $break-ssm){
+        font-size: 1.2em;
+      }
+    }
+  }
+}
