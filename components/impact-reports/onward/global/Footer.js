@@ -11,8 +11,9 @@ export default function Footer() {
             Give Now
           </a>
           <p className="contact-text">
-            CU Advancement | CU Foundation<br />
-            1800 Grant Street<br />
+            CU Advancement<br />
+            CU Foundation<br />
+            1800 Grant Street, Suite 725<br />
             Denver, CO 80203<br />
             <a href="tel:3035411290">303-541-1290</a><br />
             <a href="mailto:giving@cu.edu">giving@cu.edu</a><br />
