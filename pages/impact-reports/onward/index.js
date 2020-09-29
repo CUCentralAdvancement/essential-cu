@@ -6,6 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
+import { useCookies } from 'react-cookie';
 
 Home.propTypes = {
   storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
@@ -17,6 +18,14 @@ export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
+
+  //WIP COOKIES:
+  const [cookies, setCookie] = useCookies(['testy1']);
+
+  setCookie('testy1', "blah blah blah", { path: '/' });
+
+
+
 
   // Set the initial filters for stories.
   useEffect(() => {
@@ -51,7 +60,7 @@ export default function Home({ storyData }) {
       </Head>
       <Layout>
         <div className="container">
-
+        
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
