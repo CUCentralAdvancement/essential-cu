@@ -124,7 +124,7 @@ export async function getStaticProps() {
     props: {
       storyData: stories,
     },
-    // No need to revalidate data at this point.
-    // revalidate: 600,
+    // Set to five seconds while testing.
+    revalidate: 5,
   };
 }

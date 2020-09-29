@@ -132,11 +132,10 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      // Data comes back in array so first result is the story.
       story: story,
     },
-    // Only need to revalidate if data changes after deployments.
-    // revalidate: 60,
+    // Set to five seconds while testing.
+    revalidate: 5,
   };
 }
 
