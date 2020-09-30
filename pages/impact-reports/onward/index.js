@@ -22,7 +22,6 @@ export default function Home({ storyData }) {
 
   //WIP COOKIES:
   const [cookies, setCookie] = useCookies(['testFin']);
-  // setCookie('testy1', "blah blah blah", { path: '/' });
 
   // check for Financial entrypoint cookie for module reorder
   function checkEntryFinancial() {
@@ -33,8 +32,6 @@ export default function Home({ storyData }) {
     }
   }
   const isEntryFinancial = checkEntryFinancial(); 
-  console.log('isEntryFinancial = ' + isEntryFinancial);
-
 
   // Set the initial filters for stories.
   useEffect(() => {
@@ -139,10 +136,8 @@ export default function Home({ storyData }) {
               </li>
             ))}
           </ul>
-{/*
 
-  { isEntryFinancial ? '' : <HomeFinancials /> }
-*/}
+          { isEntryFinancial ? '' : <HomeFinancials /> }
 
           <section className="home-mission">
             <h2 className="h1">Our Mission</h2>
