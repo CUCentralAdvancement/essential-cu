@@ -1,6 +1,26 @@
 /* FINANCIALS PAGE */
 
 .financials-title {
-  margin-top: 45px;
+  padding: 79px 0;
   text-align: center;
+  
+  @media screen and (max-width: $break-mmmd){
+    padding: 25px 0 45px;
+  }
+
+  h1 {
+    margin: 75px 0 15px;
+
+    @media screen and (max-width: $break-mmmd){
+      margin-top: 35px;
+    }
+  }
+
+  h2 {
+    margin: 15px 0 25px;
+  }
+
+  p {
+    margin: 20px 0;
+  }
 }

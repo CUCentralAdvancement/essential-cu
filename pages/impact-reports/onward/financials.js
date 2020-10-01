@@ -12,17 +12,18 @@ export default function StyleGuide({ storyData }) {
     <>
       <Head>
         <title>University of Colorado Fiscal Year 2020 Philanthropy Financials</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
       
         <div className="container">
+        
           <section className="financials-title">
-
-            <h1>Financials page</h1>
+            <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" />
+            <h1>It adds up:<br /> Your generosity is an investment</h1>
             <hr />
-            <p className="body-text-lg">Lorem ipsum</p>
-
+            <h2>2020 fiscal year financials</h2>
+            <p className="body-text-lg">You give to what matters to you—deeply, personally, meaningfully—to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today.</p>
+            <p className="body-text-lg"><strong>Thank you for supporting what’s important to you.</strong><br />You made a difference last year. Here’s how.</p>
           </section>
 
         </div>
