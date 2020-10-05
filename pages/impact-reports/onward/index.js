@@ -62,55 +62,57 @@ export default function Home({ storyData }) {
             </h2>
             <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" alt="divider graphic" />
           </section>
+          <section className="home-stories">
+            <a id="stories" className="home-stories-anchor"></a>
+            <ul className="story-cards">
+              {stories
+                // default SORT by priority
+                .sort((el1, el2) => el1.priority - el2.priority )
+                .map((el) => (
+                <li key={el.slug} className="storycard">
+                  <Link
+                    href="/impact-reports/onward/[slug]"
+                    as={`/impact-reports/onward/${el.slug}`}
+                  >
+                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                      <img
+                        style={{ display: "block" }}
+                        src={el.image_card.url}
+                        alt={el.image_card.alt}
+                        height={el.image_card.height}
+                        width={el.image_card.width}
+                        className="storycard-image"
+                      />
 
-          <ul className="story-cards">
-          {stories
-              // default SORT by priority
-              .sort((el1, el2) => el1.priority - el2.priority )
-              .map((el) => (
-              <li key={el.slug} className="storycard">
-                <Link
-                  href="/impact-reports/onward/[slug]"
-                  as={`/impact-reports/onward/${el.slug}`}
-                >
-                  <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                    <img
-                      style={{ display: "block" }}
-                      src={el.image_card.url}
-                      alt={el.image_card.alt}
-                      height={el.image_card.height}
-                      width={el.image_card.width}
-                      className="storycard-image"
-                    />
+                      <h5 className="storycard-title">
+                        {el.title}
+                      </h5>
 
-                    <h5 className="storycard-title">
-                      {el.title}
-                    </h5>
+                      <hr className="storycard-hr" />
 
-                    <hr className="storycard-hr" />
+                      <p className="storycard-subtitle">
+                        {el.subtitle}
+                      </p>
+                      
+                      <span className="storycard-readmore">
+                        <span className="storycard-readmore-text label-text">Read More</span>
+                      </span>
 
-                    <p className="storycard-subtitle">
-                      {el.subtitle}
-                    </p>
-                    
-                    <span className="storycard-readmore">
-                      <span className="storycard-readmore-text label-text">Read More</span>
-                    </span>
+                      <span className="storycard-arrow"></span>
+                      
+                      <span className="storycard-temptags">
+                        {`Campus Tag: ${el.campus_tag}`}<br />
+                        {`Interest Tag: ${el.interest_tag}`}<br />
+                        {`Priority: ${el.priority}`}
+                      </span>
 
-                    <span className="storycard-arrow"></span>
-                    
-                    <span className="storycard-temptags">
-                      {`Campus Tag: ${el.campus_tag}`}<br />
-                      {`Interest Tag: ${el.interest_tag}`}<br />
-                      {`Priority: ${el.priority}`}
-                    </span>
-
-                    <span className="storycard-bg"></span>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+                      <span className="storycard-bg"></span>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
 
           <section className="home-financials">
             <Link href="/impact-reports/onward/financials">
@@ -139,7 +141,7 @@ export default function Home({ storyData }) {
             <h2 className="h1">Our Mission</h2>
             <div className="home-mission-container">
               <div className="home-mission-content">
-                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
+                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
                   <a>
                     <h3 className="h2">CU Foundation</h3>  
                     <p className="body-text-lg">
@@ -149,7 +151,7 @@ export default function Home({ storyData }) {
                 </Link>
               </div>
               <div className="home-mission-content">
-                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
+                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
                   <a>
                     <h3 className="h2">CU Advancement</h3>  
                     <p className="body-text-lg">
