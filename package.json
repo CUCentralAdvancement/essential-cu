@@ -13,8 +13,9 @@
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-gtm-module": "^2.0.10",
-    "react-share": "^4.2.1"
+    "react-gtm-module": "^2.0.11",
+    "react-share": "^4.2.1",
+    "sass": "^1.26.11"
   },
   "engines": {
     "node": ">=12.0 <13.0"
