@@ -46,8 +46,8 @@ export default function Home({ storyData }) {
         <meta property="og:url" content={shareUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
+        <meta property="og:image" content="TODO" />
       </Head>
       <Layout>
         <div className="container">
@@ -55,15 +55,15 @@ export default function Home({ storyData }) {
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
-              <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" />
+              <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" width="1181" height="485" />
             </h1>
             <h2>
               Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
             </h2>
-            <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" alt="divider graphic" />
+            <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" width="189" height="57" alt="divider graphic" />
           </section>
           <section className="home-stories">
-            <a id="stories" className="home-stories-anchor"></a>
+            <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
               {stories
                 // default SORT by priority
