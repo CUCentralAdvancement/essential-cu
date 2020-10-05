@@ -6,6 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
+import { baseURL } from "../../../data/base";
 
 Story.propTypes = {
   story: PropTypes.shape(storyDefinition),
@@ -134,7 +135,7 @@ export default function Story({ story }) {
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/story/${slug}`
+    `${baseURL}/api/story/${slug}`
   );
   const rawStoryData = await res.json();
 
@@ -153,7 +154,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/stories/paths`
+    `${baseURL}/api/stories/paths`
   );
   const data = await res.json();
 

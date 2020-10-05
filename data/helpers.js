@@ -39,7 +39,7 @@ module.exports = {
     story.image_card = el.image_card;
     story.image_main = el.image_main;
 
-    story.related_stories = el.related_stories;
+    story.related_stories = el.related_stories ?? [];
 
     return story;
   },
