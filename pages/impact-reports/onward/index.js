@@ -90,10 +90,7 @@ export default function Home({ storyData }) {
                     <hr className="storycard-hr" />
 
                     <p className="storycard-subtitle">
-                      static subtitle for dev static subtitle for dev static subtitle for dev 
-                    {/*
                       {el.subtitle}
-                    */}
                     </p>
                     
                     <span className="storycard-readmore">
@@ -116,28 +113,26 @@ export default function Home({ storyData }) {
           </ul>
 
           <section className="home-financials">
-            {/* TODO: 
-              order this section here by default, or before story cards dependent upon "entry into the site" ?? 
-            */}
-            <h2 className="h1">CU philanthropy,</h2>
-            <h3 className="h2">by the numbers</h3>
-
-            <div className="home-financials-container">
-              <div className="home-financials-content">
-                <h4 className="h1">$455.9 million</h4>
-                <p className="body-text-lg">
-                  Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
-                </p>
-                <div className="text-center">
-                  <Link href="/impact-reports/onward/financials">
-                    <a className="btn">See more</a>
-                  </Link>
+            <Link href="/impact-reports/onward/financials">
+              <a>
+                <h2 className="h1">CU philanthropy,</h2>
+                <h3 className="h2">by the numbers</h3>
+                <div className="home-financials-container">
+                  <div className="home-financials-content">
+                    <h4 className="h1">$455.9 million</h4>
+                    <p className="body-text-lg">
+                      Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
+                    </p>
+                    <div className="text-center">
+                      <span className="btn">See more</span>
+                    </div>
+                  </div>
+                  <div className="home-financials-image">
+                    <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
+                  </div>
                 </div>
-              </div>
-              <div className="home-financials-image">
-                <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
-              </div>
-            </div>
+              </a>
+            </Link>
           </section>
 
           <section className="home-mission">
