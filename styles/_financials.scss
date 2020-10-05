@@ -129,9 +129,19 @@
     }
   }
 
+  &-5 {
+    @media screen and (max-width: $break-mmmd){
+        padding-bottom: 0;
+    }    
+  }
+
   &-6 {
     padding-left: $financials-gutter;
     padding-right: $financials-gutter;
+
+    @media screen and (max-width: $break-mmmd){
+      padding-top: 0;
+    }    
   }
 
   &-7,
@@ -145,6 +155,15 @@
 
     #{ $top }-image {
       flex: 0 1 55%;
+    }
+  }
+
+  &-8,
+  &-9 {
+    @media screen and (max-width: $break-mmmd){
+      h2.financials-hide-large {
+        margin-bottom: 40px;
+      }
     }
   }
 
