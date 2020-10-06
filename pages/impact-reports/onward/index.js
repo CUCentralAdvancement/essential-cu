@@ -7,7 +7,6 @@ import HomeFinancials from "../../../components/impact-reports/onward/global/Hom
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
-import { useCookies } from 'react-cookie';
 
 Home.propTypes = {
   storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
@@ -20,18 +19,7 @@ export default function Home({ storyData }) {
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
 
-  //WIP COOKIES:
-  const [cookies, setCookie] = useCookies(['testFin']);
-
-  // check for Financial entrypoint cookie for module reorder
-  function checkEntryFinancial() {
-    if ( cookies.testFin == ("ucb_financials" || "ucd_financials" || "uccs_financials") ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  const isEntryFinancial = checkEntryFinancial(); 
+  /* Not using this method anymore; keep for example of useEffect -KM/TEMP
 
   // Set the initial filters for stories.
   useEffect(() => {
@@ -53,6 +41,8 @@ export default function Home({ storyData }) {
     }
   }, []);
 
+  */
+  
   return (
     <>
       <Head>
@@ -65,12 +55,7 @@ export default function Home({ storyData }) {
         <meta property="og:image" content="TODO" />
       </Head>
       <Layout>
-        <div className="container">
-
-          {/*
-          WIP set a cookie
-          */}
-          <button className="btn" type="button" onClick={() => setCookie("testFin", "ucb_financials") }>SetCookie: testFin ucb_financials</button>
+        <div className="container home-container">
 
           <section className="home-title">
             <h1>
@@ -82,8 +67,6 @@ export default function Home({ storyData }) {
             </h2>
             <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" width="189" height="57" alt="divider graphic" />
           </section>
-
-          { isEntryFinancial ? <HomeFinancials /> : '' }
 
           <section className="home-stories">
             <a id="stories" name="stories" className="home-stories-anchor"></a>
@@ -137,30 +120,7 @@ export default function Home({ storyData }) {
             </ul>
           </section>
 
-          { isEntryFinancial ? '' : <HomeFinancials /> }
-
-          <section className="home-financials">
-            <Link href="/impact-reports/onward/financials">
-              <a>
-                <h2 className="h1">CU philanthropy,</h2>
-                <h3 className="h2">by the numbers</h3>
-                <div className="home-financials-container">
-                  <div className="home-financials-content">
-                    <h4 className="h1">$455.9 million</h4>
-                    <p className="body-text-lg">
-                      Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
-                    </p>
-                    <div className="text-center">
-                      <span className="btn">See more</span>
-                    </div>
-                  </div>
-                  <div className="home-financials-image">
-                    <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
-                  </div>
-                </div>
-              </a>
-            </Link>
-          </section>
+          <HomeFinancials />
 
           <section className="home-mission">
             <h2 className="h1">Our Mission</h2>
