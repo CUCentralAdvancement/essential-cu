@@ -37,11 +37,28 @@
   }
 }
 
+.home-stories {
+  position: relative;
+
+  &-anchor {
+    position: absolute;
+    top: -100px;
+
+    @media screen and (max-width: $break-mobilenav){
+      top: 0;
+    }
+  }
+}
+
 .home-financials {
   padding: 60px 0;
 
   @media screen and (max-width: $break-mmmd){
     padding: 45px 0;
+  }
+
+  a {
+    color: inherit;
   }
 
   h2 {
@@ -140,11 +157,6 @@
 
     a {
       color: inherit;
-      transition: color 0.2s ease;
-
-      &:hover {
-        color: $link-color;
-      }
     }
 
     h3 {

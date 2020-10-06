@@ -15,13 +15,13 @@ export default function Financials() {
         <div className="container">
         
           <section className="financials-title">
-            <img src="//fpoimg.com/1181x485?text=FPO" alt="TODO" />
+            <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" width="1181" height="485" />
             <div className="financials-container">
               <h1>It adds up:<br /> Your generosity is an investment</h1>
               <hr />
               <h2>2020 fiscal year financials</h2>
               <p className="body-text-lg">You give to what matters to you—deeply, personally, meaningfully—to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today.</p>
-              <p className="body-text-lg"><strong>Thank you for supporting what’s important to you.</strong><br />You made a difference last year. Here’s how.</p>
+              <p className="body-text-lg"><strong>Thank you for supporting what’s important to you.</strong><br />Here's how you made a difference in fiscal year 2020.</p>
             </div>
           </section>
 
@@ -53,7 +53,7 @@ export default function Financials() {
 
           <section className="financials-section financials-section-3">
             <div className="financials-section-content">
-              <p className="body-text-lg">You also rose to meet the challenge in a year unlike any other. You are stepping up we face new hardships caused by COVID and the economic downturn. And you’re standing together with those who fight for social justice.</p>
+              <p className="body-text-lg">You also rose to meet the challenge in a year unlike any other. You are stepping up as we face new hardships caused by COVID and the economic downturn. And you’re standing together with those who fight for social justice.</p>
               <h3>$3.3 million</h3>
               <p className="body-text-lg">How much <strong>1,986 donors</strong> gave to COVID and emergency relief efforts since March 1</p>
               <h3>$11.8 million</h3>
@@ -99,7 +99,7 @@ export default function Financials() {
               <h2 className="h1 text-center">You’re looking ahead</h2>
               <hr />
               <p className="body-text-lg">
-                You give with an eye on the future—to create solutions tomorrow that the challenges we face today. Endowments are investments in that future. They’re gifts that support CU forever because they generate reliable support for generations to come. CU’s collective endowment is made up of thousands of individual endowments, and just like a current gift, an endowment has a specific purpose determined by the donor: It could be a scholarship that’s awarded year after year, or support to attract a sought-after faculty chair or the creation of a mental health and wellness program.
+                You give with an eye on the future—to create solutions tomorrow for the challenges we face today. Endowments are investments in that future. They’re gifts that support CU forever because they generate reliable support for generations to come. CU’s collective endowment is made up of thousands of individual endowments, and just like a current gift, an endowment has a specific purpose determined by the donor: It could be a scholarship that’s awarded year after year, or support to attract a sought-after faculty chair or the creation of a mental health and wellness program.
               </p>
             </div>
           </section>
@@ -107,10 +107,10 @@ export default function Financials() {
           <section className="financials-section financials-section-7">
             <div className="financials-section-content">
               <h3>$1.52 billion</h3>
-              <p className="body-text-lg">CU’s endowment is valued at $1.52 billion. Here’s how the collective value of the endowment has grown in recent years.</p>
+              <p className="body-text-lg">CU’s endowment is valued at $1.52 billion, as of June 30. Here’s how the collective value of the endowment has grown in recent years.</p>
               <p className="body-text-lg">
-                <strong>140</strong> new endowments were created last year<br />  
-                <strong>$73 million</strong> in new endowment support<br /> 
+                <strong>140</strong> new endowments were created last fiscal year<br />  
+                <strong>$73 million</strong> was given in new endowment support<br /> 
                 <strong>3,029</strong> total endowments at CU have an enduring impact 
               </p>
             </div>
@@ -136,10 +136,11 @@ export default function Financials() {
 
           <section className="financials-section financials-section-9">
             <div className="financials-section-content">
-              <h2>Investment return vs. policy benchmark</h2>
-              <p className="body-text-lg">The endowment is invested in the Long Term Investment Pool, or LTIP, in a diverse asset class with a long-term horizon in mind. Here’s how the LTIP was invested in fiscal year 2020.</p>
+              <h2 className="financials-hide-small">Investment return vs. policy benchmark</h2>
+              <p className="body-text-lg">Here is the LTIP’s annualized investment performance compared to our policy benchmark.</p>
             </div>
             <div className="financials-section-image">
+              <h2 className="financials-hide-large">Investment return vs. policy benchmark</h2>
               <img src="//fpoimg.com/723x586?text=FPO" alt="TODO" />
             </div>
           </section>
