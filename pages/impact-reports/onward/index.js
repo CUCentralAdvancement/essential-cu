@@ -46,8 +46,8 @@ export default function Home({ storyData }) {
         <meta property="og:url" content={shareUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
+        <meta property="og:image" content="TODO" />
       </Head>
       <Layout>
         <div className="container">
@@ -55,93 +55,93 @@ export default function Home({ storyData }) {
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
-              <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" />
+              <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" width="1181" height="485" />
             </h1>
             <h2>
               Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
             </h2>
-            <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" alt="divider graphic" />
+            <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" width="189" height="57" alt="divider graphic" />
+          </section>
+          <section className="home-stories">
+            <a id="stories" name="stories" className="home-stories-anchor"></a>
+            <ul className="story-cards">
+              {stories
+                // default SORT by priority
+                .sort((el1, el2) => el1.priority - el2.priority )
+                .map((el) => (
+                <li key={el.slug} className="storycard">
+                  <Link
+                    href="/impact-reports/onward/[slug]"
+                    as={`/impact-reports/onward/${el.slug}`}
+                  >
+                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                      <img
+                        style={{ display: "block" }}
+                        src={el.image_card.url}
+                        alt={el.image_card.alt}
+                        height={el.image_card.height}
+                        width={el.image_card.width}
+                        className="storycard-image"
+                      />
+
+                      <h5 className="storycard-title">
+                        {el.title}
+                      </h5>
+
+                      <hr className="storycard-hr" />
+
+                      <p className="storycard-subtitle">
+                        {el.subtitle}
+                      </p>
+                      
+                      <span className="storycard-readmore">
+                        <span className="storycard-readmore-text label-text">Read More</span>
+                      </span>
+
+                      <span className="storycard-arrow"></span>
+                      
+                      <span className="storycard-temptags">
+                        {`Campus Tag: ${el.campus_tag}`}<br />
+                        {`Interest Tag: ${el.interest_tag}`}<br />
+                        {`Priority: ${el.priority}`}
+                      </span>
+
+                      <span className="storycard-bg"></span>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
 
-          <ul className="story-cards">
-            {stories.map((el) => (
-              <li key={el.slug} className="storycard">
-                <Link
-                  href="/impact-reports/onward/[slug]"
-                  as={`/impact-reports/onward/${el.slug}`}
-                >
-                  <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                    <img
-                      style={{ display: "block" }}
-                      src={el.image_card.url}
-                      alt={el.image_card.alt}
-                      height={el.image_card.height}
-                      width={el.image_card.width}
-                      className="storycard-image"
-                    />
-
-                    <h5 className="storycard-title">
-                      {el.title}
-                    </h5>
-
-                    <hr className="storycard-hr" />
-
-                    <p className="storycard-subtitle">
-                      static subtitle for dev static subtitle for dev static subtitle for dev 
-                    {/*
-                      {el.subtitle}
-                    */}
-                    </p>
-                    
-                    <span className="storycard-readmore">
-                      <span className="storycard-readmore-text label-text">Read More</span>
-                    </span>
-
-                    <span className="storycard-arrow"></span>
-                    
-                    <span className="storycard-temptags">
-                      {`Campus Tag: ${el.campus_tag}`}<br />
-                      {`Interest Tag: ${el.interest_tag}`}<br />
-                      {`Priority: ${el.priority}`}
-                    </span>
-
-                    <span className="storycard-bg"></span>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-
           <section className="home-financials">
-            {/* TODO: 
-              order this section here by default, or before story cards dependent upon "entry into the site" ?? 
-            */}
-            <h2 className="h1">CU philanthropy,</h2>
-            <h3 className="h2">by the numbers</h3>
-
-            <div className="home-financials-container">
-              <div className="home-financials-content">
-                <h4 className="h1">$455.9 million</h4>
-                <p className="body-text-lg">
-                  Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
-                </p>
-                <div className="text-center">
-                  <Link href="/impact-reports/onward/financials">
-                    <a className="btn">See more</a>
-                  </Link>
+            <Link href="/impact-reports/onward/financials">
+              <a>
+                <h2 className="h1">CU philanthropy,</h2>
+                <h3 className="h2">by the numbers</h3>
+                <div className="home-financials-container">
+                  <div className="home-financials-content">
+                    <h4 className="h1">$455.9 million</h4>
+                    <p className="body-text-lg">
+                      Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
+                    </p>
+                    <div className="text-center">
+                      <span className="btn">See more</span>
+                    </div>
+                  </div>
+                  <div className="home-financials-image">
+                    <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
+                  </div>
                 </div>
-              </div>
-              <div className="home-financials-image">
-                <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
-              </div>
-            </div>
+              </a>
+            </Link>
           </section>
 
           <section className="home-mission">
             <h2 className="h1">Our Mission</h2>
             <div className="home-mission-container">
               <div className="home-mission-content">
-                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
+                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
                   <a>
                     <h3 className="h2">CU Foundation</h3>  
                     <p className="body-text-lg">
@@ -151,7 +151,7 @@ export default function Home({ storyData }) {
                 </Link>
               </div>
               <div className="home-mission-content">
-                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
+                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
                   <a>
                     <h3 className="h2">CU Advancement</h3>  
                     <p className="body-text-lg">
