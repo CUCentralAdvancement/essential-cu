@@ -66,6 +66,16 @@
                     mid = cookiecase[1];
                     SetCookie("STYXKEY-MemberID", mid, ExpireDays);
                     break;
+                case "utm_content":
+                    utmContent = cookiecase[1];
+                    if (utmContent.indexOf("_")) {
+                      var contentParts = utmContent.split("_");
+                      SetCookie("STYXKEY-Campus", contentParts[0], ExpireDays);
+                      SetCookie("STYXKEY-Interest", contentParts[1], ExpireDays);
+                      break;
+                    }
+                    SetCookie("STYXKEY-Campus", utmContent, ExpireDays);
+                    break;
                 default:
                     break;
             }
