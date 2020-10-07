@@ -7,12 +7,12 @@ export default function HomeFinancials() {
 
   const [isEntryFinancial, setEntryFinancial] = useState(false);
 
-  const [cookies] = useCookies(['interest']);
+  const [cookies] = useCookies(["STYXKEY-Interest"]);
 
   useEffect(() => {
     // check for Financial entrypoint cookie for module reorder
     (() => {
-      if ( cookies.interest == "financials" ) {
+      if ( cookies["STYXKEY-Interest"] == "financials" ) {
         setEntryFinancial(!isEntryFinancial);
       } else {
         setEntryFinancial(isEntryFinancial);
