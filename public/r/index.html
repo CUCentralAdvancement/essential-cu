@@ -11,21 +11,20 @@
       })(window, document, 'script', 'dataLayer', 'GTM-KFCM644');</script>
     <!-- End Google Tag Manager -->
   <script language="javascript">
-
         var ExpireDays = 90;
         qstr = document.location.search;
         qstr = qstr.substring(1, qstr.length);
         function SetCookie(cookieName, cookieValue, nDays) {
             var domain = get_top_domain(window.location.host);
-            if (domain === undefined) {
-              domain = "localhost";
-            }
-            console.log(domain);
             var today = new Date();
             var expire = new Date();
             if (nDays == null || nDays == 0) nDays = 1;
             expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-            document.cookie = cookieName + "=" + escape(cookieValue) + "; expires=" + expire.toGMTString() + "; path=/; domain=." + domain + ";";
+            var cookieString = cookieName + "=" + escape(cookieValue) + "; expires=" + expire.toGMTString() + "; path=/; domain=." + domain + ";";
+            if (domain === undefined) {
+              cookieString = cookieName + "=" + escape(cookieValue) + "; expires=" + expire.toGMTString() + "; path=/;";
+            }
+            document.cookie = cookieString;
         }
         thevars = qstr.split("&");
         for (i = 0; i < thevars.length; i++) {
@@ -45,7 +44,6 @@
                       var emailNameParts = emailName.split("+");
                       e = emailNameParts[0] + "@" + emailParts[1];
                     }
-                    console.log(e);
                     SetCookie("STYXKEY-Email", e, ExpireDays);
                     break;
                 case "j":
@@ -106,7 +104,7 @@
     }
     </script>
     <script type="text/javascript" src="https://7327152.collect.igodigital.com/collect.js"></script>
-    <meta http-equiv="refresh" content="1;url=https://essential.cu.edu/impact-reports/onward" />
+    <!-- meta http-equiv="refresh" content="1;url=https://essential.cu.edu/impact-reports/onward" /-->
 </head>
 <body>
   <script type="text/javascript">
