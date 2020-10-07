@@ -22,6 +22,13 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
+  if (process.env.NODE_ENV === 'production' &&
+    req.headers['x-forwarded-proto'] !== 'https') {
+
+    sslUrl = ['https://', req.hostname, req.url].join('');
+    return res.redirect(sslUrl);
+  }
+
   if (dev) {
     const options = {
       key: fs.readFileSync("localhost.key"),
