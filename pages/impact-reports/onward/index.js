@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
+import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
@@ -17,6 +18,8 @@ export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
+
+  /* Not using this method anymore; keep for example of useEffect -KM/TEMP
 
   // Set the initial filters for stories.
   useEffect(() => {
@@ -38,6 +41,8 @@ export default function Home({ storyData }) {
     }
   }, []);
 
+  */
+  
   return (
     <>
       <Head>
@@ -50,7 +55,7 @@ export default function Home({ storyData }) {
         <meta property="og:image" content="TODO" />
       </Head>
       <Layout>
-        <div className="container">
+        <div className="container home-container">
 
           <section className="home-title">
             <h1>
@@ -62,6 +67,7 @@ export default function Home({ storyData }) {
             </h2>
             <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" width="189" height="57" alt="divider graphic" />
           </section>
+
           <section className="home-stories">
             <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
@@ -114,28 +120,7 @@ export default function Home({ storyData }) {
             </ul>
           </section>
 
-          <section className="home-financials">
-            <Link href="/impact-reports/onward/financials">
-              <a>
-                <h2 className="h1">CU philanthropy,</h2>
-                <h3 className="h2">by the numbers</h3>
-                <div className="home-financials-container">
-                  <div className="home-financials-content">
-                    <h4 className="h1">$455.9 million</h4>
-                    <p className="body-text-lg">
-                      Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
-                    </p>
-                    <div className="text-center">
-                      <span className="btn">See more</span>
-                    </div>
-                  </div>
-                  <div className="home-financials-image">
-                    <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
-                  </div>
-                </div>
-              </a>
-            </Link>
-          </section>
+          <HomeFinancials />
 
           <section className="home-mission">
             <h2 className="h1">Our Mission</h2>
@@ -168,11 +153,6 @@ export default function Home({ storyData }) {
     </>
   );
 }
-
-const PaddedDiv = ({ children }) => {
-  return <div style={{ padding: "1rem" }}>{children}</div>;
-};
-PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
 export async function getStaticProps() {
   // Real data from API.

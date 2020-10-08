@@ -26,17 +26,11 @@ export default function Story({ story }) {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={story.title} />
         <meta property="og:description" content={story.subtitle} />
-        {/*
-          <meta property="og:image" content={story.image_main.url} />
-          TEMP WIP FOR TESTING:
-        */}
+        <meta property="og:image" content={story.image_main.url} />
         <meta property="og:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:title" content={story.title} />
         <meta property="twitter:description" content={story.subtitle} />
-        {/*
-          <meta property="twitter:image" content={story.image_main.url} />
-          TEMP WIP FOR TESTING:
-        */}
+        <meta property="twitter:image" content={story.image_main.url} />
         <meta property="twitter:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
