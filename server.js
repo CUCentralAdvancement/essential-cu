@@ -24,8 +24,7 @@ app.prepare().then(() => {
 
   if (process.env.NODE_ENV === 'production' &&
     req.headers['x-forwarded-proto'] !== 'https') {
-
-    sslUrl = ['https://', req.hostname, req.url].join('');
+    var sslUrl = ['https://', req.hostname, req.url].join('');
     return res.redirect(sslUrl);
   }
 
