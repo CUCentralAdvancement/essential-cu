@@ -4,9 +4,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
+// import HomeStoryCards from "../../../components/impact-reports/onward/global/HomeStoryCards";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
+import { useCookies } from 'react-cookie';
 
 Home.propTypes = {
   storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
@@ -18,6 +20,39 @@ export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
+
+  const [isCampusAnschutz, setStoryCardAnschutz] = useState(false);
+  const [isCampusBoulder, setStoryCardBoulder] = useState(false);
+  const [isCampusDenver, setStoryCardDenver] = useState(false);
+  const [isCampusUCCS, setStoryCardUCCS] = useState(false);
+
+  const [cookies] = useCookies(["STYXKEY-Campus"]);
+
+  useEffect(() => {
+    // check for Campus cookie for story card reorder
+    (() => {
+      if ( cookies["STYXKEY-Campus"] == "Anschutz" ) {
+        setStoryCardAnschutz(!isCampusAnschutz);
+      } else {
+        setStoryCardAnschutz(isCampusAnschutz);
+      }
+      if ( cookies["STYXKEY-Campus"] == "Boulder" ) {
+        setStoryCardBoulder(!isCampusBoulder);
+      } else {
+        setStoryCardBoulder(isCampusBoulder);
+      }
+      if ( cookies["STYXKEY-Campus"] == "Denver" ) {
+        setStoryCardDenver(!isCampusDenver);
+      } else {
+        setStoryCardDenver(isCampusDenver);
+      }
+      if ( cookies["STYXKEY-Campus"] == "UCCS" ) {
+        setStoryCardUCCS(!isCampusUCCS);
+      } else {
+        setStoryCardUCCS(isCampusUCCS);
+      }
+    })();
+  }, []);
 
   /* Not using this method anymore; keep for example of useEffect -KM/TEMP
 
@@ -69,6 +104,13 @@ export default function Home({ storyData }) {
           </section>
 
           <section className="home-stories">
+
+          {/* WIP */}
+          Is Campus Anschutz? {`${isCampusAnschutz}`}<br />
+          Is Campus Boulder? {`${isCampusBoulder}`}<br />
+          Is Campus Denver? {`${isCampusDenver}`}<br />
+          Is Campus UCCS? {`${isCampusUCCS}`}<br />
+
             <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
               {stories
