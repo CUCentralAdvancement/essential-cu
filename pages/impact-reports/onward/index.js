@@ -60,12 +60,12 @@ export default function Home({ storyData }) {
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
-              <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" width="1181" height="485" />
+              <img src="/home-banner-onward.png" alt="Onward" width="1255" height="516" />
             </h1>
             <h2>
               Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
             </h2>
-            <img className="home-title-hrimg" src="//fpoimg.com/189x57?text=FPO" width="189" height="57" alt="divider graphic" />
+            <img className="home-title-hrimg" src="/divider-shapes.png" width="199" height="60" alt="divider graphic" />
           </section>
 
           <section className="home-stories">
