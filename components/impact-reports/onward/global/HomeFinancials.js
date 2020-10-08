@@ -37,7 +37,7 @@ export default function HomeFinancials() {
               </div>
             </div>
             <div className="home-financials-image">
-              <img src="//fpoimg.com/615x530?text=FPO" alt="financials graph" />
+              <img src="/home-financials.png" width="615" height="530" alt="financials graph" />
             </div>
           </div>
         </a>
