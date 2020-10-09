@@ -1,0 +1,29 @@
+//Foundation
+// import custom settings
+//@import 'settings';
+
+// import foundation sass
+@import "foundation";
+//@import "../../foundation-sites/scss/foundation";
+
+// Framework
+@import "framework/utils/utils";
+@import "framework/layout";
+
+
+@import "global/settings";
+@import "global/app";
+
+
+@import "global/mixins";
+@import "global/animation";
+@import "global/slick";
+@import "global/icons";
+@import "global/buttons";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+
+// Pages
+@import "pages/landing";

@@ -1,0 +1,83 @@
+//*****************************
+// Font Icons
+//*****************************
+
+$icon-font: 'icons';
+$icon-font-path: '../fonts/cu-icons/fonts/';
+
+@font-face {
+  font-family: $icon-font;
+  src: url($icon-font-path + 'cu-icons.eot?48442214');
+  src: url($icon-font-path + 'cu-icons.eot?48442214#iefix') format('embedded-opentype'),
+  url($icon-font-path + 'cu-icons.woff?48442214') format('woff'),
+  url($icon-font-path + 'cu-icons.ttf?48442214') format('truetype'),
+  url($icon-font-path + 'cu-icons.svg?48442214#cu-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon-cancel: '\e800';
+$icon-close: $icon-cancel;
+$icon-menu: '\e801';
+$icon-cart: '\e802';
+$icon-basket: '\e908';
+$icon-science: '\e900';
+$icon-arts-culture: '\e901';
+$icon-alumni: '\e902';
+$icon-health-wellness: '\e903';
+$icon-scholarships: '\e904';
+$icon-community: '\e905';
+$icon-athletics: '\e906';
+$icon-enterprise: '\e907';
+$icon-ctrl: '\e909';
+$icon-compass: '\e90a';
+$icon-feather: '\e90b';
+$icon-telescope: '\e90c';
+$icon-play: '\e90d';
+
+// Add a font icon. This must be used in a before or after pseudo class
+@mixin icon($icon) {
+  font-family: $icon-font;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  content: '#{$icon}';
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  // For safety - reset parent styles, that can break glyph codes
+  font-variant: normal;
+  text-transform: none;
+
+  // Ensure consistent height
+  line-height: 1em;
+
+  // Animation center compensation - margins should be symmetric
+  // remove if not needed
+  margin-left: .2em;
+
+  // Font smoothing. That was taken from TWBS
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Add an icon to the before pseudo class
+@mixin icon-before($icon) {
+  &:before {
+    @include icon($icon);
+    @content;
+  }
+}
+
+// Add an icon to the after pseudo class
+@mixin icon-after($icon) {
+  &:after {
+    @include icon($icon);
+    @content;
+  }
+}
