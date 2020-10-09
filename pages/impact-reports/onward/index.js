@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
-// import HomeStoryCards from "../../../components/impact-reports/onward/global/HomeStoryCards";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition, storyDefinition } from "../../../data/types";
 import { useState, useEffect } from "react";
@@ -17,67 +16,36 @@ Home.propTypes = {
 // @todo Add default props.
 
 export default function Home({ storyData }) {
+  const [cookies] = useCookies(["STYXKEY-Campus"]);
   const [stories, setStories] = useState(storyData);
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
-
-  const [isCampusAnschutz, setStoryCardAnschutz] = useState(false);
-  const [isCampusBoulder, setStoryCardBoulder] = useState(false);
-  const [isCampusDenver, setStoryCardDenver] = useState(false);
-  const [isCampusUCCS, setStoryCardUCCS] = useState(false);
-
-  const [cookies] = useCookies(["STYXKEY-Campus"]);
-
-  useEffect(() => {
-    // check for Campus cookie for story card reorder
-    (() => {
-      if ( cookies["STYXKEY-Campus"] == "Anschutz" ) {
-        setStoryCardAnschutz(!isCampusAnschutz);
-      } else {
-        setStoryCardAnschutz(isCampusAnschutz);
-      }
-      if ( cookies["STYXKEY-Campus"] == "Boulder" ) {
-        setStoryCardBoulder(!isCampusBoulder);
-      } else {
-        setStoryCardBoulder(isCampusBoulder);
-      }
-      if ( cookies["STYXKEY-Campus"] == "Denver" ) {
-        setStoryCardDenver(!isCampusDenver);
-      } else {
-        setStoryCardDenver(isCampusDenver);
-      }
-      if ( cookies["STYXKEY-Campus"] == "UCCS" ) {
-        setStoryCardUCCS(!isCampusUCCS);
-      } else {
-        setStoryCardUCCS(isCampusUCCS);
-      }
-    })();
-  }, []);
-
-  /* Not using this method anymore; keep for example of useEffect -KM/TEMP
-
-  // Set the initial filters for stories.
-  useEffect(() => {
-    // Only do this client-side so SSG content is full for SEO.
-    if (typeof window !== "undefined") {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get("campus")) {
-        let first = [];
-        let second = [];
-        stories.forEach((el) => {
-          if (el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")) {
-            first.push(el);
-          } else {
-            second.push(el);
-          }
-        });
-        setStories([...first, ...second]);
-      }
-    }
-  }, []);
-
-  */
   
+  useEffect(() => {
+    // default sort order by priority
+    stories.sort((el1, el2) => el1.priority - el2.priority );
+    
+    // check for campus cookie
+    if ( cookies["STYXKEY-Campus"] != null){
+      const campusEntryName = cookies["STYXKEY-Campus"];
+      let first = [];
+      let second = [];
+
+      // move campus tag matches to beginning
+      stories.forEach((el) => {
+        if (el.campus_tag == campusEntryName) {
+          first.push(el);
+        } else {
+          second.push(el);
+        }
+      });
+      setStories([...first, ...second]);
+
+    } else {
+      setStories([...stories]);
+    }
+  },[]);
+
   return (
     <>
       <Head>
@@ -104,19 +72,9 @@ export default function Home({ storyData }) {
           </section>
 
           <section className="home-stories">
-
-          {/* WIP */}
-          Is Campus Anschutz? {`${isCampusAnschutz}`}<br />
-          Is Campus Boulder? {`${isCampusBoulder}`}<br />
-          Is Campus Denver? {`${isCampusDenver}`}<br />
-          Is Campus UCCS? {`${isCampusUCCS}`}<br />
-
             <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
-              {stories
-                // default SORT by priority
-                .sort((el1, el2) => el1.priority - el2.priority )
-                .map((el) => (
+              {stories.map((el) => (
                 <li key={el.slug} className="storycard">
                   <Link
                     href="/impact-reports/onward/[slug]"
@@ -131,29 +89,23 @@ export default function Home({ storyData }) {
                         width={el.image_card.width}
                         className="storycard-image"
                       />
-
                       <h5 className="storycard-title">
                         {el.title}
                       </h5>
-
                       <hr className="storycard-hr" />
-
                       <p className="storycard-subtitle">
                         {el.subtitle}
                       </p>
-                      
                       <span className="storycard-readmore">
                         <span className="storycard-readmore-text label-text">Read More</span>
                       </span>
-
                       <span className="storycard-arrow"></span>
-                      
+                      {/* TEMP TO DELETE AFTER TESTING: */}
                       <span className="storycard-temptags">
                         {`Campus Tag: ${el.campus_tag}`}<br />
                         {`Interest Tag: ${el.interest_tag}`}<br />
                         {`Priority: ${el.priority}`}
                       </span>
-
                       <span className="storycard-bg"></span>
                     </a>
                   </Link>
@@ -161,7 +113,7 @@ export default function Home({ storyData }) {
               ))}
             </ul>
           </section>
-
+        
           <HomeFinancials />
 
           <section className="home-mission">

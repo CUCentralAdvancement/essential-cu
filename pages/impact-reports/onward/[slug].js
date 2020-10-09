@@ -113,11 +113,6 @@ export default function Story({ story }) {
                         <span className="storycard-readmore-text label-text">Read More</span>
                       </span>
                       <span className="storycard-arrow"></span>
-                      <span className="storycard-temptags">
-                        {`Campus Tag: ${el.campus_tag}`}<br />
-                        {`Interest Tag: ${el.interest_tag}`}<br />
-                        {`Priority: ${el.priority}`}
-                      </span>
                       <span className="storycard-bg"></span>
                     </a>
                   </Link>
