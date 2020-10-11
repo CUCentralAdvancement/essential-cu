@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
+import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition } from "../../../data/types";
 import { baseURL } from "../../../data/base";
@@ -18,6 +19,8 @@ export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
 
   const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
+
+  /* Not using this method anymore; keep for example of useEffect -KM/TEMP
 
   // Set the initial filters for stories.
   useEffect(() => {
@@ -39,6 +42,8 @@ export default function Home({ storyData }) {
     }
   }, []);
 
+  */
+  
   return (
     <>
       <Head>
@@ -47,69 +52,108 @@ export default function Home({ storyData }) {
         <meta property="og:url" content={shareUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
+        <meta property="og:image" content="TODO" />
       </Head>
       <Layout>
-        <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
-          <h1>Welcome to IR20!</h1>
+        <div className="container home-container">
 
-          <ul className="story-cards">
-            {stories.map((el) => (
-              <li key={el.slug} className="storycard">
-                <Link
-                  href="/impact-reports/onward/[slug]"
-                  as={`/impact-reports/onward/${el.slug}`}
-                >
-                  <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                    <img
-                      style={{ display: "block" }}
-                      src={el.image_card.url}
-                      alt={el.image_card.alt}
-                      height={el.image_card.height}
-                      width={el.image_card.width}
-                      className="storycard-image"
-                    />
+          <section className="home-title">
+            <h1>
+              <span className="visually-hidden">Onward</span>
+              <img src="/home-banner-onward.png" alt="Onward" width="1255" height="516" />
+            </h1>
+            <h2>
+              Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
+            </h2>
+            <img className="home-title-hrimg" src="/divider-shapes.png" width="199" height="60" alt="divider graphic" />
+          </section>
 
-                    <h5 className="storycard-title">
-                      {el.title}
-                    </h5>
+          <section className="home-stories">
+            <a id="stories" name="stories" className="home-stories-anchor"></a>
+            <ul className="story-cards">
+              {stories
+                // default SORT by priority
+                .sort((el1, el2) => el1.priority - el2.priority )
+                .map((el) => (
+                <li key={el.slug} className="storycard">
+                  <Link
+                    href="/impact-reports/onward/[slug]"
+                    as={`/impact-reports/onward/${el.slug}`}
+                  >
+                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                      <img
+                        style={{ display: "block" }}
+                        src={el.image_card.url}
+                        alt={el.image_card.alt}
+                        height={el.image_card.height}
+                        width={el.image_card.width}
+                        className="storycard-image"
+                      />
 
-                    <hr className="storycard-hr" />
+                      <h5 className="storycard-title">
+                        {el.title}
+                      </h5>
 
-                    <p className="storycard-subtitle">
-                      {el.subtitle}
+                      <hr className="storycard-hr" />
+
+                      <p className="storycard-subtitle">
+                        {el.subtitle}
+                      </p>
+                      
+                      <span className="storycard-readmore">
+                        <span className="storycard-readmore-text label-text">Read More</span>
+                      </span>
+
+                      <span className="storycard-arrow"></span>
+                      
+                      <span className="storycard-temptags">
+                        {`Campus Tag: ${el.campus_tag}`}<br />
+                        {`Interest Tag: ${el.interest_tag}`}<br />
+                        {`Priority: ${el.priority}`}
+                      </span>
+
+                      <span className="storycard-bg"></span>
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <HomeFinancials />
+
+          <section className="home-mission">
+            <h2 className="h1">Our Mission</h2>
+            <div className="home-mission-container">
+              <div className="home-mission-content">
+                <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
+                  <a>
+                    <h3 className="h2">CU Foundation</h3>  
+                    <p className="body-text-lg">
+                      We receive, manage and prudently invest private support for the benefit of the University of Colorado and support the university’s philanthropic endeavors through donor stewardship.
                     </p>
-                    
-                    <span className="storycard-readmore">
-                      <span className="storycard-readmore-text label-text">Read More</span>
-                    </span>
-
-                    <span className="storycard-arrow"></span>
-                    
-                    <span className="storycard-temptags">
-                      {`Campus Tag: ${el.campus_tag}`}<br />
-                      {`Interest Tag: ${el.interest_tag}`}<br />
-                      {`Priority: ${el.priority}`}
-                    </span>
-
-                    <span className="storycard-bg"></span>
                   </a>
                 </Link>
-              </li>
-            ))}
-          </ul>
+              </div>
+              <div className="home-mission-content">
+                <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
+                  <a>
+                    <h3 className="h2">CU Advancement</h3>  
+                    <p className="body-text-lg">
+                      We aspire to unite donor with their passions, elevate grand ideas and prudently manage philanthropy—all to spark enduring support of a university that creates transformative impact in our communities and around the world.
+                    </p>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </section>
 
         </div>
       </Layout>
     </>
   );
 }
-
-const PaddedDiv = ({ children }) => {
-  return <div style={{ padding: "1rem" }}>{children}</div>;
-};
-PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
 export async function getStaticProps() {
   const res = await fetch(`${baseURL}/api/stories`);

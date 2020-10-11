@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "next": "9.5.2",
     "react": "16.13.1",
+    "react-cookie": "^4.0.3",
     "react-dom": "16.13.1",
     "react-gtm-module": "^2.0.10",
     "react-share": "^4.2.1"
