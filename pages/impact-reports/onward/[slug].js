@@ -154,7 +154,7 @@ export async function getStaticPaths() {
 
   const paths = data.map((el) => ({
     params: {
-      slug: el.slug,
+      slug: `${el.slug}`,
     },
   }));
 
