@@ -9,6 +9,15 @@ export default function Financials() {
     <>
       <Head>
         <title>University of Colorado Fiscal Year 2020 Philanthropy Financials</title>
+        <meta property="og:url" content="https://essential.cu.edu/impact-reports/onward/financials" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="University of Colorado Fiscal Year 2020 Philanthropy Financials" />
+        <meta property="og:description" content="It adds up: your generosity is an investment. You give to what matters to you — deeply, personally, meaningfully — to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today. Thank you for supporting what’s important to you." />
+        <meta property="og:image" content="https://essential.cu.edu/home-banner-onward.png#TODO" />
+        <meta property="twitter:title" content="University of Colorado 2020 Donor Impact Report" />
+        <meta property="twitter:description" content="It adds up: your generosity is an investment. You give to what matters to you — deeply, personally, meaningfully — to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today. Thank you for supporting what’s important to you." />
+        <meta property="twitter:image" content="https://essential.cu.edu/home-banner-onward.png#TODO" />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
       

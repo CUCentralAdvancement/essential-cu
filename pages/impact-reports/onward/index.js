@@ -19,8 +19,6 @@ Home.propTypes = {
 export default function Home({ storyData }) {
   const [cookies] = useCookies(["STYXKEY-Campus"]);
   const [stories, setStories] = useState(storyData);
-
-  const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
   
   useEffect(() => {
     // default sort order by priority
@@ -51,12 +49,15 @@ export default function Home({ storyData }) {
     <>
       <Head>
         <title>University of Colorado 2020 Donor Impact Report</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:url" content={shareUrl} />
+        <meta property="og:url" content="https://essential.cu.edu/impact-reports/onward" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
-        <meta property="og:image" content="TODO" />
+        <meta property="og:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="twitter:title" content="University of Colorado 2020 Donor Impact Report" />
+        <meta property="twitter:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
+        <meta property="twitter:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
         <div className="container home-container">
