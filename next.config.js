@@ -16,6 +16,11 @@ module.exports = {
         destination: "/impact-reports/onward",
         permanent: true,
       },
+      {
+        source: "/impact-reports/picture-this",
+        destination: "/impact-reports/picture-this/index.html",
+        permanent: true,
+      },
     ];
   },
 };
