@@ -3,8 +3,8 @@ module.exports = {
     return [
       {
         source: "/",
-        destination: "https://giving.cu.edu/essentialcu/",
-        permanent: false,
+        destination: "/index.html",
+        permanent: true,
       },
       {
         source: "/impact",

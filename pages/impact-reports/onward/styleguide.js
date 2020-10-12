@@ -4,7 +4,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import { formatStoriesData } from "../../../data/helpers";
-import { storiesDefinition, storyDefinition } from "../../../data/types";
+import { storiesDefinition } from "../../../data/types";
+import { baseURL } from "../../../data/base";
 import { useState, useEffect } from "react";
 
 StyleGuide.propTypes = {
@@ -43,35 +44,43 @@ export default function StyleGuide({ storyData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-      {/* generic StyleGuide content to develop styles */}
+        {/* generic StyleGuide content to develop styles */}
         <div className="">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5 </h5>
-            <p>This is text p</p>
-            <p className="body-text-lg">This is text p.body-text-lg</p>
-            <p className="body-text-sm">This is text p.body-text-sm</p>
-            <p>This is text p <a href="#">with an inline link</a></p>
-            <p className="caption-text">This is text p.caption-tex</p>
-            <p className="label-text">This is text p.label-text</p>
-            <p className="label-text-sm">This is text p.label-text-sm</p>
-            <hr />
-            hr.left:<br />
-            <hr className="hr-left" />
-            <div className="gold-grad" style={{ height: "200px", width: "200px"}}>gold grad</div>
-            <br />
-            Test text not in element.
-            <br />
-            <br />
-            <button>Default Button</button> Text after
-            <br />
-            <button className="btn">Button.btn</button> Text after
-            <br />
-            <button className="btn-md">Button.btn-md</button> Text after
-            <br />
-            <button className="btn-sm">Button.btn-sm</button> Text after
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <h4>Heading 4</h4>
+          <h5>Heading 5 </h5>
+          <p>This is text p</p>
+          <p className="body-text-lg">This is text p.body-text-lg</p>
+          <p className="body-text-sm">This is text p.body-text-sm</p>
+          <p>
+            This is text p <a href="#">with an inline link</a>
+          </p>
+          <p className="caption-text">This is text p.caption-tex</p>
+          <p className="label-text">This is text p.label-text</p>
+          <p className="label-text-sm">This is text p.label-text-sm</p>
+          <hr />
+          hr.left:
+          <br />
+          <hr className="hr-left" />
+          <div
+            className="gold-grad"
+            style={{ height: "200px", width: "200px" }}
+          >
+            gold grad
+          </div>
+          <br />
+          Test text not in element.
+          <br />
+          <br />
+          <button>Default Button</button> Text after
+          <br />
+          <button className="btn">Button.btn</button> Text after
+          <br />
+          <button className="btn-md">Button.btn-md</button> Text after
+          <br />
+          <button className="btn-sm">Button.btn-sm</button> Text after
         </div>
 
         <div style={{ margin: "0 auto", maxWidth: "1280px", padding: "2rem" }}>
@@ -118,13 +127,11 @@ PaddedDiv.propTypes = { children: PropTypes.any.isRequired };
 
 export async function getStaticProps() {
   // Real data from API.
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(`${baseURL}/api/stories`);
+  const rawStoryData = await res.json();
 
   // Sample data.
-  const rawStoryData = require("../../../data/stories/stories.json");
+  // const rawStoryData = require("../../../data/stories/stories.json");
 
   const stories = formatStoriesData(rawStoryData);
 
