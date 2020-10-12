@@ -1,0 +1,9 @@
+html, body {
+  height: 100%;
+}
+
+.svg-arrow {
+  opacity: 0;
+
+  &[data-drawn] { opacity: 1; }
+}

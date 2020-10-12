@@ -1,0 +1,7 @@
+.btn {
+  text-decoration: none;
+  &.btn--gold {
+    background-color: #c8b377;
+    color: $dark-gray;
+  }
+}

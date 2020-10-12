@@ -1,0 +1,158 @@
+.slider-chart {
+  //overflow: hidden;
+  position: relative;
+  @include content-width(page);
+  @include breakpoint(large) {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    //margin-bottom: 120px;
+    margin-top: 0;
+  }
+  @include breakpoint(xxlarge) {
+    margin-top: 50px;
+  }
+  .slider-wrapper {
+    display: flex;
+    @include breakpoint(large) {
+      width: 61%;
+    }
+  }
+  .chart-wrapper {
+    padding-left: rem-calc(15px);
+    @include breakpoint(large) {
+      width: 40%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .slick-slider-container {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 100%;
+    position: relative;
+    @include breakpoint(medium) {
+      flex-direction: row-reverse;
+    }
+    > .slide {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      &:first-child {
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+      }
+    }
+    .slide {
+      h2 {
+        margin-bottom: 24px;
+        font-size: rem-calc(21px);
+        font-weight: 700;
+        @include breakpoint(medium) {
+          font-size: rem-calc(42px);
+          padding-right: 45px;
+        }
+      }
+      p {
+        margin-top: 24px;
+        line-height: 1.75;
+        letter-spacing: -0.1px;
+        @include breakpoint(medium) {
+          margin-top: 45px;
+          padding-right: 45px;
+        }
+        @include breakpoint(large) {
+          font-size: rem-calc(18px);
+        }
+      }
+    }
+    .slick-dots {
+      font-size: rem-calc(15);
+      color: $gray;
+      list-style: none;
+      margin: 0 0 10px;
+      @include breakpoint(medium) {
+        width: 180px;
+        margin-right: 20px;
+        flex: 1 0 auto;
+        text-align: right;
+      }
+      @include breakpoint(large) {
+        margin-right: 45px;
+      }
+      li {
+        cursor: pointer;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        @include breakpoint(large) {
+          margin-bottom: 15px;
+        }
+        @include selectors(active) {
+          color: $dark-gray;
+        }
+      }
+      .slick-active {
+        font-weight: 700;
+        color: $dark-gray;
+        &:after {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 8px;
+          height: 8px;
+          background: $dark-gray;
+          border-radius: 50%;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+  #private-support-chart {
+    @include breakpoint(medium down) {
+      display: none !important;
+    }
+  }
+  #private-support-chart-legend {
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    ul {
+      text-align: center;
+    }
+    li {
+      font-size: rem-calc(13px);
+      display: inline-block;
+      margin: 0 5px;
+      @include breakpoint(medium) {
+        font-size: rem-calc(15px);
+        line-height: 1.35;
+      }
+    }
+
+    span {
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 2px;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  #arrow-support {
+    max-height: 200px;
+    left: 0;
+    position: absolute;
+    z-index: 5;
+    top: 104%;
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    @include breakpoint(large) {
+      left: 26%;
+      max-height: none;
+    }
+  }
+}
