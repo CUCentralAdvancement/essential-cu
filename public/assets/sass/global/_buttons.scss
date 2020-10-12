@@ -1,0 +1,9 @@
+%btn-gold {
+  background: $gold;
+  color: $black;
+  border: 1px solid $gold;
+
+  #{$selector-active-states} {
+    border-color: rgba($gold, 0.8);
+  }
+}
