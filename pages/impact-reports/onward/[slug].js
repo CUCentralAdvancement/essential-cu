@@ -132,7 +132,6 @@ export async function getStaticProps({ params }) {
     `${baseURL}/api/story/${slug}`
   );
   const rawStoryData = await res.json();
-
   // const rawStoryData = require(`../../../data/stories/${slug}.json`);
 
   const story = formatStoryData(rawStoryData);
@@ -151,14 +150,11 @@ export async function getStaticPaths() {
     `${baseURL}/api/stories/paths`
   );
   const data = await res.json();
+  // const data = require("../../../data/stories/stories.json");
 
-  // const rawStoryData = require("../../../data/stories/stories.json");
-
-  // const stories = formatStoryData(rawStoryData);
-
-  const paths = data.map((path) => ({
+  const paths = data.map((el) => ({
     params: {
-      slug: path,
+      slug: el.slug,
     },
   }));
 

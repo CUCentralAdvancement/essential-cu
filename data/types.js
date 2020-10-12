@@ -16,11 +16,11 @@ const imageDefinition = {
   /**
    * Given in pixels without the unit, e.g. {width: 480}
    */
-  width: PropTypes.string,
+  width: PropTypes.number,
   /**
    * Given in pixels without the unit, e.g. {height: 640}
    */
-  height: PropTypes.string,
+  height: PropTypes.number,
 };
 
 const storyBase = {
