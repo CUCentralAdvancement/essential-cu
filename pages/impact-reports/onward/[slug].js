@@ -6,6 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
+import { baseURL } from "../../../data/base";
 
 Story.propTypes = {
   story: PropTypes.shape(storyDefinition),
@@ -60,21 +61,6 @@ export default function Story({ story }) {
           <article className="story-container body-text-lg">
             <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
           </article>
-
-          {story.images.map((el) => {
-            return (
-              <div className="container story-image-container">
-                <img
-                  src={el.url}
-                  alt={el.alt}
-                  height={el.height}
-                  width={el.width}
-                  className="story-image"
-                />
-                <p className="caption-text">{el.caption}</p>
-              </div>            
-            );
-          })}
 
           <hr />
           
@@ -142,36 +128,33 @@ export default function Story({ story }) {
  */
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?filter[field_story_slug]=${slug}`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(
+    `${baseURL}/api/story/${slug}`
+  );
+  const rawStoryData = await res.json();
+  // const rawStoryData = require(`../../../data/stories/${slug}.json`);
 
-  const rawStoryData = require(`../../../data/stories/${slug}.json`);
-  const stories = formatStoryData(rawStoryData);
+  const story = formatStoryData(rawStoryData);
 
   return {
     props: {
-      // Data comes back in array so first result is the story.
-      story: stories[0],
+      story: story,
     },
-    // Only need to revalidate if data changes after deployments.
-    // revalidate: 60,
+    // Set to five seconds while testing.
+    revalidate: 5,
   };
 }
 
 export async function getStaticPaths() {
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story`
-  // );
-  // const rawStoryData = await res.json();
+  const res = await fetch(
+    `${baseURL}/api/stories/paths`
+  );
+  const data = await res.json();
+  // const data = require("../../../data/stories/stories.json");
 
-  const rawStoryData = require("../../../data/stories/stories.json");
-  const stories = formatStoryData(rawStoryData);
-
-  const paths = stories.map((el) => ({
+  const paths = data.map((el) => ({
     params: {
-      slug: el.slug,
+      slug: `${el.slug}`,
     },
   }));
 

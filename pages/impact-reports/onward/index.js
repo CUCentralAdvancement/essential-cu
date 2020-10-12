@@ -5,7 +5,8 @@ import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
 import { formatStoriesData } from "../../../data/helpers";
-import { storiesDefinition, storyDefinition } from "../../../data/types";
+import { storiesDefinition } from "../../../data/types";
+import { baseURL } from "../../../data/base";
 import { useState, useEffect } from "react";
 
 Home.propTypes = {
@@ -155,14 +156,9 @@ export default function Home({ storyData }) {
 }
 
 export async function getStaticProps() {
-  // Real data from API.
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/jsonapi/node/story?sort=created`
-  // );
-  // const rawStoryData = await res.json();
-
-  // Sample data.
-  const rawStoryData = require("../../../data/stories/stories.json");
+  const res = await fetch(`${baseURL}/api/stories`);
+  const rawStoryData = await res.json();
+  // const rawStoryData = require("../../../data/stories/stories.json");
 
   const stories = formatStoriesData(rawStoryData);
 
@@ -170,7 +166,7 @@ export async function getStaticProps() {
     props: {
       storyData: stories,
     },
-    // No need to revalidate data at this point.
-    // revalidate: 600,
+    // Set to five seconds while testing.
+    revalidate: 5,
   };
 }

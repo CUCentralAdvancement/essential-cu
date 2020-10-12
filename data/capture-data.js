@@ -1,17 +1,16 @@
 const https = require("https");
 const fs = require("fs");
 const helpers = require("./helpers");
-const baseURL = "https://digital-dash-stage-adv-cu.herokuapp.com";
+const baseURL = "https://digital-dash-adv-cu.herokuapp.com";
 
 // Capture Stories collection.
-https.get(`${baseURL}/jsonapi/node/story?sort=-priority`, (res) => {
+https.get(`${baseURL}/api/stories`, (res) => {
   res.setEncoding("utf8");
   let body = "";
   res.on("data", (data) => {
     body += data;
   });
   res.on("end", () => {
-    // console.log(body);
 
     fs.writeFile("./data/stories/stories.json", body, (err) => {
       if (err) console.log(err);
@@ -23,12 +22,15 @@ https.get(`${baseURL}/jsonapi/node/story?sort=-priority`, (res) => {
     });
 
     body = JSON.parse(body);
-    const stories = helpers.formatStoryData(body);
-    const paths = stories.map((el) => el.slug);
+
+    // console.log(body);
+
+    // const stories = helpers.formatStoryData(body);
+    const paths = body.map((el) => el.slug);
 
     paths.forEach((slug) => {
       https.get(
-        `${baseURL}/jsonapi/node/story?filter[field_story_slug]=${slug}`,
+        `${baseURL}/api/story/${slug}`,
         (res) => {
           res.setEncoding("utf8");
           let body2 = "";
