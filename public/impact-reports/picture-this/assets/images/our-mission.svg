@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="914px" viewBox="0 0 1440 914" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Mask</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M-4.54747351e-13,-9.09494702e-13 L1570.90139,-9.09494702e-13 L1570.90139,616.451667 C1477.34186,670.194826 1351.24244,697.066406 1192.60313,697.066406 C954.644165,697.066406 864.715861,639.17362 627.322744,639.17362 C389.929627,639.17362 320.849768,682.890805 206.57313,682.890805 C130.388705,682.890805 61.5309949,673.764546 4.54747351e-13,655.512027 L-4.54747351e-13,-9.09494702e-13 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(0.000000, -8257.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="9228"></rect>
+            <g id="MIssion/Footer" transform="translate(-75.000000, 8357.000000)">
+                <g id="Mask">
+                    <path d="M45.1044878,-3.9221959e-12 L1581.60099,-2.84217094e-13 L1581.60099,629.693574 C1488.73476,683.038483 1363.56977,709.710937 1206.10601,709.710937 C969.910384,709.710937 895.019361,629.693574 693.507761,629.693574 C491.996161,629.693574 318.47219,695.640381 205.042371,695.640381 C129.422492,695.640381 61.0750346,686.58175 0,668.464487 L45.1044878,-3.9221959e-12 Z" fill="#C8B377" fill-rule="evenodd" transform="translate(790.800493, 354.855469) scale(1, -1) translate(-790.800493, -354.855469) "></path>
+                    <g id="Mask-Copy" transform="translate(63.000000, 16.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use fill="#231F20" fill-rule="evenodd" transform="translate(785.450695, 348.533203) scale(1, -1) translate(-785.450695, -348.533203) " xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

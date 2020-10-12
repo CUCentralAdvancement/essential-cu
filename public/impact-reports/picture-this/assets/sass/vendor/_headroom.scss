@@ -1,0 +1,21 @@
+.headroom {
+  transition: transform 200ms linear, background-color 200ms ease;
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+  &.headroom--unpinned {
+    transform: translateY(-100%);
+    @include breakpoint(medium) {
+      transform: translateY(-110%);
+    }
+    @include breakpoint(large) {
+      transform: translateY(-165%);
+    }
+  }
+  &.headroom--not-top {
+    &.headroom--pinned,
+    &.headroom--not-bottom {
+      background-color: rgba(35, 31, 32, 0.75);
+    }
+  }
+}

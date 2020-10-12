@@ -1,0 +1,90 @@
+.text-medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.gold {
+  color: $gold;
+}
+
+.box-text {
+  display: inline-block;
+  font-family: $font-reef;
+  font-size: rem-calc(36px);
+  font-weight: 700;
+  line-height: 1;
+  padding: 10px 20px 0;
+  @include breakpoint(medium) {
+    font-size: rem-calc(54px);
+  }
+  @include breakpoint(large) {
+    font-size: rem-calc(72px);
+    padding-top: 15px;
+  }
+
+  &.black-box-text {
+    background-color: $dark-gray;
+    color: $white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  &.gold-box-text {
+    background-color: $gold;
+    color: $black;
+  }
+
+  &.white-box-text {
+    background-color: $white;
+    color: $black;
+  }
+
+  // If there is a span tag inside
+  &.box-text-extra {
+    align-items: center;
+    display: inline-flex;
+  }
+
+  &.box-text-padding {
+    padding-bottom: 10px;
+    @include breakpoint(large) {
+      padding-bottom: 15px;
+    }
+  }
+
+  span.details {
+    font-family: $font-roboto;
+    font-size: rem-calc(18px);
+    //margin-left: rem-calc(10px);
+    @include breakpoint(large) {
+      font-size: rem-calc(36px);
+      //margin-left: rem-calc(15px);
+    }
+  }
+}
+
+.count {
+  opacity: 0;
+  display: inline-block;
+}
+
+body {
+  ul {
+    li {
+      font-size: rem-calc(16px);
+      padding-bottom: 15px;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+  @include breakpoint(large) {
+    font-size: rem-calc(18px);
+    ul {
+      li {
+        font-size: rem-calc(20px);
+        padding-bottom: 15px;
+      }
+    }
+  }
+}

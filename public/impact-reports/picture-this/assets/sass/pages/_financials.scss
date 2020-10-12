@@ -1,0 +1,772 @@
+// Arrows
+#financials-arrow-1,
+#financials-arrow-2,
+#financials-arrow-3,
+#financials-arrow-5,
+#financials-arrow-6,
+#financials-arrow-7,
+#financials-arrow-11 {
+  //display: none;
+  position: absolute;
+  z-index: 4;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+#financials-arrow-1,
+#financials-arrow-3 {
+  max-height: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    max-height: none;
+  }
+}
+
+#financials-arrow-1 {
+  display: block;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+#financials-arrow-2 {
+  max-height: 60px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    left: -5%;
+    max-height: 80px;
+  }
+
+}
+
+#financials-arrow-5 {
+  width: 100%;
+  top: 25px;
+  right: 18%;
+  max-height: 280px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    top: 45px;
+  }
+}
+
+#financials-arrow-6 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: -25%;
+  bottom: 15%;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    bottom: -15%;
+  }
+}
+
+#financials-arrow-7 {
+  bottom: -30%;
+  width: 30%;
+  left: 15%;
+  @include breakpoint(medium) {
+    left: 10%;
+    bottom: -20%;
+    width: 40%;
+  }
+}
+
+#financials-arrow-8 {
+  display: block;
+  margin: 0 auto;
+  max-height: 100px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    margin-top: rem-calc(55px);
+    max-height: none;
+  }
+}
+
+#financials-arrow-9 {
+  position: absolute;
+  right: 410px;
+  bottom: calc(100% - 200px);
+  @include breakpoint(medium down) {
+    display: none !important;
+  }
+}
+
+#financials-arrow-10 {
+  max-height: 170px;
+  @include breakpoint(large) {
+    max-height: 200px;
+    position: absolute;
+    bottom: -9%;
+    right: 25%;
+  }
+
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+#financials-arrow-11 {
+  bottom: -6%;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  max-width: 200px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    bottom: 4%;
+    left: 0;
+    right: 5%;
+    margin: 0 auto;
+    max-width: none;
+    max-height: 250px;
+  }
+}
+
+#financials-arrow-12 {
+  margin: 0 auto;
+  max-height: 250px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
+  @include breakpoint(large) {
+    margin-top: rem-calc(35px);
+  }
+}
+
+#endowments-line {
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 100%;
+  @include breakpoint(small) {
+    bottom: -55px;
+  }
+  @include breakpoint(medium) {
+    bottom: -33px;
+  }
+  @include breakpoint(large) {
+    bottom: -11px;
+  }
+  @include breakpoint(xlarge) {
+
+  }
+}
+.financials-banner::after {
+  height: 25% !important;
+}
+
+.financials {
+
+  section {
+    overflow: hidden;
+  }
+  .wrapper {
+    @include content-width(page);
+    max-width: 1200px;
+    overflow: hidden;
+  }
+
+  .left-text {
+    max-width: 350px;
+    @include breakpoint(large) {
+      max-width: 540px;
+    }
+  }
+}
+
+.donor-support-slider {
+  //overflow-x: hidden;
+}
+
+/**
+ * Donors Section
+ */
+.financials-donors {
+  .content-invest {
+    width: 100%;
+    @include breakpoint(large) {
+      padding-top: rem-calc(50px);
+      width: 55%
+    }
+    p {
+      font-size: rem-calc(18);
+      line-height: 1.75;
+    }
+  }
+
+  .content-how {
+    position: relative;
+    padding: 80px 0 120px;
+    @include breakpoint(medium down) {
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+    p {
+      font-size: rem-calc(18px);
+      line-height: 1.75;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 270px;
+      margin: 0 auto;
+      @include breakpoint(large) {
+        font-size: rem-calc(24px);
+        line-height: 1;
+        margin: 50px auto 70px;
+        max-width: 350px;
+      }
+      &::before {
+        display: inline-block;
+        content: url("./assets/images/Left-Paren.svg");
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      &::after {
+        display: inline-block;
+        content: url("./assets/images/Right-Paren.svg");
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(24px);
+    @include breakpoint(large) {
+      font-size: rem-calc(48px);
+    }
+  }
+}
+
+/**
+ * Financials Made Section
+ */
+.financials-made {
+  @include top-bottom("padding", 32px);
+  @include breakpoint(large) {
+    @include top-bottom("padding", 64px);
+  }
+  @include breakpoint(medium down) {
+    overflow: hidden;
+    //overflow: hidden !important;
+  }
+
+  .wrapper {
+    position: relative;
+    overflow: visible;
+
+    .svg-arrow {
+      position: absolute;
+      bottom: calc(100% - 50px);
+      right: calc(100% - 90px);
+      @media screen and (max-width: 1350px) {
+        display: none !important;
+      }
+    }
+  }
+
+  .count {
+    min-width: 100px;
+    @include breakpoint(medium) {
+      min-width: 150px;
+    }
+    @include breakpoint(large) {
+      min-width: 200px;
+    }
+  }
+
+  .gold-box-text {
+    margin-left: rem-calc(35px);
+  }
+
+  p {
+    margin-top: rem-calc(15px);
+    font-size: rem-calc(18);
+    line-height: 1.75;
+  }
+}
+
+/**
+ * Financials Senior Section
+ */
+.financials-senior-class {
+  min-height: 400px;
+  @include breakpoint(medium) {
+    min-height: 270px;
+  }
+  @include breakpoint(large) {
+    min-height: 370px;
+  }
+  .wrapper {
+    @include content-width(narrow);
+    position: relative;
+    min-height: 400px;
+    @include breakpoint(large) {
+      @include content-width(large);
+    }
+  }
+
+  .text-right {
+    //padding-bottom: 20%;
+    position: absolute;
+    right: 1.25em;
+    width: 100%;
+    @include breakpoint(xlarge) {
+      //padding-bottom: 25%;
+    }
+  }
+
+  .count {
+    min-width: 90px;
+    @include breakpoint(medium) {
+      min-width: 140px;
+    }
+    @include breakpoint(large) {
+      min-width: 190px;
+    }
+  }
+  p {
+    margin-top: rem-calc(15px);
+    font-size: rem-calc(18);
+    line-height: 1.75;
+  }
+}
+
+/**
+ * Financials Endowments section
+ */
+.financials-endowments {
+
+  background-color: $black;
+  color: $white;
+  margin-bottom: 8%;
+  position: relative;
+  @include breakpoint(medium) {
+    margin-bottom: 15%;
+    padding-top: rem-calc(75px);
+  }
+  @include breakpoint(large) {
+    margin-bottom: 12%;
+    padding-top: rem-calc(100px);
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+  }
+  &:before {
+    background: url("./assets/images/financials-wave-top.png") no-repeat top center;
+    background-size: 100%;
+    height: 1.5%;
+    top: -1.5%;
+    @include breakpoint(medium) {
+      height: 3%;
+      top: -3%;
+    }
+    @include breakpoint(large) {
+      height: 4.25%;
+      top: -4.25%;
+    }
+  }
+  &:after {
+    background: url("./assets/images/financials-wave-bottom.png") no-repeat top center;
+    background-size: 100%;
+    height: 5%;
+    bottom: -5%;
+    @include breakpoint(large) {
+      height: 9%;
+      bottom: -9%;
+    }
+  }
+
+  .wrapper {
+    &:before {
+      background: url("./assets/images/splat.png") no-repeat top center;
+      background-size: 100%;
+      content: "";
+      display: block;
+      height: 100%;
+      position: absolute;
+      z-index: -2;
+      left: -10%;
+      top: -6%;
+      width: 60%;
+      @include breakpoint(medium) {
+        left: -6%;
+        top: -10%;
+        width: 50%;
+      }
+      @include breakpoint(large) {
+        left: -4%;
+        top: -12%;
+        width: 40%;
+      }
+      @include breakpoint(xlarge) {
+        left: 0;
+        width: 30%;
+      }
+    }
+  }
+
+  h2,
+  h3 {
+    &:not(.box-text) {
+      font-size: rem-calc(24px);
+      line-height: 1.15;
+      margin-bottom: rem-calc(25px);
+      @include breakpoint(medium) {
+        font-size: rem-calc(36px);
+      }
+      @include breakpoint(large) {
+        font-size: rem-calc(48px);
+      }
+    }
+  }
+  p {
+    font-size: rem-calc(18);
+    line-height: 1.75;
+  }
+
+  .endowments-support {
+    @include content-width(medium);
+    padding-top: rem-calc(20px);
+    position: relative;
+    @include breakpoint(large) {
+      @include content-width(large);
+    }
+
+    .arrow-wrapper {
+      padding-bottom: 20%;
+      position: relative;
+      @include breakpoint(large) {
+        padding-bottom: 25%;
+      }
+    }
+  }
+
+  .endowments-generate {
+    @include content-width(page);
+    max-width: 1200px;
+    position: relative;
+    @include breakpoint(medium) {
+      min-height: 600px;
+    }
+    @include breakpoint(large) {
+      padding-bottom: rem-calc(115px);
+    }
+
+    .left-text {
+      max-width: none;
+      p {
+        max-width: 350px;
+        @include breakpoint(large) {
+          max-width: 400px;
+        }
+      }
+    }
+
+    .right-image {
+      @include breakpoint(medium) {
+        width: 400px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+      @include breakpoint(large) {
+        bottom: 100px;
+        width: 500px;
+      }
+    }
+
+    .count {
+      min-width: 60px;
+      @include breakpoint(medium) {
+        min-width: 90px;
+      }
+      @include breakpoint(large) {
+        min-width: 115px;
+      }
+    }
+  }
+
+  .endowments-created {
+    padding-top: rem-calc(125px);
+    padding-bottom: rem-calc(55px);
+    @include breakpoint(medium) {
+      padding-top: 155px;
+    }
+
+    .text-center {
+      @include content-width(page);
+      max-width: 1200px;
+      @include breakpoint(large) {
+        max-width: 1100px;
+      }
+    }
+
+    h2 {
+      font-size: rem-calc(24px);
+      line-height: 1.75;
+      @include breakpoint(large) {
+        font-size: rem-calc(36px);
+      }
+    }
+
+    .box-text {
+      font-size: rem-calc(30px);
+      padding-bottom: 5px;
+      @include breakpoint(large) {
+        font-size: rem-calc(48px);
+      }
+    }
+  }
+
+  .transfers-cu {
+    @include breakpoint(medium) {
+      align-items: center;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      margin-bottom: 70px;
+    }
+
+    .text-left {
+      @include breakpoint(medium) {
+        padding-right: rem-calc(15px);
+        width: 50%;
+      }
+      @include breakpoint(large) {
+        width: 38%;
+      }
+    }
+
+    .right-image {
+      text-align: right;
+      @include breakpoint(medium) {
+        max-width: 500px;
+        width: 50%;
+      }
+      @include breakpoint(large) {
+        width: 62%;
+      }
+    }
+  }
+}
+
+.financials-invest,
+.financials-longterm-invest,
+.financials-asset-allocation {
+
+  @include top-bottom("padding", 50px);
+  @include breakpoint(large) {
+    padding-top: rem-calc(165px);
+    padding-bottom: rem-calc(85px);
+  }
+  @include breakpoint(large down) {
+    overflow: hidden;
+  }
+  .wrapper {
+    @include content-width(page);
+    max-width: 1200px;
+    @include breakpoint(medium) {
+      align-items: center;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+    }
+  }
+  p {
+    font-size: rem-calc(18);
+    line-height: 1.75;
+    color: #4a4a4a;
+  }
+
+  .text-left {
+    @include breakpoint(medium) {
+      width: 45%;
+    }
+    @include breakpoint(large) {
+      width: 40%;
+    }
+  }
+
+  .text-right,
+  .right-image {
+    @include breakpoint(medium) {
+      width: 55%;
+    }
+    @include breakpoint(large) {
+      width: 60%;
+    }
+    p {
+      color: #4a4a4a;
+      margin-top: rem-calc(5px);
+      @include breakpoint(large) {
+        font-size: rem-calc(24px);
+      }
+    }
+  }
+
+  h2 {
+    font-size: rem-calc(24px);
+    line-height: 1.25;
+    margin-bottom: rem-calc(30px);
+    @include breakpoint(large) {
+      font-size: rem-calc(48px);
+      margin-bottom: rem-calc(40px);
+    }
+  }
+
+  .black-box-text {
+    color: $gold;
+    font-size: rem-calc(60px);
+    padding-bottom: rem-calc(10px);
+    @include breakpoint(large) {
+      font-size: rem-calc(100px);
+      margin-right: rem-calc(45px);
+    }
+  }
+
+  .right-image {
+    max-width: 500px;
+  }
+}
+
+.financials-invest {
+  position: relative;
+  padding-top: rem-calc(250);
+
+  @include breakpoint(medium down) {
+    padding-bottom: 0;
+  }
+  .wrapper {
+    position: relative;
+  }
+}
+
+.financials-longterm-invest {
+  position: relative;
+  padding-bottom: 10.5rem;
+  @include breakpoint(medium down) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  @include breakpoint(large) {
+    padding-bottom: 17rem;
+  }
+}
+
+.financials-asset-allocation {
+  overflow: hidden !important;
+
+  padding-bottom: rem-calc(25px);
+  @include breakpoint(large) {
+    padding-bottom: rem-calc(35px);
+  }
+}
+
+//  Legends
+#financials-ltip-legend,
+#financials-transfers-doughnut-legend,
+#financials-transfers-doughnut-legend-mobile,
+#financials-asset-allocation-doughnut-legend,
+#financials-asset-allocation-doughnut-legend-mobile{
+  margin-top: rem-calc(25px);
+  @include breakpoint(medium) {
+    margin-top: rem-calc(35px);
+  }
+
+  li {
+    @include top-bottom("padding", 5px);
+    font-size: rem-calc(13px);
+    @include breakpoint(medium) {
+      @include top-bottom("padding", 8px);
+      display: inline-block;
+      font-size: rem-calc(15px);
+      padding-right: rem-calc(10px);
+    }
+  }
+
+  span {
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.financials-audited-statement {
+  padding-bottom: rem-calc(60px);
+  @include breakpoint(large) {
+    padding-bottom: rem-calc(120px);
+  }
+  h3 {
+    font-size: rem-calc(16px);
+    @include breakpoint(medium) {
+      font-size: rem-calc(18px);
+    }
+    @include breakpoint(large) {
+      font-size: rem-calc(20px);
+    }
+  }
+
+  a {
+    color: $black;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+    &:hover {
+      &:after {
+        left: -5%;
+        width: 110%;
+      }
+    }
+    &:after {
+      background-color: $gold;
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transition: .25s ease-in-out;
+    }
+  }
+}
+
+.financial-page {
+  .slider-chart {
+    max-width: 1400px;
+  }
+}

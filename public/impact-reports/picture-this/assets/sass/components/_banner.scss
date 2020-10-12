@@ -1,0 +1,223 @@
+.banner {
+  background-color: $black;
+  color: $white;
+  margin-top: 105px;
+  position: relative;
+  @include breakpoint(large) {
+    margin-top: 0;
+  }
+
+  @include breakpoint(medium down) {
+    margin-top: 0;
+  }
+  &::after {
+    background-image: url("assets/images/home_video_wave.png");
+    background-size: 100%;
+    content: "";
+    z-index: 3;
+    position: absolute;
+    bottom: -2px;
+    height: 70px;
+    width: 100%;
+    display: block;
+    transform: scaleX(-1);
+    @include breakpoint(large) {
+      height: 16%;
+    }
+  }
+
+  .banner-text {
+    @include content-width(page);
+    padding-top: 25px;
+    padding-bottom: 100px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    @include breakpoint(large) {
+      @include left-right("padding", 0);
+      text-align: left;
+      width: 80%;
+      z-index: 2;
+    }
+  }
+
+  // Banner Title
+  .banner-title {
+    font-size: rem-calc(42px);
+    line-height: 1.15;
+    @include breakpoint(large) {
+      font-size: rem-calc(84px);
+      letter-spacing: -1.11px;
+    }
+    + p {
+      margin-top: rem-calc(25px);
+      @include breakpoint(large) {
+        margin-top: rem-calc(100px);
+      }
+    }
+
+    &.story-banner-title {
+      font-size: rem-calc(28px);
+      text-shadow:  0 2px 4px rgba(0, 0, 0, 0.5);
+      @include breakpoint(medium) {
+        font-size: rem-calc(38px);
+      }
+      @include breakpoint(large) {
+        font-size: rem-calc(57px);
+        width: 60%;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  // Banner Sub Title
+  .banner-sub-title {
+    display: block;
+    font-size: rem-calc(24px);
+    font-weight: 400;
+    @include breakpoint(large) {
+      font-size: rem-calc(48px);
+    }
+
+    &.story-banner-author {
+      font-size: rem-calc(18px);
+      font-weight: 700;
+      color: $gold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 15px;
+    }
+  }
+}
+
+// Text Banner
+.hero-text {
+  .banner-text {
+    @include breakpoint(large) {
+      padding-top: 210px;
+      padding-bottom: 180px;
+    }
+  }
+
+  .banner-title {
+    @include breakpoint(large) {
+      font-size: rem-calc(64px);
+    }
+  }
+
+  .banner-sub-title {
+    font-weight: 300;
+    @include breakpoint(large) {
+      font-size: rem-calc(64px);
+    }
+  }
+}
+
+// Video Banner
+.hero-video {
+  &:after {
+    content: none;
+  }
+  &__video-wrapper {
+    position: relative;
+    @include breakpoint(large) {
+      //overflow: hidden;
+      max-height: none;
+    }
+  }
+
+  &__video {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover;
+  }
+
+  &__gradient-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 0%,
+            #000000 100%
+    );
+    opacity: 0.44;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .banner-text {
+    @include breakpoint(large) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .banner-sub-title {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.63);
+  }
+
+  // Banner Button
+  &__button {
+    display: block;
+    z-index: 1;
+    color: $dark-gray;
+    text-decoration: none;
+    padding: 11px 20px 5px 20px;
+    @include breakpoint(medium) {
+      display: inline-block;
+    }
+    @include breakpoint(large) {
+      font-size: rem-calc(28px);
+      line-height: 24px;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include breakpoint(xlarge) {
+      top: 80%;
+    }
+  }
+
+  #arrow-1 {
+    bottom: -100px;
+    max-width: 80px;
+    left: auto;
+    right: 0;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    transform: translateX(-45%);
+    @include breakpoint(medium down) {
+      display: none;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1350px) {
+      bottom: -125px !important;
+    }
+
+
+    @include breakpoint(large) {
+      max-width: none;
+      max-height: 340px;
+      margin: 0 auto;
+      bottom: -96px;
+      right: 0;
+      left: 0;
+    }
+    @include breakpoint(xlarge) {
+      margin: 0 auto;
+      bottom: -70px;
+      right: 0;
+      left: 0;
+      transform: none;
+    }
+  }
+}

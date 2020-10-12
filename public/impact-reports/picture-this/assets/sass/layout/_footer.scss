@@ -1,0 +1,75 @@
+.footer {
+  background-color: $black;
+  color: $white;
+  font-size: rem-calc(13px);
+  //padding: 35px 290px;
+  //background: $dark-gray;
+  //border-top: 3px solid $gray;
+  //display: flex;
+  //justify-content: space-between;
+  //&__column {
+  //  color: $white;
+  //}
+  .footer-wrapper {
+    @include content-width(page);
+    @include top-bottom("padding", 25px);
+    @include breakpoint(medium) {
+      display: flex;
+      flex-flow: wrap;
+    }
+  }
+
+  .footer__column {
+    @include breakpoint(medium) {
+      @include left-right("padding", 15px);
+      width: 33.333%;
+    }
+    @include breakpoint(large) {
+      width: 25%;
+    }
+
+    &:first-of-type {
+      @include breakpoint(medium) {
+        text-align: center;
+        width: 100%;
+      }
+      @include breakpoint(large) {
+        text-align: left;
+        width: 25%;
+      }
+    }
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: rem-calc(16px);
+  }
+
+  a {
+    color: $white;
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__button {
+    font-size: rem-calc(18px);
+    display: block;
+    width: 110px;
+    padding: 10px 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid $gold;
+    @include breakpoint(medium) {
+      margin: 0 auto 10px;
+    }
+    @include breakpoint(large) {
+      margin: 0 0 10px;
+    }
+    &:hover {
+      color: $gold;
+      background: transparent;
+    }
+  }
+}

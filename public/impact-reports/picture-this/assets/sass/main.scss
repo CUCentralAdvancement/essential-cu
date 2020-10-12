@@ -1,0 +1,40 @@
+//Foundation
+// import custom settings
+//@import 'settings';
+
+// import foundation sass
+@import "foundation";
+//@import "../../foundation-sites/scss/foundation";
+
+@import "global/reset";
+@import "global/settings";
+/* either include all foundation components…  //*/
+@include foundation-everything;
+
+// Framework
+@import "framework/utils/utils";
+@import "framework/layout";
+
+@import "global/functions";
+@import "global/base";
+@import "global/colors";
+@import "global/typography";
+@import "global/buttons";
+@import "global/animation";
+@import "global/slick";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+
+// Components
+@import "components/banner";
+@import "components/slider-chart";
+
+// Pages
+@import "pages/home";
+@import "pages/stories";
+@import "pages/financials";
+
+// Vendor
+@import "vendor/headroom";
