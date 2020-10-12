@@ -28,11 +28,9 @@ export default function Story({ story }) {
         <meta property="og:title" content={story.title} />
         <meta property="og:description" content={story.subtitle} />
         <meta property="og:image" content={story.image_main.url} />
-        <meta property="og:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:title" content={story.title} />
         <meta property="twitter:description" content={story.subtitle} />
         <meta property="twitter:image" content={story.image_main.url} />
-        <meta property="twitter:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
@@ -74,36 +72,40 @@ export default function Story({ story }) {
             <h5 className="text-center">Read related stories</h5>
 
             <ul className="story-cards">
-              {story.related_stories.map((el) => (
-                <li key={el.slug} className="storycard">
-                  <Link
-                    href="/impact-reports/onward/[slug]"
-                    as={`/impact-reports/onward/${el.slug}`}
-                  >
-                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                      <img
-                        src={el.image_card.url}
-                        alt={el.image_card.alt}
-                        height={el.image_card.height}
-                        width={el.image_card.width}
-                        className="storycard-image"
-                      />
-                      <h5 className="storycard-title">
-                        {el.title}
-                      </h5>
-                      <hr className="storycard-hr" />
-                      <p className="storycard-subtitle">
-                        {el.subtitle}
-                      </p>
-                      <span className="storycard-readmore">
-                        <span className="storycard-readmore-text label-text">Read More</span>
-                      </span>
-                      <span className="storycard-arrow"></span>
-                      <span className="storycard-bg"></span>
-                    </a>
-                  </Link>
-                </li>
-              ))}
+              {story.related_stories
+                .sort((el1, el2) => el1.priority - el2.priority )
+                .map((el) => (
+                  <li key={el.slug} className="storycard">
+                    <Link
+                      href="/impact-reports/onward/[slug]"
+                      as={`/impact-reports/onward/${el.slug}`}
+                    >
+                      <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                      {console.dir(el)}
+                        <img
+                          src={el.image_card.url}
+                          alt={el.image_card.alt}
+                          height={el.image_card.height}
+                          width={el.image_card.width}
+                          className="storycard-image"
+                        />
+                        <h5 className="storycard-title">
+                          {el.title}
+                        </h5>
+                        <hr className="storycard-hr" />
+                        <p className="storycard-subtitle">
+                          {el.subtitle}
+                        </p>
+                        <span className="storycard-readmore">
+                          <span className="storycard-readmore-text label-text">Read More</span>
+                        </span>
+                        <span className="storycard-arrow"></span>
+                        <span className="storycard-bg"></span>
+                      </a>
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </section>
 

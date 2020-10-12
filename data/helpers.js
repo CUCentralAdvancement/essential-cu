@@ -9,7 +9,6 @@ module.exports = {
       story.slug = el.slug;
       story.priority = el.priority;
 
-
       // Related taxonomy entities.
       story.campus_tag = el.campus_tag;
       story.interest_tag = el.interest_tag;
@@ -40,6 +39,8 @@ module.exports = {
     story.image_main = el.image_main;
 
     story.related_stories = el.related_stories ? el.related_stories : [];
+
+    story.share_url = `https://essential.cu.edu/impact-reports/onward/${story.slug}`;
 
     return story;
   },
