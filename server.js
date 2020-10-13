@@ -13,12 +13,12 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // No homepage yet so IR20 is the homepage.
-  // server.get("/", (req, res) => {
-  //   res.redirect("/fund-search");
-  // });
-
   server.all("*", (req, res) => {
+    if (req.protocol !== 'https') {
+      const host = req.hostname == 'localhost' ?  'localhost:3443' : req.hostname;
+      return res.redirect('https://' + host + req.originalUrl);
+    }
+    
     return handle(req, res);
   });
 
