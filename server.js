@@ -15,10 +15,11 @@ app.prepare().then(() => {
 
   server.all("*", (req, res) => {
     if (req.protocol !== 'https') {
+      console.log(req.protocol);
       const host = req.hostname == 'localhost' ?  'localhost:3443' : req.hostname;
       return res.redirect('https://' + host + req.originalUrl);
     }
-    
+
     return handle(req, res);
   });
 
