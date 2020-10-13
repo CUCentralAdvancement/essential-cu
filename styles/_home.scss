@@ -73,6 +73,10 @@
   &.js-reorder {
     order: 5;
   }
+  
+  &:focus-within {
+    outline: solid 1px $link-color;
+  }
 
   @media screen and (max-width: $break-mmmd){
     padding: 30px 0 45px;
@@ -152,6 +156,10 @@
   order: 20;
   padding: 60px 0;
   
+  &:focus-within {
+    outline: solid 1px $link-color;
+  }
+
   @media screen and (max-width: $break-mmmd){
     padding: 45px 0;
   }
