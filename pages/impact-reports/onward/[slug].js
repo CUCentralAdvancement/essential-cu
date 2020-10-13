@@ -18,6 +18,13 @@ export default function Story({ story }) {
   if (!story) {
     return null;
   }
+
+  // parse story.body for images
+  let storyBody = story.body;
+  const imgOpenRegex = /<p><img/g;
+  const imgCloseRegex = /" \/><\/p>/g;
+  storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
+  storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text">caption todo</p></div></div>');
  
   return (
     <>
@@ -35,7 +42,7 @@ export default function Story({ story }) {
       </Head>
       <Layout>
 
-        <div className="container">
+        <div className="container story-container">
     
           <section className="story-title">
             <div className="story-title-content">
@@ -56,9 +63,7 @@ export default function Story({ story }) {
 
           <StorySocial shareUrl={story.share_url} />
 
-          <article className="story-container body-text-lg">
-            <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
-          </article>
+          <article className="story-body-container body-text-lg" dangerouslySetInnerHTML={{ __html: storyBody }} />
 
           <hr />
           
