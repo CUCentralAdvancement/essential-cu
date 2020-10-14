@@ -15,8 +15,27 @@ Story.propTypes = {
 export default function Story({ story }) {
   // A ghost story slug or something tries to run on build casuing errors.
   // This is a stopgap until that is figured out but impacts nothing if left in.
-  if (!story) {
+  if (typeof story === 'undefined' || story.title === null) {
     return null;
+  }
+
+  // parse story.body for images, wrap in container for styling
+  const imgOpenRegex = /<p><img/g;
+  const imgCloseRegex = /" \/><\/p>/g;
+  let storyBody = story.body;
+  if (storyBody.indexOf("<p><img") > 0){
+    storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
+    storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text">imageTargetString</p></div></div>');
+  }
+
+  // parse story.body images for alt text, copy as captions
+  const imgAltRegex = /alt="([\s\S]*?)"/g;
+  if (storyBody.indexOf("alt=") > 0){
+    let imgAlt = storyBody.match(imgAltRegex);
+    imgAlt.forEach((el) => {
+      el = el.replace('alt="',"").replace('"',"");
+      storyBody = storyBody.replace("imageTargetString", el);
+    });
   }
  
   return (
@@ -28,16 +47,14 @@ export default function Story({ story }) {
         <meta property="og:title" content={story.title} />
         <meta property="og:description" content={story.subtitle} />
         <meta property="og:image" content={story.image_main.url} />
-        <meta property="og:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:title" content={story.title} />
         <meta property="twitter:description" content={story.subtitle} />
         <meta property="twitter:image" content={story.image_main.url} />
-        <meta property="twitter:image" content="https://essential-stage.cu.edu/cu-fpoimage.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
 
-        <div className="container">
+        <div className="container story-container">
     
           <section className="story-title">
             <div className="story-title-content">
@@ -58,9 +75,7 @@ export default function Story({ story }) {
 
           <StorySocial shareUrl={story.share_url} />
 
-          <article className="story-container body-text-lg">
-            <div dangerouslySetInnerHTML={{ __html: story.body }}></div>
-          </article>
+          <article className="story-body-container body-text-lg" dangerouslySetInnerHTML={{ __html: storyBody }} />
 
           <hr />
           
@@ -74,41 +89,35 @@ export default function Story({ story }) {
             <h5 className="text-center">Read related stories</h5>
 
             <ul className="story-cards">
-              {story.related_stories.map((el) => (
-                <li key={el.slug} className="storycard">
-                  <Link
-                    href="/impact-reports/onward/[slug]"
-                    as={`/impact-reports/onward/${el.slug}`}
-                  >
-                    <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
-                      <img
-                        src={el.image_card.url}
-                        alt={el.image_card.alt}
-                        height={el.image_card.height}
-                        width={el.image_card.width}
-                        className="storycard-image"
-                      />
-                      <h5 className="storycard-title">
-                        {el.title}
-                      </h5>
-                      <hr className="storycard-hr" />
-                      <p className="storycard-subtitle">
-                        {el.subtitle}
-                      </p>
-                      <span className="storycard-readmore">
-                        <span className="storycard-readmore-text label-text">Read More</span>
-                      </span>
-                      <span className="storycard-arrow"></span>
-                      <span className="storycard-temptags">
-                        {`Campus Tag: ${el.campus_tag}`}<br />
-                        {`Interest Tag: ${el.interest_tag}`}<br />
-                        {`Priority: ${el.priority}`}
-                      </span>
-                      <span className="storycard-bg"></span>
-                    </a>
-                  </Link>
-                </li>
-              ))}
+              {story.related_stories
+                .sort((el1, el2) => el1.priority - el2.priority )
+                .map((el) => (
+                  <li key={el.slug} className="storycard">
+                    <Link
+                      href="/impact-reports/onward/[slug]"
+                      as={`/impact-reports/onward/${el.slug}`}
+                    >
+                      <a className={ "storycard-link " + ( el.interest_tag ? el.interest_tag.toLowerCase() : "")}>
+                        <img
+                          src={el.image_card.url}
+                          alt={el.image_card.alt}
+                          height={el.image_card.height}
+                          width={el.image_card.width}
+                          className="storycard-image"
+                        />
+                        <h5 className="storycard-title">{el.title}</h5>
+                        <hr className="storycard-hr" />
+                        <p className="storycard-subtitle">{el.subtitle}</p>
+                        <span className="storycard-readmore">
+                          <span className="storycard-readmore-text label-text">Read More</span>
+                        </span>
+                        <span className="storycard-arrow"></span>
+                        <span className="storycard-bg"></span>
+                      </a>
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </section>
 
@@ -154,7 +163,7 @@ export async function getStaticPaths() {
 
   const paths = data.map((el) => ({
     params: {
-      slug: `${el.slug}`,
+      slug: `${el}`,
     },
   }));
 

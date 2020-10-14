@@ -58,6 +58,10 @@
 .site-logo-container {
   width: 224px;
 
+  &:focus-within {
+    outline: solid 1px $link-color;
+  }
+
   @media screen and (max-width: $break-mobilenav){
     display: none;
     order: 3;

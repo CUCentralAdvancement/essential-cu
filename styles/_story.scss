@@ -1,5 +1,9 @@
 /* STORY PAGE */
 
+.story-container {
+  overflow: hidden;
+}
+
 .story-title {
   display: flex;
   align-items: center;
@@ -32,12 +36,12 @@
   }
 }
 
-.story-container {
+.story-body-container {
   max-width: $story-container-max + ( $container-gutter * 2 );
   margin-left: auto;
   margin-right: auto;
 
-  &.body-text-lg p {
+  &.body-text-lg p:not(.caption-text) {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
@@ -45,11 +49,43 @@
 }
 
 .story-image-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin: 50px -50vw;
+  font-size: 1rem;
+
+  @media screen and (max-width: $break-mmmd){
+    position: static;
+    left: auto;
+    right: auto;
+    margin: 35px #{ -$container-gutter };
+  }
+
+  .container {
+    max-width: $container-max + ( $container-gutter * 2 );
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $container-gutter;
+    padding-right: $container-gutter;
+
+    @media screen and (max-width: $container-max + ( $container-gutter * 2 )){
+      padding-left: $container-gutter + ( $container-gutter / 2 );
+      padding-right: $container-gutter + ( $container-gutter / 2 );
+      max-width: $container-max;
+    }
+
+    @media screen and (max-width: $break-mmmd){
+      padding: 0;
+    }
+  }
 
   .caption-text {
     max-width: 615px;
+    font-size: $caption-size;
+    line-height: 1.43;
+    font-weight: 700;
 
     @media screen and (max-width: $break-mmmd){
       margin-left: $container-gutter;
@@ -58,13 +94,8 @@
     }
   }
   
-  .story-image {
+  img {
     display: block;
-  }
-
-  @media screen and (max-width: $break-mmmd){
-    margin-left: -$container-gutter;
-    margin-right: -$container-gutter;
   }
 }
 

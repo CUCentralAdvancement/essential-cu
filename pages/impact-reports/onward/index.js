@@ -8,6 +8,7 @@ import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition } from "../../../data/types";
 import { baseURL } from "../../../data/base";
 import { useState, useEffect } from "react";
+import { useCookies } from 'react-cookie';
 
 Home.propTypes = {
   storyData: PropTypes.arrayOf(PropTypes.shape(storiesDefinition)),
@@ -16,44 +17,71 @@ Home.propTypes = {
 // @todo Add default props.
 
 export default function Home({ storyData }) {
+  const [cookies] = useCookies(["STYXKEY-Campus"]);
   const [stories, setStories] = useState(storyData);
-
-  const shareUrl = "https://essential.cu.edu/impact-reports/onward/";
-
-  /* Not using this method anymore; keep for example of useEffect -KM/TEMP
-
-  // Set the initial filters for stories.
+  
   useEffect(() => {
-    // Only do this client-side so SSG content is full for SEO.
-    if (typeof window !== "undefined") {
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get("campus")) {
-        let first = [];
-        let second = [];
+    // default sort order by priority
+    stories.sort((el1, el2) => el1.priority - el2.priority );
+    
+    // check for campus cookie
+    if ( cookies["STYXKEY-Campus"] != null){
+      const campusEntryName = cookies["STYXKEY-Campus"];
+      let campusMatch = "";
+      let first = [];
+      let second = [];
+
+      // match cookie campus code to campus tag
+      switch (campusEntryName.toUpperCase()) {
+        case "AMC":
+          campusMatch = "Anschutz";
+          break;
+        case "UCB":
+          campusMatch = "Boulder";
+          break;
+        case "UCD":
+          campusMatch = "Denver";
+          break;
+        case "UCCS":
+          campusMatch = "UCCS";
+          break;
+      }
+
+      if (campusMatch) {
+
+        // move campus tag matches to beginning
         stories.forEach((el) => {
-          if (el.campus_tag.toLocaleLowerCase() === urlParams.get("campus")) {
+          if ( el.campus_tag == campusMatch ) {
             first.push(el);
           } else {
             second.push(el);
           }
         });
         setStories([...first, ...second]);
-      }
-    }
-  }, []);
 
-  */
-  
+      } else {
+        setStories([...stories]);
+      }
+
+    } else {
+      setStories([...stories]);
+    }
+
+  },[]);
+
   return (
     <>
       <Head>
         <title>University of Colorado 2020 Donor Impact Report</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:url" content={shareUrl} />
+        <meta property="og:url" content="https://essential.cu.edu/impact-reports/onward" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
-        <meta property="og:image" content="TODO" />
+        <meta property="og:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="twitter:title" content="University of Colorado 2020 Donor Impact Report" />
+        <meta property="twitter:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
+        <meta property="twitter:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
         <div className="container home-container">
@@ -72,10 +100,7 @@ export default function Home({ storyData }) {
           <section className="home-stories">
             <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
-              {stories
-                // default SORT by priority
-                .sort((el1, el2) => el1.priority - el2.priority )
-                .map((el) => (
+              {stories.map((el) => (
                 <li key={el.slug} className="storycard">
                   <Link
                     href="/impact-reports/onward/[slug]"
@@ -90,29 +115,23 @@ export default function Home({ storyData }) {
                         width={el.image_card.width}
                         className="storycard-image"
                       />
-
                       <h5 className="storycard-title">
                         {el.title}
                       </h5>
-
                       <hr className="storycard-hr" />
-
                       <p className="storycard-subtitle">
                         {el.subtitle}
                       </p>
-                      
                       <span className="storycard-readmore">
                         <span className="storycard-readmore-text label-text">Read More</span>
                       </span>
-
                       <span className="storycard-arrow"></span>
-                      
+                      {/* TEMP TO DELETE AFTER TESTING: */}
                       <span className="storycard-temptags">
                         {`Campus Tag: ${el.campus_tag}`}<br />
                         {`Interest Tag: ${el.interest_tag}`}<br />
                         {`Priority: ${el.priority}`}
                       </span>
-
                       <span className="storycard-bg"></span>
                     </a>
                   </Link>
@@ -120,7 +139,7 @@ export default function Home({ storyData }) {
               ))}
             </ul>
           </section>
-
+        
           <HomeFinancials />
 
           <section className="home-mission">
