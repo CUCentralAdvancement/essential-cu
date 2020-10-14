@@ -23,16 +23,20 @@ export default function Story({ story }) {
   const imgOpenRegex = /<p><img/g;
   const imgCloseRegex = /" \/><\/p>/g;
   let storyBody = story.body;
-  storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
-  storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text">imageTargetString</p></div></div>');
+  if (storyBody.indexOf("<p><img") > 0){
+    storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
+    storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text">imageTargetString</p></div></div>');
+  }
 
   // parse story.body images for alt text, copy as captions
   const imgAltRegex = /alt="([\s\S]*?)"/g;
-  let imgAlt = storyBody.match(imgAltRegex);
-  imgAlt.forEach((el) => {
-    el = el.replace('alt="',"").replace('"',"");
-    storyBody = storyBody.replace("imageTargetString", el);
-  });
+  if (storyBody.indexOf("alt=") > 0){
+    let imgAlt = storyBody.match(imgAltRegex);
+    imgAlt.forEach((el) => {
+      el = el.replace('alt="',"").replace('"',"");
+      storyBody = storyBody.replace("imageTargetString", el);
+    });
+  }
  
   return (
     <>
