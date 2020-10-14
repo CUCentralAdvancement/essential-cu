@@ -20,21 +20,21 @@ export default function Story({ story }) {
   }
 
   // parse story.body for images, wrap in container for styling
-  const imgOpenRegex = /<p><img/g;
-  const imgCloseRegex = /" \/><\/p>/g;
+  const imgOpenRegex = /<img/g;
+  const imgCloseRegex = /" \/>/g;
   let storyBody = story.body;
-  if (storyBody.indexOf("<p><img") > 0){
+  if (storyBody.indexOf("<img") > 0){
     storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
-    storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text">imageTargetString</p></div></div>');
+    storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text"></p></div></div>');
   }
-
+  
   // parse story.body images for alt text, copy as captions
-  const imgAltRegex = /alt="([\s\S]*?)"/g;
-  if (storyBody.indexOf("alt=") > 0){
-    let imgAlt = storyBody.match(imgAltRegex);
-    imgAlt.forEach((el) => {
-      el = el.replace('alt="',"").replace('"',"");
-      storyBody = storyBody.replace("imageTargetString", el);
+  const imgCaptionRegex = /data-caption="([\s\S]*?)"/g;
+  if (storyBody.indexOf("data-caption") > 0){
+    let imgCaption = storyBody.match(imgCaptionRegex);
+    imgCaption.forEach((el) => {
+      el = el.replace('data-caption="',"").replace('"',"");
+      storyBody = storyBody.replace('<p class="caption-text"></p>', '<p class="caption-text">' + el + '</p>');
     });
   }
  
