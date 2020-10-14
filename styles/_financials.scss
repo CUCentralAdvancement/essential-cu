@@ -87,11 +87,11 @@
 
     #{ $top }-content {
       padding-right: $financials-inner-pad;
-      flex: 0 1 75%;
+      flex: 0 1 65%;
     }
 
     #{ $top }-image {
-      flex: 0 1 25%;
+      flex: 0 1 35%;
     }
   }
 
@@ -122,6 +122,10 @@
     #{ $top }-content {
       padding-left: $financials-inner-pad;
       flex: 0 1 50%;
+
+      p {
+        margin-top: -5px;
+      }
     }
 
     #{ $top }-image {
