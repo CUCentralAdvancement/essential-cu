@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         source: "/onward2020",
-        destination: "/r?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
+        destination: "/r.html?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
         permanent: true,
       },
 
