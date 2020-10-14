@@ -21,6 +21,12 @@ module.exports = {
         destination: "/impact-reports/picture-this/index.html",
         permanent: true,
       },
+      {
+        source: "/onward2020",
+        destination: "/r?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
+        permanent: true,
+      },
+
     ];
   },
 };
