@@ -27,22 +27,46 @@ export default function Home({ storyData }) {
     // check for campus cookie
     if ( cookies["STYXKEY-Campus"] != null){
       const campusEntryName = cookies["STYXKEY-Campus"];
+      let campusMatch = "";
       let first = [];
       let second = [];
 
-      // move campus tag matches to beginning
-      stories.forEach((el) => {
-        if (el.campus_tag == campusEntryName) {
-          first.push(el);
-        } else {
-          second.push(el);
-        }
-      });
-      setStories([...first, ...second]);
+      // match cookie campus code to campus tag
+      switch (campusEntryName.toUpperCase()) {
+        case "AMC":
+          campusMatch = "Anschutz";
+          break;
+        case "UCB":
+          campusMatch = "Boulder";
+          break;
+        case "UCD":
+          campusMatch = "Denver";
+          break;
+        case "UCCS":
+          campusMatch = "UCCS";
+          break;
+      }
+
+      if (campusMatch) {
+
+        // move campus tag matches to beginning
+        stories.forEach((el) => {
+          if ( el.campus_tag == campusMatch ) {
+            first.push(el);
+          } else {
+            second.push(el);
+          }
+        });
+        setStories([...first, ...second]);
+
+      } else {
+        setStories([...stories]);
+      }
 
     } else {
       setStories([...stories]);
     }
+
   },[]);
 
   return (

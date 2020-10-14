@@ -11,10 +11,15 @@ export default function HomeFinancials() {
 
   useEffect(() => {
     // check for Financial entrypoint cookie for module reorder
-    if ( cookies["STYXKEY-Interest"] == "financials" ) {
-      setEntryFinancial(!isEntryFinancial);
-    } else {
-      setEntryFinancial(isEntryFinancial);
+
+    if ( cookies["STYXKEY-Interest"] != null ) {
+      const interestEntryName = cookies["STYXKEY-Interest"];
+ 
+      if ( interestEntryName.toUpperCase() === "FINANCIALS" ){
+        setEntryFinancial(!isEntryFinancial);
+      } else {
+        setEntryFinancial(isEntryFinancial);
+      }
     }
   }, []);
 
