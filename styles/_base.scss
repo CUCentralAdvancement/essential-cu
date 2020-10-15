@@ -27,8 +27,6 @@ body {
     background-position: center top;
     background-size: 100% auto;
     transform: rotate(180deg);
-    opacity: 0.75;
-    background-blend-mode: multiply;
     
     @media screen and (max-width: $break-mobilenav){
       top: 56px;
@@ -39,24 +37,11 @@ body {
 main {
   position: relative;
   z-index: 0;
+  background-image: url("/bkgd-goldwash.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
   padding: 1px 0;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding-top: 56.25%;
-    background-image: url("/bkgd-goldwash.jpg");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% auto;
-    opacity: 0.75;
-    background-blend-mode: multiply;
-  }
 }
 
 * {
