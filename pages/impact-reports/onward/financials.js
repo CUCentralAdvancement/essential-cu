@@ -40,7 +40,7 @@ export default function Financials() {
               <p className="body-text-lg">You committed to improving lives. Year after year, your gifts add up to create substantial and enduring solutions to our biggest challenges. The numbers tell just part of the story, however. It’s the impact you have that resonates.</p>
             </div>
             <div className="financials-section-image">
-              <img src="/financials-fillgraphic-1.png" alt="Financials graphic - open hands holding a heart" width="800" height="800" />
+              <img className="financials-fillgraphic" src="/financials-fillgraphic-1.png" alt="Financials graphic - open hands holding a heart" width="800" height="800" />
             </div>
           </section>
 
@@ -69,7 +69,7 @@ export default function Financials() {
               <p className="body-text-lg">How much <strong>128 donors</strong> gave to diversity, equity and inclusion efforts since January 1</p>
             </div>
             <div className="financials-section-image">
-              <img src="/financials-fillgraphic-2.png" alt="Financials graphic - hands holding over a circle" width="800" height="800" />
+              <img className="financials-fillgraphic" src="/financials-fillgraphic-2.png" alt="Financials graphic - hands holding over a circle" width="800" height="800" />
             </div>
           </section>
 
@@ -101,7 +101,7 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="/financials-fillgraphic-3.png" alt="Financials graphic - people standing with raised arms" width="800"   height="800" />
+              <img className="financials-fillgraphic" className="financials-fillgraphic" src="/financials-fillgraphic-3.png" alt="Financials graphic - people standing with raised arms" width="800" height="800" />
             </div>
           </section>
 
@@ -126,7 +126,7 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="//fpoimg.com/656x517?text=FPO" alt="TODO" />
+              <img src="/financials-chart-2.png" alt="Financials chart graphic - showing endowments 2015 $1.09 billion through 2020 $1.52 billion" width="1447" height="1173" />
             </div>
           </section>
 
@@ -135,7 +135,7 @@ export default function Financials() {
           <section className="financials-section financials-section-8">
             <div className="financials-section-image">
               <h2 className="financials-hide-large">How the endowment is invested</h2>
-              <img src="//fpoimg.com/514x513?text=FPO" alt="TODO" />
+              <img src="/financials-chart-3.png" alt="Financials chart graphic - showing how the endowment is invested by percentage" width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h2 className="financials-hide-small">How the endowment is invested</h2>
@@ -148,11 +148,11 @@ export default function Financials() {
           <section className="financials-section financials-section-9">
             <div className="financials-section-content">
               <h2 className="financials-hide-small">Investment return vs. policy benchmark</h2>
-              <p className="body-text-lg">Here is the LTIP’s annualized investment performance compared to our policy benchmark.</p>
+              <p className="body-text-lg">In fiscal year 2020, the LTIP returned 4.2% compared to 3.8% for our policy benchmark. Here is the LTIP’s annualized investment performance compared to the benchmark.</p>
             </div>
             <div className="financials-section-image">
               <h2 className="financials-hide-large">Investment return vs. policy benchmark</h2>
-              <img src="//fpoimg.com/723x586?text=FPO" alt="TODO" />
+              <img src="/financials-chart-4.png" alt="Financials chart graphic - showing the LTIP annualized investment performance" width="1447" height="1172" />
             </div>
           </section>
 
@@ -160,7 +160,7 @@ export default function Financials() {
 
           <section className="financials-section financials-section-10">
             <div className="financials-section-image">
-              <img src="//fpoimg.com/699x594?text=FPO" alt="TODO" />
+              <img src="/financials-chart-5.png" alt="Financials chart graphic - showing the breakdown of how much the CU foundation transferred to CU last fiscal year by percentage, totalling $209 million" width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h3>$209 million</h3>
@@ -169,12 +169,16 @@ export default function Financials() {
           </section>
 
           <section className="financials-section financials-section-11 text-center">
-            <h3>See our audited financials from fiscal year 2020</h3>
+            <h3>
+              <a className="financials-section-11-textlink"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+                See our audited financials from fiscal year 2020
+              </a>
+            </h3>
             <br />
             <div className="text-center">
-              <Link href="#TODO-MISSING-LINK">
-                <a className="btn">See here</a>
-              </Link>
+              <a className="btn"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+                Download here
+              </a>
             </div>
           </section>
 
