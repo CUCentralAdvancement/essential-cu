@@ -1,0 +1,261 @@
+figcaption {
+  @include left-right("padding", 20px);
+  bottom: 8%;
+  font-size: rem-calc(14px);
+  font-style: italic;
+  position: absolute;
+  left: 15px;
+  color: $white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-left: 3px solid $white;
+  width: calc(100% - 30px);
+  @include breakpoint(medium) {
+    left: 30px;
+    width: calc(100% - 60px);
+  }
+  @include breakpoint(large) {
+    left: 100px;
+    width: calc(100% - 200px);
+  }
+}
+
+blockquote {
+  border-left: none;
+  color: $gold;
+  font-family: $font-reef;
+  font-size: rem-calc(24px);
+  font-weight: 700;
+  line-height: 1.15;
+  padding-top: 0;
+  @include breakpoint(medium) {
+    @include top-bottom("margin", 35px);
+    font-size: rem-calc(36px);
+  }
+  @include breakpoint(large) {
+    font-size: rem-calc(44px);
+    line-height: 1.25;
+    margin-left: -105px;
+    padding: 0;
+    position: relative;
+    &:after {
+      content: url("./assets/images/blockquote-arrow.svg");
+      position: absolute;
+      left: 103%;
+      top: 50%;
+      transform: translateY(-85%);
+    }
+  }
+}
+section.story {
+  overflow-x: hidden;
+  h2 {
+    font-weight: bold;
+    font-size: rem-calc(22px);
+    @include breakpoint(large) {
+      font-size: rem-calc(42px);
+    }
+  }
+  p {
+    @include breakpoint(medium) {
+      font-size: rem-calc(20);
+      line-height: 1.45;
+      margin: 45px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .gold {
+    color: $gold;
+  }
+}
+.story-wrapper {
+  margin-top: 45px;
+  @include content-width(large);
+}
+
+.story-link {
+  font-weight: bold;
+  color: $black;
+  border-bottom: 2px solid $gold;
+}
+
+.story-photo {
+  position: relative;
+  margin: 40px 0 40px 0;
+  img {
+    max-height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .two-col-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+    .two-col-image-left,
+    .two-col-image-right {
+      @include breakpoint(large) {
+        width: 50%;
+      }
+    }
+  }
+}
+.story-compound-media {
+  @include clearfix();
+  .story-compound-photo {
+    position: relative;
+    margin-bottom: rem-calc(25px);
+    @include breakpoint(medium) {
+      float: left;
+      width: 50%;
+      margin: 0 25px 25px 0;
+      position: relative;
+    }
+    @include breakpoint(large) {
+      margin: 0 50px 50px 0;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+  .story-compound-text {
+    @include left-right("padding", 20px);
+    @include breakpoint(medium) {
+      padding-left: 0;
+      padding-right: 5%;
+    }
+    @include breakpoint(large) {
+      padding-right: 10%;
+    }
+    @include breakpoint(xlarge) {
+      padding-right: 14%;
+    }
+    //margin-left: 50%;
+    //width: 50%;
+    //max-width: 480px;
+  }
+  .story-wrapper {
+    clear: both;
+  }
+}
+
+.other-stories {
+
+  background-color: $dark-gray;
+  margin-top: 150px;
+  padding-bottom: 100px;
+  border-bottom: 2px solid $white;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 350px;
+    background: $white url("assets/images/pictures-wave.png") no-repeat center 200px;
+    background-size: 110% auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  .inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include content-width(page);
+    position: relative;
+    z-index: 1;
+  }
+  .box-text {
+    margin-bottom: 50px;
+  }
+  .other-stories-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @include breakpoint(medium) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .other-story {
+      width: 50%;
+      min-width: 250px;
+      max-width: 315px;
+      margin: 20px 0;
+      @include breakpoint(medium) {
+        margin: 0 20px;
+        width: 33%;
+        min-width: 0;
+      }
+      .other-story-heading {
+        color: $gold;
+        font-family: $font-reef;
+        font-size: rem-calc(18);
+        font-weight: 700;
+        line-height: 1.35;
+        margin-top: 15px;
+      }
+      .other-story-subheading {
+        color: $white;
+        font-size: rem-calc(22);
+        line-height: 1.45;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.hero-photo__photo-wrapper {
+  background: url("./stories-photos/arts-ryan-hero-1.jpeg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  &:before {
+    background-image: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,0));
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .banner-text {
+    @include breakpoint(large) {
+      position: relative;
+      min-height: 800px;
+    }
+  }
+
+  figcaption {
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+      left: 0;
+      bottom: 20%;
+    }
+  }
+
+  //.banner-figcaption {
+  //  display: none;
+  //  position: absolute;
+  //  left: 10%;
+  //  top: 65%;
+  //  width: 40%;
+  //  color: $white;
+  //  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  //  border-left: 3px solid $white;
+  //  padding-left: 20px;
+  //  @include breakpoint(large) {
+  //    display: block;
+  //  }
+  //}
+}
