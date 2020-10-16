@@ -13,10 +13,10 @@ export default function Financials() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado Fiscal Year 2020 Philanthropy Financials" />
         <meta property="og:description" content="It adds up: your generosity is an investment. You give to what matters to you — deeply, personally, meaningfully — to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today. Thank you for supporting what’s important to you." />
-        <meta property="og:image" content="https://essential.cu.edu/home-banner-onward.png#TODO" />
+        <meta property="og:image" content="https://essential.cu.edu/financials-header.png" />
         <meta property="twitter:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="twitter:description" content="It adds up: your generosity is an investment. You give to what matters to you — deeply, personally, meaningfully — to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today. Thank you for supporting what’s important to you." />
-        <meta property="twitter:image" content="https://essential.cu.edu/home-banner-onward.png#TODO" />
+        <meta property="twitter:image" content="https://essential.cu.edu/financials-header.png" />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
@@ -24,9 +24,9 @@ export default function Financials() {
         <div className="container">
         
           <section className="financials-title">
-            <img src="//fpoimg.com/1181x485?text=FPO" alt="Onward" width="1181" height="485" />
+            <img src="/financials-header.png" alt="Financials graphic - painterly hand pointing upwards, graphs, shapes" width="1256" height="516" />
             <div className="financials-container">
-              <h1>It adds up:<br /> Your generosity is an investment</h1>
+              <h1>Your generosity is an investment</h1>
               <hr />
               <h2>2020 fiscal year financials</h2>
               <p className="body-text-lg">You give to what matters to you—deeply, personally, meaningfully—to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today.</p>
@@ -40,13 +40,13 @@ export default function Financials() {
               <p className="body-text-lg">You committed to improving lives. Year after year, your gifts add up to create substantial and enduring solutions to our biggest challenges. The numbers tell just part of the story, however. It’s the impact you have that resonates.</p>
             </div>
             <div className="financials-section-image">
-              <img src="//fpoimg.com/350x350?text=FPO" alt="TODO" />
+              <img className="financials-fillgraphic" src="/financials-fillgraphic-1.png" alt="Financials graphic - open hands holding a heart" width="800" height="800" />
             </div>
           </section>
 
           <section className="financials-section financials-section-2">
             <div className="financials-section-image">
-              <img src="//fpoimg.com/610x710?text=FPO" alt="TODO" />
+              <img src="/financials-bodygraphic-2.png" alt="Financials graphic - woman looking upwards with rocket graphic and arrow line pointing up" width="1232" height="1400" />
             </div>
             <div className="financials-section-content">
               <h3>55,450 <span className="text-light">gifts</span></h3>
@@ -69,7 +69,7 @@ export default function Financials() {
               <p className="body-text-lg">How much <strong>128 donors</strong> gave to diversity, equity and inclusion efforts since January 1</p>
             </div>
             <div className="financials-section-image">
-              <img src="//fpoimg.com/350x350?text=FPO" alt="TODO" />
+              <img className="financials-fillgraphic" src="/financials-fillgraphic-2.png" alt="Financials graphic - hands holding over a circle" width="800" height="800" />
             </div>
           </section>
 
@@ -77,10 +77,12 @@ export default function Financials() {
 
           <section className="financials-section financials-section-4">
             <div className="financials-section-image">
-              <img src="//fpoimg.com/723x613?text=FPO" alt="TODO" />
-              <p className="body-text-lg text-center"><strong>92%</strong> of gifts were <strong>less than $2,500</strong> each</p>
+              <img src="/financials-chart-1.png" alt="Financials chart graphic - showing 9 out of 10 present boxes small, 1 large box" width="1234" height="1000" />
             </div>  
             <div className="financials-section-content">
+              <h3>9 out of 10</h3>
+              <p className="body-text-lg">That’s how many gifts were less than <strong>$2,500</strong> last year.</p>
+              <br />
               <h3>$8,220</h3>
               <p className="body-text-lg">That was the average size of a gift last year. Some gifts to CU are large, but every gift makes a difference in someone’s life.</p>
             </div>
@@ -99,7 +101,7 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="//fpoimg.com/350x350?text=FPO" alt="TODO" />
+              <img className="financials-fillgraphic" className="financials-fillgraphic" src="/financials-fillgraphic-3.png" alt="Financials graphic - people standing with raised arms" width="800" height="800" />
             </div>
           </section>
 
@@ -124,7 +126,7 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="//fpoimg.com/656x517?text=FPO" alt="TODO" />
+              <img src="/financials-chart-2.png" alt="Financials chart graphic - showing endowments 2015 $1.09 billion through 2020 $1.52 billion" width="1447" height="1173" />
             </div>
           </section>
 
@@ -133,7 +135,7 @@ export default function Financials() {
           <section className="financials-section financials-section-8">
             <div className="financials-section-image">
               <h2 className="financials-hide-large">How the endowment is invested</h2>
-              <img src="//fpoimg.com/514x513?text=FPO" alt="TODO" />
+              <img src="/financials-chart-3.png" alt="Financials chart graphic - showing how the endowment is invested by percentage" width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h2 className="financials-hide-small">How the endowment is invested</h2>
@@ -146,11 +148,11 @@ export default function Financials() {
           <section className="financials-section financials-section-9">
             <div className="financials-section-content">
               <h2 className="financials-hide-small">Investment return vs. policy benchmark</h2>
-              <p className="body-text-lg">Here is the LTIP’s annualized investment performance compared to our policy benchmark.</p>
+              <p className="body-text-lg">In fiscal year 2020, the LTIP returned 4.2% compared to 3.8% for our policy benchmark. Here is the LTIP’s annualized investment performance compared to the benchmark.</p>
             </div>
             <div className="financials-section-image">
               <h2 className="financials-hide-large">Investment return vs. policy benchmark</h2>
-              <img src="//fpoimg.com/723x586?text=FPO" alt="TODO" />
+              <img src="/financials-chart-4.png" alt="Financials chart graphic - showing the LTIP annualized investment performance" width="1447" height="1172" />
             </div>
           </section>
 
@@ -158,7 +160,7 @@ export default function Financials() {
 
           <section className="financials-section financials-section-10">
             <div className="financials-section-image">
-              <img src="//fpoimg.com/699x594?text=FPO" alt="TODO" />
+              <img src="/financials-chart-5.png" alt="Financials chart graphic - showing the breakdown of how much the CU foundation transferred to CU last fiscal year by percentage, totalling $209 million" width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h3>$209 million</h3>
@@ -167,12 +169,16 @@ export default function Financials() {
           </section>
 
           <section className="financials-section financials-section-11 text-center">
-            <h3>See our audited financials from fiscal year 2020</h3>
+            <h3>
+              <a className="financials-section-11-textlink"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+                See our audited financials from fiscal year 2020
+              </a>
+            </h3>
             <br />
             <div className="text-center">
-              <Link href="#TODO-MISSING-LINK">
-                <a className="btn">See here</a>
-              </Link>
+              <a className="btn"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+                Download here
+              </a>
             </div>
           </section>
 

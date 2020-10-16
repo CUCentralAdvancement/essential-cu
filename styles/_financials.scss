@@ -47,6 +47,15 @@
   }
 }
 
+.financials-fillgraphic {
+  @media screen and (max-width: $break-mmmd){
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+
 .financials-section {
   $top: &;
   padding-top: 80px;
@@ -87,11 +96,11 @@
 
     #{ $top }-content {
       padding-right: $financials-inner-pad;
-      flex: 0 1 75%;
+      flex: 0 1 65%;
     }
 
     #{ $top }-image {
-      flex: 0 1 25%;
+      flex: 0 1 35%;
     }
   }
 
@@ -122,6 +131,10 @@
     #{ $top }-content {
       padding-left: $financials-inner-pad;
       flex: 0 1 50%;
+
+      p {
+        margin-top: -5px;
+      }
     }
 
     #{ $top }-image {
@@ -183,6 +196,11 @@
   &-11 {
     padding-bottom: 250px;
     display: block;
+
+    &-textlink {
+      color: $text-color;
+      text-decoration: underline;
+    }
 
     h3 {
       max-width: 450px;
