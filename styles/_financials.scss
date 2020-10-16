@@ -183,11 +183,11 @@
   &-10 {
     @media screen and (max-width: $break-mmmd){
   
-      &-content {
+      #{ $top }-content {
         order: 1;
       }
   
-      &-image {
+      #{ $top }-image {
         order: 2;
       }
     }

@@ -164,7 +164,7 @@ export default function Financials() {
             </div>
             <div className="financials-section-content">
               <h3>$209 million</h3>
-              <p className="body-text-lg">That’s how much the CU Foundation transferred to CU last fiscal year to support a variety of people, place and programs on our campuses. Here’s where that support went.</p>
+              <p className="body-text-lg">That’s how much the CU Foundation transferred to CU last fiscal year to support a variety of people, places and programs on our campuses. Here’s where that support went.</p>
             </div>
           </section>
 
