@@ -101,7 +101,7 @@ export default function Home({ storyData }) {
             <a id="stories" name="stories" className="home-stories-anchor"></a>
             <ul className="story-cards">
               {stories.map((el) => (
-                <li key={el.slug} className="storycard">
+                <li key={el.slug} className="storycard" data-priority={el.priority} data-interest={el.interest_tag} data-campus={el.campus_tag}>
                   <Link
                     href="/impact-reports/onward/[slug]"
                     as={`/impact-reports/onward/${el.slug}`}
@@ -126,12 +126,6 @@ export default function Home({ storyData }) {
                         <span className="storycard-readmore-text label-text">Read More</span>
                       </span>
                       <span className="storycard-arrow"></span>
-                      {/* TEMP TO DELETE AFTER TESTING: */}
-                      <span className="storycard-temptags">
-                        {`Campus Tag: ${el.campus_tag}`}<br />
-                        {`Interest Tag: ${el.interest_tag}`}<br />
-                        {`Priority: ${el.priority}`}
-                      </span>
                       <span className="storycard-bg"></span>
                     </a>
                   </Link>

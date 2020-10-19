@@ -92,7 +92,7 @@ export default function Story({ story }) {
               {story.related_stories
                 .sort((el1, el2) => el1.priority - el2.priority )
                 .map((el) => (
-                  <li key={el.slug} className="storycard">
+                  <li key={el.slug} className="storycard" data-priority={el.priority} data-interest={el.interest_tag} data-campus={el.campus_tag}>
                     <Link
                       href="/impact-reports/onward/[slug]"
                       as={`/impact-reports/onward/${el.slug}`}
