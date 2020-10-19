@@ -3,6 +3,7 @@ const next = require("next");
 const http = require("http");
 const https = require("https");
 const fs = require("fs");
+const enforce = require('express-sslify');
 
 const httpsPort = 3443;
 const port = parseInt(process.env.PORT, 10) || 3000;
@@ -13,16 +14,15 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // No homepage yet so IR20 is the homepage.
-  // server.get("/", (req, res) => {
-  //   res.redirect("/fund-search");
-  // });
+  if (dev === false) {
+    app.use(enforce.HTTPS({ trustProtoHeader: true }))
+  }
 
   server.all("*", (req, res) => {
     return handle(req, res);
   });
 
-  if (dev) {
+  if (dev === true) {
     const options = {
       key: fs.readFileSync("localhost.key"),
       cert: fs.readFileSync("localhost.crt"),
