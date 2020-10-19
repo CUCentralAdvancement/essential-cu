@@ -14,8 +14,9 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  // Apply HTTPS middleware on heroku.
   if (dev === false) {
-    app.use(enforce.HTTPS({ trustProtoHeader: true }))
+    server.use(enforce.HTTPS({ trustProtoHeader: true }))
   }
 
   server.all("*", (req, res) => {
