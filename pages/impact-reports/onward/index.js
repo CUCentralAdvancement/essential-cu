@@ -175,7 +175,6 @@ export async function getStaticProps() {
 
   const stories = formatStoriesData(rawStoryData);
 
-  
   return {
     props: {
       storyData: stories,

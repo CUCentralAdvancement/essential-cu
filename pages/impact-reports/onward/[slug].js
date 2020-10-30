@@ -145,7 +145,6 @@ export async function getStaticProps({ params }) {
 
   const story = formatStoryData(rawStoryData);
 
-  
   return {
     props: {
       story: story,
