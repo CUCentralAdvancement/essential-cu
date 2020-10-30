@@ -145,20 +145,12 @@ export async function getStaticProps({ params }) {
 
   const story = formatStoryData(rawStoryData);
 
-  if (process.env.NODE_ENV !== "production") {
-    return {
-      props: {
-        story: story,
-      },
-      // Set to five seconds while testing.
-      revalidate: 5,
-    };
-  }
-
+  
   return {
     props: {
       story: story,
-    }
+    },
+    revalidate: process.env.CACHE_TTL ? process.env.CACHE_TTL : 5,
   };
 }
 
