@@ -145,12 +145,20 @@ export async function getStaticProps({ params }) {
 
   const story = formatStoryData(rawStoryData);
 
+  if (process.env.NODE_ENV !== "production") {
+    return {
+      props: {
+        story: story,
+      },
+      // Set to five seconds while testing.
+      revalidate: 5,
+    };
+  }
+
   return {
     props: {
       story: story,
-    },
-    // Set to five seconds while testing.
-    revalidate: 5,
+    }
   };
 }
 
@@ -169,6 +177,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
