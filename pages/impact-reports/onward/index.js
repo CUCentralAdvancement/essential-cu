@@ -179,7 +179,6 @@ export async function getStaticProps() {
     props: {
       storyData: stories,
     },
-    // Set to five seconds while testing.
-    revalidate: 5,
+    revalidate: process.env.CACHE_TTL ? process.env.CACHE_TTL : 5,
   };
 }

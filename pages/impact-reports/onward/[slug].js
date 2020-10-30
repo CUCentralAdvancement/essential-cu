@@ -149,8 +149,7 @@ export async function getStaticProps({ params }) {
     props: {
       story: story,
     },
-    // Set to five seconds while testing.
-    revalidate: 5,
+    revalidate: process.env.CACHE_TTL ? process.env.CACHE_TTL : 5,
   };
 }
 
@@ -169,6 +168,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
