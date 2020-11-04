@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
@@ -13,6 +13,15 @@ Story.propTypes = {
 };
 
 export default function Story({ story }) {
+
+  useEffect(() => {
+    // This should be done on the server, but Heroku's internal networking makes it difficult.
+    if (typeof window !== 'undefined' && window.location.host === 'essential.cu.edu' && window.location.protocol !== 'https:') {
+      window.location.href = 'https://' + window.location.host + window.location.pathname + window.location.search;
+    }
+  });
+
+
   // A ghost story slug or something tries to run on build casuing errors.
   // This is a stopgap until that is figured out but impacts nothing if left in.
   if (typeof story === 'undefined' || story.title === null) {
