@@ -21,6 +21,11 @@ export default function Home({ storyData }) {
   const [stories, setStories] = useState(storyData);
   
   useEffect(() => {
+    // This should be done on the server, but Heroku's internal networking makes it difficult.
+    if (typeof window !== 'undefined' && window.location.host === 'essential-stage.cu.edu' && window.location.protocol !== 'https:') {
+      window.location.href = 'https://' + window.location.host + window.location.pathname;
+    }
+
     // default sort order by priority
     stories.sort((el1, el2) => el1.priority - el2.priority );
     
