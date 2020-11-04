@@ -6,7 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition } from "../../../data/types";
-import { baseURL } from "../../../data/base";
+import { baseURL, cacheTTL } from "../../../data/base";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 
@@ -184,6 +184,6 @@ export async function getStaticProps() {
     props: {
       storyData: stories,
     },
-    revalidate: process.env.CACHE_TTL ? process.env.CACHE_TTL : 5,
+    revalidate: cacheTTL,
   };
 }
