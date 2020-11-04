@@ -1,9 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 
 export default function Financials() {
+
+  useEffect(() => {
+    // This should be done on the server, but Heroku's internal networking makes it difficult.
+    if (typeof window !== 'undefined' && window.location.host === 'essential.cu.edu' && window.location.protocol !== 'https:') {
+      window.location.href = 'https://' + window.location.host + window.location.pathname + window.location.search;
+    }
+  });
 
   return (
     <>
