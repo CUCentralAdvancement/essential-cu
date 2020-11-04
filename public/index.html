@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      // This should be done on the server, but Heroku's internal networking makes it difficult.
+      if (window.location.host === 'essential-stage.cu.edu' && window.location.protocol !== 'https:') {
+        window.location.href = 'https://' + window.location.host + window.location.pathname;
+      }
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70508646-1"></script>
     <script>
