@@ -159,7 +159,7 @@ export default function Home({ storyData }) {
                   <a>
                     <h3 className="h2">CU Advancement</h3>  
                     <p className="body-text-lg">
-                      We aspire to unite donor with their passions, elevate grand ideas and prudently manage philanthropy—all to spark enduring support of a university that creates transformative impact in our communities and around the world.
+                      We aspire to unite donors with their passions, elevate grand ideas and prudently manage philanthropy—all to spark enduring support of a university that creates transformative impact in our communities and around the world.
                     </p>
                   </a>
                 </Link>

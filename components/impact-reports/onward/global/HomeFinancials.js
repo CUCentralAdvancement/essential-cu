@@ -33,7 +33,7 @@ export default function HomeFinancials() {
             <div className="home-financials-content">
               <h4 className="h1">$455.9 million</h4>
               <p className="body-text-lg">
-                Your generosity creates impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
+                Your generosity creates impact: bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, donors like you invested $455.9 million in your passions. 
               </p>
               <div className="text-center">
                 <span className="btn">See more</span>
