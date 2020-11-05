@@ -36,7 +36,7 @@ export default function Financials() {
               <h1>Your generosity is an investment</h1>
               <hr />
               <h2>2020 fiscal year financials</h2>
-              <p className="body-text-lg">You give to what matters to you—deeply, personally, meaningfully—to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today.</p>
+              <p className="body-text-lg">You give to what matters to you — deeply, personally, meaningfully — to make a better world. At CU, we believe donors like you support your passions because you want tomorrow to be better than today.</p>
               <p className="body-text-lg"><strong>Thank you for supporting what’s important to you.</strong><br />Here's how you made a difference in fiscal year 2020.</p>
             </div>
           </section>
@@ -57,7 +57,7 @@ export default function Financials() {
             </div>
             <div className="financials-section-content">
               <h3>55,450 <span className="text-light">gifts</span></h3>
-              <p className="body-text-lg">Your generosity drives that impact—bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, you gave: </p>
+              <p className="body-text-lg">Your generosity drives that impact: bright futures for students, awe-inspiring discovery, innovative health care and a commitment to the common good. Last year, you gave: </p>
               <p className="body-text-lg">
                 <strong>$65 million</strong> to expand opportunities for students through scholarships<br />
                 <strong>$126 million</strong> to spur pioneering research and discovery<br />
@@ -69,11 +69,11 @@ export default function Financials() {
 
           <section className="financials-section financials-section-3">
             <div className="financials-section-content">
-              <p className="body-text-lg">You also rose to meet the challenge in a year unlike any other. You are stepping up as we face new hardships caused by COVID and the economic downturn. And you’re standing together with those who fight for social justice.</p>
+              <p className="body-text-lg">You also rose to meet the challenge in a year unlike any other. You are stepping up as we face new hardships caused by COVID-19 and the economic downturn. And you’re standing together with those who fight for social justice.</p>
               <h3>$3.3 million</h3>
-              <p className="body-text-lg">How much <strong>1,986 donors</strong> gave to COVID and emergency relief efforts since March 1</p>
+              <p className="body-text-lg">How much <strong>1,986 donors</strong> gave to COVID-19 and emergency relief efforts from March 1 to June 30</p>
               <h3>$11.8 million</h3>
-              <p className="body-text-lg">How much <strong>128 donors</strong> gave to diversity, equity and inclusion efforts since January 1</p>
+              <p className="body-text-lg">How much <strong>128 donors</strong> gave to diversity, equity and inclusion efforts from January 1 to June 30</p>
             </div>
             <div className="financials-section-image">
               <img className="financials-fillgraphic" src="/financials-fillgraphic-2.png" alt="Financials graphic - hands holding over a circle" width="800" height="800" />
@@ -117,7 +117,7 @@ export default function Financials() {
               <h2 className="h1 text-center">You’re looking ahead</h2>
               <hr />
               <p className="body-text-lg">
-                You give with an eye on the future—to create solutions tomorrow for the challenges we face today. Endowments are investments in that future. They’re gifts that support CU forever because they generate reliable support for generations to come. CU’s collective endowment is made up of thousands of individual endowments, and just like a current gift, an endowment has a specific purpose determined by the donor: It could be a scholarship that’s awarded year after year, or support to attract a sought-after faculty chair or the creation of a mental health and wellness program.
+                You give with an eye on the future to create solutions tomorrow for the challenges we face today. Endowments are investments in that future. They’re gifts that support CU forever because they generate reliable support for generations to come. CU’s collective endowment is made up of thousands of individual endowments, and just like a current gift, an endowment has a specific purpose determined by the donor: It could be a scholarship that’s awarded year after year, or support to attract a sought-after faculty chair or the creation of a mental health and wellness program.
               </p>
             </div>
           </section>
@@ -128,12 +128,13 @@ export default function Financials() {
               <p className="body-text-lg">CU’s endowment is valued at $1.52 billion, as of June 30. Here’s how the collective value of the endowment has grown in recent years.</p>
               <p className="body-text-lg">
                 <strong>140</strong> new endowments were created last fiscal year<br />  
-                <strong>$73 million</strong> was given in new endowment support<br /> 
+                <strong>$75 million</strong> was given in new endowment support<br /> 
                 <strong>3,029</strong> total endowments at CU have an enduring impact 
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="/financials-chart-2.png" alt="Financials chart graphic - showing endowments 2015 $1.09 billion through 2020 $1.52 billion" width="1447" height="1173" />
+              <img src="/financials-chart-2.png" alt="This is a bar chart that shows the value of the CU endowment by year. Here are the values: $1.09 billion for 2015, $1.06 billion for 2016, $1.22 billion for 2017, $1.36 billion for 2018, $1.45 billion for 2019 and $1.52 billion for 2020." 
+              width="1447" height="1173" />
             </div>
           </section>
 
@@ -142,7 +143,8 @@ export default function Financials() {
           <section className="financials-section financials-section-8">
             <div className="financials-section-image">
               <h2 className="financials-hide-large">How the endowment is invested</h2>
-              <img src="/financials-chart-3.png" alt="Financials chart graphic - showing how the endowment is invested by percentage" width="1446" height="1172" />
+              <img src="/financials-chart-3.png" alt="This is a chart that shows how the LTIP is invested in asset classes. 46.3% for global public equities, $24.7% for global private capital, 13.1% for global hedge funds, 8.7% for real assets and 7.2% for fixed income and cash." 
+              width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h2 className="financials-hide-small">How the endowment is invested</h2>
@@ -159,7 +161,8 @@ export default function Financials() {
             </div>
             <div className="financials-section-image">
               <h2 className="financials-hide-large">Investment return vs. policy benchmark</h2>
-              <img src="/financials-chart-4.png" alt="Financials chart graphic - showing the LTIP annualized investment performance" width="1447" height="1172" />
+              <img src="/financials-chart-4.png" alt="This is a dual bar chat that compares the LTIP and benchmark returns. Here are the percentage returns: 3 year for LTIP is 7.2%, 3 year for benchmark is 6.2%; 5 year for LTIP is 7.9%, 5 year for benchmark is 7.5%; 10 year for LTIP is 8.4%, 10 year for benchmark is 8.9%; 15 year for LTIP is 7.4%, 15 year for benchmark is 6.1%." 
+              width="1447" height="1172" />
             </div>
           </section>
 
@@ -167,7 +170,7 @@ export default function Financials() {
 
           <section className="financials-section financials-section-10">
             <div className="financials-section-image">
-              <img src="/financials-chart-5.png" alt="Financials chart graphic - showing the breakdown of how much the CU foundation transferred to CU last fiscal year by percentage, totalling $209 million" width="1446" height="1172" />
+              <img src="/financials-chart-5.png" alt="This is a waffle chart that shows where support from the CU Foundation to CU goes, by percentage. Academic Support 36%; Capital Projects 12%; Research 12%; Scholarships 12%; Advancement support 12%; Chairs, Professorships and Other Faculty Support 10%; Public Service, Administration, Library and Other Support 5%; and Athletics 1%" width="1446" height="1172" />
             </div>
             <div className="financials-section-content">
               <h3>$209 million</h3>

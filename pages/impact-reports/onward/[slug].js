@@ -21,7 +21,6 @@ export default function Story({ story }) {
     }
   });
 
-
   // A ghost story slug or something tries to run on build casuing errors.
   // This is a stopgap until that is figured out but impacts nothing if left in.
   if (typeof story === 'undefined' || story.title === null) {
