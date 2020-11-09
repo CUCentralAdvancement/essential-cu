@@ -14,7 +14,7 @@ export default function StorySocial({ shareUrl }) {
       />
       <LinkedinShareButton
         className="btn-social btn-social-li"
-        url={shareUrl + "%3Futm_campaign%3D2020ImpactReport%26utm_source%3DIR20_Share%26utm_medium%3DSocial"}
+        url={shareUrl + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
       />
     </div>
   );
