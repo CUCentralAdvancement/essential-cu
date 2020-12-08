@@ -22,9 +22,7 @@ https.get(`${baseURL}/api/stories`, (res) => {
     });
 
     body = JSON.parse(body);
-
     // console.log(body);
-
     // const stories = helpers.formatStoryData(body);
     const paths = body.map((el) => el.slug);
 

@@ -174,17 +174,14 @@ export default function Home({ storyData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${baseURL}/api/stories`);
-  const rawStoryData = await res.json();
-  // Commenting to trigger deploy.
-  // const rawStoryData = require("../../../data/stories/stories.json");
-
+  // const res = await fetch(`${baseURL}/api/stories`);
+  // const rawStoryData = await res.json();
+  const rawStoryData = require("../../../data/stories/stories.json");
   const stories = formatStoriesData(rawStoryData);
 
   return {
     props: {
       storyData: stories,
-    },
-    revalidate: cacheTTL,
+    }
   };
 }
