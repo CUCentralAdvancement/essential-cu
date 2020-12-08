@@ -145,32 +145,31 @@ export default function Story({ story }) {
  */
 export async function getStaticProps({ params }) {
   const slug = params.slug || null;
-  const res = await fetch(
-    `${baseURL}/api/story/${slug}`
-  );
-  const rawStoryData = await res.json();
-  // const rawStoryData = require(`../../../data/stories/${slug}.json`);
+  // const res = await fetch(
+  //   `${baseURL}/api/story/${slug}`
+  // );
+  // const rawStoryData = await res.json();
+  const rawStoryData = require(`../../../data/stories/${slug}.json`);
 
   const story = formatStoryData(rawStoryData);
 
   return {
     props: {
       story: story,
-    },
-    revalidate: cacheTTL,
+    }
   };
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `${baseURL}/api/stories/paths`
-  );
-  const data = await res.json();
-  // const data = require("../../../data/stories/stories.json");
+  // const res = await fetch(
+  //   `${baseURL}/api/stories/paths`
+  // );
+  // const data = await res.json();
+  const data = require("../../../data/stories/stories.json");
 
   const paths = data.map((el) => ({
     params: {
-      slug: `${el}`,
+      slug: `${el.slug}`,
     },
   }));
 
