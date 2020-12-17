@@ -4,6 +4,28 @@ This project handles routing and renders all content visible at https://essentia
 
 Hosted at: https://essential-cu.herokuapp.com/
 
+## Maintenance
+
+**Ongoing duties:**
+- Update permalink redirect in `next.config.js`. `/impact` should redirect to the current year's impact report page. For 2020 this is redirecting `/impact` to `/impact-reports/onward`.
+- Ensure UptimeRobot monitor is enabled. Shared password in LastPass and located on https://uptimerobot.com/dashboard.
+- ...maybe more...
+
+**Audience:** Unauthenticated - All traffic is public. No routes are protected.
+
+**Dependencies: ...other than Heroku**
+- Drupal 9 API. This API is now deprecated and data from it in this codebase under `/data` directory.
+- Fastly. Fastly sits in front of the Heroku load balancers. TTL is set to 1 day for most content.
+
+**Status:** Deployed - People are going to https://essential.cu.edu via emails, organic traffic, etc. The "campaign" is over but the content will be public forever.
+
+List of statuses: (move this to some policy doc place)
+- pre-planning, no dev instance but sample project repo created with scaffolfding
+- active development, dev instance
+- pre-deployment, dev, staging, and prod instance with DNS
+- deployed - open to the world and marketed
+- archived - site is statically hosted elsewhere and dev environments spun down. Any needed business logic is (Function-as-a-Service) FaaS -- static server handles logging, redirects, and other middleware but no app-specific business logic.
+
 ## Development Workflow
 
 This project uses a version of GitFlow. Each issue has a feature branch attached to it based on the issue number. For "Issue #10" it would be, `git checkout -b feature/10` to create the corresponding branch. Once a pull request is created against the master branch, Heroku builds a review app and shows you the URL.
