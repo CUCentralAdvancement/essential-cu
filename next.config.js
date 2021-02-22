@@ -26,7 +26,11 @@ module.exports = {
         destination: "/r/index.html?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
         permanent: true,
       },
-
+      {
+        source: "/fund/*",
+        destination: "https://giving.cu.edu/fund/*",
+        permanent: true,
+      }
     ];
   },
 };
