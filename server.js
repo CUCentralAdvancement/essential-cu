@@ -20,7 +20,6 @@ app.prepare().then(() => {
   });
 
   server.all("*", (req, res) => {
-    console.log(req.path);
     return handle(req, res);
   });
 
