@@ -6,7 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
 import { formatStoryData } from "../../../data/helpers";
 import { storyDefinition } from "../../../data/types";
-import { baseURL, cacheTTL } from "../../../data/base";
+// import { baseURL, cacheTTL } from "../../../data/base";
 
 Story.propTypes = {
   story: PropTypes.shape(storyDefinition),

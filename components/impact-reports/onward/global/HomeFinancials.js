@@ -40,7 +40,10 @@ export default function HomeFinancials() {
               </div>
             </div>
             <div className="home-financials-image">
-              <img src="/home-financials.png" width="615" height="530" alt="financials graph" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_530,w_615/v1614627666/ir-20/financials/home-financials_v54jdl.png" 
+              width="615" 
+              height="530" 
+              alt="financials graph" />
             </div>
           </div>
         </a>
