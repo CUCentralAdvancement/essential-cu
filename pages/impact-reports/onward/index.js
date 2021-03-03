@@ -6,7 +6,7 @@ import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
 import { formatStoriesData } from "../../../data/helpers";
 import { storiesDefinition } from "../../../data/types";
-import { baseURL, cacheTTL } from "../../../data/base";
+// import { baseURL, cacheTTL } from "../../../data/base";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 
@@ -82,10 +82,10 @@ export default function Home({ storyData }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="og:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
-        <meta property="og:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="og:image" content="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627813/ir-20/home-banner-onward_r3bfw2.png" />
         <meta property="twitter:title" content="University of Colorado 2020 Donor Impact Report" />
         <meta property="twitter:description" content="Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge." />
-        <meta property="twitter:image" content="https://essential.cu.edu/home-banner-onward.png" />
+        <meta property="twitter:image" content="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627813/ir-20/home-banner-onward_r3bfw2.png" />
         <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <Layout>
@@ -94,7 +94,10 @@ export default function Home({ storyData }) {
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
-              <img src="/home-banner-onward.png" alt="Onward" width="1255" height="516" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,w_1255,h_516/v1614627813/ir-20/home-banner-onward_r3bfw2.png" 
+              alt="Onward" 
+              width="1255" 
+              height="516" />
             </h1>
             <h2 className="body-text-lg">
               Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 

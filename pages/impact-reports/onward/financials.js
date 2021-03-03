@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 
 export default function Financials() {
@@ -31,7 +30,10 @@ export default function Financials() {
         <div className="container">
         
           <section className="financials-title">
-            <img src="/financials-header.png" alt="Financials graphic - painterly hand pointing upwards, graphs, shapes" width="1256" height="516" />
+            <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_516,w_1256/v1614625736/ir-20/financials/financials-header_ldjcop.png" 
+                 alt="Financials graphic - painterly hand pointing upwards, graphs, shapes" 
+                 width="1256" 
+                 height="516" />
             <div className="financials-container">
               <h1>Your generosity is an investment</h1>
               <hr />
@@ -47,13 +49,20 @@ export default function Financials() {
               <p className="body-text-lg">You committed to improving lives. Year after year, your gifts add up to create substantial and enduring solutions to our biggest challenges. The numbers tell just part of the story, however. It’s the impact you have that resonates.</p>
             </div>
             <div className="financials-section-image">
-              <img className="financials-fillgraphic" src="/financials-fillgraphic-1.png" alt="Financials graphic - open hands holding a heart" width="800" height="800" />
+              <img className="financials-fillgraphic" 
+                src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_800,w_800/v1614626326/ir-20/financials/financials-fillgraphic-1_xuuorb.png" 
+                alt="Financials graphic - open hands holding a heart" 
+                width="800" 
+                height="800" />
             </div>
           </section>
 
           <section className="financials-section financials-section-2">
             <div className="financials-section-image">
-              <img src="/financials-bodygraphic-2.png" alt="Financials graphic - woman looking upwards with rocket graphic and arrow line pointing up" width="1232" height="1400" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1400,w_1232/v1614626326/ir-20/financials/financials-bodygraphic-2_om0sb6.png" 
+                alt="Financials graphic - woman looking upwards with rocket graphic and arrow line pointing up" 
+                width="1232" 
+                height="1400" />
             </div>
             <div className="financials-section-content">
               <h3>55,450 <span className="text-light">gifts</span></h3>
@@ -76,7 +85,11 @@ export default function Financials() {
               <p className="body-text-lg">How much <strong>128 donors</strong> gave to diversity, equity and inclusion efforts from January 1 to June 30</p>
             </div>
             <div className="financials-section-image">
-              <img className="financials-fillgraphic" src="/financials-fillgraphic-2.png" alt="Financials graphic - hands holding over a circle" width="800" height="800" />
+              <img className="financials-fillgraphic" 
+                src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_800,w_800/v1614626326/ir-20/financials/financials-fillgraphic-2_z0w17p.png" 
+                alt="Financials graphic - hands holding over a circle" 
+                width="800" 
+                height="800" />
             </div>
           </section>
 
@@ -84,7 +97,10 @@ export default function Financials() {
 
           <section className="financials-section financials-section-4">
             <div className="financials-section-image">
-              <img src="/financials-chart-1.png" alt="Financials chart graphic - showing 9 out of 10 present boxes small, 1 large box" width="1234" height="1000" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1000,w_1234/v1614626326/ir-20/financials/financials-chart-1_jz6rnw.png" 
+                alt="Financials chart graphic - showing 9 out of 10 present boxes small, 1 large box" 
+                width="1234" 
+                height="1000" />
             </div>  
             <div className="financials-section-content">
               <h3>9 out of 10</h3>
@@ -108,7 +124,11 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img className="financials-fillgraphic" className="financials-fillgraphic" src="/financials-fillgraphic-3.png" alt="Financials graphic - people standing with raised arms" width="800" height="800" />
+              <img className="financials-fillgraphic" 
+                src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_800,w_800/v1614626326/ir-20/financials/financials-fillgraphic-3_ain4xr.png" 
+                alt="Financials graphic - people standing with raised arms" 
+                width="800" 
+                height="800" />
             </div>
           </section>
 
@@ -133,8 +153,10 @@ export default function Financials() {
               </p>
             </div>
             <div className="financials-section-image">
-              <img src="/financials-chart-2.png" alt="This is a bar chart that shows the value of the CU endowment by year. Here are the values: $1.09 billion for 2015, $1.06 billion for 2016, $1.22 billion for 2017, $1.36 billion for 2018, $1.45 billion for 2019 and $1.52 billion for 2020." 
-              width="1447" height="1173" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1173,w_1447/v1614626326/ir-20/financials/financials-chart-2_vgl9lr.png" 
+              alt="This is a bar chart that shows the value of the CU endowment by year. Here are the values: $1.09 billion for 2015, $1.06 billion for 2016, $1.22 billion for 2017, $1.36 billion for 2018, $1.45 billion for 2019 and $1.52 billion for 2020." 
+              width="1447" 
+              height="1173" />
             </div>
           </section>
 
@@ -143,8 +165,10 @@ export default function Financials() {
           <section className="financials-section financials-section-8">
             <div className="financials-section-image">
               <h2 className="financials-hide-large">How the endowment is invested</h2>
-              <img src="/financials-chart-3.png" alt="This is a chart that shows how the LTIP is invested in asset classes. 46.3% for global public equities, $24.7% for global private capital, 13.1% for global hedge funds, 8.7% for real assets and 7.2% for fixed income and cash." 
-              width="1446" height="1172" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1172,w_1446/v1614626326/ir-20/financials/financials-chart-3_ikkvs4.png" 
+                alt="This is a chart that shows how the LTIP is invested in asset classes. 46.3% for global public equities, $24.7% for global private capital, 13.1% for global hedge funds, 8.7% for real assets and 7.2% for fixed income and cash." 
+                width="1446" 
+                height="1172" />
             </div>
             <div className="financials-section-content">
               <h2 className="financials-hide-small">How the endowment is invested</h2>
@@ -161,8 +185,10 @@ export default function Financials() {
             </div>
             <div className="financials-section-image">
               <h2 className="financials-hide-large">Investment return vs. policy benchmark</h2>
-              <img src="/financials-chart-4.png" alt="This is a dual bar chat that compares the LTIP and benchmark returns. Here are the percentage returns: 3 year for LTIP is 7.2%, 3 year for benchmark is 6.2%; 5 year for LTIP is 7.9%, 5 year for benchmark is 7.5%; 10 year for LTIP is 8.4%, 10 year for benchmark is 8.9%; 15 year for LTIP is 7.4%, 15 year for benchmark is 6.1%." 
-              width="1447" height="1172" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1172,w_1447/v1614626326/ir-20/financials/financials-chart-4_vttceo.png" 
+                alt="This is a dual bar chat that compares the LTIP and benchmark returns. Here are the percentage returns: 3 year for LTIP is 7.2%, 3 year for benchmark is 6.2%; 5 year for LTIP is 7.9%, 5 year for benchmark is 7.5%; 10 year for LTIP is 8.4%, 10 year for benchmark is 8.9%; 15 year for LTIP is 7.4%, 15 year for benchmark is 6.1%." 
+                width="1447" 
+                height="1172" />
             </div>
           </section>
 
@@ -170,7 +196,10 @@ export default function Financials() {
 
           <section className="financials-section financials-section-10">
             <div className="financials-section-image">
-              <img src="/financials-chart-5.png" alt="This is a waffle chart that shows where support from the CU Foundation to CU goes, by percentage. Academic Support 36%; Capital Projects 12%; Research 12%; Scholarships 12%; Advancement support 12%; Chairs, Professorships and Other Faculty Support 10%; Public Service, Administration, Library and Other Support 5%; and Athletics 1%" width="1446" height="1172" />
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,h_1172,w_1447/v1614626326/ir-20/financials/financials-chart-5_eadxx8.png" 
+              alt="This is a waffle chart that shows where support from the CU Foundation to CU goes, by percentage. Academic Support 36%; Capital Projects 12%; Research 12%; Scholarships 12%; Advancement support 12%; Chairs, Professorships and Other Faculty Support 10%; Public Service, Administration, Library and Other Support 5%; and Athletics 1%" 
+              width="1446" 
+              height="1172" />
             </div>
             <div className="financials-section-content">
               <h3>$209 million</h3>
@@ -180,13 +209,13 @@ export default function Financials() {
 
           <section className="financials-section financials-section-11 text-center">
             <h3>
-              <a className="financials-section-11-textlink"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+              <a className="financials-section-11-textlink"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank" rel="noreferrer">
                 See our audited financials from fiscal year 2020
               </a>
             </h3>
             <br />
             <div className="text-center">
-              <a className="btn"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank">
+              <a className="btn"  href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf" target="_blank" rel="noreferrer">
                 Download here
               </a>
             </div>
