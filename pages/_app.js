@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import "../styles/styles.scss";
 
 import TagManager from "react-gtm-module";
 

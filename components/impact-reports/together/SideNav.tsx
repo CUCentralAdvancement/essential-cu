@@ -19,24 +19,24 @@ export default function SideNav() {
           <ul className="nav" aria-label="Main Navigation">
             <li>
               {/* <?php if ( $bodyClass == 'page-home' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="./">
+              <a href="/impact-reports/together">
                 <span>Home</span>
               </a>
             </li>
             <li>
               {/* <?php if ( $bodyClass == 'page-story' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="./#stories">
+              <a href="/impact-reports/together/#stories">
                 <span>Stories</span>
               </a>
             </li>
             <li>
               {/* <?php if ( $bodyClass == 'page-financials' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="financials.php">
+              <a href="/impact-reports/together/financials">
                 <span>Financials</span>
               </a>
             </li>
             <li>
-              <a href="./#mission">
+              <a href="/impact-reports/together/#mission">
                 <span>Mission</span>
               </a>
             </li>
