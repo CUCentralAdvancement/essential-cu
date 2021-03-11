@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function SideNav() {
   return (
@@ -19,26 +20,34 @@ export default function SideNav() {
           <ul className="nav" aria-label="Main Navigation">
             <li>
               {/* <?php if ( $bodyClass == 'page-home' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="/impact-reports/together">
-                <span>Home</span>
-              </a>
+              <Link href="/impact-reports/together">
+                <a>
+                  <span>Home</span>
+                </a>
+              </Link>
             </li>
             <li>
               {/* <?php if ( $bodyClass == 'page-story' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="/impact-reports/together/#stories">
-                <span>Stories</span>
-              </a>
+              <Link href="/impact-reports/together/#stories">
+                <a>
+                  <span>Stories</span>
+                </a>
+              </Link>
             </li>
             <li>
               {/* <?php if ( $bodyClass == 'page-financials' ) { ?> aria-current="page"<?php } ?> */}
-              <a href="/impact-reports/together/financials">
-                <span>Financials</span>
-              </a>
+              <Link href="/impact-reports/together/financials">
+                <a>
+                  <span>Financials</span>
+                </a>
+              </Link>
             </li>
             <li>
-              <a href="/impact-reports/together/#mission">
-                <span>Mission</span>
-              </a>
+              <Link href="/impact-reports/together/#mission">
+                <a>
+                  <span>Mission</span>
+                </a>
+              </Link>
             </li>
             <li>
               <a href="#credits" id="creditsNavButton">

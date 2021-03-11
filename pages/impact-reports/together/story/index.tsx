@@ -1,18 +1,16 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useMediaQuery } from 'react-responsive';
-
 
 export default function Story() {
     const isMobile = useMediaQuery({
         query: '(max-device-width: 720px)'
     });
-
-    return (
-        <div>
-            {
-                isMobile ? <h1>Mobile Story</h1>
-                    : <h1>Desktop Story</h1>
-            }
-        </div>
-    )
+    const router = useRouter()
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            router.push(`/impact-reports/together/story/innovation${ isMobile ? '/m' : ''}`)
+        }
+    })
+    return null;
 }
