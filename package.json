@@ -6,7 +6,8 @@
     "dev": "node server.js -p $PORT",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
-    "capture": "node ./data/capture-data.js"
+    "capture": "node ./data/capture-data.js",
+    "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
