@@ -1,16 +1,20 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <header className="header-top">
-        <a href="/">
+        <Link href="/impact-reports/together">
+          <a>
           <img
             src="/impact-reports/together/static/images/logo-cu-advancement.png"
             alt="University of Colorado - Advancement | CU Foundation"
             className="header-top__logo"
           />
         </a>
+        </Link>
       </header>
 
       <main className="main">
@@ -138,10 +142,10 @@ export default function Home() {
 
           <div className="story-thumbs js-story-thumbs">
             {/* Former tabIndex values of 20-22-24-26 changed to 0 per jsx-ally/no-positive-tabindex linter */}
+            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['resilience']}}} prefetch={false} >
             <a
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
-              href="story.php?id=5pHvMTYkI6qAtRlsGxsVqV"
             >
               <div className="story-thumbs__item-inner">
                 <h3>Resilience</h3>
@@ -155,10 +159,11 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            </Link>
+            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['community']}}} prefetch={false} >
             <a
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
-              href="story.php?id=1a9AAkTCKQ9V3n6Urcsaq0"
             >
               <div className="story-thumbs__item-inner">
                 <h3>Community</h3>
@@ -172,10 +177,11 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            </Link>
+            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['innovation']}}} prefetch={false} >
             <a
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
-              href="story.php?id=3shO3Vyy5NA2hhazVVNLrx"
             >
               <div className="story-thumbs__item-inner">
                 <h3>Innovation</h3>
@@ -189,10 +195,11 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            </Link>
+            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['wonder']}}} prefetch={false} >
             <a
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
-              href="story.php?id=6vDZM13EkpuzvZKcSpW0Gh"
             >
               <div className="story-thumbs__item-inner">
                 <h3>Wonder</h3>
@@ -206,6 +213,7 @@ export default function Home() {
                 </div>
               </div>
             </a>
+            </Link>
           </div>
         </section>
 
@@ -221,9 +229,11 @@ export default function Home() {
           </p>
 
           <div className="home-section home-section-generosity__links">
-            <a href="financials.php" className="button">
-              See what you accomplished
-            </a>
+            <Link href="/impact-reports/together/financials">
+              <a className="button">
+                See what you accomplished
+              </a>
+            </Link>
           </div>
 
           <p className="home-section-generosity__stat home-section-generosity__stat-1">

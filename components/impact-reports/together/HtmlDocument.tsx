@@ -29,7 +29,11 @@ const getBodyClass = (
   return bodyClass ?? classMap["default"][0];
 };
 
-export default function HtmlDocument({ pathname, globalCss: _ }: { pathname: string, globalCss: string }) {
+export default function HtmlDocument({
+  pathname
+}: {
+  pathname: string;
+}) {
   const bodyClass = getBodyClass(pathname, BODY_CLASSES_BY_PATH);
   return (
     <Html lang="en">
@@ -39,7 +43,12 @@ export default function HtmlDocument({ pathname, globalCss: _ }: { pathname: str
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="/impact-reports/together/static/globals.css"
+          rel="stylesheet"
+        />
       </Head>
+
       <body className={bodyClass}>
         <CreditsModal />
         <SideNav />
@@ -78,10 +87,7 @@ export default function HtmlDocument({ pathname, globalCss: _ }: { pathname: str
         </>
       )}
 
-      <link href="/impact-reports/together/static/globals.css" rel="stylesheet" />
-      
       {<script src="/impact-reports/together/static/js/global-min.js"></script>}
-      
     </Html>
   );
 }
