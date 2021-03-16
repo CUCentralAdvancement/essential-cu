@@ -8,7 +8,7 @@ import {
   getStoryByIdWithSlides,
 } from "../../../../data/impact-reports/together/client";
 import ChapterEnd from "../../../../components/impact-reports/together/ChapterEnd";
-import { ISlide } from "../../../../data/impact-reports/together/types";
+import { ISlide, IStory } from "../../../../data/impact-reports/together/types";
 import Slide from "../../../../components/impact-reports/together/Slide";
 
 export default function Story({
@@ -18,6 +18,7 @@ export default function Story({
   storyBody,
   mobileTarget,
   storySlides,
+  otherStories,
 }: {
   previewImage: string;
   previewImageDesc: string;
@@ -25,6 +26,7 @@ export default function Story({
   storyBody: any;
   mobileTarget: string;
   storySlides: ISlide[];
+  otherStories: IStory[];
 }) {
   /* TODO: Set up redirect && differentiated links.
   const isMobile = useMediaQuery({
@@ -58,7 +60,7 @@ export default function Story({
           data-ambientstop="true"
         >
           {"'"};
-          <ChapterEnd />
+          <ChapterEnd otherStories={otherStories} />
         </div>
       </div>
       <ProgressAudio />
@@ -83,11 +85,13 @@ export async function getStaticPaths(_context) {
 }
 
 export async function getStaticProps(context) {
-  const story = await getStoryByIdWithSlides(context?.params?.storyId[0]);
+  const { story, otherStories } = await getStoryByIdWithSlides(
+    context?.params?.storyId[0]
+  );
 
   return {
     props: {
-      storyBody: story.fields.body,
+      storyBody: story.fields?.body ?? "",
       storyTitle: story.fields.title,
       previewImage: story.fields.previewImage.fields.file.url,
       previewImageDesc: story.fields.previewImage.fields.description ?? "",
@@ -95,6 +99,7 @@ export async function getStaticProps(context) {
         ? story.fields.slides.map((slide) => slide.fields)
         : [],
       mobileTarget: !!context.params.storyId[1],
+      otherStories,
     },
   };
 }
