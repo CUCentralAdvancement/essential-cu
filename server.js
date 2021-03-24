@@ -13,10 +13,11 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  // No homepage yet so IR20 is the homepage.
-  // server.get("/", (req, res) => {
-  //   res.redirect("/fund-search");
-  // });
+  // Add redirect back to giving.cu.edu for weird issue.
+  // @see https://github.com/CUCentralAdvancement/essential-cu/issues/142 .
+  server.get("/fund/*", (req, res) => {
+    res.redirect("https://giving.cu.edu" + req.path);
+  });
 
   server.all("*", (req, res) => {
     return handle(req, res);
