@@ -1,5 +1,6 @@
 import React from "react";
 // import { useMediaQuery } from "react-responsive";
+import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ChapterHead from "../../../../components/impact-reports/together/ChapterHead";
 import ProgressAudio from "../../../../components/impact-reports/together/ProgressAudio";
@@ -36,6 +37,10 @@ export default function Story({
 
   return (
     <main className="main">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{storyTitle}</title>
+      </Head>
       <div className="js-story-slider story-slider" style={{ opacity: 0 }}>
         <ChapterHead
           previewImage={previewImage}

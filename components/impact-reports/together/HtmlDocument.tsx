@@ -38,7 +38,8 @@ export default function HtmlDocument({
   return (
     <Html lang="en">
       <Head>
-        <meta property="custom" content={pathname}></meta>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"
           rel="stylesheet"
@@ -47,9 +48,23 @@ export default function HtmlDocument({
           href="/impact-reports/together/static/globals.css"
           rel="stylesheet"
         />
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KFCM644')};`}}
+        />
+        {/* End Google Tag Manager */}
       </Head>
 
       <body className={bodyClass}>
+        <noscript 
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFCM644"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+          }}
+        />
         <CreditsModal />
         <SideNav />
         <Main />

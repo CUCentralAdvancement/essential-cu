@@ -1,11 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function Financials() {
     return (
         
 <main className="main">
-
+<Head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CU Giving 2019 - Financials</title>
+</Head>
 <div className="js-fin-slider fin-slider" style={{opacity: 0}}>
   <div>
 {

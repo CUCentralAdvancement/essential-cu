@@ -1,10 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>CU Giving 2019 - Welcome</title>
+    </Head>
       <header className="header-top">
         <Link href="/impact-reports/together">
           <a>

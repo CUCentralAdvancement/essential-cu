@@ -5,7 +5,7 @@ import {
   OverlayPosition,
 } from "../../../data/impact-reports/together/types";
 import BackgroundImage from "./BackgroundImage";
-import SlideAudio from "./SlideAudio";
+import SlideAudio, { AmbientAudio } from "./SlideAudio";
 import {
   getImageUrl,
   IMAGE_FORMAT,
@@ -245,25 +245,6 @@ const FullFrame = ({
   );
 };
 
-const AmbientAudio = ({
-  ambientAudio,
-  stopAmbientAudio,
-  children,
-}: {
-  ambientAudio: any;
-  stopAmbientAudio: boolean;
-  children: React.ReactNode;
-}) => (
-  <div
-    className="js-section-story__audio"
-    {...{
-      "data-ambienturl": ambientAudio?.[0]?.secure_url ?? null,
-      "data-ambientstop": stopAmbientAudio ? "true" : null,
-    }}
-  >
-    {children}
-  </div>
-);
 
 export default function Slide({
   layout,

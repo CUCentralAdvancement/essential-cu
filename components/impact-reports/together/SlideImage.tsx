@@ -4,7 +4,7 @@
  * to provide the structure/separation necessary for migrating
  * to another CDN.
  */
-
+import { Cloudinary } from 'cloudinary-core';
 import { Asset } from "contentful";
 
 export const IMAGE_FORMAT = "jpg";
@@ -28,13 +28,27 @@ export enum IMAGE_WIDTH {
   THUMBNAIL = "500",
 }
 
-export function getImageUrl(
+// eslint-disable-next-line no-unused-vars
+function getImageUrlv1(
   baseUrl: string,
   imgFormat: string,
   imgQuality: string,
   imgWidth: string
 ) {
   return `${baseUrl}?fm=${imgFormat}&q=${imgQuality}&w=${imgWidth}`;
+}
+
+export function getImageUrl(
+  baseUrl: string,
+  imgFormat: string,
+  imgQuality: string,
+  imgWidth: string
+) {
+  if (!baseUrl) return "";
+  const cld = new Cloudinary({cloud_name: "hs9mwpicm", secure: true});
+  const filename = "ir-19/images/" + baseUrl.substring(baseUrl.lastIndexOf("/") + 1, baseUrl.lastIndexOf("."));
+  const img = cld.url(filename, {format: imgFormat, quality: imgQuality, width: parseInt(imgWidth), crop: 'fit'});
+  return img;
 }
 
 export function parseImageProps({

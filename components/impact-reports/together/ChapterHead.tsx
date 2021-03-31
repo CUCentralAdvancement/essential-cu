@@ -1,4 +1,5 @@
 import React from "react";
+import { getImageUrl } from "./SlideImage";
 
 const IMAGE_FORMAT = "jpg";
 const IMAGE_QUALITY_MOBILE = "80";
@@ -27,16 +28,16 @@ export default function ChapterHead({
 }: ChapterHeadProps) {
   return isMobile ? (
     <MobileChapterHead
-      previewImageLowRes={`${previewImage}?fm=${IMAGE_FORMAT}&q=${IMAGE_QUALITY_MOBILE_LO}&w=${IMAGE_WIDTH_MOBILE_LO}`}
-      previewImage={`${previewImage}?fm=${IMAGE_FORMAT}&q=${IMAGE_QUALITY_MOBILE}&w=${IMAGE_WIDTH_MOBILE}`}
+      previewImageLowRes={`${getImageUrl(previewImage, IMAGE_FORMAT, IMAGE_QUALITY_MOBILE_LO, IMAGE_WIDTH_MOBILE_LO)}`}
+      previewImage={`${getImageUrl(previewImage, IMAGE_FORMAT, IMAGE_QUALITY_MOBILE, IMAGE_WIDTH_MOBILE)}`}
       previewImageDesc={previewImageDesc}
       storyTitle={storyTitle}
       storyBody={storyBody}
     />
   ) : (
     <DesktopChapterHead
-      previewImageLowRes={`${previewImage}?fm=${IMAGE_FORMAT}&q=${IMAGE_QUALITY_DESKTOP_LO}&w=${IMAGE_WIDTH_DESKTOP_LO}`}
-      previewImage={`${previewImage}?fm=${IMAGE_FORMAT}&q=${IMAGE_QUALITY_DESKTOP}&w=${IMAGE_WIDTH_DESKTOP}`}
+      previewImageLowRes={`${getImageUrl(previewImage, IMAGE_FORMAT, IMAGE_QUALITY_DESKTOP_LO, IMAGE_WIDTH_DESKTOP_LO)}`}
+      previewImage={`${getImageUrl(previewImage, IMAGE_FORMAT, IMAGE_QUALITY_DESKTOP, IMAGE_WIDTH_DESKTOP)}`}
       previewImageDesc={previewImageDesc}
       storyTitle={storyTitle}
       storyBody={storyBody}
