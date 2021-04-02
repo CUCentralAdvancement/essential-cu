@@ -96,7 +96,7 @@ export default function HtmlDocument({
         <>
           <script src="/impact-reports/together/static/slick/slick.min.js"></script>
           <script src="/impact-reports/together/static/js/howler.core.min.js"></script>
-          <script src="/impact-reports/together/static/js/stories.js" async></script>
+          <script src="/impact-reports/together/static/js/stories-min.js" async></script>
         </>
       )}
 
