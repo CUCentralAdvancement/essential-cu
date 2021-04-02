@@ -44,7 +44,7 @@ export default function Story({
   useEffect(() => {
     // @ts-ignore-next-line
     window?.StoryReady?.resolve()
-  })
+  },[])
   const title = "CU Giving 2019 - We're in this together";
 
   return (
