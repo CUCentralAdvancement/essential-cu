@@ -17,15 +17,15 @@ export default function VideoPlayer({
       <iframe
         title="story video"
         className="js-story-video story-video-full"
-        style={{ 
+        style={{} /*{ 
           pointerEvents: "auto",
           minHeight: "auto",
           height: "56.25vw"
-        }}
+        }*/}
         src={
           "https://player.vimeo.com/video/" +
           bgVideoId +
-          "?autoplay=0&title=0&controls=1&byline=0&loop=1"
+          "?autoplay=1&title=0&controls=0&byline=0&loop=1"
         }
         frameBorder="0"
         allow="autoplay; fullscreen"

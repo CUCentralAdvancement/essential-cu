@@ -208,10 +208,13 @@ const FullFrame = ({
       className={`section-story section-story__fullframe ${
         backgroundVideo ? "js-story-video-container" : ""
       }`}
-      style={bgVideoPoster ? { // backgroundImage: `url( ${bgVideoPoster})`
-      background: 'linear-gradient(#cfb87c, #000)',
-      backgroundImage: `linear-gradient(#cfb87c, #000) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='100%' width='100%'><text x='50%' y='50%' fill='black' font-size='20'>Loading...</text></rect></svg>")`
-    } : {}}
+      {...{ 
+        style: bgVideoPoster ? {
+            backgroundImage: `url( ${bgVideoPoster})`,
+            // background: 'linear-gradient(#cfb87c, #000)',
+            // backgroundImage: `linear-gradient(#cfb87c, #000) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='100%' width='100%'><text x='50%' y='50%' fill='black' font-size='20'>Loading...</text></rect></svg>")`
+          } : {}
+      }}
     >
       {bgImage && (
         <BackgroundImage
