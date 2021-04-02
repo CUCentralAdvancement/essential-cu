@@ -147,8 +147,8 @@ export default function Home() {
 
           <div className="story-thumbs js-story-thumbs">
             {/* Former tabIndex values of 20-22-24-26 changed to 0 per jsx-ally/no-positive-tabindex linter */}
-            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['resilience']}}} prefetch={false} >
             <a
+              href="/impact-reports/together/story/resilience"
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
             >
@@ -164,9 +164,9 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            </Link>
-            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['community']}}} prefetch={false} >
+            { /* <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['community']}}} prefetch={false} > */}
             <a
+              href="/impact-reports/together/story/community"
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
             >
@@ -182,9 +182,9 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            </Link>
-            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['innovation']}}} prefetch={false} >
+            {/* </Link> */}
             <a
+              href="/impact-reports/together/story/innovation"
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
             >
@@ -200,9 +200,8 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            </Link>
-            <Link href={{pathname: '/impact-reports/together/story/[...storyId]', query: { storyId: ['wonder']}}} prefetch={false} >
             <a
+              href="/impact-reports/together/story/wonder"
               className="story-thumbs__item js-story-thumbs__item"
               tabIndex={0}
             >
@@ -218,7 +217,6 @@ export default function Home() {
                 </div>
               </div>
             </a>
-            </Link>
           </div>
         </section>
 
@@ -234,11 +232,9 @@ export default function Home() {
           </p>
 
           <div className="home-section home-section-generosity__links">
-            <Link href="/impact-reports/together/financials">
-              <a className="button">
+              <a href="/impact-reports/together/financials" className="button">
                 See what you accomplished
               </a>
-            </Link>
           </div>
 
           <p className="home-section-generosity__stat home-section-generosity__stat-1">

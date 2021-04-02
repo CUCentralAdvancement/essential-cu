@@ -276,6 +276,7 @@ export default function Slide({
         audioBodyCredit={audioBodyCredit}
         audioBodyDuration={audioBodyDuration}
         audioBodyText={audioBodyText}
+        {...{layout, ambientAudio, stopAmbientAudio,}}
         body={body}
       />
     </AmbientAudio>

@@ -20,7 +20,7 @@ const getBodyClass = (
         // eslint-disable-next-line no-unused-vars
         Object.entries(classMap).find(([_className, pathsArray]) =>
           pathsArray.reduce(
-            (acc, curr) => acc || uriFragment.startsWith(curr),
+            (acc: boolean, curr) => acc || uriFragment.startsWith(curr),
             false
           )
         )?.[0]
@@ -34,6 +34,7 @@ export default function HtmlDocument({
 }: {
   pathname: string;
 }) {
+
   const bodyClass = getBodyClass(pathname, BODY_CLASSES_BY_PATH);
   return (
     <Html lang="en">
@@ -82,20 +83,20 @@ export default function HtmlDocument({
       </body>
       <script src="/impact-reports/together/static/js/jquery-3.4.1.min.js"></script>
 
-      {bodyClass === "page-home" && (
+      {bodyClass === "page-home" && 
         <>
           <script src="/impact-reports/together/static/js/ScrollMagic.min.js"></script>
           <script src="/impact-reports/together/static/js/animation.gsap.min.js"></script>
           <script src="/impact-reports/together/static/js/TweenMax.min.js"></script>
           <script src="/impact-reports/together/static/js/home-min.js"></script>
         </>
-      )}
+      }
 
       {bodyClass === "page-story" && (
         <>
           <script src="/impact-reports/together/static/slick/slick.min.js"></script>
           <script src="/impact-reports/together/static/js/howler.core.min.js"></script>
-          <script src="/impact-reports/together/static/js/stories-min.js"></script>
+          <script src="/impact-reports/together/static/js/stories.js" async></script>
         </>
       )}
 

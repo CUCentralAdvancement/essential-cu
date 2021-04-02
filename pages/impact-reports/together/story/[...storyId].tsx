@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { useMediaQuery } from "react-responsive";
 import Head from "next/head";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -41,6 +41,10 @@ export default function Story({
     query: "(max-device-width: 720px)",
   });
   */
+  useEffect(() => {
+    // @ts-ignore-next-line
+    window?.StoryReady?.resolve()
+  })
   const title = "CU Giving 2019 - We're in this together";
 
   return (
@@ -97,14 +101,7 @@ export async function getStaticPaths(_context) {
   const paths = await getAllStoryIds();
 
   return {
-    paths: paths.concat(
-      paths.map((path) => ({
-        params: {
-          ...path.params,
-          storyId: path.params.storyId.concat("m"),
-        },
-      }))
-    ),
+    paths,
     fallback: false,
   };
 }

@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactPlayer from "react-player";
 
 export default function VideoPlayer({
   bgVideo,
@@ -25,26 +24,12 @@ export default function VideoPlayer({
         src={
           "https://player.vimeo.com/video/" +
           bgVideoId +
-          "?autoplay=1&title=0&controls=0&byline=0&loop=1"
+          "?autoplay=0&title=0&controls=0&byline=0&loop=1"
         }
         frameBorder="0"
         allow="autoplay; fullscreen"
         allowFullScreen
       ></iframe>
-      {/*
-    <ReactPlayer
-      className="js-story-video story-video-full"
-      style={{pointerEvents: 'auto'}}
-      url={`https://player.vimeo.com/video/${bgVideoId}`}
-      config={{
-          vimeo: {
-              playerOptions: {
-                  autoplay: autoPlay === 1
-              }
-          }
-      }}
-    />
-  */}
     </script>
   );
 }

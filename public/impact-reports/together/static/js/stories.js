@@ -1,6 +1,8 @@
 // ***** Stories page JS ******
+var StoryReady = $.Deferred();
+window.StoryReady = StoryReady;
 
-$(function() {
+$.when( StoryReady ).then(function() {
   var $window = $( window );
   var $body = $( 'body' );
 
@@ -86,7 +88,9 @@ $(function() {
 
     if ( $videoEl.length ) {
       var $videoContainer = $videoEl.parent( '.js-story-video-container' );
-      $videoContainer.append( $videoEl.html() );
+      var $videoFrame = $videoEl.children().clone();
+      $videoFrame.attr("src", (idx, src) => src.replace("autoplay=0", "autoplay=1"));
+      $videoContainer.append($videoFrame);
       $videoContainer.addClass( 'js-story-video-added' );
       videoIsAdded = true;
     }
