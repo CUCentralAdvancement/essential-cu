@@ -129,15 +129,19 @@ const SplitText = ({ orientation, side }) => ({
   return (
     <section
       className={`"section-story section-story__${orientation}splittext section-story__${orientation}splittext-${side}"`}
-      style={{
+      >
+      {/* style={{
         flexDirection: orientation === "vert" ? 
           ( side === "left" ? "row-reverse" : "row" ) : 
-          ( side === "top" ? "column-reverse" : "column" ) }}
-    >
+      ( side === "top" ? "column-reverse" : "column" ) }} */}
       <div
         className={`section-story__${orientation}splittext-img${
           orientation === "vert" ? "col" : "row"
         }`}
+        style={{
+          order: orientation === "vert" ? 
+            ( side === "left" ? 2 : 1 ) : 
+            ( side === "top" ? 2 : 1 ) }}
       >
         <BackgroundImage
           slideIndex={slideIndex}
@@ -152,6 +156,10 @@ const SplitText = ({ orientation, side }) => ({
         className={`section-story__${orientation}splittext-text${
           orientation === "vert" ? "col" : "row"
         }`}
+        style={{
+          order: orientation === "vert" ? 
+            ( side === "left" ? 1 : 2 ) : 
+            ( side === "top" ? 1 : 2 ) }}
       >
         <div
           className={`section-story__${orientation}splittext-text${
