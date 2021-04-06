@@ -76,7 +76,7 @@ export default function Story({
         {storySlides.map((slide, idx) => {
           const audioProps = {
             audioBody: slide?.bodyAudio?.[0]?.secure_url ?? "",
-            audioBodyDuration: slide?.bodyAudio?.[0]?.duration ?? "",
+            audioBodyDuration: slide?.bodyAudio?.[0]?.duration ? `${Math.round(1000 * (slide.bodyAudio[0].duration + 0.5))}` : "10000",
             audioBodyCredit: slide?.bodyAudioCredit ?? "",
             audioBodyText: slide?.bodyAudioText ?? "",
           };

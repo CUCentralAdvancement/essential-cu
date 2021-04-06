@@ -129,6 +129,10 @@ const SplitText = ({ orientation, side }) => ({
   return (
     <section
       className={`"section-story section-story__${orientation}splittext section-story__${orientation}splittext-${side}"`}
+      style={{
+        flexDirection: orientation === "vert" ? 
+          ( side === "left" ? "row-reverse" : "row" ) : 
+          ( side === "top" ? "column-reverse" : "column" ) }}
     >
       <div
         className={`section-story__${orientation}splittext-img${
@@ -155,13 +159,22 @@ const SplitText = ({ orientation, side }) => ({
           }-inner`}
         >
           {displayTitle && <h2>{title}</h2>}
+          <style>
+          {`.split-text-section-${slideIndex} p {
+            font-size: 2.5em;
+            font-weight: 300;
+          }`}
+          </style>
+          
           <SlideAudio
             audioBody={audioBody}
             audioBodyCredit={audioBodyCredit}
             audioBodyDuration={audioBodyDuration}
             audioBodyText={audioBodyText}
           />
-          <Body content={body} />
+          <div className={`split-text-section-${slideIndex}`} >
+            <Body content={body} />
+          </div>
         </div>
       </div>
     </section>

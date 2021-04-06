@@ -73,7 +73,17 @@ function DesktopChapterHead({
             />
           </div>
         </div>
-
+        <style>
+        {`@media screen and (max-width:900px){
+           .section-story__chapterhead-textcol::before {
+             content: "Swipe ➠";
+             font-size: 3em;
+             margin-top: 0.25em;
+             margin-bottom: 0.75em;
+             display: block;
+           }
+        `}
+        </style>
         <div className="section-story__chapterhead-textcol">
           <h1 dangerouslySetInnerHTML={{ __html: storyTitle }}></h1>
 
