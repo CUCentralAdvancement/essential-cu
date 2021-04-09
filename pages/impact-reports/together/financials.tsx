@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 
 export default function Financials() {
@@ -292,7 +291,7 @@ export default function Financials() {
       <div className="section-fin__justtext-text">
         <h2>Audited financials statement</h2>
         <p>And if you&apos;re interested in knowing even more, read our <a href="https://giving.cu.edu/fy19-audited-financials">FY 2019 audited financials statement</a>.</p>
-        <p>Or return to our <Link href="/impact-reports/together"><a>home page</a></Link>.</p>
+        <p>Or return to our <a href="/impact-reports/together">home page</a>.</p>
       </div>
     </section>
   </div>
