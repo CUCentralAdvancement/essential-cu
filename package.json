@@ -6,21 +6,30 @@
     "dev": "node server.js -p $PORT",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
-    "capture": "node ./data/capture-data.js"
+    "capture": "node ./data/capture-data.js",
+    "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "cloudinary-core": "^2.11.3",
+    "contentful": "^8.1.8",
     "express": "^4.17.1",
     "next": "10.1.2",
     "react": "17.0.2",
     "react-cookie": "^4.0.3",
     "react-dom": "17.0.2",
     "react-gtm-module": "^2.0.11",
+    "react-player": "^2.9.0",
+    "react-responsive": "^8.2.0",
+    "styled-jsx": "^3.4.4",
     "react-share": "^4.4.0"
   },
   "engines": {
     "node": "14.x"
   },
   "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
     "babel-eslint": "^10.1.0",
     "cypress": "^6.8.0",
     "eslint": "^7.23.0",
@@ -29,6 +38,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "node-sass": "^5.0.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "typescript": "^4.2.2"
   }
 }
