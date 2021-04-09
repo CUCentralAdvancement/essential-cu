@@ -143,6 +143,24 @@ $(function() {
     triggerElement: '.js-scene-3'
   })
   .setTween( scene3Timeline )
+  .on('enter', function (event) {
+    // HOME and Story thumbnail hover/click/tab functionality >>>>>>>
+    var $storyThumbs = $( '.js-story-thumbs' );
+    if ( $storyThumbs.length ){
+      var $links = $( '.js-story-thumbs__item' );
+
+      // get natural height of each item. use to set max for mobile vertical accordion behavior
+      (function setHeight() {
+        if ( $body.width() < 600 ){
+          $links.each( function(){
+            var $this = $(this);
+            var trueHeight = $this[0].scrollHeight;
+            $this.css( 'max-height', trueHeight );
+          });
+        }
+      })();
+    }
+  })
   .addTo( controller );
 
   var scene3reverse = new ScrollMagic.Scene({
