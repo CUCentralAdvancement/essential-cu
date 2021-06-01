@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
     "capture": "node ./data/capture-data.js",
-    "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed"
+    "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed",
+    "test": "lint && cy:run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --spec 'cypress/integration/**/*'",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",

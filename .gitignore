@@ -33,7 +33,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Local SSL cert
 localhost.key
 localhost.crt
 
+# IntelliJ
 *.idea
+
+# Cypress
+cypress/videos
+cypress/screenshots
