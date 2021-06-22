@@ -3,7 +3,7 @@ name: eslint the code
 on:
   pull_request:
     branches:
-      - main
+      - master
 jobs:
   cypress-run:
     name: Lint Code
