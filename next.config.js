@@ -26,7 +26,11 @@ module.exports = {
         destination: "/r/index.html?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
         permanent: true,
       },
-
     ];
+  },
+  eslint: {
+    // Warning: Hilariously allow production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
 };
