@@ -32,7 +32,7 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/node": "^16.4.0",
+    "@types/node": "^16.4.12",
     "@types/react": "^17.0.15",
     "babel-eslint": "^10.1.0",
     "cypress": "^8.1.0",
