@@ -4,8 +4,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import StorySocial from "../../../components/impact-reports/onward/global/StorySocial";
-import { formatStoryData } from "../../../data/helpers";
-import { storyDefinition } from "../../../data/types";
+import { formatStoryData } from "../../../data/impact-reports/onward/helpers";
+import { storyDefinition } from "../../../data/impact-reports/onward/types";
 // import { baseURL, cacheTTL } from "../../../data/base";
 
 Story.propTypes = {
@@ -35,7 +35,7 @@ export default function Story({ story }) {
     storyBody = storyBody.replace(imgOpenRegex, '<div class="story-image-container"><div class="container"><img');
     storyBody = storyBody.replace(imgCloseRegex, '" /><p class="caption-text"></p></div></div>');
   }
-  
+
   // parse story.body images for alt text, copy as captions
   const imgCaptionRegex = /data-caption="([\s\S]*?)"/g;
   if (storyBody.indexOf("data-caption") > 0){
@@ -45,7 +45,7 @@ export default function Story({ story }) {
       storyBody = storyBody.replace('<p class="caption-text"></p>', '<p class="caption-text">' + el + '</p>');
     });
   }
- 
+
   return (
     <>
       <Head>
@@ -63,7 +63,7 @@ export default function Story({ story }) {
       <Layout>
 
         <div className="container story-container">
-    
+
           <section className="story-title">
             <div className="story-title-content">
               <h1>{story.title}</h1>
@@ -86,14 +86,14 @@ export default function Story({ story }) {
           <article className="story-body-container body-text-lg" dangerouslySetInnerHTML={{ __html: storyBody }} />
 
           <hr />
-          
+
           <div className="story-social-bottom">
             <h5 className="text-center">Share this story</h5>
             <StorySocial shareUrl={story.share_url} />
           </div>
 
           <section className="container story-related">
-          
+
             <h5 className="text-center">Read related stories</h5>
 
             <ul className="story-cards">
@@ -130,7 +130,7 @@ export default function Story({ story }) {
           </section>
 
         </div>
-        
+
       </Layout>
     </>
   );
@@ -149,7 +149,7 @@ export async function getStaticProps({ params }) {
   //   `${baseURL}/api/story/${slug}`
   // );
   // const rawStoryData = await res.json();
-  const rawStoryData = require(`../../../data/stories/${slug}.json`);
+  const rawStoryData = require(`./data/impact-reports/onward/stories/${slug}.json`);
 
   const story = formatStoryData(rawStoryData);
 
@@ -165,7 +165,7 @@ export async function getStaticPaths() {
   //   `${baseURL}/api/stories/paths`
   // );
   // const data = await res.json();
-  const data = require("../../../data/stories/stories.json");
+  const data = require("../../../data/impact-reports/onward/stories/stories.json");
 
   const paths = data.map((el) => ({
     params: {
