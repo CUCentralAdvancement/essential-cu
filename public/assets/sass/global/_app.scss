@@ -9,7 +9,7 @@
 // Sass utilities
 //@import 'util/util';
 
-// Global variables and styles
+// Global variables and sx
 //@import 'global';
 
 // Components
@@ -105,7 +105,7 @@
 }
 
 
-// Choose the styles that we actually want PRINTED into our stylesheets
+// Choose the sx that we actually want PRINTED into our stylesheets
 @include foundation-global-styles();
 @include foundation-typography();
 @include foundation-forms();

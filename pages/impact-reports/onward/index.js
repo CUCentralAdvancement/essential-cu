@@ -4,8 +4,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/onward/global/Layout";
 import HomeFinancials from "../../../components/impact-reports/onward/global/HomeFinancials";
-import { formatStoriesData } from "../../../data/helpers";
-import { storiesDefinition } from "../../../data/types";
+import { formatStoriesData } from "../../../data/impact-reports/onward/helpers";
+import { storiesDefinition } from "../../../data/impact-reports/onward/types";
 // import { baseURL, cacheTTL } from "../../../data/base";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
@@ -19,7 +19,7 @@ Home.propTypes = {
 export default function Home({ storyData }) {
   const [cookies] = useCookies(["STYXKEY-Campus"]);
   const [stories, setStories] = useState(storyData);
-  
+
   useEffect(() => {
     // This should be done on the server, but Heroku's internal networking makes it difficult.
     if (typeof window !== 'undefined' && window.location.host === 'essential.cu.edu' && window.location.protocol !== 'https:') {
@@ -28,7 +28,7 @@ export default function Home({ storyData }) {
 
     // default sort order by priority
     stories.sort((el1, el2) => el1.priority - el2.priority );
-    
+
     // check for campus cookie
     if ( cookies["STYXKEY-Campus"] != null){
       const campusEntryName = cookies["STYXKEY-Campus"];
@@ -94,13 +94,13 @@ export default function Home({ storyData }) {
           <section className="home-title">
             <h1>
               <span className="visually-hidden">Onward</span>
-              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,w_1255,h_516/v1614627813/ir-20/home-banner-onward_r3bfw2.png" 
-              alt="Onward" 
-              width="1255" 
+              <img src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,w_1255,h_516/v1614627813/ir-20/home-banner-onward_r3bfw2.png"
+              alt="Onward"
+              width="1255"
               height="516" />
             </h1>
             <h2 className="body-text-lg">
-              Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge. 
+              Giving is a force for good, especially when the world feels anything but. Thanks to the incredible generosity of ordinary people on every front and the resilience of those who face adversity, we are inspired by stories like the ones below. We believe you will be, too. With hope, determination and support, we believe brighter days lie ahead no matter the challenge.
             </h2>
             <img className="home-title-hrimg" src="/divider-shapes.png" width="199" height="60" alt="divider graphic" />
           </section>
@@ -141,7 +141,7 @@ export default function Home({ storyData }) {
               ))}
             </ul>
           </section>
-        
+
           <HomeFinancials />
 
           <section className="home-mission">
@@ -150,7 +150,7 @@ export default function Home({ storyData }) {
               <div className="home-mission-content">
                 <Link href="https://giving.cu.edu/about-us/university-colorado-foundation">
                   <a>
-                    <h3 className="h2">CU Foundation</h3>  
+                    <h3 className="h2">CU Foundation</h3>
                     <p className="body-text-lg">
                       We receive, manage and prudently invest private support for the benefit of the University of Colorado and support the university’s philanthropic endeavors through donor stewardship.
                     </p>
@@ -160,7 +160,7 @@ export default function Home({ storyData }) {
               <div className="home-mission-content">
                 <Link href="https://giving.cu.edu/about-us/central-cu-advancement">
                   <a>
-                    <h3 className="h2">CU Advancement</h3>  
+                    <h3 className="h2">CU Advancement</h3>
                     <p className="body-text-lg">
                       We aspire to unite donors with their passions, elevate grand ideas and prudently manage philanthropy—all to spark enduring support of a university that creates transformative impact in our communities and around the world.
                     </p>
@@ -179,7 +179,7 @@ export default function Home({ storyData }) {
 export async function getStaticProps() {
   // const res = await fetch(`${baseURL}/api/stories`);
   // const rawStoryData = await res.json();
-  const rawStoryData = require("../../../data/stories/stories.json");
+  const rawStoryData = require("../../../data/impact-reports/onward/stories/stories.json");
   const stories = formatStoriesData(rawStoryData);
 
   return {

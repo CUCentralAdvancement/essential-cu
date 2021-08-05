@@ -30,7 +30,7 @@
 }
 
 
-/// This block grid variation only applies styles to DIRECT children, which is generally the intended effect. Does NOT use flexbox.
+/// This block grid variation only applies sx to DIRECT children, which is generally the intended effect. Does NOT use flexbox.
 /// @param {Number} $number [1] - Number of items to display per row
 /// @param {String} $selector ['.column'] - The css selector to use as the child selector
 /// @param {Number} $bottom-gutter [15] - The number of pixels for the bottom margin of each item

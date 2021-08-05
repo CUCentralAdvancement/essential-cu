@@ -6,7 +6,7 @@
     "dev": "node server.js -p $PORT",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
-    "capture": "node ./data/capture-data.js",
+    "capture": "node data/impact-reports/onward/capture-data.js",
     "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed",
     "test": "lint && cy:run",
     "cy:open": "cypress open",
@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.1.0",
+    "@nivo/core": "^0.73.0",
+    "@nivo/pie": "^0.73.0",
     "cloudinary-core": "^2.11.4",
     "contentful": "^8.4.2",
     "express": "^4.17.1",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@types/node": "^16.4.0",
     "@types/react": "^17.0.15",
+    "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
     "cypress": "^8.1.0",
     "eslint": "^7.31.0",
@@ -42,7 +45,9 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
     "prop-types": "^15.7.2",
+    "tailwindcss": "^2.2.7",
     "typescript": "^4.3.5"
   }
 }

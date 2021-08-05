@@ -1,5 +1,5 @@
 import React from "react";
-import { menuLinks } from "../../../../data/menus/footerMenuLinks";
+import { menuLinks } from "../../../../data/impact-reports/onward/menus/footerMenuLinks";
 
 export default function Footer() {
   return (
