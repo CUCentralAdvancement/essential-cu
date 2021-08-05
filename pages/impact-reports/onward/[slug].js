@@ -149,7 +149,7 @@ export async function getStaticProps({ params }) {
   //   `${baseURL}/api/story/${slug}`
   // );
   // const rawStoryData = await res.json();
-  const rawStoryData = require(`./data/impact-reports/onward/stories/${slug}.json`);
+  const rawStoryData = require(`../../../data/impact-reports/onward/stories/${slug}.json`);
 
   const story = formatStoryData(rawStoryData);
 
