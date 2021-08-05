@@ -47,7 +47,3 @@
 .link-blue-underline a {
     @apply underline text-blue-500;
 }
-
-select.ais-MenuSelect-select {
-    height: '42px';
-}
