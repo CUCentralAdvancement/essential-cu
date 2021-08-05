@@ -118,7 +118,7 @@ Here are notes about the special files in the repo but will not cover the standa
       want to manupulate the data and cache the result.
 - `public` - Used for any static assets like the favicon. Files are accessed from the docroot
   so `public/image1.jpg` would be accessible at https://essential.cu.edu/image1.jpg.
-- `styles` - I'm not sure it makes sense to have this directory since styles will relate to individual
+- `sx` - I'm not sure it makes sense to have this directory since sx will relate to individual
   components and can be stored alongside the components or even added in the component files themselves as JS.
 
 ### IR20 Files
@@ -174,7 +174,7 @@ routing and state management won't be included.
 
 ### Styling
 
-Many different options for handling styles exist for React-based projects and two available ones are Theme UI
+Many different options for handling sx exist for React-based projects and two available ones are Theme UI
 and CSS Modules. Plenty of other options exist and can be used but will not be listed here.
 
 **Theme UI** - In React circles, Theme UI is used widely and allows for keeping all the styling in JS. No need

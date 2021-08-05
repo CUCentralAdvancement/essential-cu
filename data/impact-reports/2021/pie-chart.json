@@ -1,0 +1,32 @@
+[
+  {
+    "id": "denver",
+    "label": "Denver",
+    "value": 282,
+    "color": "hsl(30, 70%, 50%)"
+  },
+  {
+    "id": "uccs",
+    "label": "UCCS",
+    "value": 141,
+    "color": "hsl(323, 70%, 50%)"
+  },
+  {
+    "id": "anschutz",
+    "label": "Anschutz",
+    "value": 381,
+    "color": "hsl(211, 70%, 50%)"
+  },
+  {
+    "id": "boulder",
+    "label": "Boulder",
+    "value": 446,
+    "color": "hsl(344, 70%, 50%)"
+  },
+  {
+    "id": "system",
+    "label": "System",
+    "value": 97,
+    "color": "hsl(45, 70%, 50%)"
+  }
+]

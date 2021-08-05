@@ -30,13 +30,13 @@ $img-dir: '../../images' !default;
   }
 }
 
-/// Required for message styles
+/// Required for message sx
 @mixin square($dimensions) {
   height: $dimensions;
   width: $dimensions;
 }
 
-/// Required for message styles
+/// Required for message sx
 @mixin circle($dimensions) {
   height: $dimensions;
   width: $dimensions;
@@ -122,7 +122,7 @@ $gradients: (
 
 
 /// Gradients - Helpful mixin when many gradients are used on a site so you can call them by name.
-/// @param {String} $gradient-key - key in $gradients map to determine styles from config
+/// @param {String} $gradient-key - key in $gradients map to determine sx from config
 /// @param {String} $type [linear] - valid gradient type (linear/radial)
 /// @param {String} $position ["to right"] - the directional keyword for the gradient
 /// @param {Boolean} $legacy-support [false] - include background color where gradients aren't supported
