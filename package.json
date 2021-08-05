@@ -14,7 +14,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.0.0",
+    "@contentful/rich-text-react-renderer": "^15.1.0",
     "@nivo/core": "^0.73.0",
     "@nivo/pie": "^0.73.0",
     "cloudinary-core": "^2.11.4",
@@ -27,18 +27,18 @@
     "react-gtm-module": "^2.0.11",
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
-    "react-share": "^4.4.0",
-    "styled-jsx": "^3.4.4"
+    "styled-jsx": "^3.4.6",
+    "react-share": "^4.4.0"
   },
   "engines": {
     "node": "14.x"
   },
   "devDependencies": {
     "@types/node": "^16.4.0",
-    "@types/react": "^17.0.14",
+    "@types/react": "^17.0.15",
     "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
-    "cypress": "^7.7.0",
+    "cypress": "^8.1.0",
     "eslint": "^7.31.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
