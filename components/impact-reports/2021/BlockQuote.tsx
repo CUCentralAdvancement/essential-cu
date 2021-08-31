@@ -8,7 +8,6 @@ interface BlockQuoteProps {
 export default function BlockQuote({variant, children}: BlockQuoteProps) {
     switch (variant) {
         case '4-col--hero-middle':
-            break;
         default:
             return (
                 <>

@@ -9,10 +9,8 @@ import NumericStat from "../../../../components/impact-reports/2021/NumericStat"
 import ContentListing from "../../../../components/impact-reports/2021/ContentListing";
 import StoryLinkCards from "../../../../components/impact-reports/2021/StoryLinkCards";
 import BlockQuote from "../../../../components/impact-reports/2021/BlockQuote";
-import {First, Second, Third, Fourth} from "../../../../components/impact-reports/2021/Columns";
+import {First, Second } from "../../../../components/impact-reports/2021/Columns";
 import ImageWithCaption from "../../../../components/impact-reports/2021/ImageWithCaption";
-
-const baseURL = 'http://the-cms.lndo.site';
 
 interface StoryProps {
     story: any,
@@ -209,21 +207,21 @@ const cardsStuff = [
         title: 'Story One',
         subTitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' +
             ' tempor incididunt ut labore et dolore magna aliqua.',
-        campus: 'boulder',
+        campus: 'Boulder',
         image: {src: '/assets/ir21/circles-pic.png', alt: 'the image'}
     },
     {
         title: 'Story Two',
         subTitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' +
             ' tempor incididunt ut labore et dolore magna aliqua.',
-        campus: 'boulder',
+        campus: 'Anschutz',
         image: {src: '/assets/ir21/circles-pic.png', alt: 'the image'}
     },
     {
         title: 'Story Three',
         subTitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' +
             ' tempor incididunt ut labore et dolore magna aliqua.',
-        campus: 'boulder',
+        campus: 'Denver',
         image: {src: '/assets/ir21/circles-pic.png', alt: 'the image'}
     },
 ];

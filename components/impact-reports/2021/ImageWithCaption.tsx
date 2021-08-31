@@ -1,10 +1,10 @@
-interface ImageProps {
+interface ImageWithCaptionProps {
     src: string,
     alt: string,
     caption: string,
 }
 
-export default function ImageWithCaption({src, alt, caption}: ImageProps) {
+export default function ImageWithCaption({src, alt, caption}: ImageWithCaptionProps) {
     return (
         <figure className="rounded">
             <img src={src} alt={alt} className="" />
