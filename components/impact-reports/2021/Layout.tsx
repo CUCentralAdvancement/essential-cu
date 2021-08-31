@@ -1,10 +1,7 @@
 import Head from "next/head";
-import Link from 'next/link';
 import React, {ReactNode} from "react";
 import ButtonLink from "./ButtonLink";
 import Image from './Image';
-
-// import '../../../styles/impact-report/2021/global.css';
 
 interface LayoutProps {
     children: ReactNode,
