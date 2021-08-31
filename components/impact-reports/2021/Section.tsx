@@ -6,10 +6,10 @@ interface SectionProps {
 }
 
 export default function Section({children, type, sx} :SectionProps) {
-    const defaultStyles = 'grid grid-cols-1 mx-auto';
+    const defaultStyles = 'grid grid-cols-1 mx-auto p-4';
     switch (type) {
         case '2-col':
-            return <div className={`${defaultStyles} md:grid-cols-2 ${sx}`}>{children}</div>;
+            return <div className={`${defaultStyles} md:grid-cols-2 gap-4 ${sx}`}>{children}</div>;
         case '2-col-33':
             return <div className={`${defaultStyles} md:grid-cols-3 ${sx}`}>{children}</div>
         case '3-col':
@@ -17,6 +17,6 @@ export default function Section({children, type, sx} :SectionProps) {
         case '4-col':
             return <div className={`${defaultStyles} md:grid-cols-4 ${sx}`}>{children}</div>
         default:
-            return <div className={`${defaultStyles} md:grid-cols-1 ${sx}`}>{children}</div>;
+            return <div className={`${defaultStyles} md:grid-cols-1 gap-2 ${sx}`}>{children}</div>;
     }
 }

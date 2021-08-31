@@ -1,14 +1,14 @@
 import {ReactNode} from "react";
 
 interface TextBlockProps {
-    title: string,
+    title?: string,
     children: ReactNode,
     variant?: string,
 }
 
 export default function TextBlock({title, children, variant} :TextBlockProps) {
     let styles = {
-        container: '',
+        container: 'py-4',
         title: 'text-3xl block py-4'
     };
     switch (variant) {
@@ -20,7 +20,7 @@ export default function TextBlock({title, children, variant} :TextBlockProps) {
     }
      return (
         <div className={styles.container}>
-            <span className={styles.title}>{title}</span>
+            { title && <span className={styles.title}>{title}</span>}
             {children}
         </div>
     );
