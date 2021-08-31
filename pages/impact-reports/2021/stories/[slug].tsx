@@ -24,7 +24,6 @@ const defaultStory = {
 };
 
 export default function Story({story = defaultStory}: StoryProps) {
-    console.log(story);
     return (
         <Layout>
             <Section type="2-col">
@@ -166,7 +165,7 @@ export async function getStaticProps({params}) {
     //     `${baseURL}/api/impact-story/${slug}`
     // );
     // const storyData = await res.json();
-    const rawStoryData = require(`../../../../data/impact-reports/2021/${slug}.json`);
+    const rawStoryData = require("../../../../data/impact-reports/2021/story-one.json");
 
     return {
         props: {
@@ -190,7 +189,7 @@ export async function getStaticPaths() {
 
     return {
         paths: paths,
-        fallback: false,
+        fallback: true,
     };
 }
 
