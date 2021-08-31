@@ -20,7 +20,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
         <Layout>
             <Section type="2-col">
                 <First>
-                    <Image src="/2021/fish.jpeg" alt="The Image"/>
+                    <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
                     {/* <Image src="https://place-hold.it/840x400/#ccc" alt="The Image"/> */}
                 </First>
                 <Second>
@@ -97,7 +97,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
                     turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat
                     imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
                 </TextBlock>
-                <ButtonLink href="..." sx="pt-8">SEE REPORT</ButtonLink>
+                <ButtonLink href="...">SEE REPORT</ButtonLink>
                 <SocialLinks sx="py-8"/>
             </Section>
         </Layout>

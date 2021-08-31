@@ -8,6 +8,8 @@
     "start": "NODE_ENV=production node server.js -p $PORT",
     "capture": "node data/impact-reports/onward/capture-data.js",
     "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed",
+    "styles:2021": "tailwindcss -i ./styles/impact-report/2021/global.css  -o ./public/impact-reports/2021/tailwind.css",
+    "styles:2022": "NODE_ENV=production tailwindcss -i ./styles/impact-report/2021/global.css  -o ./public/impact-reports/2021/tailwind.css --minify",
     "test": "lint && cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run --spec 'cypress/integration/**/*'",
@@ -22,13 +24,14 @@
     "express": "^4.17.1",
     "next": "11.0.1",
     "react": "17.0.2",
+    "react-circular-progressbar": "^2.0.4",
     "react-cookie": "^4.0.3",
     "react-dom": "17.0.2",
     "react-gtm-module": "^2.0.11",
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
-    "styled-jsx": "^3.4.6",
-    "react-share": "^4.4.0"
+    "react-share": "^4.4.0",
+    "styled-jsx": "^3.4.6"
   },
   "engines": {
     "node": "14.x"

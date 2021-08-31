@@ -47,3 +47,9 @@
 .link-blue-underline a {
     @apply underline text-blue-500;
 }
+
+.block-quote::before {
+    content: '"';
+    color: purple;
+    font-size: 48px;
+}
