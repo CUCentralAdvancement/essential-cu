@@ -24,7 +24,7 @@ export default function StoryCardLinks({title, variant, cards} :StoryCardLinksPr
                     <div className="grid grid-cols-1 md:grid-cols-3">
                         {cards.map((el, index) => {
                             return (
-                                <div key={index} className="rounded-3xl bg-white flex flex-col mx-3 shadow border">
+                                <div key={index} className="rounded-3xl bg-white flex flex-col mx-3 my-3 md:my-0 shadow border">
                                     <div style={{backgroundImage: `url('/assets/ir21/circles-pic.png')`}}
                                          className="flex flex-col justify-end bg-cover h-64">
                                         <span className="bg-gold text-white text-center p-3 w-36 rounded-tr-full">{el.campus}</span>

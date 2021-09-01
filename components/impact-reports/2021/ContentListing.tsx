@@ -1,3 +1,6 @@
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+
 interface ContentListingProps {
     variant: string,
     content: any,
@@ -30,8 +33,10 @@ export default function ContentListing({variant, content, title}: ContentListing
                     <div className="grid grid-cols-1 gap-2">
                         {content.map((el, index) => {
                             return (
-                                <div key={index}>
-                                    <a href={el.href}>{el.linkText}</a> --&gt;
+                                <div key={index} className="flex flex-row items-center">
+                                    <a href={el.href}>{el.linkText}</a>
+                                    <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
+                                                     className="text-gold ml-2"/>
                                 </div>
                             );
                         })}

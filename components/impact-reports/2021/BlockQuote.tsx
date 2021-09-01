@@ -1,4 +1,6 @@
 import {ReactNode} from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faQuoteLeft} from '@fortawesome/free-solid-svg-icons';
 
 interface BlockQuoteProps {
     variant?: string,
@@ -11,13 +13,13 @@ export default function BlockQuote({variant, children}: BlockQuoteProps) {
         default:
             return (
                 <>
-                    <div style={{backgroundColor: '#2a839c'}}
-                         className="p-4 text-white rounded-tl-3xl rounded block-quote"
+                    <div style={{backgroundColor: '#29839B', borderTopLeftRadius: '4.0rem'}}
+                         className="px-6 py-3 text-white rounded block-quote"
                     >
-                        <div className="-ml-10 text-9xl" style={{color: '#ccf2fc'}}>
-                            <span className="drop-shadow">&quot;</span>
+                        <div className="-ml-10 mt-3" style={{color: '#CDF2FB'}}>
+                            <FontAwesomeIcon icon={faQuoteLeft} style={{height: '48px'}}/>
                         </div>
-                        <div className="-mt-28 pl-4">
+                        <div className="-mt-10 pl-4">
                             {children}
                         </div>
                     </div>

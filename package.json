@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@nivo/core": "^0.73.0",
     "@nivo/pie": "^0.73.0",
     "cloudinary-core": "^2.11.4",
