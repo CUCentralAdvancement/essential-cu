@@ -31,7 +31,7 @@
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
     "react-share": "^4.4.0",
-    "styled-jsx": "^3.4.6"
+    "styled-jsx": "^4.0.1"
   },
   "engines": {
     "node": "14.x"
