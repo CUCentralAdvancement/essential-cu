@@ -16,7 +16,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.2.0",
+    "@contentful/rich-text-react-renderer": "^15.3.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
@@ -40,7 +40,7 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/node": "^16.7.10",
+    "@types/node": "^16.9.0",
     "@types/react": "^17.0.19",
     "autoprefixer": "^10.3.3",
     "babel-eslint": "^10.1.0",
