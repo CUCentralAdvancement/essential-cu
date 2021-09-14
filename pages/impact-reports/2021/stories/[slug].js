@@ -28,8 +28,7 @@ const defaultStory = {
     },
 };
 
-export default function Story({story}) {
-    console.log(story);
+export default function Story({story = defaultStory}) {
     return (
         <Layout>
             <Section type="2-col">
@@ -77,14 +76,9 @@ export default function Story({story}) {
 }
 
 export async function getStaticProps({params}) {
-    let storyData = defaultStory;
     const slug = params.slug || '';
     const res = await fetch(new Request(baseURL + '/api/impact-story/' + slug));
-    // if (res !== null || typeof res !== 'undefined') {
-        storyData = await res.json();
-    // }
-
-    // console.log(storyData);
+    const storyData = await res.json();
     // const storyData = require("../../../../data/impact-reports/2021/story-one.json");
 
     return {
@@ -99,15 +93,8 @@ export async function getStaticPaths() {
     const data = await res.json();
     // const data = require("../../../../data/impact-reports/2021/story-paths.json");
 
-    const paths = data.map((el) => ({
-        params: {
-            slug: el,
-        },
-    }));
-
-    // console.log(paths);
     return {
-        paths: paths,
+        paths: data.map((el) => `/impact-reports/2021/stories/${el}`),
         fallback: true,
     };
 }
