@@ -14,13 +14,13 @@ export default function ButtonLink({ href, children, variant, external = false }
     }
     let styles = {
         container: '',
-        button: 'py-4 bg-gold text-white rounded-3xl px-8 shadow'
+        button: 'py-4 bg-gold uppercase font-bold rounded-full px-12 shadow-md'
     };
     switch (variant) {
         case 'header':
             styles = {
                 container: '',
-                button: 'py-4 bg-white rounded-full px-8 border-2 border-gold shadow'
+                button: 'py-4 bg-white uppercase font-bold rounded-full px-8 border-2 border-gold shadow-md'
             };
     }
     if (external) {

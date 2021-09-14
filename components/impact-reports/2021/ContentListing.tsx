@@ -30,11 +30,11 @@ export default function ContentListing({variant, content, title}: ContentListing
                 <div className="">
                     <span className="text-3xl font-bold block py-4">{title}</span>
                     <hr/>
-                    <div className="grid grid-cols-1 gap-2">
+                    <div className="flex flex-col w-full space-y-2">
                         {content.map((el, index) => {
                             return (
-                                <div key={index} className="flex flex-row items-center">
-                                    <a href={el.href}>{el.linkText}</a>
+                                <div key={index} className="flex flex-row justify-between flex-1">
+                                    <a href={`https://giving.cu.edu${el.path}`}>{el.title}</a>
                                     <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
                                                      className="text-gold ml-2"/>
                                 </div>

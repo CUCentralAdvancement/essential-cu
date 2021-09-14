@@ -17,6 +17,6 @@ export default function Section({children, type, sx} :SectionProps) {
         case '4-col':
             return <div className={`${defaultStyles} md:grid-cols-4 ${sx}`}>{children}</div>
         default:
-            return <div className={`${defaultStyles} md:grid-cols-1 gap-2 ${sx}`}>{children}</div>;
+            return <div className={`${defaultStyles} gap-2 ${sx}`}>{children}</div>;
     }
 }

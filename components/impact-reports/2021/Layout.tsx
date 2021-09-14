@@ -38,7 +38,7 @@ function Header() {
                 </div>
                 <div className="text-2xl pr-4">Impact Report 2021</div>
             </div>
-            <div className="flex flex-row items-center justify-around bg-gray-300 p-4 rounded-b-full shadow">
+            <div className="flex flex-row items-center justify-around bg-gray-300 p-4 rounded-b-full shadow-md">
                 <ButtonLink href="/impact-reports/2021/financials">Financials</ButtonLink>
                 <ButtonLink href="/impact-reports/2021/stories">Stories</ButtonLink>
                 <ButtonLink href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
