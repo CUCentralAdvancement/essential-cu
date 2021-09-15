@@ -1,4 +1,4 @@
-/*! tailwindcss v2.2.7 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -473,6 +473,18 @@ textarea::placeholder {
 button,
 [role="button"] {
   cursor: pointer;
+}
+
+/**
+ * Override legacy focus reset from Normalize with modern Firefox focus styles.
+ *
+ * This is actually an improvement over the new defaults in Firefox in our testing,
+ * as it triggers the better focus styles even for links, which still use a dotted
+ * outline in Firefox by default.
+ */
+
+:-moz-focusring {
+  outline: auto;
 }
 
 table {
@@ -6887,6 +6899,10 @@ hr {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-medium {
+  width: 768px;
 }
 
 .min-w-0 {
@@ -32829,12 +32845,6 @@ hr {
   text-decoration: underline;
 }
 
-.block-quote::before {
-  content: '"';
-  color: purple;
-  font-size: 48px;
-}
-
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -39084,6 +39094,10 @@ hr {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .sm\:w-medium {
+    width: 768px;
   }
 
   .sm\:min-w-0 {
@@ -70841,6 +70855,10 @@ hr {
     width: max-content;
   }
 
+  .md\:w-medium {
+    width: 768px;
+  }
+
   .md\:min-w-0 {
     min-width: 0px;
   }
@@ -102594,6 +102612,10 @@ hr {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .lg\:w-medium {
+    width: 768px;
   }
 
   .lg\:min-w-0 {
@@ -134351,6 +134373,10 @@ hr {
     width: max-content;
   }
 
+  .xl\:w-medium {
+    width: 768px;
+  }
+
   .xl\:min-w-0 {
     min-width: 0px;
   }
@@ -166104,6 +166130,10 @@ hr {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+  }
+
+  .\32xl\:w-medium {
+    width: 768px;
   }
 
   .\32xl\:min-w-0 {

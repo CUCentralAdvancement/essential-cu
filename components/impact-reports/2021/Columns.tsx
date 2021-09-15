@@ -48,7 +48,7 @@ function Column({children, sx, content = null}: ColumnProps) {
                         );
                     case 'social_links':
                         return (
-                            <SocialLinks key={comp.id} services={comp.services} />
+                            <SocialLinks key={comp.id} services={comp.services}  sx={"justify-center"}/>
                         );
                     case 'feedback_button':
                         return (

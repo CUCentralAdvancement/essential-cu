@@ -11,7 +11,7 @@ export default function ContentListing({variant, content, title}: ContentListing
     switch (variant) {
         case '4-col--hero-middle':
             return (
-                <div className="">
+                <div className="flex">
                     <span className="text-3xl font-bold block py-4">{title}</span>
                     <div className="grid grid-cols-4 gap-2">
                         {content.map((el, index) => {
@@ -27,10 +27,10 @@ export default function ContentListing({variant, content, title}: ContentListing
             );
         case  'links':
             return (
-                <div className="">
+                <div className="w-medium">
                     <span className="text-3xl font-bold block py-4">{title}</span>
                     <hr/>
-                    <div className="flex flex-col w-full space-y-2">
+                    <div className="space-y-2">
                         {content.map((el, index) => {
                             return (
                                 <div key={index} className="flex flex-row justify-between flex-1">
