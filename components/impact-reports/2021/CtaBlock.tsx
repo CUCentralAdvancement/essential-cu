@@ -5,14 +5,14 @@ interface Button {
     url: string,
 }
 
-interface TextBlockProps {
+interface CtaBlockProps {
     heading?: string,
     content: string,
     variant?: string,
     button: Button
 }
 
-export default function CtaBlock({heading, content, variant, button} :TextBlockProps) {
+export default function CtaBlock({heading, content, variant, button} :CtaBlockProps) {
     let styles = {
         container: 'py-4 flex flex-col justify-between',
         title: 'text-3xl block py-4',
