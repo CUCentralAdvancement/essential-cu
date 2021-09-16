@@ -11,6 +11,7 @@ import StoryLinkCards from "../../../../components/impact-reports/2021/StoryLink
 import BlockQuote from "../../../../components/impact-reports/2021/BlockQuote";
 import {First, Second } from "../../../../components/impact-reports/2021/Columns";
 import ImageWithCaption from "../../../../components/impact-reports/2021/ImageWithCaption";
+import {baseURL} from '../../../../data/impact-reports/2021/base';
 
 interface StoryProps {
     story: any,
@@ -18,7 +19,14 @@ interface StoryProps {
 
 const defaultStory = {
     title: 'Foo',
-    body: 'bar...'
+    body: 'bar...',
+    main_image: {
+        alt: '',
+        caption: '',
+        width: '',
+        height: '',
+        url: ''
+    },
 };
 
 export default function Story({story = defaultStory}: StoryProps) {
@@ -26,7 +34,7 @@ export default function Story({story = defaultStory}: StoryProps) {
         <Layout>
             <Section type="2-col">
                 <First>
-                    <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
+                    <Image src={story.main_image.url} alt={story.main_image.alt}/>
                 </First>
                 <Second>
                     <Hero socialLinks={true}
@@ -159,25 +167,25 @@ export default function Story({story = defaultStory}: StoryProps) {
 
 export async function getStaticProps({params}) {
     const slug = params.slug || null;
-    // const res = await fetch(
-    //     `${baseURL}/api/impact-story/${slug}`
-    // );
-    // const storyData = await res.json();
-    const rawStoryData = require("../../../../data/impact-reports/2021/story-one.json");
+    const res = await fetch(
+        `${baseURL}/api/impact-story/${slug}`
+    );
+    const storyData = await res.json();
+    // const storyData = require("../../../../data/impact-reports/2021/story-one.json");
 
     return {
         props: {
-            story: rawStoryData,
+            story: storyData,
         }
     };
 }
 
 export async function getStaticPaths() {
-    // const res = await fetch(
-    //     `${baseURL}/api/paths/impact_story`
-    // );
-    // const data = await res.json();
-    const data = require("../../../../data/impact-reports/2021/story-paths.json");
+    const res = await fetch(
+        `${baseURL}/api/paths/impact_story`
+    );
+    const data = await res.json();
+    // const data = require("../../../../data/impact-reports/2021/story-paths.json");
 
     const paths = data.map((el) => ({
         params: {
@@ -225,3 +233,7 @@ const cardsStuff = [
         image: {src: '/assets/ir21/circles-pic.png', alt: 'the image'}
     },
 ];
+
+// Old leeds-crowdfunding.html embed code.
+<div class="community-funded"></div>
+<script src="https://my.communityfunded.com/collaborate.js?initId=845&embedKey=482a5cc0-7c69-489c-8401-53768b0d95bf&type=initiative"></script>
