@@ -84,8 +84,8 @@ export async function getStaticProps({params}) {
     return {
         props: {
             story: storyData,
-            revalidate: 2,
-        }
+        },
+        revalidate: 1,
     };
 }
 
