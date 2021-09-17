@@ -1,20 +1,23 @@
-import Image from './Image';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
 
 interface SocialLinksProps {
     sx?: string,
     services?: Array<string>
 }
 
+const iconStyles = 'h-12 p-2 bg-gray-600 rounded-full transform hover:scale-110 cursor-pointer';
+
 export default function SocialLinks({sx, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
     return (
-        <>
+        <div className={"py-3"}>
             <span className="font-bold pl-1">Share:</span>
-            <div className={`flex flex-row ${sx}`}>
-                {services.includes('twitter') && <Image src="/icon-social-tw-gold2x.png" alt="Twitter logo" sx="h-12 p-1"/>}
-                {services.includes('facebook') && <Image src="/icon-social-fb-gold2x.png" alt="Facebook logo" sx="h-12 p-1"/>}
-                {services.includes('instagram') && <Image src="/icon-social-in-gold2x.png" alt="Instagram logo" sx="h-12 p-1"/>}
+            <div className={`flex flex-row text-white space-x-3 ${sx}`}>
+                {services.includes('twitter') && <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>}
+                {services.includes('facebook') && <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>}
+                {services.includes('instagram') && <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>}
             </div>
-        </>
+        </div>
 
     );
 }

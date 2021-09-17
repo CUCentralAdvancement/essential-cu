@@ -33,7 +33,7 @@ function Column({children, sx, content = null}: ColumnProps) {
                         if (comp.styles.includes('with-caption')) {
                             return <ImageWithCaption key={comp.id} src={comp.url} alt={comp.alt} caption={comp.caption}/>
                         }
-                        return <Image key={comp.id} src={comp.url} alt={comp.alt}/>
+                        return <Image key={comp.id} src={comp.url} alt={comp.alt} />
                     case 'numeric_stat':
                         return (
                             <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
@@ -52,7 +52,7 @@ function Column({children, sx, content = null}: ColumnProps) {
                         );
                     case 'feedback_button':
                         return (
-                            <FeedbackButton key={comp.id} action={comp.action} />
+                            <FeedbackButton key={comp.id} />
                         );
                     case 'content_list':
                         return (

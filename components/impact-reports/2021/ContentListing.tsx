@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 interface ContentListingProps {
     variant: string,
@@ -27,22 +27,26 @@ export default function ContentListing({variant, content, title}: ContentListing
             );
         case  'links':
             return (
-                <div className="w-medium">
-                    <span className="text-3xl font-bold block py-4">{title}</span>
-                    <hr/>
-                    <div className="space-y-2">
+                <>
+                    <div className={"flex flex-row justify-between items-baseline w-full"}>
+                        <span className="text-3xl font-bold block py-4">{title}</span>
+                        {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
+                        {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
+                    </div>
+                    <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold">
                         {content.map((el, index) => {
                             return (
-                                <div key={index} className="flex flex-row justify-between flex-1">
-                                    <a href={`https://giving.cu.edu${el.path}`}>{el.title}</a>
-                                    <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
-                                                     className="text-gold ml-2"/>
-                                </div>
+                                <a key={index} href={`https://giving.cu.edu${el.path}`}>
+                                    <div className="flex flex-row justify-between flex-1 p-2 hover:bg-muted-gold">
+                                        <span>{el.title}</span>
+                                        <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
+                                                         className="text-gold ml-2"/>
+                                    </div>
+                                </a>
                             );
                         })}
                     </div>
-                    <hr/>
-                </div>
+                </>
             );
     }
 

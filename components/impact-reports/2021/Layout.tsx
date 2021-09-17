@@ -14,13 +14,9 @@ export default function Layout({children}: LayoutProps) {
                 <link href="/assets/ir21/tailwind.css" rel="stylesheet"></link>
             </Head>
             <div className="flex flex-col min-h-screen" style={{backgroundColor: '#fffaeb'}}>
-                <div>
-                    <Header/>
-                </div>
+                <Header/>
                 <main className="flex-grow grid grid-cols-1 gap-4">{children}</main>
-                <div className="mt-4">
-                    <Footer/>
-                </div>
+                <Footer/>
             </div>
         </>
     );
@@ -29,19 +25,19 @@ export default function Layout({children}: LayoutProps) {
 
 function Header() {
     return (
-        <header className="flex flex-col pb-3">
-            <div className="flex flex-row items-center justify-between bg-white">
+        <header className="flex flex-col pb-3 shadow-md bg-gold rounded-2xl">
+            <div className="flex flex-row items-center justify-between bg-white rounded-2xl shadow-md px-3">
                 <div className="h-16 md:h-24">
                     <Image sx="h-full"
                            alt="University of Colorado - Advancement | CU Foundation - Boulder, Colorado Springs, Denver, Anschutz Medical Campus"
                            src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"/>
                 </div>
-                <div className="text-2xl pr-4">Impact Report 2021</div>
-            </div>
-            <div className="flex flex-row items-center justify-around bg-gray-300 p-4 rounded-b-full shadow-md">
-                <ButtonLink href="/impact-reports/2021/financials">Financials</ButtonLink>
-                <ButtonLink href="/impact-reports/2021/stories">Stories</ButtonLink>
-                <ButtonLink href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
+                <div className="flex flex-row items-baseline space-x-4">
+                    <ButtonLink href="/impact-reports/2021/financials">Financials</ButtonLink>
+                    <ButtonLink href="/impact-reports/2021/stories">Stories</ButtonLink>
+                    <ButtonLink href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
+                </div>
+                <div className="text-2xl pr-4">IR 2021 Logo</div>
             </div>
         </header>
     );

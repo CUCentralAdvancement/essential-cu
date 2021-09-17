@@ -31,8 +31,8 @@ const defaultStory = {
 export default function Story({story = defaultStory}) {
     return (
         <Layout>
-            <Section type="2-col">
-                <First>
+            <Section type="2-col" sx={"max-w-screen-xl"}>
+                <First sx={""}>
                     <Image src={story.main_image.url} alt={story.main_image.alt}/>
                 </First>
                 <Second>
@@ -45,17 +45,18 @@ export default function Story({story = defaultStory}) {
 
             {Object.keys(story.layout.sections).map((section, ind) => {
                 let cont = null;
+                const containerStyles = story.layout.sections[section].styles !== '' ? story.layout.sections[section].styles : 'max-w-screen-md p-4';
                 switch (story.layout.sections[section].type) {
                     case 'one-column':
                         cont = (
-                            <Section key={ind} type="1-col" sx={story.layout.sections[section].styles}>
+                            <Section key={ind} type="1-col" sx={containerStyles}>
                                 <First content={story.layout.sections[section].content}/>
                             </Section>
                         );
                         break;
                     case 'two-columns':
                         cont = (
-                            <Section key={ind} type="2-col" sx={story.layout.sections[section].styles}>
+                            <Section key={ind} type="2-col" sx={containerStyles}>
                                 <First content={story.layout.sections[section].content.first}/>
                                 <Second content={story.layout.sections[section].content.second}/>
                             </Section>
