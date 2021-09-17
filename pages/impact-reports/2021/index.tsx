@@ -30,7 +30,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
                 </Second>
             </Section>
             <Section type="1-col" sx="md:max-w-screen-md p-4">
-                <TextBlock title="Here are qualitative facts about your gifts" variant="centered">
+                <TextBlock variant="centered">
                     nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor
                     vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse
                     platea dictumst
@@ -57,7 +57,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
             </Section>
             <Section type="2-col" sx="container">
                 <First sx="p-2">
-                    <TextBlock title="Here are qualitative facts about your gifts">
+                    <TextBlock>
                         facilisi morbi tempus iaculis urna id volutpat lacus laoreet non curabitur gravida
                         arcu ac tortor dignissim convallis aenean et tortor
                     </TextBlock>
@@ -71,7 +71,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
                     <Image src="https://place-hold.it/640x400/#ccc" alt="The Image"/>
                 </First>
                 <Second sx="p-2 order-1 md:order-2">
-                    <TextBlock title="Here are qualitative facts about your gifts">
+                    <TextBlock>
                         nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit
                         scelerisque mauris pellentesque pulvinar pellentesque habitant morbi
                     </TextBlock>
@@ -79,7 +79,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
             </Section>
             <Section type="2-col" sx="container px-4">
                 <First sx="md:p-2">
-                    <TextBlock title="Our Stats">
+                    <TextBlock>
                         et malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi leo
                         urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed
                         adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum posuere
@@ -92,7 +92,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
                 </Second>
             </Section>
             <Section type="1-col" sx="place-items-center md:max-w-screen-md px-4">
-                <TextBlock title="Find out more about the numbers">
+                <TextBlock>
                     pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus
                     turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat
                     imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
