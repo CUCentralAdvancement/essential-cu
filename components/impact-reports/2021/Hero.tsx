@@ -16,9 +16,9 @@ export default function Hero({ socialLinks, variant, title, detail }: HeroProps)
     switch (variant) {
         case 'centered':
             styles = {
-                container: 'flex flex-col h-full justify-center',
+                container: 'flex flex-col h-full justify-center w-3/4',
                 title: 'text-4xl',
-                detail: '',
+                detail: 'py-3',
             };
     }
     return (
