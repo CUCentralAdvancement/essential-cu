@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-interface Cards {
-    title: string,
-    description: string,
-    image?: any,
-    campus: string,
-}
+// interface Cards {
+//     title: string,
+//     description: string,
+//     image?: any,
+//     campus: string,
+// }
 
 interface StoryCardLinksProps {
     title?: string,

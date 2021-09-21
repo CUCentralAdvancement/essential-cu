@@ -15,7 +15,7 @@ export default function Layout({children}: LayoutProps) {
             </Head>
             <div className="flex flex-col min-h-screen" style={{backgroundColor: '#fffaeb'}}>
                 <Header/>
-                <main className="flex-grow grid grid-cols-1 gap-4">{children}</main>
+                <main className="flex-grow grid grid-cols-1 gap-4 pb-4">{children}</main>
                 <Footer/>
             </div>
         </>
