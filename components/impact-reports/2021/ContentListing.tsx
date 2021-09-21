@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight, faTimes} from '@fortawesome/free-solid-svg-icons';
-import {useWindowSize} from 'usehooks-ts'
-import {breakpoints} from '../../../data/impact-reports/2021/base'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+// import {useWindowSize} from 'usehooks-ts'
+// import {breakpoints} from '../../../data/impact-reports/2021/base'
 
 interface ContentListingProps {
     variant: string,
@@ -10,7 +10,7 @@ interface ContentListingProps {
 }
 
 export default function ContentListing({variant, content, title}: ContentListingProps) {
-    const {width} = useWindowSize();
+    // const {width} = useWindowSize();
 
     switch (variant) {
         case '4-col--hero-middle':
@@ -32,8 +32,7 @@ export default function ContentListing({variant, content, title}: ContentListing
         case  'links':
             return (
                 <>
-                    <div className={"flex flex-row justify-between items-baseline"}
-                          style={{width: width > breakpoints.medium ? 768 : (width - 18)}}>
+                    <div className={"flex flex-row justify-between items-baseline w-full"}>
                         <span className="text-3xl font-bold block py-4">{title}</span>
                         {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
                         {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
