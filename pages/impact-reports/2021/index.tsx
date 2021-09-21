@@ -7,15 +7,13 @@ import SocialLinks from "../../../components/impact-reports/2021/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/2021/ButtonLink";
 import NumericStat from "../../../components/impact-reports/2021/NumericStat";
 import ContentListing from "../../../components/impact-reports/2021/ContentListing";
-import PieChart from "../../../components/impact-reports/2021/PieChart";
 import {First, Second, Third, Fourth} from "../../../components/impact-reports/2021/Columns";
 
 interface HomepageProps {
     impactStoriesContent: any,
-    pieChartData?: any,
 }
 
-export default function Index({impactStoriesContent, pieChartData}: HomepageProps) {
+export default function Index({impactStoriesContent}: HomepageProps) {
     return (
         <Layout>
             <Section type="2-col">
@@ -87,8 +85,7 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
                     </TextBlock>
                 </First>
                 <Second sx="h-64 md:h-72">
-                    {/* <Image src="https://place-hold.it/720x400/#ccc" alt="the alt text"/> */}
-                    <PieChart data={pieChartData} />
+                     <Image src="https://place-hold.it/720x400/#ccc" alt="the alt text"/>
                 </Second>
             </Section>
             <Section type="1-col" sx="place-items-center md:max-w-screen-md px-4">
@@ -106,11 +103,9 @@ export default function Index({impactStoriesContent, pieChartData}: HomepageProp
 
 export function getStaticProps() {
     const rawStoryData = require('../../../data/impact-reports/2021/stories.json');
-    const pieChartData = require('../../../data/impact-reports/2021/pie-chart.json');
     return {
         props: {
             impactStoriesContent: rawStoryData,
-            pieChartData
         }
     };
 }

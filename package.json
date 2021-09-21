@@ -13,7 +13,7 @@
     "test": "lint && cy:run",
     "cy:open": "cypress open",
     "cy:run": "cypress run --spec 'cypress/integration/**/*'",
-    "lint": "eslint ."
+    "lint:2021": "eslint components/impact-reports/2021/* && eslint pages/impact-reports/2021/*"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.3.3",
