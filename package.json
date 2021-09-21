@@ -21,6 +21,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+    "@headlessui/react": "^1.4.1",
     "@nivo/core": "^0.73.0",
     "@nivo/pie": "^0.73.0",
     "cloudinary-core": "^2.11.4",
@@ -35,7 +36,8 @@
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
     "react-share": "^4.4.0",
-    "styled-jsx": "^4.0.1"
+    "styled-jsx": "^4.0.1",
+    "usehooks-ts": "^1.0.1"
   },
   "engines": {
     "node": "14.x"
