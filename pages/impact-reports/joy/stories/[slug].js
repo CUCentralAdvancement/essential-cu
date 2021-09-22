@@ -1,11 +1,11 @@
-import Layout from "../../../../components/impact-reports/2021/Layout";
-import Section from "../../../../components/impact-reports/2021/Section";
-import Image from "../../../../components/impact-reports/2021/Image";
-import Hero from "../../../../components/impact-reports/2021/Hero";
-import ButtonLink from "../../../../components/impact-reports/2021/ButtonLink";
-import StoryLinkCards from "../../../../components/impact-reports/2021/StoryLinkCards";
-import {First, Second} from "../../../../components/impact-reports/2021/Columns";
-import {baseURL} from '../../../../data/impact-reports/2021/base';
+import Layout from "../../../../components/impact-reports/joy/Layout";
+import Section from "../../../../components/impact-reports/joy/Section";
+import Image from "../../../../components/impact-reports/joy/Image";
+import Hero from "../../../../components/impact-reports/joy/Hero";
+import ButtonLink from "../../../../components/impact-reports/joy/ButtonLink";
+import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkCards";
+import {First, Second} from "../../../../components/impact-reports/joy/Columns";
+import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 
 Story.propTypes = {
@@ -99,7 +99,7 @@ export async function getStaticPaths() {
   // const data = require("../../../../data/impact-reports/2021/story-paths.json");
 
   return {
-    paths: data.map((el) => `/impact-reports/2021/stories/${el}`),
+    paths: data.map((el) => `/impact-reports/joy/stories/${el}`),
     fallback: true,
   };
 }

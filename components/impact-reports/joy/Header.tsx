@@ -1,7 +1,7 @@
 import {useWindowSize} from 'usehooks-ts'
 import Image from "./Image";
 import ButtonLink from "./ButtonLink";
-import {breakpoints} from '../../../data/impact-reports/2021/base'
+import {breakpoints} from '../../../data/impact-reports/joy/base'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 // import {useState} from "react";
