@@ -32,6 +32,7 @@ Story.defaultProps = {
 };
 
 export default function Story({story}) {
+  console.log(story);
   return (
     <Layout>
       <Section type="2-col" sx={"max-w-screen-xl"}>
@@ -79,7 +80,7 @@ export default function Story({story}) {
   );
 }
 
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
   const slug = params.slug || '';
   const res = await fetch(new Request(baseURL + '/api/impact-story/' + slug));
   const storyData = await res.json();
@@ -89,17 +90,16 @@ export async function getStaticProps({params}) {
     props: {
       story: storyData,
     },
-    revalidate: 1,
   };
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${baseURL}/api/paths/impact_story`);
-  const data = await res.json();
-  // const data = require("../../../../data/impact-reports/2021/story-paths.json");
-
-  return {
-    paths: data.map((el) => `/impact-reports/2021/stories/${el}`),
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   const res = await fetch(`${baseURL}/api/paths/impact_story`);
+//   const data = await res.json();
+//   // const data = require("../../../../data/impact-reports/2021/story-paths.json");
+//
+//   return {
+//     paths: data.map((el) => `/impact-reports/joy/stories/${el}`),
+//     fallback: true,
+//   };
+// }

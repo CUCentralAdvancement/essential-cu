@@ -43,3 +43,6 @@ localhost.crt
 # Cypress
 cypress/videos
 cypress/screenshots
+
+# Local env vars.
+.env
