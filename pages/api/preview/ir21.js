@@ -1,4 +1,4 @@
-import {baseURL} from "../../../data/impact-reports/2021/base";
+import {baseURL} from "../../../data/impact-reports/joy/base";
 
 // Next.js API preview mode support: https://nextjs.org/docs/advanced-features/preview-mode
 export default async (req, res) => {

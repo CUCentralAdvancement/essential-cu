@@ -1,13 +1,13 @@
-import Layout from "../../../components/impact-reports/2021/Layout";
-import Section from "../../../components/impact-reports/2021/Section";
-import Image from "../../../components/impact-reports/2021/Image";
-import Hero from "../../../components/impact-reports/2021/Hero";
-import TextBlock from "../../../components/impact-reports/2021/TextBlock";
-import SocialLinks from "../../../components/impact-reports/2021/SocialLinks";
-import ButtonLink from "../../../components/impact-reports/2021/ButtonLink";
-import NumericStat from "../../../components/impact-reports/2021/NumericStat";
-import ContentListing from "../../../components/impact-reports/2021/ContentListing";
-import {First, Second, Third, Fourth} from "../../../components/impact-reports/2021/Columns";
+import Layout from "../../../components/impact-reports/joy/Layout";
+import Section from "../../../components/impact-reports/joy/Section";
+import Image from "../../../components/impact-reports/joy/Image";
+import Hero from "../../../components/impact-reports/joy/Hero";
+import TextBlock from "../../../components/impact-reports/joy/TextBlock";
+import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
+import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
+import NumericStat from "../../../components/impact-reports/joy/NumericStat";
+import ContentListing from "../../../components/impact-reports/joy/ContentListing";
+import {First, Second, Third, Fourth} from "../../../components/impact-reports/joy/Columns";
 
 interface HomepageProps {
     impactStoriesContent: any,
@@ -102,7 +102,7 @@ export default function Index({impactStoriesContent}: HomepageProps) {
 }
 
 export function getStaticProps() {
-    const rawStoryData = require('../../../data/impact-reports/2021/stories.json');
+    const rawStoryData = require('../../../data/impact-reports/joy/stories.json');
     return {
         props: {
             impactStoriesContent: rawStoryData,
