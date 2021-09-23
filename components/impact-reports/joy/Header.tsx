@@ -1,15 +1,11 @@
-import {useWindowSize} from 'usehooks-ts'
 import Link from 'next/link';
 import Image from "./Image";
 import ButtonLink from "./ButtonLink";
-import {breakpoints} from '../../../data/impact-reports/joy/base'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {Menu, Transition} from '@headlessui/react'
 
 export default function Header() {
-  const {width} = useWindowSize();
-
   return (
     <Menu as={"div"} className={"relative"}>
       {({open}) => (
