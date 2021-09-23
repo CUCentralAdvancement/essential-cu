@@ -9,11 +9,11 @@ import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import ContentListing from "../../../components/impact-reports/joy/ContentListing";
 import {First, Second, Third, Fourth} from "../../../components/impact-reports/joy/Columns";
 
-interface HomepageProps {
+interface FinancialsProps {
   impactStoriesContent: any,
 }
 
-export default function Index({impactStoriesContent}: HomepageProps) {
+export default function Financials({impactStoriesContent}: FinancialsProps) {
   return (
     <Layout>
       <Section type="2-col-flex">
@@ -22,7 +22,7 @@ export default function Index({impactStoriesContent}: HomepageProps) {
           {/* <Image src="https://place-hold.it/840x400/#ccc" alt="The Image"/> */}
         </First>
         <Second sx={"w-3/7"}>
-          <Hero title="University of Colorado Impact Report 2021"
+          <Hero title="Our Story By The Numbers"
                 variant="homepage">
           </Hero>
         </Second>

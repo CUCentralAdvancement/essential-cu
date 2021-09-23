@@ -1,32 +1,39 @@
-import SocialLinks from "./SocialLinks"
+import {ReactNode} from "react";
 
 interface HeroProps {
-    socialLinks: boolean,
-    variant: string,
-    title: string,
-    detail?: string,
+  variant?: string,
+  title: string,
+  children?: ReactNode,
 }
 
-export default function Hero({ socialLinks, variant, title, detail }: HeroProps) {
-    let styles = {
-        container: 'flex flex-col items-center justify-between',
-        title: 'text-2xl',
-        detail: '',
-    };
-    switch (variant) {
-        case 'centered':
-            styles = {
-                container: 'flex flex-col h-full justify-center md:w-3/4',
-                title: 'text-4xl',
-                detail: 'py-3',
-            };
-    }
-    return (
-        <div className={styles.container}>
-            <span className={styles.title}>{title}</span>
-            <span className={styles.detail} dangerouslySetInnerHTML={{ __html: detail }} />
-            {socialLinks && <SocialLinks/>}
+export default function Hero({children, variant, title}: HeroProps) {
+  switch (variant) {
+    case 'story':
+      return (
+        <div className={"flex flex-col h-full justify-center md:w-3/4"}>
+          <span className={"text-4xl"}>{title}</span>
+          <div className={"py-3"}>
+            {children}
+          </div>
         </div>
-
-    );
+      );
+    case 'homepage':
+      return (
+        <div className={"flex flex-col h-full justify-center md:w-3/4"}>
+          <span className={"text-5xl"}>{title}</span>
+          <div className={"py-3"}>
+            {children}
+          </div>
+        </div>
+      );
+    case 'centered':
+      return (
+        <div className={"flex flex-col text-center"}>
+          <span className={"text-4xl"}>{title}</span>
+          <div className={"py-4"}>
+            {children}
+          </div>
+        </div>
+      );
+  }
 }

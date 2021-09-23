@@ -11,6 +11,11 @@ interface ButtonLinkProps {
 }
 
 export default function ButtonLink({href, children, variant}: ButtonLinkProps) {
+  // If the link isn't relative, then it is an external link.
+  if (href.charAt(0) !== '/') {
+    variant = 'external';
+  }
+
   switch (variant) {
     case 'external':
       return (

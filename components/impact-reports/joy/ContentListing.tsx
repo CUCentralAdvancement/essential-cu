@@ -15,8 +15,8 @@ export default function ContentListing({variant, content, title}: ContentListing
     switch (variant) {
         case '4-col--hero-middle':
             return (
-                <div className="flex">
-                    <span className="text-3xl font-bold block py-4">{title}</span>
+                <div className="flex flex-col">
+                    <h2 className="block py-4">{title}</h2>
                     <div className="grid grid-cols-4 gap-2">
                         {content.map((el, index) => {
                             return (

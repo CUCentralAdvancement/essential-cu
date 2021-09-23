@@ -7,6 +7,8 @@ import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkC
 import {First, Second} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
+import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
+import TextBlock from "../../../../components/impact-reports/joy/TextBlock";
 
 Story.propTypes = {
   story: PropTypes.object,
@@ -39,10 +41,13 @@ export default function Story({story}) {
           <Image src={story.main_image.url} alt={story.main_image.alt}/>
         </First>
         <Second>
-          <Hero socialLinks={true}
-                title={story.title}
-                detail={story.body}
-                variant="centered"/>
+          <Hero title={story.title}
+                variant="story">
+            <TextBlock>
+              <div dangerouslySetInnerHTML={{ __html: story.body }} />
+            </TextBlock>
+            <SocialLinks/>
+          </Hero>
         </Second>
       </Section>
 
