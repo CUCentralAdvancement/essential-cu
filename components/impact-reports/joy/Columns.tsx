@@ -59,6 +59,7 @@ function Column({children, sx, content = null}: ColumnProps) {
                             <ContentListing title={comp.heading}
                                             variant="links"
                                             key={comp.id}
+                                            sx={comp.styles}
                                             content={comp.content}/>
                         );
                     case 'text_block':

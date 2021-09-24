@@ -47,3 +47,13 @@
 .link-blue-underline a {
     @apply underline text-blue-500;
 }
+
+.related-stories {
+    width: 90vw;
+}
+
+@media screen and (min-width: 772px) {
+    .related-stories {
+        width: 768px;
+    }
+}

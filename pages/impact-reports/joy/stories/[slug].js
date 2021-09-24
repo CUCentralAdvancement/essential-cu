@@ -76,6 +76,8 @@ export default function Story({story}) {
       })}
       <Section type="1-col" sx="md:max-w-screen-xl">
         <StoryLinkCards title="Read More:" cards={story.related_stories}/>
+      </Section>
+      <Section type="1-col" sx="md:max-w-screen-md">
         <div className="text-center pt-4">
           <ButtonLink href="#foo">See Past Stories</ButtonLink>
         </div>
@@ -86,7 +88,7 @@ export default function Story({story}) {
 
 export async function getStaticProps({params}) {
   const slug = params.slug || '';
-  const res = await fetch(new Request(baseURL + '/api/impact-story/' + slug));
+  const res = await fetch(new Request(baseURL + '/api/stories/' + slug));
   const storyData = await res.json();
   // const storyData = require("../../../../data/impact-reports/2021/story-one.json");
 
