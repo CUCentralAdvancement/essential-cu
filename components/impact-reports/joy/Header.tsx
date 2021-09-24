@@ -11,30 +11,29 @@ export default function Header() {
       {({open}) => (
         <>
           <header className="flex flex-col pb-3 shadow-md bg-gold rounded-2xl">
-            <div className="flex flex-row items-center justify-between bg-white rounded-2xl shadow-md px-3">
+            <nav className="flex flex-row items-center justify-between bg-white rounded-2xl shadow-md px-3">
               <div className="h-16 md:h-24">
                 <Link href={"/impact-reports/joy"}>
                   <a>
                     <Image sx="h-full"
-                           alt="University of Colorado - Advancement | CU Foundation - Boulder, Colorado Springs, Denver, Anschutz Medical Campus"
+                           alt=""
                            src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"/>
                   </a>
                 </Link>
               </div>
               <div className="hidden lg:flex flex-row items-baseline space-x-4">
-                <ButtonLink href="/impact-reports/joy/financials">Financials</ButtonLink>
-                <ButtonLink href="/impact-reports/joy#stories">Stories</ButtonLink>
-                <ButtonLink href="https://giving.cu.edu">Giving At CU</ButtonLink>
+                <ButtonLink label="View the financials page" href="/impact-reports/joy/financials">Financials</ButtonLink>
+                <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
+                <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu">Giving At CU</ButtonLink>
               </div>
               <div className="text-2xl pr-4">IR 2021 Logo</div>
               <div className={"pr-4 block lg:hidden"}>
-                <Menu.Button className={""}>
+                <Menu.Button>
                   <FontAwesomeIcon icon={open ? faTimes : faBars}
-                                   className={""}
                                    style={{height: '36px'}}/>
                 </Menu.Button>
               </div>
-            </div>
+            </nav>
           </header>
           <Transition show={open}
                       enter={"transform transition duration-100 ease-in"}
