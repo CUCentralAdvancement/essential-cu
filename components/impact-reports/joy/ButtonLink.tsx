@@ -5,7 +5,7 @@ import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 
 interface ButtonLinkProps {
   href: string,
-  label: string,
+  label?: string,
   children: ReactNode,
   variant?: string,
   external?: boolean,
