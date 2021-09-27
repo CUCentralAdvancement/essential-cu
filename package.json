@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.6",
-    "@types/react": "^17.0.20",
+    "@types/react": "^17.0.24",
     "autoprefixer": "^10.3.5",
     "babel-eslint": "^10.1.0",
     "cypress": "^8.4.1",
