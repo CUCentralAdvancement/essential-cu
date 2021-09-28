@@ -5,23 +5,33 @@ import Hero from "../../../components/impact-reports/joy/Hero";
 import TextBlock from "../../../components/impact-reports/joy/TextBlock";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
-import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import ContentListing from "../../../components/impact-reports/joy/ContentListing";
-import {First, Second, Third, Fourth} from "../../../components/impact-reports/joy/Columns";
+import {First, Second} from "../../../components/impact-reports/joy/Columns";
+import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 
 interface FinancialsProps {
   impactStoriesContent: any,
 }
 
+// Sample data
+const data = [
+  {name: 'Geeksforgeeks', students: 400},
+  {name: 'Geeksforgeeks', teachers: 600},
+  {name: 'Technical scripter', students: 700},
+  {name: 'Technical scripter', teachers: 400},
+  {name: 'Geek-i-knack', students: 200},
+  {name: 'Geek-i-knack', teacher: 300},
+];
+
 export default function Financials({impactStoriesContent}: FinancialsProps) {
   return (
     <Layout>
       <Section type="2-col-flex">
-        <First sx={"w-4/7"}>
+        <First sx={"w-1/2"}>
           <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
           {/* <Image src="https://place-hold.it/840x400/#ccc" alt="The Image"/> */}
         </First>
-        <Second sx={"w-3/7"}>
+        <Second sx={"w-1/2"}>
           <Hero title="Our Story By The Numbers"
                 variant="homepage">
           </Hero>
@@ -37,19 +47,14 @@ export default function Financials({impactStoriesContent}: FinancialsProps) {
           </TextBlock>
         </Hero>
       </Section>
-      <Section type="4-col" sx="container">
-        <First>
-          <NumericStat variant="icon-left" number={102} label="type something"/>
-        </First>
-        <Second>
-          <NumericStat variant="icon-left" number={354} label="type something"/>
-        </Second>
-        <Third>
-          <NumericStat variant="icon-left" number={521} label="type something"/>
-        </Third>
-        <Fourth>
-          <NumericStat variant="icon-left" number={974} label="type something"/>
-        </Fourth>
+      <Section type="1-col" sx="md:max-w-screen-xl p-4">
+        <BarChart width={1200} height={800} data={data}>
+          <Bar dataKey="students" fill="#cfb87c" />
+          <Bar dataKey="teachers" fill="#000" />
+          {/*<CartesianGrid stroke="#ccc" />*/}
+          <XAxis dataKey="name" />
+          <YAxis />
+        </BarChart>
       </Section>
       <span id={"stories"} />
       <Section type="1-col" sx="px-4">
