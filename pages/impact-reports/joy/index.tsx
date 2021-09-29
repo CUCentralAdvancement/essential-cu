@@ -6,7 +6,7 @@ import TextBlock from "../../../components/impact-reports/joy/TextBlock";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
-import ContentListing from "../../../components/impact-reports/joy/ContentListing";
+// import ContentListing from "../../../components/impact-reports/joy/ContentListing";
 import {First, Second} from "../../../components/impact-reports/joy/Columns";
 
 interface HomepageProps {
