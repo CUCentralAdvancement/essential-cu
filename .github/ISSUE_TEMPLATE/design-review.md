@@ -12,7 +12,7 @@ page, a component, or some combination of the two.
 **Design Changes**
 
 - [ ] [My first change](#first-change) - potential summary
-- [ ] [My second change](#first-change) - potential summary
+- [ ] [My second change](#second-change) - potential summary
 
 **Explanations**
 
