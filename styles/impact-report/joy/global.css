@@ -44,8 +44,8 @@
     }
 }
 
-.link-blue-underline a {
-    @apply underline text-blue-500;
+.link-underline-italic {
+    @apply underline italic
 }
 
 .related-stories {

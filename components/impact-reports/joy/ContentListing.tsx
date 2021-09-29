@@ -17,7 +17,7 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
     case '4-col--hero-middle':
       return (
         <div className={"flex flex-col " + sx}>
-          <h2 className="block py-4">{title}</h2>
+          <h2 className="block py-4 text-4xl">{title}</h2>
           <div className="grid grid-cols-4 gap-2">
             {content.map((el, index) => {
               return (
@@ -38,7 +38,7 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
             {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
             {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
           </div>
-          <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold">
+          <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold link-underline-italic">
             {content.map((el, index) => {
               return (
                 <a key={index} href={`https://giving.cu.edu${el.path}`}>

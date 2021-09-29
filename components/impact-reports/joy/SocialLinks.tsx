@@ -12,7 +12,7 @@ export default function SocialLinks({sx, services = ['twitter', 'facebook', 'ins
     return (
         <div className={"py-3"}>
             <span className="font-bold pl-1">Share:</span>
-            <div className={`flex flex-row text-white space-x-3 ${sx}`}>
+            <div className={`flex flex-row space-x-3 ${sx}`} style={{color: '#fffaeb'}}>
                 {services.includes('twitter') && <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>}
                 {services.includes('facebook') && <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>}
                 {services.includes('instagram') && <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>}

@@ -6,8 +6,8 @@ import TextBlock from "../../../components/impact-reports/joy/TextBlock";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
-import ContentListing from "../../../components/impact-reports/joy/ContentListing";
-import {First, Second, Third, Fourth} from "../../../components/impact-reports/joy/Columns";
+// import ContentListing from "../../../components/impact-reports/joy/ContentListing";
+import {First, Second} from "../../../components/impact-reports/joy/Columns";
 
 interface HomepageProps {
   impactStoriesContent: any,
@@ -37,26 +37,24 @@ export default function Index({impactStoriesContent}: HomepageProps) {
           </TextBlock>
         </Hero>
       </Section>
-      <Section type="4-col" sx="container">
-        <First>
+      <div className={"flex flex-col md:flex-row md:justify-around items-center space-y-8 md:space-y-0 mx-4" +
+      " md:mx-32"}>
           <NumericStat variant="icon-left" number={102} label="type something"/>
-        </First>
-        <Second>
           <NumericStat variant="icon-left" number={354} label="type something"/>
-        </Second>
-        <Third>
           <NumericStat variant="icon-left" number={521} label="type something"/>
-        </Third>
-        <Fourth>
           <NumericStat variant="icon-left" number={974} label="type something"/>
-        </Fourth>
-      </Section>
+      </div>
       <span id={"stories"} />
-      <Section type="1-col" sx="px-4">
-        <ContentListing title="Impact Stories: your gifts made a difference"
-                        variant="4-col--hero-middle"
-                        content={impactStoriesContent}/>
-      </Section>
+      <div className={"md:max-w-screen-lg mx-auto"}>
+        <h2>Impact stories: your gifts made a difference</h2>
+        <div className={"grid "}>
+          {impactStoriesContent.map((story) => {
+            return (
+              <div key={story.id}>{story.title}</div>
+            )
+          })}
+        </div>
+      </div>
       <Section type="2-col" sx="container">
         <First sx="p-2">
           <TextBlock>

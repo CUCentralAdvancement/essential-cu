@@ -2,7 +2,7 @@ import Layout from "../../../../components/impact-reports/joy/Layout";
 import Section from "../../../../components/impact-reports/joy/Section";
 import Image from "../../../../components/impact-reports/joy/Image";
 import Hero from "../../../../components/impact-reports/joy/Hero";
-import ButtonLink from "../../../../components/impact-reports/joy/ButtonLink";
+// import ButtonLink from "../../../../components/impact-reports/joy/ButtonLink";
 import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkCards";
 import {First, Second} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
@@ -77,11 +77,11 @@ export default function Story({story}) {
       <Section type="1-col" sx="md:max-w-screen-xl">
         <StoryLinkCards title="Read More:" cards={story.related_stories}/>
       </Section>
-      <Section type="1-col" sx="md:max-w-screen-md">
-        <div className="text-center pt-4">
-          <ButtonLink href="#foo">See Past Stories</ButtonLink>
-        </div>
-      </Section>
+      {/*<Section type="1-col" sx="md:max-w-screen-md">*/}
+      {/*  <div className="text-center pt-4">*/}
+      {/*    <ButtonLink href="#foo">See Past Stories</ButtonLink>*/}
+      {/*  </div>*/}
+      {/*</Section>*/}
     </Layout>
   );
 }

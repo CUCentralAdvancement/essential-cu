@@ -32889,10 +32889,9 @@ hr {
   content: none;
 }
 
-.link-blue-underline a {
-  --tw-text-opacity: 1;
-  color: rgba(59, 130, 246, var(--tw-text-opacity));
-  text-decoration: underline;
+.link-underline-italic {
+  font-style: italic;
+  text-decoration: underline
 }
 
 .related-stories {
