@@ -7,7 +7,7 @@ import {Menu, Transition} from '@headlessui/react'
 
 export default function Header() {
   return (
-    <Menu as={"div"} className={"relative sticky top-0 z-10"}>
+    <Menu as={"div"} className={"relative sticky top-0 z-20"}>
       {({open}) => (
         <>
           <header className="flex flex-col pb-3 shadow-md bg-gold rounded-2xl">
