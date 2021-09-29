@@ -1,5 +1,7 @@
 import {CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faImage} from '@fortawesome/free-solid-svg-icons';
 
 interface NumericStatProps {
   label: string,
@@ -11,12 +13,14 @@ export default function NumericStat({label, variant, number}: NumericStatProps) 
   switch (variant) {
     case 'icon-left':
       return (
-        <figure className="text-center flex flex-col items-center">
-          <div className={"flex flex-row justify-around w-full"}>
-            <span>dd</span>
-            <span>dd</span>
-          </div>
-          <figcaption className="text-4xl pt-4">{label}</figcaption>
+        <figure className="flex flex-row items-center space-x-3">
+            <span className={"p-2 rounded-full bg-gray-500"}>
+                   <FontAwesomeIcon icon={faImage} style={{height: '36px'}}/>
+            </span>
+          <figcaption className="flex flex-col">
+            <span className={"text-4xl"}>{number}</span>
+            <span>{label}</span>
+          </figcaption>
         </figure>
       );
     default:

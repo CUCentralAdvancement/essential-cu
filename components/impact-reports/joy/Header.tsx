@@ -7,11 +7,11 @@ import {Menu, Transition} from '@headlessui/react'
 
 export default function Header() {
   return (
-    <Menu as={"div"} className={"relative"}>
+    <Menu as={"div"} className={"relative sticky top-0 z-10"}>
       {({open}) => (
         <>
           <header className="flex flex-col pb-3 shadow-md bg-gold rounded-2xl">
-            <nav className="flex flex-row items-center justify-between bg-white rounded-2xl shadow-md px-3">
+            <nav className="flex flex-row items-center justify-between bg-white rounded-2xl px-3">
               <div className="h-16 md:h-24">
                 <Link href={"/impact-reports/joy"}>
                   <a>

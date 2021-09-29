@@ -77,11 +77,11 @@ export default function Story({story}) {
       <Section type="1-col" sx="md:max-w-screen-xl">
         <StoryLinkCards title="Read More:" cards={story.related_stories}/>
       </Section>
-      <Section type="1-col" sx="md:max-w-screen-md">
-        <div className="text-center pt-4">
-          <ButtonLink href="#foo">See Past Stories</ButtonLink>
-        </div>
-      </Section>
+      {/*<Section type="1-col" sx="md:max-w-screen-md">*/}
+      {/*  <div className="text-center pt-4">*/}
+      {/*    <ButtonLink href="#foo">See Past Stories</ButtonLink>*/}
+      {/*  </div>*/}
+      {/*</Section>*/}
     </Layout>
   );
 }
