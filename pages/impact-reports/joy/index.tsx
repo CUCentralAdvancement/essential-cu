@@ -12,7 +12,7 @@ import Link from "next/link";
 import {baseURL} from "../../../data/impact-reports/joy/base";
 
 interface HomepageProps {
-  impactStoriesContent: any,
+  cards: any,
 }
 
 export default function Index({cards}: HomepageProps) {
