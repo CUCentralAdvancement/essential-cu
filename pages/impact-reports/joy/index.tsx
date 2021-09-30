@@ -8,12 +8,14 @@ import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 // import ContentListing from "../../../components/impact-reports/joy/ContentListing";
 import {First, Second} from "../../../components/impact-reports/joy/Columns";
+import Link from "next/link";
+import {baseURL} from "../../../data/impact-reports/joy/base";
 
 interface HomepageProps {
   impactStoriesContent: any,
 }
 
-export default function Index({impactStoriesContent}: HomepageProps) {
+export default function Index({cards}: HomepageProps) {
   return (
     <Layout>
       <Section type="2-col-flex">
@@ -45,13 +47,26 @@ export default function Index({impactStoriesContent}: HomepageProps) {
           <NumericStat variant="icon-left" number={974} label="type something"/>
       </div>
       <span id={"stories"} />
-      <div className={"md:max-w-screen-lg mx-auto"}>
+      <div className={"md:mx-32"}>
         <h2>Impact stories: your gifts made a difference</h2>
-        <div className={"grid "}>
-          {impactStoriesContent.map((story) => {
+        <div className={"story-grid"}>
+          {Object.keys(cards).map((el, index) => {
             return (
-              <div key={story.id}>{story.title}</div>
-            )
+              <Link key={index}
+                    as={`/impact-reports/2021/stories/${cards[el].slug}`}
+                    href="/impact-reports/2021/stories/[slug]">
+                <a>
+                  <div className="rounded-3xl bg-white flex flex-col md:mx-3 my-3 md:my-0 shadow border h-full w-full">
+                    <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
+                         className="flex flex-col justify-end bg-cover h-64">
+                      <span className="bg-gold text-center p-3 w-36 rounded-tr-full">{cards[el].campus}</span>
+                    </div>
+                    <span className="p-3 font-bold text-xl">{cards[el].title}</span>
+                    <span className="p-3 hidden md:inline-block">{cards[el].description}</span>
+                  </div>
+                </a>
+              </Link>
+            );
           })}
         </div>
       </div>
@@ -103,11 +118,14 @@ export default function Index({impactStoriesContent}: HomepageProps) {
   )
 }
 
-export function getStaticProps() {
-  const rawStoryData = require('../../../data/impact-reports/joy/stories.json');
+export async function getStaticProps() {
+  // const rawStoryData = require('../../../data/impact-reports/joy/stories.json');
+  const res = await fetch(new Request(baseURL + '/api/stories/'));
+  const storyData = await res.json();
+
   return {
     props: {
-      impactStoriesContent: rawStoryData,
+      cards: storyData,
     }
   };
 }

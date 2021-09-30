@@ -14,7 +14,7 @@ export default function NumericStat({label, variant, number}: NumericStatProps) 
     case 'icon-left':
       return (
         <figure className="flex flex-row items-center space-x-3">
-            <span className={"p-2 rounded-full bg-gray-500"}>
+            <span className={"p-2 rounded-full bg-gray-500"} style={{color: '#fffaeb'}}>
                    <FontAwesomeIcon icon={faImage} style={{height: '36px'}}/>
             </span>
           <figcaption className="flex flex-col">
