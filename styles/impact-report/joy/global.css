@@ -24,7 +24,7 @@
     }
 
     p {
-        @apply my-4;
+        @apply my-4 py-4;
     }
 
     ol {
@@ -44,6 +44,38 @@
     }
 }
 
+body {
+    background-color: #F5F1E5;
+    font-family: "Roboto", sans-serif;
+}
+
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    /*z-index: -1;*/
+    top: 96px;
+    left: 0;
+    right: 0;
+    padding-top: 56.25%;
+    background-image: url("/bkgd-goldwash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    transform: rotate(180deg);
+
+}
+
+main {
+    position: relative;
+    z-index: 0;
+    background-image: url("/bkgd-goldwash.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+    padding: 1px 0;
+}
+
 .link-underline-italic {
     @apply underline italic
 }
@@ -52,41 +84,51 @@
     width: 90vw;
 }
 
+.fb-25 {
+    flex-basis: 25%;
+}
+
+.fb-full {
+    flex-basis: 100%;
+}
+
 .story-grid {
     display: grid;
     grid-gap: 4%;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
+    grid-template-columns: auto;
     grid-template-areas:
-     "aSt bSt bSt ..."
-     "... cSt cSt dSt";
+     "aSt"
+     "bSt"
+     "cSt"
+     "dSt";
 }
 
 .story-grid a:nth-child(1) {
     grid-area: aSt;
-    /*grid-row: 1 / 2;*/
-    /*grid-column: 1 / 2;*/
 }
 
 .story-grid a:nth-child(2) {
     grid-area: bSt;
-    /*grid-row: 2 / 4;*/
-    /*grid-column: 1 / 2;*/
 }
 
 .story-grid a:nth-child(3) {
     grid-area: cSt;
-    /*grid-row: 2 / 4;*/
-    /*grid-column: 2 / 3;*/
 }
 
 .story-grid a:nth-child(4) {
     grid-area: dSt;
-    /*grid-row: 5 / 6;*/
-    /*grid-column: 2 / 3;*/
 }
 
 @media screen and (min-width: 772px) {
+
+    .story-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+     "aSt bSt bSt ..."
+     "... cSt cSt dSt";
+    }
+
     .related-stories {
         width: 768px;
     }

@@ -42,10 +42,10 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
             {content.map((el, index) => {
               return (
                 <a key={index} href={`https://giving.cu.edu${el.path}`}>
-                  <div className="flex flex-row justify-between p-2 hover:bg-muted-gold">
+                  <div className="flex flex-row p-2 hover:bg-muted-gold">
                     <span>{el.title}</span>
                     <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
-                                     className="text-gold ml-2"/>
+                                     className="text-gold pl-4"/>
                   </div>
                 </a>
               );

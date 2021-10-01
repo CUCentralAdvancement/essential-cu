@@ -44,36 +44,49 @@ export default function Story({story}) {
           <Hero title={story.title}
                 variant="story">
             <TextBlock>
-              <div dangerouslySetInnerHTML={{ __html: story.body }} />
+              <div dangerouslySetInnerHTML={{__html: story.body}}/>
             </TextBlock>
             <SocialLinks/>
           </Hero>
         </Second>
       </Section>
-
-      {Object.keys(story.layout.sections).map((section, ind) => {
-        let cont = null;
-        const containerStyles = story.layout.sections[section].styles !== '' ? story.layout.sections[section].styles : 'max-w-screen-md p-4';
-        switch (story.layout.sections[section].type) {
-          case 'one-column':
-            cont = (
-              <Section key={ind} type="1-col" sx={containerStyles}>
-                <First content={story.layout.sections[section].content}/>
-              </Section>
-            );
-            break;
-          case 'two-columns':
-            cont = (
-              <Section key={ind} type="2-col" sx={containerStyles}>
-                <First content={story.layout.sections[section].content.first}/>
-                <Second content={story.layout.sections[section].content.second}/>
-              </Section>
-            );
-            break;
-
-        }
-        return cont;
-      })}
+      {/*<Section type={"1-col"} sx={"w-full max-w-screen-lg"}>*/}
+      {/*  <div className={"aspect-w-16 aspect-h-9 shadow-xl transform"}>*/}
+      {/*    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"*/}
+      {/*            title={"Video title"}*/}
+      {/*            width={"100%"}*/}
+      {/*            height={"100%"}*/}
+      {/*            frameBorder="0"*/}
+      {/*            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+      {/*            allowFullScreen/>*/}
+      {/*  </div>*/}
+      {/*</Section>*/}
+      <Section type="1-col" sx="max-w-screen-lg w-full">
+        <First content={story.layout}/>
+      </Section>
+      {/* Multi-column layouts. */}
+      {/*{Object.keys(story.layout.sections).map((section, ind) => {*/}
+      {/*  let cont = null;*/}
+      {/*  const containerStyles = story.layout.sections[section].styles !== '' ? story.layout.sections[section].styles : 'max-w-screen-md p-4';*/}
+      {/*  switch (story.layout.sections[section].type) {*/}
+      {/*    case 'one-column':*/}
+      {/*      cont = (*/}
+      {/*        <Section key={ind} type="1-col" sx={containerStyles}>*/}
+      {/*          <First content={story.layout.sections[section].content}/>*/}
+      {/*        </Section>*/}
+      {/*      );*/}
+      {/*      break;*/}
+      {/*    case 'two-columns':*/}
+      {/*      cont = (*/}
+      {/*        <Section key={ind} type="2-col" sx={containerStyles}>*/}
+      {/*          <First content={story.layout.sections[section].content.first}/>*/}
+      {/*          <Second content={story.layout.sections[section].content.second}/>*/}
+      {/*        </Section>*/}
+      {/*      );*/}
+      {/*      break;*/}
+      {/*  }*/}
+      {/*  return cont;*/}
+      {/*})}*/}
       <Section type="1-col" sx="md:max-w-screen-xl">
         <StoryLinkCards title="Read More:" cards={story.related_stories}/>
       </Section>
