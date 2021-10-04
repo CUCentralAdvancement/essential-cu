@@ -22,17 +22,17 @@ export default function ButtonLink({href, children, variant, label}: ButtonLinkP
       return (
         <a href={href}
            aria-label={label}
-           className={"bg-gold font-bold rounded-full py-4 px-8 shadow-md flex flex-row" +
-           " space-x-3 transform hover:scale-110"}>
+           className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md flex flex-row" +
+           " space-x-3 transform hover:scale-110 flex flex-row items-center"}>
           <span>{children}</span>
-          <FontAwesomeIcon icon={faExternalLinkAlt} style={{height: '24px'}}/>
+          <FontAwesomeIcon icon={faExternalLinkAlt} style={{height: '18px'}}/>
         </a>
       );
     default:
       return (
         <Link href={href}>
           <a role={"button"}
-             className={"bg-gold font-bold rounded-full py-4 px-8 shadow-md transform" +
+             className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md transform" +
              " hover:scale-110"}>
             {children}
           </a>

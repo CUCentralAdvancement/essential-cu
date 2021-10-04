@@ -36,18 +36,16 @@ Story.defaultProps = {
 export default function Story({story}) {
   return (
     <Layout>
-      <Section type="2-col" sx={"max-w-screen-xl"}>
-        <First sx={""}>
+      <Section type="2-col-flex" sx={"max-w-screen-2xl space-x-6"}>
+        <First sx={"w-1/2"}>
           <Image src={story.main_image.url} alt={story.main_image.alt}/>
         </First>
-        <Second>
-          <Hero title={story.title}
-                variant="story">
-            <TextBlock>
-              <div dangerouslySetInnerHTML={{__html: story.body}}/>
-            </TextBlock>
+        <Second sx={"w-1/2"}>
+          <div className={"flex flex-col h-full justify-center md:w-3/4"}>
+            <h1 className={"py-3"}>{story.title}</h1>
+            <p className={"story-header-text pt-3 pb-6"}>{story.body}</p>
             <SocialLinks/>
-          </Hero>
+          </div>
         </Second>
       </Section>
       {/*<Section type={"1-col"} sx={"w-full max-w-screen-lg"}>*/}

@@ -1,10 +1,17 @@
+/*@import 'stories.css';*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Main styles. */
+
 @layer base {
     body {
-        @apply text-lg;
+        /*@apply text-lg;*/
+        font-size: 1rem;
+        line-height: 1.625rem;
+        font-family: "Roboto", sans-serif;
+        background-color: #F5F1E5;
     }
 
     h1, h2, h3 {
@@ -12,7 +19,8 @@
     }
 
     h1 {
-        @apply text-3xl;
+        /*@apply text-3xl;*/
+        font-size: 4.125rem;
     }
 
     h2 {
@@ -24,7 +32,7 @@
     }
 
     p {
-        @apply my-4 py-4;
+        /*@apply my-4 py-4;*/
     }
 
     ol {
@@ -42,11 +50,11 @@
     hr {
         @apply my-4 border-gray-600;
     }
-}
 
-body {
-    background-color: #F5F1E5;
-    font-family: "Roboto", sans-serif;
+    blockquote {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+    }
 }
 
 body::before {
@@ -80,16 +88,13 @@ main {
     @apply underline italic
 }
 
-.related-stories {
-    width: 90vw;
-}
+/* End main section. */
 
-.fb-25 {
-    flex-basis: 25%;
-}
+/* Stories pages. */
 
-.fb-full {
-    flex-basis: 100%;
+.story-header-text {
+    font-size: 1.3125rem;
+    line-height: 1.9375rem;
 }
 
 .story-grid {
@@ -121,15 +126,12 @@ main {
 }
 
 @media screen and (min-width: 772px) {
-
     .story-grid {
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas:
      "aSt bSt bSt ..."
      "... cSt cSt dSt";
     }
-
-    .related-stories {
-        width: 768px;
-    }
 }
+
+/* End stories pages. */

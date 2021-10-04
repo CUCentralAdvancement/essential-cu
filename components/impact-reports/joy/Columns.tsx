@@ -29,7 +29,6 @@ function Column({children, sx, content = null}: ColumnProps) {
   return (
     <>
       {content.map((comp) => {
-        console.log(comp);
         switch (comp.type) {
           case 'image':
             if (comp.styles.includes('with-caption')) {
@@ -42,7 +41,9 @@ function Column({children, sx, content = null}: ColumnProps) {
             );
           case 'block_quote':
             return (
-              <BlockQuote key={comp.id}>{comp.quote}</BlockQuote>
+              <BlockQuote key={comp.id} sx={"max-w-screen-sm mx-auto pl-4"}>
+                {comp.quote}
+              </BlockQuote>
             );
           case 'cta_block':
             return (
@@ -50,7 +51,7 @@ function Column({children, sx, content = null}: ColumnProps) {
             );
           case 'social_links':
             return (
-              <SocialLinks key={comp.id} services={comp.services} sx={"justify-center"}/>
+              <SocialLinks key={comp.id} services={comp.services} variant={"centered"}/>
             );
           case 'feedback_button':
             return (
@@ -71,8 +72,7 @@ function Column({children, sx, content = null}: ColumnProps) {
           case 'text_block':
           default:
             return (
-              <TextBlock key={comp.id}>
-                {/*<div dangerouslySetInnerHTML={{__html: comp.content}}></div>*/}
+              <TextBlock key={comp.id} sx={"max-w-screen-md mx-auto"}>
                 {comp.content}
               </TextBlock>
             );

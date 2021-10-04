@@ -1,4 +1,6 @@
-/*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com */
+/*@import 'stories.css';*/
+
+/*! tailwindcss v2.2.16 | MIT License | https://tailwindcss.com*/
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -601,8 +603,11 @@ video {
 }
 
 body {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  /*@apply text-lg;*/
+  font-size: 1rem;
+  line-height: 1.625rem;
+  font-family: "Roboto", sans-serif;
+  background-color: #F5F1E5;
 }
 
 h1, h2, h3 {
@@ -612,8 +617,8 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  /*@apply text-3xl;*/
+  font-size: 4.125rem;
 }
 
 h2 {
@@ -627,10 +632,7 @@ h3 {
 }
 
 p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /*@apply my-4 py-4;*/
 }
 
 ol {
@@ -651,6 +653,11 @@ hr {
   margin-bottom: 1rem;
   --tw-border-opacity: 1;
   border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+}
+
+blockquote {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .container {
@@ -33079,10 +33086,7 @@ hr {
   content: none;
 }
 
-body {
-  background-color: #F5F1E5;
-  font-family: "Roboto", sans-serif;
-}
+/* Main styles. */
 
 body::before {
   content: "";
@@ -33115,16 +33119,13 @@ main {
   text-decoration: underline
 }
 
-.related-stories {
-  width: 90vw;
-}
+/* End main section. */
 
-.fb-25 {
-  flex-basis: 25%;
-}
+/* Stories pages. */
 
-.fb-full {
-  flex-basis: 100%;
+.story-header-text {
+  font-size: 1.3125rem;
+  line-height: 1.9375rem;
 }
 
 .story-grid {
@@ -33162,11 +33163,9 @@ main {
      "aSt bSt bSt ..."
      "... cSt cSt dSt";
   }
-
-  .related-stories {
-    width: 768px;
-  }
 }
+
+/* End stories pages. */
 
 @media (min-width: 640px) {
   .sm\:container {
