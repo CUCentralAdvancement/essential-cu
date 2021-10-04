@@ -6,7 +6,7 @@ interface SectionProps {
 }
 
 export default function Section({children, type, sx} :SectionProps) {
-    const defaultGridStyles = 'grid grid-cols-1 mx-auto p-4';
+    const defaultGridStyles = 'grid grid-cols-1 mx-auto p-4 space-y-8';
     const defaultFlexStyles = 'flex mx-auto p-4';
     switch (type) {
         case '2-col':

@@ -8,72 +8,78 @@ import CtaBlock from "./CtaBlock";
 import SocialLinks from "./SocialLinks";
 import FeedbackButton from "./FeedbackButton";
 import ContentListing from "./ContentListing";
+import YouTubeVideo from "./YouTubeVideo";
 
 interface ColumnProps {
-    children?: ReactNode,
-    sx?: string,
-    content?: any,
+  children?: ReactNode,
+  sx?: string,
+  content?: any,
 }
 
 function Column({children, sx, content = null}: ColumnProps) {
-    // If the content is hard-coded and not from the CMS,
-    // then the components are already set with props.
-    if (content === null) {
-        return (
-            <div className={sx}>{children}</div>
-        );
-    }
-
-    // Content via the CMS needs to be looped through and rendered.
+  // If the content is hard-coded and not from the CMS,
+  // then the components are already set with props.
+  if (content === null) {
     return (
-        <div className={sx}>
-            {content.map((comp) => {
-                switch (comp.type) {
-                    case 'image':
-                        if (comp.styles.includes('with-caption')) {
-                            return <ImageWithCaption key={comp.id} src={comp.url} alt={comp.alt} caption={comp.caption}/>
-                        }
-                        return <Image key={comp.id} src={comp.url} alt={comp.alt} />
-                    case 'numeric_stat':
-                        return (
-                            <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
-                        );
-                    case 'block_quote':
-                        return (
-                            <BlockQuote key={comp.id}>{comp.quote}</BlockQuote>
-                        );
-                    case 'cta_block':
-                        return (
-                            <CtaBlock key={comp.id} content={comp.content} button={comp.button} heading={comp.heading} />
-                        );
-                    case 'social_links':
-                        return (
-                            <SocialLinks key={comp.id} services={comp.services}  sx={"justify-center"}/>
-                        );
-                    case 'feedback_button':
-                        return (
-                            <FeedbackButton key={comp.id} />
-                        );
-                    case 'content_list':
-                        return (
-                            <ContentListing title={comp.heading}
-                                            variant="links"
-                                            key={comp.id}
-                                            sx={comp.styles}
-                                            content={comp.content}/>
-                        );
-                    case 'text_block':
-                    default:
-                        return (
-                            <TextBlock key={comp.id}>
-                                {/*<div dangerouslySetInnerHTML={{__html: comp.content}}></div>*/}
-                                {comp.content}
-                            </TextBlock>
-                        );
-                }
-            })}
-        </div>
+      <div className={sx}>{children}</div>
     );
+  }
+
+  // Content via the CMS needs to be looped through and rendered.
+  return (
+    <>
+      {content.map((comp) => {
+        switch (comp.type) {
+          case 'image':
+            if (comp.styles.includes('with-caption')) {
+              return <ImageWithCaption key={comp.id} src={comp.url} alt={comp.alt} caption={comp.caption}/>
+            }
+            return <Image key={comp.id} src={comp.url} alt={comp.alt}/>
+          case 'numeric_stat':
+            return (
+              <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
+            );
+          case 'block_quote':
+            return (
+              <BlockQuote key={comp.id} sx={"sm:max-w-screen-sm ml-3 mr-9 lg:mx-auto lg:pl-4"}>
+                {comp.quote}
+              </BlockQuote>
+            );
+          case 'cta_block':
+            return (
+              <CtaBlock key={comp.id} content={comp.content} button={comp.button} heading={comp.heading}/>
+            );
+          case 'social_links':
+            return (
+              <SocialLinks key={comp.id} services={comp.services} variant={"centered"}/>
+            );
+          case 'feedback_button':
+            return (
+              <FeedbackButton key={comp.id}/>
+            );
+          case 'content_list':
+            return (
+              <ContentListing title={comp.heading}
+                              variant="links"
+                              key={comp.id}
+                              sx={comp.styles}
+                              content={comp.content}/>
+            );
+          case 'youtube_video':
+            return (
+              <YouTubeVideo video_id={comp.video_id} title={comp.title}/>
+            );
+          case 'text_block':
+          default:
+            return (
+              <TextBlock key={comp.id} sx={"md:max-w-screen-md mx-auto p-3"}>
+                {comp.content}
+              </TextBlock>
+            );
+        }
+      })}
+    </>
+  );
 }
 
 export const First = Column;

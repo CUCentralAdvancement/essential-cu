@@ -32,20 +32,18 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
       );
     case  'links':
       return (
-        <div className={sx}>
-          <div className={"flex flex-row justify-between items-baseline"}>
-            <span className="text-3xl font-bold block py-4">{title}</span>
+        <div className={`${sx} px-4 lg:px-32`} >
+            <h2>{title}</h2>
             {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
             {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
-          </div>
           <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold link-underline-italic">
             {content.map((el, index) => {
               return (
                 <a key={index} href={`https://giving.cu.edu${el.path}`}>
-                  <div className="flex flex-row justify-between p-2 hover:bg-muted-gold">
+                  <div className="flex flex-row p-2 hover:bg-muted-gold">
                     <span>{el.title}</span>
                     <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
-                                     className="text-gold ml-2"/>
+                                     className="text-gold pl-4"/>
                   </div>
                 </a>
               );
