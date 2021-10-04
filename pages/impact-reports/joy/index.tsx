@@ -111,7 +111,7 @@ export default function Index({cards}: HomepageProps) {
           imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
         </TextBlock>
         <ButtonLink href="...">SEE REPORT</ButtonLink>
-        <SocialLinks sx="py-8"/>
+        <SocialLinks/>
       </Section>
     </Layout>
   )

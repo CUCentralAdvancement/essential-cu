@@ -1,14 +1,11 @@
 import Layout from "../../../../components/impact-reports/joy/Layout";
 import Section from "../../../../components/impact-reports/joy/Section";
 import Image from "../../../../components/impact-reports/joy/Image";
-import Hero from "../../../../components/impact-reports/joy/Hero";
-// import ButtonLink from "../../../../components/impact-reports/joy/ButtonLink";
 import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkCards";
 import {First, Second} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
-import TextBlock from "../../../../components/impact-reports/joy/TextBlock";
 
 Story.propTypes = {
   story: PropTypes.object,
@@ -25,11 +22,14 @@ Story.defaultProps = {
       height: '',
       url: ''
     },
-    layout: {
-      sections: [
-        {content: [], type: 'one-column'}
-      ]
-    },
+    layout: [
+      {
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer enim neque volutpat ac tincidunt vitae. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Amet risus nullam eget felis eget. Ultricies integer quis auctor elit sed. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Commodo ullamcorper a lacus vestibulum sed arcu non odio.",
+        id: "TG9yZW0gaXBzdW0gZG9s",
+        type: "text_block",
+        styles: []
+      },
+    ],
   }
 };
 
@@ -37,10 +37,10 @@ export default function Story({story}) {
   return (
     <Layout>
       <Section type="2-col-flex" sx={"max-w-screen-2xl space-x-6"}>
-        <First sx={"w-1/2"}>
+        <First sx={"lg:w-1/2"}>
           <Image src={story.main_image.url} alt={story.main_image.alt}/>
         </First>
-        <Second sx={"w-1/2"}>
+        <Second sx={"lg:w-1/2"}>
           <div className={"flex flex-col h-full justify-center md:w-3/4"}>
             <h1 className={"py-3"}>{story.title}</h1>
             <p className={"story-header-text pt-3 pb-6"}>{story.body}</p>
@@ -85,9 +85,9 @@ export default function Story({story}) {
       {/*  }*/}
       {/*  return cont;*/}
       {/*})}*/}
-      <Section type="1-col" sx="md:max-w-screen-xl">
+      <div className="md:max-w-screen-xl lg:mx-auto p-8">
         <StoryLinkCards title="Read More:" cards={story.related_stories}/>
-      </Section>
+      </div>
       {/*<Section type="1-col" sx="md:max-w-screen-md">*/}
       {/*  <div className="text-center pt-4">*/}
       {/*    <ButtonLink href="#foo">See Past Stories</ButtonLink>*/}

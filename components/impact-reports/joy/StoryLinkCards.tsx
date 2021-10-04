@@ -31,7 +31,7 @@ export default function StoryCardLinks({title, variant, cards = defaultCards}: S
         default:
             return (
                 <>
-                    <span className="p-2 font-bold text-3xl">{title}</span>
+                    <h2>{title}</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                         {Object.keys(cards).map((el, index) => {
                             return (
@@ -39,7 +39,7 @@ export default function StoryCardLinks({title, variant, cards = defaultCards}: S
                                       as={`/impact-reports/joy/stories/${cards[el].slug}`}
                                       href="/impact-reports/joy/stories/[slug]">
                                     <a>
-                                        <div className="rounded-3xl bg-white flex flex-col md:mx-3 my-3 md:my-0 shadow border h-full w-full">
+                                        <div className="rounded-3xl bg-white flex flex-col shadow border h-full">
                                             <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                                                  className="flex flex-col justify-end bg-cover h-64">
                                                 <span className="bg-gold text-center p-3 w-36 rounded-tr-full">{cards[el].campus}</span>
