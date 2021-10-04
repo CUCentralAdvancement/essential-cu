@@ -33119,6 +33119,10 @@ main {
   text-decoration: underline
 }
 
+.bkg-gray {
+  background-color: #7C7E7F;
+}
+
 /* End main section. */
 
 /* Stories pages. */

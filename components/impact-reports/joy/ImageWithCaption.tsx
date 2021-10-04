@@ -9,7 +9,7 @@ export default function ImageWithCaption({src, alt, caption, sx = ''}: ImageWith
     return (
         <figure className={'rounded ' + sx}>
             <img src={src} alt={alt} className="w-full" />
-            <figcaption className="bg-black text-white p-4 rounded-br-3xl">{caption}</figcaption>
+            <figcaption className="bg-black text-white p-4 rounded-br-3xl text-center">{caption}</figcaption>
         </figure>
 
     );
