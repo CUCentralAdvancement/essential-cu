@@ -92,6 +92,11 @@ main {
     background-color: #7C7E7F;
 }
 
+.svg-inline--fa.fa-w-16,
+.svg-inline--fa.fa-w-14 {
+    width: auto;
+}
+
 /* End main section. */
 
 /* Stories pages. */
