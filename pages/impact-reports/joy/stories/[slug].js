@@ -42,8 +42,8 @@ export default function Story({story}) {
         </First>
         <Second sx={"lg:w-1/2"}>
           <div className={"flex flex-col h-full justify-center md:w-3/4"}>
-            <h1 className={"py-3"}>{story.title}</h1>
-            <p className={"story-header-text pt-3 pb-6"}>{story.body}</p>
+            <h1 className={"py-4 text-5xl"}>{story.title}</h1>
+            <p className={"story-header-text pb-6"}>{story.body}</p>
             <SocialLinks/>
           </div>
         </Second>

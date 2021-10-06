@@ -7,7 +7,6 @@ import TextBlock from "../../../components/impact-reports/joy/TextBlock";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
-import {First, Second} from "../../../components/impact-reports/joy/Columns";
 import Link from "next/link";
 import {baseURL} from "../../../data/impact-reports/joy/base";
 
@@ -21,7 +20,7 @@ export default function Index({cards}: HomepageProps) {
       <Section type="1-col">
         <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
         <div className={"md:max-w-screen-lg mx-auto text-center"}>
-          <h1 className={"py-4"}>When you invest in CU, your impact is mighty</h1>
+          <h1 className={"py-4 text-28"}>When you invest in CU, your impact is mighty</h1>
           <p className={"text-xl py-3"}>
             In 2021, nearly <strong>29,793 donors</strong> made <strong>53,485 gifts</strong> to support CU. In
             a breakthrough year, CU&apos;s endowment is now valued at $2.16 billion.
@@ -37,14 +36,15 @@ export default function Index({cards}: HomepageProps) {
       <span id={"stories"}/>
       <div className={"bg-blue-900 pb-4"}>
         <div className={"p-3 bg-light-yellow rounded-b-lg -mt-1"}>
-          <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold text-xl"}>
+          <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold" +
+          " text-lg"}>
             There are stories of true impact behind those numbers-stories of how giving pays dividends in joy.
             <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-3"}/>
           </p>
         </div>
       </div>
       <div className={"p-8 bg-blue-900 -mt-8 rounded-b-lg"}>
-        <h2 className={"text-center text-white py-4"}>We asked our CU community: What brings you joy?</h2>
+        <h2 className={"text-center text-white py-4 text-28"}>We asked our CU community: What brings you joy?</h2>
         <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 place-items-stretch"}>
           {Object.keys(cards).map((el, index) => {
             return (
@@ -52,7 +52,7 @@ export default function Index({cards}: HomepageProps) {
                     as={`/impact-reports/joy/stories/${cards[el].slug}`}
                     href="/impact-reports/joy/stories/[slug]">
                 <a className={"bg-blue-900"}>
-                  <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-64"
+                  <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-32 md:pt-64"
                        style={{backgroundImage: `url('${cards[el].main_image.url}')`}}>
                     <span className="bg-gold text-center py-3 pr-4 w-36 rounded-tr-lg">{cards[el].campus}</span>
                     <span className="px-6 py-2 font-bold bg-white text-xl lg:w-1/2 lg:rounded-tr-lg">{cards[el].title}</span>
@@ -73,30 +73,22 @@ export default function Index({cards}: HomepageProps) {
           innovative minds.
         </p>
       </Section>
-      <Section type="2-col" sx="container space-x-4 text-center place-content-center">
-        <First sx="p-2">
-          <p className={"text-28"}>
+      <div className="container text-center grid grid-cols-1 lg:grid-cols-2 p-4">
+          <p className={"text-28 order-2 lg:order-1 py-6"}>
             <strong>92%</strong> of gifts were less than <strong>$2,500</strong>
           </p>
-        </First>
-        <Second sx="p-2">
+          <Image src="/assets/ir21/circles-pic.png" alt="The Image" sx={"order-1 lg:order-2"}/>
+      </div>
+      <div className="container space-x-4 text-center grid grid-cols-1 lg:grid-cols-2 p-4">
           <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
-        </Second>
-      </Section>
-      <Section type="2-col" sx="container space-x-4 text-center">
-        <First sx="p-2 order-2 md:order-1">
-          <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
-        </First>
-        <Second sx="p-2 order-1 md:order-2">
-          <p className={"text-28"}>
+          <p className={"text-28 py-6"}>
             The average size of a gift was <strong>$6,472</strong>
           </p>
-        </Second>
-      </Section>
-      <Section type="1-col" sx="place-items-center md:max-w-screen-md px-4 text-center space-y-4">
+      </div>
+      <div className="place-items-center md:max-w-screen-md px-4 text-center space-y-4 grid grid-cols-1">
         <h2 className={"flex flex-row items-center"}>
           <Link href={"/impact-reports/joy/financials"}>
-            <a>
+            <a className={"text-lg"}>
               Find out more about your investments in CU
               <FontAwesomeIcon icon={faChevronRight} className={"h-12 text-gold ml-3 pb-2 inline"}/>
             </a>
@@ -108,7 +100,7 @@ export default function Index({cards}: HomepageProps) {
         </p>
         <ButtonLink href="/impact-reports/joy/financials">See Financials</ButtonLink>
         <SocialLinks/>
-      </Section>
+      </div>
       <h2 className={"text-center pt-8 pb-4 text-38"}>Our Mission</h2>
       <div className="container text-center grid grid-cols-1 md:grid-cols-2 gap-4 p-2 mx-auto">
           <TextBlock>
