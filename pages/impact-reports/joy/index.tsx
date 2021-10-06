@@ -24,7 +24,7 @@ export default function Index({cards}: HomepageProps) {
           <h1 className={"py-4"}>When you invest in CU, your impact is mighty</h1>
           <p className={"text-xl py-3"}>
             In 2021, nearly <strong>29,793 donors</strong> made <strong>53,485 gifts</strong> to support CU. In
-            a breakthrough year, CU's endowment is now valued at $2.16 billion.
+            a breakthrough year, CU&apos;s endowment is now valued at $2.16 billion.
           </p>
         </div>
       </Section>
