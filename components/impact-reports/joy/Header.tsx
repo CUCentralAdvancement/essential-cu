@@ -10,8 +10,8 @@ export default function Header() {
     <Menu as={"div"} className={"relative sticky top-0 z-20"}>
       {({open}) => (
         <>
-          <header className="flex flex-col pb-3 shadow-md bg-gold rounded-2xl">
-            <nav className="flex flex-row items-center justify-between bg-white rounded-2xl px-3">
+          <header className="flex flex-col pb-3 shadow-md bg-gold rounded-b">
+            <nav className="flex flex-row items-center justify-between bg-white rounded-b px-3">
               <div className="h-16 md:h-24">
                 <Link href={"/impact-reports/joy"}>
                   <a>
@@ -26,7 +26,7 @@ export default function Header() {
                 <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
                 <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu">Giving At CU</ButtonLink>
               </div>
-              <div className="text-2xl pr-4">IR 2021 Logo</div>
+              <div className="text-2xl pr-4 hidden md:block">IR 2021 Logo</div>
               <div className={"pr-4 block lg:hidden"}>
                 <Menu.Button>
                   <FontAwesomeIcon icon={open ? faTimes : faBars}

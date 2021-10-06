@@ -39,7 +39,7 @@ export default function StoryCardLinks({title, variant, cards = defaultCards}: S
                                       as={`/impact-reports/joy/stories/${cards[el].slug}`}
                                       href="/impact-reports/joy/stories/[slug]">
                                     <a>
-                                        <div className="rounded-3xl bg-white flex flex-col shadow border h-full">
+                                        <div className="rounded-lg bg-white flex flex-col shadow border h-full">
                                             <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                                                  className="flex flex-col justify-end bg-cover h-64">
                                                 <span className="bg-gold text-center p-3 w-36 rounded-tr-full">{cards[el].campus}</span>

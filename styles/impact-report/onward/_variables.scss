@@ -37,14 +37,14 @@ https://material.io/design/layout/responsive-layout-grid.html#breakpoints
 1599
 1919
 */
-$break-xxxs: 359px;
+$break-xxxs: 359px; // used 1 time for font-size
 $break-xxs: 399px;
-$break-xs: 479px;
-$break-ssm: 599px;
-$break-sm: 719px;
-$break-mmmd: 839px;
-$break-mmd: 959px;
-$break-md: 1023px;
+$break-xs: 479px; // used 1 time for storycard flex basis.
+$break-ssm: 599px; // used in the footer...but who cares about the footer?
+$break-sm: 719px; // used in 23 places
+$break-mmmd: 839px; // used in 40 places.
+$break-mmd: 959px;  // used 1 time in header
+$break-md: 1023px;  // used 2 times, once in header and once in story card width
 $break-lg: 1279px;
 // to collect ALL desktop > mobile header sx:
 $break-mobilenav: $break-sm;

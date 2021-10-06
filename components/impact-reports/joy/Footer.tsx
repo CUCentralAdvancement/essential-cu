@@ -3,10 +3,10 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-white p-4 text-black">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center align-baseline">
         <div className="flex flex-col items-center text-center">
           <a href="https://giving.cu.edu/fund-search"
-             className="py-3 px-6 text-black font-bold bg-gold text-lg uppercase rounded-2xl"
+             className="py-3 px-6 text-black font-bold bg-gold text-lg uppercase rounded-md"
              data-testid="footer-give-button">
             Give Now
           </a>

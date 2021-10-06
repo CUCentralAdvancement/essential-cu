@@ -8,7 +8,7 @@
     "start": "NODE_ENV=production node server.js -p $PORT",
     "capture": "node data/impact-reports/onward/capture-data.js",
     "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed",
-    "styles:2021": "tailwindcss -i ./styles/impact-report/joy/global.css  -o ./public/impact-reports/joy/tailwind.css",
+    "styles:2021": "tailwindcss -w -i ./styles/impact-report/joy/global.css  -o ./public/impact-reports/joy/tailwind.css",
     "styles:2022": "NODE_ENV=production tailwindcss -i ./styles/impact-report/joy/global.css  -o ./public/impact-reports/joy/tailwind.css --minify",
     "test": "lint && cy:run",
     "cy:open": "cypress open",
