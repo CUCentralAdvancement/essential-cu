@@ -59,7 +59,7 @@ export default function Story({story}) {
       {/*            allowFullScreen/>*/}
       {/*  </div>*/}
       {/*</Section>*/}
-      <Section type="1-col" sx="max-w-screen-lg w-full">
+      <Section type="1-col" sx="max-w-screen-lg w-full space-y-6">
         <First content={story.layout}/>
       </Section>
       {/* Multi-column layouts. */}

@@ -11,14 +11,14 @@ interface NumericStatProps {
 
 export default function NumericStat({label, variant, number}: NumericStatProps) {
   switch (variant) {
-    case 'icon-left':
+    case 'icon-top':
       return (
-        <figure className="flex flex-row items-center space-x-3">
-            <span className={"p-2 rounded-full bg-gray-500"} style={{color: '#fffaeb'}}>
+        <figure className="flex flex-col items-center space-y-2">
+            <span className={"p-3 rounded-full bg-gray-500"} style={{color: '#fffaeb'}}>
                    <FontAwesomeIcon icon={faImage} style={{height: '36px'}}/>
             </span>
-          <figcaption className="flex flex-col">
-            <span className={"text-4xl"}>{number}</span>
+          <figcaption className="flex flex-col text-center">
+            <span className={"text-4xl"}>${number}<span className={"text-gold"}>M</span></span>
             <span>{label}</span>
           </figcaption>
         </figure>
