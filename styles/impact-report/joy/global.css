@@ -72,11 +72,6 @@
     hr {
         @apply my-4 border-gray-600;
     }
-
-    blockquote {
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-    }
 }
 
 
@@ -86,10 +81,6 @@
         @apply underline italic
     }
 
-    .bkg-gray {
-        background-color: #7C7E7F;
-    }
-
     .svg-inline--fa.fa-w-16,
     .svg-inline--fa.fa-w-14 {
         width: auto;
@@ -97,10 +88,6 @@
 
     /* Stories pages. */
 
-    .story-header-text {
-        font-size: 1.3125rem;
-        line-height: 1.9375rem;
-    }
 
     /* End stories pages. */
 }
