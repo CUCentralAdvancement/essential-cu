@@ -15,9 +15,13 @@ export default function Header() {
               <div className="h-16 md:h-24">
                 <Link href={"/impact-reports/joy"}>
                   <a>
-                    <Image sx="h-full"
-                           alt=""
-                           src="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"/>
+                    <picture>
+                      <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
+                              media="(min-width: 1023px)"/>
+                      <img src="/assets/ir21/cu-logo-small.png"
+                           className={"p-2 lg:p-0 h-full"}
+                           alt="University of Colorado Logo"/>
+                    </picture>
                   </a>
                 </Link>
               </div>
@@ -26,7 +30,7 @@ export default function Header() {
                 <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
                 <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
               </div>
-              <div className="text-2xl pr-4 hidden md:block">IR 2021 Logo</div>
+              <div className="text-2xl pr-4 hidden lg:block">IR 2021 Logo</div>
               <div className={"pr-4 block lg:hidden"}>
                 <Menu.Button>
                   <FontAwesomeIcon icon={open ? faTimes : faBars}
@@ -73,7 +77,6 @@ export default function Header() {
           </Transition>
         </>
       )}
-
     </Menu>
   );
 }

@@ -23,6 +23,9 @@ export default function Story({ story }) {
 
   // A ghost story slug or something tries to run on build casuing errors.
   // This is a stopgap until that is figured out but impacts nothing if left in.
+  //
+  // @todo Now, I know you can solve this by providing a default for all the props. PropTypes can provide
+  //  that default.
   if (typeof story === 'undefined' || story.title === null) {
     return null;
   }
