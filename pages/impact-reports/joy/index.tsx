@@ -9,6 +9,8 @@ import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Link from "next/link";
 import {baseURL} from "../../../data/impact-reports/joy/base";
+import Head from "next/head";
+import React from "react";
 
 interface HomepageProps {
   cards: any,
@@ -16,6 +18,19 @@ interface HomepageProps {
 
 export default function Index({cards}: HomepageProps) {
   return (
+    <>
+      <Head>
+        <title>University of Colorado 2021 Donor Impact Report</title>
+        <meta property="og:url" content={`https://essential.cu.edu/impact-reports/joy`}/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="University of Colorado 2021 Donor Impact Report"/>
+        <meta property="og:description" content="Fill it in."/>
+        <meta property="og:image" content="fill in"/>
+        <meta property="twitter:title" content="University of Colorado 2021 Donor Impact Report"/>
+        <meta property="twitter:description" content="fill in"/>
+        <meta property="twitter:image" content="fill in"/>
+        <meta property="twitter:card" content="summary_large_image"/>
+      </Head>
     <Layout>
       <Section type="1-col">
         <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
@@ -118,7 +133,8 @@ export default function Index({cards}: HomepageProps) {
           </TextBlock>
       </div>
     </Layout>
-  )
+    </>
+  );
 }
 
 export async function getStaticProps() {

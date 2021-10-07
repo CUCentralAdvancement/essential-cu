@@ -68,7 +68,7 @@ function Column({children, sx, content = null}: ColumnProps) {
             );
           case 'youtube_video':
             return (
-              <YouTubeVideo video_id={comp.video_id} title={comp.title}/>
+              <YouTubeVideo key={comp.id} video_id={comp.video_id} title={comp.title}/>
             );
           case 'text_block':
           default:

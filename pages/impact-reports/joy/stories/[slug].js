@@ -5,6 +5,9 @@ import {First} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
+import Head from "next/head";
+import { useRouter } from 'next/router';
+import React from "react";
 
 Story.propTypes = {
   story: PropTypes.object,
@@ -33,64 +36,45 @@ Story.defaultProps = {
 };
 
 export default function Story({story}) {
+  const router = useRouter();
+  console.log(router);
   return (
-    <Layout>
-      <div className={"flex flex-col lg:flex-row p-6 lg:space-x-8"}>
+    <>
+      <Head>
+        <title>{story.title}</title>
+        <meta property="og:url" content={`https://essential.cu.edu${router.asPath}`}/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content={story.title}/>
+        <meta property="og:description" content={story.body}/>
+        <meta property="og:image" content={story.main_image.url}/>
+        <meta property="twitter:title" content={story.title}/>
+        <meta property="twitter:description" content={story.body}/>
+        <meta property="twitter:image" content={story.main_image.url}/>
+        <meta property="twitter:card" content="summary_large_image"/>
+      </Head>
+      <Layout>
+        {/* @todo Add height/width to all images. */}
+        <Image src={'/assets/ir21/ir-21-mobile-story-logo.png'}
+               sx={"lg:hidden block pt-4 px-4 mx-auto"}
+               alt={"We're having some fun now!"}/>
+        <div className={"flex flex-col lg:flex-row p-6 lg:space-x-8"}>
           <Image src={story.main_image.url} alt={story.main_image.alt} sx={"lg:w-1/2"}/>
-        <div className={"lg:w-1/2"}>
-          <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
-            <h1 className={"py-4 text-28 lg:text-66"}>{story.title}</h1>
-            <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
-            <SocialLinks/>
+          <div className={"lg:w-1/2"}>
+            <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
+              <h1 className={"py-4 text-28 lg:text-66"}>{story.title}</h1>
+              <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
+              <SocialLinks/>
+            </div>
           </div>
         </div>
-      </div>
-      {/*<Section type={"1-col"} sx={"w-full max-w-screen-lg"}>*/}
-      {/*  <div className={"aspect-w-16 aspect-h-9 shadow-xl transform"}>*/}
-      {/*    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"*/}
-      {/*            title={"Video title"}*/}
-      {/*            width={"100%"}*/}
-      {/*            height={"100%"}*/}
-      {/*            frameBorder="0"*/}
-      {/*            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-      {/*            allowFullScreen/>*/}
-      {/*  </div>*/}
-      {/*</Section>*/}
-      <div className={"grid grid-cols-1 space-y-6 lg:max-w-screen-lg w-full text-base lg:mx-auto"}>
-        <First content={story.layout}/>
-      </div>
-      {/* Multi-column layouts. */}
-      {/*{Object.keys(story.layout.sections).map((section, ind) => {*/}
-      {/*  let cont = null;*/}
-      {/*  const containerStyles = story.layout.sections[section].styles !== '' ? story.layout.sections[section].styles : 'max-w-screen-md p-4';*/}
-      {/*  switch (story.layout.sections[section].type) {*/}
-      {/*    case 'one-column':*/}
-      {/*      cont = (*/}
-      {/*        <Section key={ind} type="1-col" sx={containerStyles}>*/}
-      {/*          <First content={story.layout.sections[section].content}/>*/}
-      {/*        </Section>*/}
-      {/*      );*/}
-      {/*      break;*/}
-      {/*    case 'two-columns':*/}
-      {/*      cont = (*/}
-      {/*        <Section key={ind} type="2-col" sx={containerStyles}>*/}
-      {/*          <First content={story.layout.sections[section].content.first}/>*/}
-      {/*          <Second content={story.layout.sections[section].content.second}/>*/}
-      {/*        </Section>*/}
-      {/*      );*/}
-      {/*      break;*/}
-      {/*  }*/}
-      {/*  return cont;*/}
-      {/*})}*/}
-      <div className="md:max-w-screen-xl lg:mx-auto p-8">
-        <StoryLinkCards title="Read more stories:" cards={story.related_stories}/>
-      </div>
-      {/*<Section type="1-col" sx="md:max-w-screen-md">*/}
-      {/*  <div className="text-center pt-4">*/}
-      {/*    <ButtonLink href="#foo">See Past Stories</ButtonLink>*/}
-      {/*  </div>*/}
-      {/*</Section>*/}
-    </Layout>
+        <div className={"grid grid-cols-1 space-y-6 lg:max-w-screen-lg w-full text-base lg:mx-auto"}>
+          <First content={story.layout}/>
+        </div>
+        <div className="md:max-w-screen-xl lg:mx-auto p-8">
+          <StoryLinkCards title="Read more stories:" cards={story.related_stories}/>
+        </div>
+      </Layout>
+    </>
   );
 }
 
