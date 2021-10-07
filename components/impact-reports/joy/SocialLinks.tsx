@@ -7,7 +7,7 @@ interface SocialLinksProps {
 }
 
 const iconStyles = 'h-12 p-2 rounded-full transform hover:scale-110 hover:bg-black hover:text-gold' +
-  ' cursor-pointer bkg-gray';
+  ' cursor-pointer bg-medium-gray';
 
 export default function SocialLinks({variant, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
 

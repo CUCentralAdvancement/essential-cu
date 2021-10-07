@@ -5,7 +5,7 @@ module.exports = {
     borderRadius: {
       'none': '0',
       'sm': '0.125rem',
-      DEFAULT: '16px',
+      DEFAULT: '15px',
       'md': '25.5px',
       'lg': '45px',
       'full': '9999px',
@@ -25,6 +25,8 @@ module.exports = {
       '5xl': ['4.58vh', '5.347vh'],
       '28': ['28px', '38px'],
       '38': ['38px', '48px'],
+      '50': ['50px', '64px'],
+      '66': ['66px', '77px'],
     },
     screens: {
       sm: '479px',
@@ -41,6 +43,8 @@ module.exports = {
         'muted-gold': '#f4ead0',
         'cu-gray': '#C6C8C9',
         'light-yellow': '#F5F1E5',
+        'light-gray': '#363636',
+        'medium-gray': '#7C7E7F',
       },
       width: {
         pro: '768px',

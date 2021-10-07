@@ -33,7 +33,7 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
     case  'links':
       return (
         <div className={`${sx} px-4 lg:px-32`} >
-            <h2>{title}</h2>
+            <h2 className={"text-lg lg:text-28 py-3"}>{title}</h2>
             {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
             {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
           <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold link-underline-italic">

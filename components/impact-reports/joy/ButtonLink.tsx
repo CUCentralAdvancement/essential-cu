@@ -9,34 +9,31 @@ interface ButtonLinkProps {
   children: ReactNode,
   variant?: string,
   external?: boolean,
+  isActive?: boolean,
 }
 
-export default function ButtonLink({href, children, variant, label}: ButtonLinkProps) {
-  // If the link isn't relative, then it is an external link.
-  if (href.charAt(0) !== '/') {
-    variant = 'external';
-  }
-
+export default function ButtonLink({href, children, variant, label, isActive, external}: ButtonLinkProps) {
   switch (variant) {
-    case 'external':
+    case 'mobile-menu':
+      return (
+        <Link href={href}>
+          <a role={"button"}
+             className={"bg-white font-bold rounded-full py-3 px-6 shadow-md transform" +
+             " hover:scale-110 max-w-max items-baseline " + (isActive ? 'bg-gold text-white' : '')}>
+            {children}
+            {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-2 pb-1"}/>}
+          </a>
+        </Link>
+      );
+    default:
       return (
         <a href={href}
            aria-label={label}
            className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md flex flex-row" +
            " space-x-3 transform hover:scale-110 flex flex-row items-center"}>
           <span>{children}</span>
-          <FontAwesomeIcon icon={faExternalLinkAlt} style={{height: '18px'}}/>
+          {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
         </a>
-      );
-    default:
-      return (
-        <Link href={href}>
-          <a role={"button"}
-             className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md transform" +
-             " hover:scale-110"}>
-            {children}
-          </a>
-        </Link>
       );
   }
 }

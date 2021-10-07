@@ -1,8 +1,7 @@
 import Layout from "../../../../components/impact-reports/joy/Layout";
-import Section from "../../../../components/impact-reports/joy/Section";
 import Image from "../../../../components/impact-reports/joy/Image";
 import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkCards";
-import {First, Second} from "../../../../components/impact-reports/joy/Columns";
+import {First} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
@@ -36,18 +35,16 @@ Story.defaultProps = {
 export default function Story({story}) {
   return (
     <Layout>
-      <Section type="2-col-flex" sx={"max-w-screen-2xl space-x-6"}>
-        <First sx={"lg:w-1/2"}>
-          <Image src={story.main_image.url} alt={story.main_image.alt}/>
-        </First>
-        <Second sx={"lg:w-1/2"}>
-          <div className={"flex flex-col h-full justify-center md:w-3/4"}>
-            <h1 className={"py-4 text-5xl"}>{story.title}</h1>
-            <p className={"story-header-text pb-6"}>{story.body}</p>
+      <div className={"flex flex-col lg:flex-row p-6 lg:space-x-8"}>
+          <Image src={story.main_image.url} alt={story.main_image.alt} sx={"lg:w-1/2"}/>
+        <div className={"lg:w-1/2"}>
+          <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
+            <h1 className={"py-4 text-28 lg:text-66"}>{story.title}</h1>
+            <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
             <SocialLinks/>
           </div>
-        </Second>
-      </Section>
+        </div>
+      </div>
       {/*<Section type={"1-col"} sx={"w-full max-w-screen-lg"}>*/}
       {/*  <div className={"aspect-w-16 aspect-h-9 shadow-xl transform"}>*/}
       {/*    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"*/}
@@ -59,9 +56,9 @@ export default function Story({story}) {
       {/*            allowFullScreen/>*/}
       {/*  </div>*/}
       {/*</Section>*/}
-      <Section type="1-col" sx="max-w-screen-lg w-full space-y-6">
+      <div className={"grid grid-cols-1 space-y-6 lg:max-w-screen-lg w-full text-base lg:mx-auto"}>
         <First content={story.layout}/>
-      </Section>
+      </div>
       {/* Multi-column layouts. */}
       {/*{Object.keys(story.layout.sections).map((section, ind) => {*/}
       {/*  let cont = null;*/}
@@ -86,7 +83,7 @@ export default function Story({story}) {
       {/*  return cont;*/}
       {/*})}*/}
       <div className="md:max-w-screen-xl lg:mx-auto p-8">
-        <StoryLinkCards title="Read More:" cards={story.related_stories}/>
+        <StoryLinkCards title="Read more stories:" cards={story.related_stories}/>
       </div>
       {/*<Section type="1-col" sx="md:max-w-screen-md">*/}
       {/*  <div className="text-center pt-4">*/}
