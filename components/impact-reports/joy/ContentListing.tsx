@@ -41,8 +41,8 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
                 <Disclosure.Button>
                   <div className={"flex flex-row border-b-2 border-gold justify-between"}>
                     <h2 className={"text-lg lg:text-28 cl-title text-left"}>{title}</h2>
-                    <FontAwesomeIcon icon={open ? faTimes : faPlus} style={{height: '24px'}}
-                                     className="text-gold cursor-pointer transform hover:scale-110 pr-2"/>
+                    <FontAwesomeIcon icon={open ? faTimes : faPlus}
+                                     className="text-gold cursor-pointer transform hover:scale-110 pr-2 h-6"/>
                   </div>
                 </Disclosure.Button>
                 {open && (
@@ -53,8 +53,8 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
                           <a key={index} href={`https://giving.cu.edu${el.path}`}>
                             <div className="flex flex-row p-2 hover:bg-muted-gold justify-between">
                               <span>{el.title}</span>
-                              <FontAwesomeIcon icon={faArrowRight} style={{height: '24px'}}
-                                               className="text-gold pl-4"/>
+                              <FontAwesomeIcon icon={faArrowRight}
+                                               className="text-gold pl-4 h-6"/>
                             </div>
                           </a>
                         );
