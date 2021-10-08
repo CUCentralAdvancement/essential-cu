@@ -44,7 +44,7 @@
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.10.3",
     "@types/react": "^17.0.24",
     "autoprefixer": "^10.3.5",
     "babel-eslint": "^10.1.0",
