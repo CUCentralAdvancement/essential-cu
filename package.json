@@ -38,7 +38,7 @@
     "react-responsive": "^8.2.0",
     "react-share": "^4.4.0",
     "styled-jsx": "^4.0.1",
-    "usehooks-ts": "^1.0.1"
+    "usehooks-ts": "^1.0.4"
   },
   "engines": {
     "node": "14.x"

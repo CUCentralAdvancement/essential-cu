@@ -5586,10 +5586,10 @@ use-subscription@1.5.1:
   dependencies:
     object-assign "^4.1.1"
 
-usehooks-ts@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-1.0.1.tgz#2ef71fc160ddc906f5df01e466ad1ce6f773280f"
-  integrity sha512-JV9dcnMT+pTSU3zaYYU/MLBqGlxhtftcsXxcBenXCaLFWULA4rCPf+GKR2xqwTlJvLP12V8wHMJOyITJFpWf4A==
+usehooks-ts@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-1.0.4.tgz#5c7ffd02013c2967a9661b3dc018e3da4fcf5f3b"
+  integrity sha512-JMXupd278pn2jA8llEWaPkwzgBdhgeDtM9wp6z6NOFOgJ4JWDw7/ptmupxujLmCbQ2zlG/xVG8P3mek85x4Sew==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
