@@ -47,7 +47,8 @@ module.exports = {
         'medium-gray': '#7C7E7F',
       },
       width: {
-        pro: '768px',
+        medium: '719px',
+        '90vw': '90vw',
       }
     },
   },
