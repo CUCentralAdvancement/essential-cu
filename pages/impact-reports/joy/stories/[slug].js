@@ -37,7 +37,7 @@ Story.defaultProps = {
 
 export default function Story({story}) {
   const router = useRouter();
-  console.log(router);
+  // console.log(router);
   return (
     <>
       <Head>

@@ -88,6 +88,24 @@
 
     /* Stories pages. */
 
+    .related-stories {
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .related-stories .cl-title {
+        width: 85vw;
+    }
+
+    @screen md {
+        .related-stories {
+            width: 719px;
+        }
+
+        .related-stories .cl-title {
+            width: 694px;
+        }
+    }
 
     /* End stories pages. */
 }
