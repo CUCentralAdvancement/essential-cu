@@ -45,6 +45,8 @@ module.exports = {
         'light-yellow': '#F5F1E5',
         'light-gray': '#363636',
         'medium-gray': '#7C7E7F',
+        'light-teal': '#4BB6AE',
+        'dark-teal': '#065E62',
       },
       width: {
         medium: '719px',

@@ -86,6 +86,14 @@
         width: auto;
     }
 
+    .quote-text::before {
+        content: open-quote;
+    }
+
+    .quote-text::after {
+        content: close-quote;
+    }
+
     /* Stories pages. */
 
     .related-stories {

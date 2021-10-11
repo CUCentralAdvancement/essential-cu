@@ -41,8 +41,8 @@ function Column({children, sx, content = null}: ColumnProps) {
             );
           case 'block_quote':
             return (
-              <BlockQuote key={comp.id} sx={"text-lg font-bold lg:mx-auto sm:max-w-screen-sm ml-4 mr-8" +
-              " lg:pl-3"}>
+              <BlockQuote key={comp.id} sx={"text-lg text-center font-bold lg:mx-auto sm:max-w-screen-sm" +
+              " p-1 mx-6"}>
                 {comp.quote}
               </BlockQuote>
             );
