@@ -38,15 +38,15 @@
     "react-responsive": "^8.2.0",
     "react-share": "^4.4.0",
     "styled-jsx": "^4.0.1",
-    "usehooks-ts": "^1.0.1"
+    "usehooks-ts": "^1.0.4"
   },
   "engines": {
     "node": "14.x"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.10.3",
     "@types/react": "^17.0.24",
-    "autoprefixer": "^10.3.5",
+    "autoprefixer": "^10.3.7",
     "babel-eslint": "^10.1.0",
     "cypress": "^8.5.0",
     "eslint": "^7.32.0",
