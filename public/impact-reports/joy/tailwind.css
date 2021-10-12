@@ -990,6 +990,7 @@ hr {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -33843,8 +33844,7 @@ hr {
   text-decoration: underline
 }
 
-.svg-inline--fa.fa-w-16,
-    .svg-inline--fa.fa-w-14 {
+.svg-inline--fa* {
   width: auto;
 }
 
@@ -34200,6 +34200,7 @@ hr {
   }
 
   .sm\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -66917,6 +66918,7 @@ hr {
   }
 
   .md\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -99634,6 +99636,7 @@ hr {
   }
 
   .lg\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -132351,6 +132354,7 @@ hr {
   }
 
   .xl\:sticky {
+    position: -webkit-sticky;
     position: sticky;
   }
 
