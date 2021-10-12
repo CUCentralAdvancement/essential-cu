@@ -57,7 +57,7 @@ export default function Story({story}) {
         <Image src={'/assets/ir21/ir-21-mobile-story-logo.png'}
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"We're having some fun now!"}/>
-        <div className={"flex flex-col lg:flex-row p-6 lg:space-x-8"}>
+        <div className={"flex flex-col lg:flex-row lg:space-x-8"}>
           <Image src={story.main_image.url} alt={story.main_image.alt} sx={"lg:w-1/2"}/>
           <div className={"lg:w-1/2"}>
             <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
