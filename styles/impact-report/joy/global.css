@@ -81,8 +81,7 @@
         @apply underline italic
     }
 
-    .svg-inline--fa.fa-w-16,
-    .svg-inline--fa.fa-w-14 {
+    .svg-inline--fa* {
         width: auto;
     }
 
