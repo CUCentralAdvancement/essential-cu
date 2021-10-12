@@ -41,8 +41,8 @@ function Column({children, sx, content = null}: ColumnProps) {
             );
           case 'block_quote':
             return (
-              <BlockQuote key={comp.id} sx={"text-lg text-center font-bold lg:mx-auto sm:max-w-screen-sm" +
-              " p-1 mx-6"}>
+              <BlockQuote key={comp.id} sx={"text-lg text-center font-bold md:max-w-screen-md" +
+              " p-1 mx-6 md:mx-auto"}>
                 {comp.quote}
               </BlockQuote>
             );
@@ -73,7 +73,7 @@ function Column({children, sx, content = null}: ColumnProps) {
           case 'text_block':
           default:
             return (
-              <TextBlock key={comp.id} sx={"md:max-w-screen-md mx-auto px-6 lg:p-3"}>
+              <TextBlock key={comp.id} sx={"md:max-w-screen-md mx-auto px-6 md:px-0"}>
                 {comp.content}
               </TextBlock>
             );
