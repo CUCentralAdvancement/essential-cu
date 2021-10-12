@@ -42,10 +42,12 @@ export default function StoryCardLinks({title, variant, cards = defaultCards}: S
                                         <div className="rounded-lg bg-white flex flex-col shadow border h-full">
                                             <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                                                  className="flex flex-col justify-end bg-cover h-64 rounded-lg">
-                                                <span className="bg-gold text-center p-3 w-36 rounded-tr-full">{cards[el].campus}</span>
+                                                <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full">
+                                                    {cards[el].campus}
+                                                </span>
                                             </div>
-                                            <span className="p-6 font-bold text-xl">{cards[el].title}</span>
-                                            <span className="p-3 hidden md:inline-block">{cards[el].description}</span>
+                                            <span className="px-4 py-3 font-bold text-xl">{cards[el].title}</span>
+                                            <span className="px-4 pb-6 hidden md:inline-block">{cards[el].description}</span>
                                         </div>
                                     </a>
                                 </Link>

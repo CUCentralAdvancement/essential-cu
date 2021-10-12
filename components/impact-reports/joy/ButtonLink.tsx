@@ -29,7 +29,7 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       return (
         <a href={href}
            aria-label={label}
-           className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md flex flex-row" +
+           className={"bg-gold font-bold rounded-full py-3 px-6  shadow-md flex flex-row" +
            " space-x-3 transform hover:scale-110 flex flex-row items-center"}>
           <span>{children}</span>
           {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
