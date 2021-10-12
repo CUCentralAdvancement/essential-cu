@@ -33844,7 +33844,9 @@ hr {
   text-decoration: underline
 }
 
-.svg-inline--fa* {
+.svg-inline--fa.fa-w-16,
+    .svg-inline--fa.fa-w-14,
+    .svg-inline--fa.fa-w-11 {
   width: auto;
 }
 
