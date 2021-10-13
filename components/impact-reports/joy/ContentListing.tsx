@@ -1,6 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight, faTimes, faPlus} from '@fortawesome/free-solid-svg-icons';
-import {Disclosure} from "@headlessui/react";
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 // import {useWindowSize} from 'usehooks-ts'
 // import {breakpoints} from '../../../data/impact-reports/2021/base'
 
