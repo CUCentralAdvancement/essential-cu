@@ -17,8 +17,8 @@ const iconStyles = 'py-4 px-4 rounded-full bg-gold cursor-pointer' +
 export default function FeedbackButton({sx}: FeedbackButtonProps) {
   return (
     <div className={"flex flex-col items-center"}>
-      <span className="font-bold pl-1">Appreciate:</span>
-      <div className={`flex flex-row space-x-4 text-center ${sx}`}>
+      <span className="font-bold pl-1 py-1">Appreciate:</span>
+      <div className={`flex flex-row space-x-8 text-center ${sx}`}>
         <button aria-label={"Like the story"}
                 className={iconStyles}>
           <FontAwesomeIcon icon={actionToIcon.like} style={{height: '36px'}}/>

@@ -1,6 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight, faTimes, faPlus} from '@fortawesome/free-solid-svg-icons';
-import {Disclosure} from "@headlessui/react";
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 // import {useWindowSize} from 'usehooks-ts'
 // import {breakpoints} from '../../../data/impact-reports/2021/base'
 
@@ -34,38 +33,23 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
       );
     case  'links':
       return (
-        <div className={`${sx} `}>
-          <Disclosure defaultOpen={true}>
-            {({open}) => (
-              <>
-                <Disclosure.Button>
-                  <div className={"flex flex-row border-b-2 border-gold justify-between"}>
-                    <h2 className={"text-lg lg:text-28 cl-title text-left"}>{title}</h2>
-                    <span className="text-gold cursor-pointer h-6">
-                      <FontAwesomeIcon icon={open ? faTimes : faPlus} className="pr-2 h-6"/>
-                    </span>
+        <div className={`${sx} `} >
+          <h2 className={"text-lg lg:text-28 py-1"}>{title}</h2>
+          {/*<FontAwesomeIcon icon={faTimes} style={{height: '24px'}}*/}
+          {/*                 className="text-gold ml-2 cursor-pointer transform hover:scale-110"/>*/}
+          <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold link-underline-italic">
+            {content.map((el, index) => {
+              return (
+                <a key={index} href={`https://giving.cu.edu${el.path}`}>
+                  <div className="flex flex-row p-2 hover:bg-muted-gold items-center">
+                    <span>{el.title}</span>
+                    <FontAwesomeIcon icon={faArrowRight}
+                                     className="text-gold pl-2 h-4"/>
                   </div>
-                </Disclosure.Button>
-                {open && (
-                  <Disclosure.Panel static>
-                    <div className="space-y-2 flex flex-col shadow-inner bg-white border-b-2 border-gold link-underline-italic">
-                      {content.map((el, index) => {
-                        return (
-                          <a key={index} href={`https://giving.cu.edu${el.path}`}>
-                            <div className="flex flex-row p-2 hover:bg-muted-gold items-center">
-                              <span>{el.title}</span>
-                              <FontAwesomeIcon icon={faArrowRight}
-                                               className="text-gold pl-2 h-4"/>
-                            </div>
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </Disclosure.Panel>
-                )}
-              </>
-            )}
-          </Disclosure>
+                </a>
+              );
+            })}
+          </div>
         </div>
       );
   }
