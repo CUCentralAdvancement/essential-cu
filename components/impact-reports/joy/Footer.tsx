@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white p-4 text-black">
+    <footer className="bg-white px-4 pt-12 pb-4 text-black">
       <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center md:place-items-start align-baseline">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <a href="https://giving.cu.edu/fund-search"
@@ -30,7 +30,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div>
+        <div className={"place-self-start lg:place-self-auto"}>
           <h3 className={"text-28 pb-4 md:pb-5"}>About Us</h3>
           <ul className="list-none space-y-4 md:space-y-2">
             <li>
