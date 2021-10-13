@@ -57,17 +57,18 @@ export default function Story({story}) {
         <Image src={'/assets/ir21/ir-21-mobile-story-logo.png'}
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"We're having some fun now!"}/>
-        <div className={"flex flex-col lg:flex-row lg:space-x-8"}>
+        <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
           <Image src={story.main_image.url} alt={story.main_image.alt} sx={"lg:w-1/2"}/>
-          <div className={"lg:w-1/2"}>
+          <div className={"lg:w-1/2 px-6 lg:px-0"}>
             <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
-              <h1 className={"py-4 text-28 lg:text-66"}>{story.title}</h1>
+              <h1 className={"py-4 lg:py-12 text-28 lg:text-66"}>{story.title}</h1>
               <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
               <SocialLinks/>
             </div>
           </div>
         </div>
-        <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full text-base lg:mx-auto"}>
+        <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full text-base lg:mx-auto" +
+        " lg:pt-16"}>
           <First content={story.layout}/>
         </div>
         <div className="md:max-w-screen-xl lg:mx-auto p-8">

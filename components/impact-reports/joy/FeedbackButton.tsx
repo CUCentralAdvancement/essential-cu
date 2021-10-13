@@ -11,8 +11,7 @@ const actionToIcon = {
   smile: faSmileBeam,
 }
 
-const iconStyles = 'py-4 px-4 rounded-full bg-gold cursor-pointer' +
-  ' transform hover:scale-110';
+const iconStyles = 'py-4 px-4 rounded-full bg-gold cursor-pointer';
 
 export default function FeedbackButton({sx}: FeedbackButtonProps) {
   return (

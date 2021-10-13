@@ -6,7 +6,7 @@ interface SocialLinksProps {
     services?: Array<string>
 }
 
-const iconStyles = 'h-12 p-2 rounded-full transform hover:scale-110 hover:bg-black hover:text-gold' +
+const iconStyles = 'h-12 p-2 rounded-full hover:bg-black hover:text-gold' +
   ' cursor-pointer bg-medium-gray';
 
 export default function SocialLinks({variant, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
