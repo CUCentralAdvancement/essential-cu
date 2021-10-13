@@ -9,7 +9,7 @@ export default function Header() {
     <Menu as={"div"} className={"relative sticky top-0 z-20"}>
       {({open}) => (
         <>
-          <header className={`flex flex-col pb-3 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
+          <header className={`flex flex-col pb-2 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
             <nav className="flex flex-row items-center justify-between bg-white rounded-b px-3">
               <div className="h-16 md:h-24">
                 <Link href={"/impact-reports/joy"}>

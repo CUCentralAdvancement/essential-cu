@@ -18,7 +18,7 @@ export default function NumericStat({label, variant, number}: NumericStatProps) 
                    <FontAwesomeIcon icon={faImage} style={{height: '36px'}}/>
             </span>
           <figcaption className="flex flex-col text-center">
-            <span className={"text-28 lg:text-50"}>${number}<span className={"text-gold"}>M</span></span>
+            <span className={"text-28 lg:text-50 font-bold"}>${number}<span className={"text-gold"}>M</span></span>
             <span className={"text-light-gray"}>{label}</span>
           </figcaption>
         </figure>
