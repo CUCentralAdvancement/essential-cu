@@ -18,8 +18,8 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       return (
         <Link href={href}>
           <a role={"button"}
-             className={"bg-white font-bold rounded-full py-3 px-6 shadow-md transform" +
-             " hover:scale-110 max-w-max items-baseline " + (isActive ? 'bg-gold text-white' : '')}>
+             className={"bg-white font-bold rounded-full py-3 px-6 shadow-md " +
+             " max-w-max items-baseline " + (isActive ? 'bg-gold text-white' : '')}>
             {children}
             {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-2 pb-1"}/>}
           </a>
@@ -29,8 +29,8 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       return (
         <a href={href}
            aria-label={label}
-           className={"bg-gold font-bold rounded-full py-3 px-6  shadow-md flex flex-row" +
-           " space-x-3 transform hover:scale-110 flex flex-row items-center"}>
+           className={"bg-gold font-bold rounded-full py-3 px-6 shadow-md flex flex-row" +
+           " space-x-3 flex flex-row items-center"}>
           <span>{children}</span>
           {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
         </a>
