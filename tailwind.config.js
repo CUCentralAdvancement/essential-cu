@@ -10,6 +10,10 @@ module.exports = {
       'lg': '45px',
       'full': '9999px',
     },
+    boxShadow: {
+      sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      DEFAULT: '0 2px 4px 0 rgba(0,0,0,0.5)',
+    },
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],
       serif: ['Merriweather', 'serif'],

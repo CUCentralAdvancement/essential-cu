@@ -3,32 +3,36 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-white p-4 text-black">
-      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center align-baseline">
-        <div className="flex flex-col items-center text-center">
+      <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center md:place-items-start align-baseline">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <a href="https://giving.cu.edu/fund-search"
-             className="py-3 px-6 text-black font-bold bg-gold text-lg uppercase rounded-md"
+             className="py-3 px-6 text-black font-bold bg-gold text-sm rounded-md"
              data-testid="footer-give-button">
             Give Now
           </a>
-          <div className="p-3">
+          <div className="py-3 md:py-4">
             CU Advancement | CU Foundation
             <br/>
-            1800 Grant Street | Denver, CO 80203
+            1800 Grant Street
             <br/>
-            303-541-1290 | giving@cu.edu
+            Denver, CO 80203
             <br/>
-            <a className="underline text-blue-500" href="https://www.cu.edu/privacy-policy">
+            303-541-1290
+            <br/>
+            <span className="underline text-blue-500">giving@cu.edu</span>
+            <br/>
+            <a href="https://www.cu.edu/privacy-policy">
               Privacy Policy
             </a>{' '}
             |{' '}
-            <a className="underline text-blue-500" href="https://www.cu.edu/terms-service">
+            <a href="https://www.cu.edu/terms-service">
               Terms of Service
             </a>
           </div>
         </div>
         <div>
-          <h3>About Us</h3>
-          <ul className="list-none">
+          <h3 className={"text-28 pb-4 md:pb-5"}>About Us</h3>
+          <ul className="list-none space-y-4 md:space-y-2">
             <li>
               <a href="https://giving.cu.edu/about-us/central-cu-advancement">Central CU Advancement</a>
             </li>
@@ -41,8 +45,8 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3>Quicklinks</h3>
-          <ul className="list-none">
+          <h3 className={"text-28 pb-4 md:pb-5"}>Quicklinks</h3>
+          <ul className="list-none space-y-4 md:space-y-2">
             <li>
               <a href="https://giving.cu.edu/guide-giving">Guide to Giving</a>
             </li>
@@ -61,8 +65,8 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h3>Campus Offices</h3>
-          <ul className="list-none">
+          <h3 className={"text-28 pb-4 md:pb-5"}>Campus Offices</h3>
+          <ul className="list-none space-y-4 md:space-y-2">
             <li>
               <a href="https://supportcuanschutz.ucdenver.edu/">
                 Anschutz

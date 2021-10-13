@@ -33,7 +33,7 @@ export default function StoryPage({story}) {
 
 export async function getServerSideProps({params}) {
   const slug = params.slug || '';
-  const res = await fetch(new Request(baseURL + '/api/impact-story/' + slug));
+  const res = await fetch(new Request(baseURL + '/api/stories/' + slug));
   const storyData = await res.json();
   // const storyData = require("../../../../data/impact-reports/2021/story-one.json");
 

@@ -15,8 +15,8 @@ export default function SocialLinks({variant, services = ['twitter', 'facebook',
     case 'centered':
       return (
         <div className={"flex flex-col items-center"}>
-          <span className="font-bold pl-1">Share:</span>
-          <div className={`flex flex-row space-x-3 justify-center`} style={{color: '#F5F1E5'}}>
+          <span className="font-bold pl-1 py-1 text-sm">Share:</span>
+          <div className={`flex flex-row space-x-5 justify-center`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') && <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>}
             {services.includes('facebook') && <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>}
             {services.includes('instagram') && <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>}

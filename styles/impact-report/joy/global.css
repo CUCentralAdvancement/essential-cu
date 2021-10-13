@@ -58,19 +58,19 @@
     }
 
     ol {
-        @apply list-decimal;
+        /*@apply list-decimal;*/
     }
 
     ul {
-        @apply list-disc;
+        /*@apply list-disc;*/
     }
 
     li {
-        @apply ml-6 p-1;
+        /*@apply ml-6 p-1;*/
     }
 
     hr {
-        @apply my-4 border-gray-600;
+        /*@apply my-4 border-gray-600;*/
     }
 }
 
