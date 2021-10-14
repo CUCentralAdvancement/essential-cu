@@ -3,14 +3,13 @@ import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-i
 
 interface SocialLinksProps {
     variant?: string,
-    sx?: string,
     services?: Array<string>
 }
 
 const iconStyles = 'social-icon p-2 rounded-full hover:bg-black hover:text-gold' +
   ' cursor-pointer bg-medium-gray';
 
-export default function SocialLinks({variant, sx, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
+export default function SocialLinks({variant, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
 
   switch (variant) {
     case 'centered':
