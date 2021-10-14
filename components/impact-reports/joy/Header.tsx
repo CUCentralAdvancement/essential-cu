@@ -3,6 +3,7 @@ import ButtonLink from "./ButtonLink";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {Menu, Transition} from '@headlessui/react'
+import Image from "./Image";
 
 export default function Header() {
   return (
@@ -17,8 +18,8 @@ export default function Header() {
                     <picture>
                       <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
                               media="(min-width: 1023px)"/>
-                      <img src="/assets/ir21/cu-logo-small.png"
-                           className={"p-2 lg:p-0 h-full"}
+                      <Image src="/assets/ir21/cu-logo-small.png"
+                           sx={"p-2 lg:p-0 h-full"}
                            alt="University of Colorado Logo"/>
                     </picture>
                   </a>
@@ -29,7 +30,11 @@ export default function Header() {
                 <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
                 <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
               </div>
-              <div className="text-2xl pr-4 hidden lg:block">IR 2021 Logo</div>
+              <div className="text-2xl pr-8 hidden lg:block">
+                <img src={"/assets/ir21/header-project-logo.png"}
+                       style={{height: '93px', paddingRight: '48px'}}
+                       alt={"2021 Impact Report Logo"} />
+              </div>
               <div className={"pr-4 block lg:hidden"}>
                 <Menu.Button>
                   <FontAwesomeIcon icon={open ? faTimes : faBars}

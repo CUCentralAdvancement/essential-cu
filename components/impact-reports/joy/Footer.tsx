@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-4 pt-12 pb-4 text-black">
+    <footer className="bg-white px-4 pt-12 pb-4 text-black shadow-footer">
       <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center md:place-items-start align-baseline">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <a href="https://giving.cu.edu/fund-search"

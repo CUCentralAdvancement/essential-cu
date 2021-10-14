@@ -58,11 +58,12 @@ export default function Index({cards}: HomepageProps) {
           </p>
         </div>
       </div>
-      <div className={"p-8 bg-blue-900 -mt-8 rounded-b-lg"}>
+      <div className={"p-8 bg-blue-900 -mt-8 rounded-b-lg homepage-story-section"}>
         <h2 className={"text-center text-white py-4 text-28 lg:text-38 lg:pb-16 lg:pt-8"}>
           We asked our CU community: What brings you joy?
         </h2>
-        <div className={"grid grid-cols-1 md:grid-cols-2 gap-12 place-items-stretch lg:px-24"}>
+        <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
+        " pb-12"}>
           {Object.keys(cards).map((el, index) => {
             return (
               <Link key={index}

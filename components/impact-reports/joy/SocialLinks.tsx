@@ -3,20 +3,21 @@ import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-i
 
 interface SocialLinksProps {
     variant?: string,
+    sx?: string,
     services?: Array<string>
 }
 
-const iconStyles = 'h-12 p-2 rounded-full hover:bg-black hover:text-gold' +
+const iconStyles = 'social-icon p-2 rounded-full hover:bg-black hover:text-gold' +
   ' cursor-pointer bg-medium-gray';
 
-export default function SocialLinks({variant, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
+export default function SocialLinks({variant, sx, services = ['twitter', 'facebook', 'instagram']} :SocialLinksProps) {
 
   switch (variant) {
     case 'centered':
       return (
         <div className={"flex flex-col items-center"}>
           <span className="font-bold pl-1 py-1 text-sm">Share:</span>
-          <div className={`flex flex-row space-x-5 justify-center`} style={{color: '#F5F1E5'}}>
+          <div className={`social-icons-flex justify-center`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') && <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>}
             {services.includes('facebook') && <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>}
             {services.includes('instagram') && <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>}
@@ -25,9 +26,9 @@ export default function SocialLinks({variant, services = ['twitter', 'facebook',
       );
     default:
       return (
-        <div className={""}>
+        <div className={"social-links-story"}>
           <span className="font-bold pl-1">Share:</span>
-          <div className={`flex flex-row space-x-3`} style={{color: '#F5F1E5'}}>
+          <div className={`social-icons-flex`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') && <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>}
             {services.includes('facebook') && <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>}
             {services.includes('instagram') && <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>}
