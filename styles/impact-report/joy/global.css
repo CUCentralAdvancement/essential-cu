@@ -11,12 +11,11 @@
         content: "";
         display: block;
         position: absolute;
-        /*z-index: -1;*/
-        top: 60px;
+        top: 90px;
         left: 0;
         right: 0;
         padding-top: 56.25%;
-        background-image: url("/bkgd-goldwash.jpg");
+        background-image: url("/assets/ir21/top-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
@@ -25,8 +24,8 @@
 
     main {
         position: relative;
-        z-index: 0;
-        background-image: url("/bkgd-goldwash.jpg");
+        z-index: -1;
+        background-image: url("/assets/ir21/top-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 100% auto;
@@ -72,13 +71,41 @@
     hr {
         /*@apply my-4 border-gray-600;*/
     }
+
+    @screen lg {
+        footer {
+            height: 403px;
+            /*max-width: 1440px;*/
+        }
+
+        footer .container {
+            max-width: 1440px;
+        }
+    }
 }
 
 
-@layer utilities {
-
+@layer components {
     .link-underline-italic {
         @apply underline italic
+    }
+
+    .social-icon {
+        height: 33px;
+        width: 33px;
+    }
+
+    .social-icons-flex {
+        display: flex;
+        flex-direction: row;
+        gap: 19px;
+    }
+
+    @screen lg {
+        .social-links-story {
+            position: absolute;
+            bottom: 75px;
+        }
     }
 
     .svg-inline--fa.fa-w-16,
@@ -86,7 +113,11 @@
     .svg-inline--fa.fa-w-11 {
         width: auto;
     }
+}
 
+@layer utilities {
+
+    /* Stories pages. */
     .quote-text::before {
         content: open-quote;
     }
@@ -94,8 +125,6 @@
     .quote-text::after {
         content: close-quote;
     }
-
-    /* Stories pages. */
 
     .related-stories {
         width: 90vw;
@@ -117,6 +146,18 @@
     }
 
     /* End stories pages. */
+    /* Homepage */
+    .homepage-story-section {
+        position: relative;
+        z-index: 0;
+        background-image: url("/assets/ir21/confetti-bckgd-01.png");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100% auto;
+        padding: 1px 0;
+    }
+
+    /* End Homepage */
 }
 
 
