@@ -627,55 +627,18 @@ main {
   padding: 1px 0;
 }
 
-h1, h2, h3, h4 {
-  font-weight: 700;
-}
-
-h1 {
-  /*@apply text-5xl;*/
-}
-
-h2 {
-  /*@apply text-4xl;*/
-}
-
-h3 {
-  /*@apply text-3xl;*/
-}
-
-h4 {
-  /*@apply text-2xl;*/
-}
-
-p {
-  /*@apply my-4 py-4;*/
-}
-
-ol {
-  /*@apply list-decimal;*/
-}
-
-ul {
-  /*@apply list-disc;*/
-}
-
-li {
-  /*@apply ml-6 p-1;*/
-}
-
-hr {
-  /*@apply my-4 border-gray-600;*/
-}
-
 @media (min-width: 1023px) {
-  footer {
-    height: 403px;
-    /*max-width: 1440px;*/
-  }
+  /*footer {*/
 
-  footer .container {
-    max-width: 1440px;
-  }
+  /*    height: 403px;*/
+
+  /*}*/
+
+  /*footer .container {*/
+
+  /*    max-width: 1440px;*/
+
+  /*}*/
 }
 
 .container {
@@ -899,22 +862,32 @@ hr {
   text-decoration: underline
 }
 
-.social-icon {
-  height: 33px;
-  width: 33px;
-}
+/*.social-icon {*/
 
-.social-icons-flex {
-  display: flex;
-  flex-direction: row;
-  gap: 19px;
-}
+/*    height: 33px;*/
+
+/*    width: 33px;*/
+
+/*}*/
+
+/*.social-icons-flex {*/
+
+/*    display: flex;*/
+
+/*    flex-direction: row;*/
+
+/*    gap: 19px;*/
+
+/*}*/
 
 @media (min-width: 1023px) {
-  .social-links-story {
-    position: absolute;
-    bottom: 75px;
-  }
+  /*.social-links-story {*/
+
+  /*    position: absolute;*/
+
+  /*    bottom: 75px;*/
+
+  /*}*/
 }
 
 .svg-inline--fa.fa-w-16,
@@ -23302,9 +23275,19 @@ hr {
   font-family: Merriweather, serif;
 }
 
+.text-25 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
 .text-28 {
   font-size: 28px;
   line-height: 38px;
+}
+
+.text-30 {
+  font-size: 30px;
+  line-height: 37px;
 }
 
 .text-38 {
@@ -23315,6 +23298,11 @@ hr {
 .text-50 {
   font-size: 50px;
   line-height: 64px;
+}
+
+.text-58 {
+  font-size: 58px;
+  line-height: 68px;
 }
 
 .text-66 {
@@ -56451,9 +56439,19 @@ hr {
     font-family: Merriweather, serif;
   }
 
+  .sm\:text-25 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
   .sm\:text-28 {
     font-size: 28px;
     line-height: 38px;
+  }
+
+  .sm\:text-30 {
+    font-size: 30px;
+    line-height: 37px;
   }
 
   .sm\:text-38 {
@@ -56464,6 +56462,11 @@ hr {
   .sm\:text-50 {
     font-size: 50px;
     line-height: 64px;
+  }
+
+  .sm\:text-58 {
+    font-size: 58px;
+    line-height: 68px;
   }
 
   .sm\:text-66 {
@@ -89169,9 +89172,19 @@ hr {
     font-family: Merriweather, serif;
   }
 
+  .md\:text-25 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
   .md\:text-28 {
     font-size: 28px;
     line-height: 38px;
+  }
+
+  .md\:text-30 {
+    font-size: 30px;
+    line-height: 37px;
   }
 
   .md\:text-38 {
@@ -89182,6 +89195,11 @@ hr {
   .md\:text-50 {
     font-size: 50px;
     line-height: 64px;
+  }
+
+  .md\:text-58 {
+    font-size: 58px;
+    line-height: 68px;
   }
 
   .md\:text-66 {
@@ -121887,9 +121905,19 @@ hr {
     font-family: Merriweather, serif;
   }
 
+  .lg\:text-25 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
   .lg\:text-28 {
     font-size: 28px;
     line-height: 38px;
+  }
+
+  .lg\:text-30 {
+    font-size: 30px;
+    line-height: 37px;
   }
 
   .lg\:text-38 {
@@ -121900,6 +121928,11 @@ hr {
   .lg\:text-50 {
     font-size: 50px;
     line-height: 64px;
+  }
+
+  .lg\:text-58 {
+    font-size: 58px;
+    line-height: 68px;
   }
 
   .lg\:text-66 {
@@ -154605,9 +154638,19 @@ hr {
     font-family: Merriweather, serif;
   }
 
+  .xl\:text-25 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
   .xl\:text-28 {
     font-size: 28px;
     line-height: 38px;
+  }
+
+  .xl\:text-30 {
+    font-size: 30px;
+    line-height: 37px;
   }
 
   .xl\:text-38 {
@@ -154618,6 +154661,11 @@ hr {
   .xl\:text-50 {
     font-size: 50px;
     line-height: 64px;
+  }
+
+  .xl\:text-58 {
+    font-size: 58px;
+    line-height: 68px;
   }
 
   .xl\:text-66 {
