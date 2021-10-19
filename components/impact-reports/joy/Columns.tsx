@@ -73,9 +73,9 @@ function Column({children, sx, content = null}: ColumnProps) {
           case 'text_block':
           default:
             return (
-              <TextBlock key={comp.id} sx={"md:max-w-screen-md mx-auto px-6 md:px-0"}>
-                {comp.content}
-              </TextBlock>
+              <TextBlock key={comp.id}
+                         content={comp.content}
+                         sx={"md:max-w-screen-md mx-auto px-6 md:px-0"} />
             );
         }
       })}

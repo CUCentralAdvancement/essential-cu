@@ -11,11 +11,11 @@
         content: "";
         display: block;
         position: absolute;
-        top: 90px;
+        top: 74px;
         left: 0;
         right: 0;
-        padding-top: 56.25%;
-        background-image: url("/assets/ir21/top-bckgd-01.png");
+        padding-top: 57.25%;
+        background-image: linear-gradient(to top, transparent 90%, #fffaeb), url("/assets/ir21/top-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
@@ -24,7 +24,7 @@
 
     main {
         position: relative;
-        z-index: -1;
+        z-index: 1;
         background-image: url("/assets/ir21/top-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center bottom;
@@ -77,6 +77,11 @@
 @layer utilities {
 
     /* Stories pages. */
+
+    .story-text-block p {
+        @apply py-4;
+    }
+
     .quote-text::before {
         content: open-quote;
     }

@@ -1,14 +1,10 @@
-import {ReactNode} from "react";
-
 interface TextBlockProps {
-  children: ReactNode,
+  content: string,
   sx?: string,
 }
 
-export default function TextBlock({children, sx}: TextBlockProps) {
+export default function TextBlock({content, sx}: TextBlockProps) {
   return (
-    <p className={sx}>
-      {children}
-    </p>
+    <div className={sx + ' story-text-block'} dangerouslySetInnerHTML={{__html: content}} />
   );
 }

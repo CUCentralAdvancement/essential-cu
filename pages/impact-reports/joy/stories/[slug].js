@@ -60,7 +60,8 @@ export default function Story({story}) {
         <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
           <Image src={story.main_image.url} alt={story.main_image.alt} sx={"lg:w-1/2"}/>
           <div className={"lg:w-1/2 px-6 lg:px-0"}>
-            <div className={"flex flex-col h-full lg:justify-center md:w-3/4 relative"}>
+            <div className={"flex flex-col h-full lg:justify-center lg:w-3/4 md:mx-auto md:max-w-screen-md" +
+            " lg:m-w-auto lg:mx-0"}>
               <h1 className={"py-4 lg:py-12 text-28 lg:text-66 font-bold"}>{story.title}</h1>
               <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
               <SocialLinks />
@@ -68,7 +69,7 @@ export default function Story({story}) {
           </div>
         </div>
         <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full text-base lg:mx-auto" +
-        " lg:pt-16"}>
+        " lg:pt-12"}>
           <First content={story.layout}/>
         </div>
         <div className="md:max-w-screen-xl lg:mx-auto p-8 lg:px-8 lg:pt-8 ">

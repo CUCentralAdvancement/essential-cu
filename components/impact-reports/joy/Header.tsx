@@ -12,7 +12,7 @@ export default function Header() {
         <>
           <header className={`flex flex-col pb-2 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
             <nav className="flex flex-row items-center justify-between bg-white rounded-b px-3">
-              <div className="h-16 md:h-24">
+              <div className="h-16 md:h-24 pl-8">
                 <Link href={"/impact-reports/joy"}>
                   <a>
                     <picture>
@@ -32,7 +32,7 @@ export default function Header() {
               </div>
               <div className="text-2xl pr-8 hidden lg:block">
                 <img src={"/assets/ir21/header-project-logo.png"}
-                       style={{height: '93px', paddingRight: '48px'}}
+                       style={{height: '93px'}}
                        alt={"2021 Impact Report Logo"} />
               </div>
               <div className={"pr-4 block lg:hidden"}>
