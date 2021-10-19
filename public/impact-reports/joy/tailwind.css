@@ -619,7 +619,7 @@ body::before {
 
 main {
   position: relative;
-  z-index: 1;
+  /*z-index: 0;*/
   background-image: url("/assets/ir21/top-bckgd-01.png");
   background-repeat: no-repeat;
   background-position: center bottom;
