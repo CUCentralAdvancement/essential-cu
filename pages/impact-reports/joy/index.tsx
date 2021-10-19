@@ -3,7 +3,6 @@ import {faChevronDown, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Section from "../../../components/impact-reports/joy/Section";
 import Image from "../../../components/impact-reports/joy/Image";
-import TextBlock from "../../../components/impact-reports/joy/TextBlock";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
@@ -103,7 +102,7 @@ export default function Index({cards}: HomepageProps) {
             The average size of a gift was <strong>$6,472</strong>
           </p>
       </div>
-      <div className="md:max-w-screen-md space-y-4 text-center grid grid-cols-1 p-4 place-items-center lg:mx-auto">
+      <div className="md:max-w-screen-md space-y-4 text-center grid grid-cols-1 p-4 place-items-center md:mx-auto">
         <h2 className={"flex flex-row items-center font-bold"}>
           <Link href={"/impact-reports/joy/financials"}>
             <a className={"text-lg lg:text-28 underline"}>
@@ -121,16 +120,20 @@ export default function Index({cards}: HomepageProps) {
       </div>
       <h2 className={"text-center pt-8 pb-4 text-38 lg:text-50 font-bold"}>Our Mission</h2>
       <div className="container text-center grid grid-cols-1 md:grid-cols-2 gap-4 p-2 mx-auto pb-12 lg:pb-16">
-          <TextBlock sx={"px-12 lg:px-24 pb-6 lg:pb-0"}>
+          <div className={"px-12 lg:px-24 pb-6 lg:pb-0"}>
             <h3 className={"py-2 lg:pb-6 text-28 lg:text-38 font-bold"}>CU Foundation</h3>
-            We receive, manage and prudently invest private support for the benefit of the University of Colorado
-            and support the university’s philanthropic endeavors through donor stewardship.
-          </TextBlock>
-          <TextBlock sx={"px-12 lg:px-24"}>
+            <p>
+              We receive, manage and prudently invest private support for the benefit of the University of Colorado
+              and support the university’s philanthropic endeavors through donor stewardship.
+            </p>
+          </div>
+          <div className={"px-12 lg:px-24"}>
             <h3 className={"py-2 lg:pb-6 text-28 lg:text-38 font-bold"}>CU Advancement</h3>
-            We aspire to unite donors with their passions, elevate grand ideas and prudently manage philanthropy—all
-            to spark enduring support of a university that creates transformative impact in our communities and around the world.
-          </TextBlock>
+            <p>
+              We aspire to unite donors with their passions, elevate grand ideas and prudently manage philanthropy—all
+              to spark enduring support of a university that creates transformative impact in our communities and around the world.
+            </p>
+          </div>
       </div>
     </Layout>
     </>

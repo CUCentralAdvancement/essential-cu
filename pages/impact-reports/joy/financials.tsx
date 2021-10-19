@@ -5,7 +5,7 @@ import PieChart from "../../../components/impact-reports/joy/PieChart";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Head from "next/head";
-import React from "react";
+import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 
 export default function Financials() {
   return (
@@ -26,8 +26,8 @@ export default function Financials() {
         <div className={"space-y-12 lg:spacy-y-16"}>
 
           <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
-            <Image src={"/assets/ir21/circles-pic.png"} alt={"Financials image."} sx={"lg:w-1/2"}/>
-            <div className={"lg:w-1/2 px-6 lg:px-0"}>
+            <Image src={"/assets/ir21/circles-pic.png"} alt={"Financials image."} sx={"lg:w-3/5"}/>
+            <div className={"lg:w-2/5 px-6 lg:px-0"}>
               <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center"}>
                   <strong>Philanthropy is transformative</strong> fueling passion, motivation, and joy
@@ -116,17 +116,19 @@ export default function Financials() {
             <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
           </div>
 
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:space-x-8 lg:max-w-screen-xl mx-4 lg:mx-auto" +
-          " place-items-center"}>
-            <div className={""}>
-              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2 lg:pl-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center lg:text-left pb-4"}>
+          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto" +
+          " "}>
+            <div className={"lg:space-y-8"}>
+              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
+              " lg:pr-4"}/>
+              <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
                 <strong>92%</strong> of gifts were less than <strong>$2,500</strong>
               </h3>
             </div>
-            <div className={""}>
-              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2 lg:pl-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center lg:text-left pb-4"}>
+            <div className={"lg:space-y-8"}>
+              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
+              " lg:pl-4"}/>
+              <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
                 The average size of a gift was <span>$6,472</span>
               </h3>
             </div>
@@ -221,7 +223,7 @@ export default function Financials() {
             </div>
             <div className={"w-3/5 lg:w-3/5 h-64"}>
               {/*<div className={"aspect-w-6 aspect-h-9"}>*/}
-                <PieChart data={endowmentAllocation}/>
+              <PieChart data={endowmentAllocation}/>
               {/*</div>*/}
             </div>
           </div>
@@ -231,7 +233,7 @@ export default function Financials() {
               <ResponsiveGroupedBarChart data={returnsByYear}/>
             </div>
             <div className={"lg:w-2/5 space-y-4 px-4 lg:px-12 order-1 lg:order-2"}>
-              <h3 className={"font-bold text-center"}>Investment return vs. policy benchmark</h3>
+              <h3 className={"text-center lg:text-38"}>Investment return vs. policy benchmark</h3>
               <p className={"font-bold"}>
                 Our Long-Term Investment Pool consistently outperforms policy benchmarks.
               </p>
@@ -260,7 +262,7 @@ export default function Financials() {
           <div className={"flex flex-row sm:max-w-screen-sm sm:mx-auto bg-white p-4 rounded-tr rounded-br" +
           " border border-gold border-l-8 border-t-2 border-r-2 border-b-2"}>
             <div className={"w-1/4 lg:w-1/8"}>
-              Foo
+              icon
             </div>
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
               <h2 className={"font-bold underline"}>Download our Financials</h2>
@@ -268,6 +270,8 @@ export default function Financials() {
               <ButtonLink href={"/"}>Download PDF</ButtonLink>
             </div>
           </div>
+
+          <SocialLinks variant={"centered"}/>
 
         </div>
       </Layout>
