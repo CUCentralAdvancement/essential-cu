@@ -617,6 +617,10 @@ body::before {
   transform: rotate(180deg);
 }
 
+body {
+  font-weight: 300;
+}
+
 main {
   position: relative;
   /*z-index: 0;*/
@@ -33877,21 +33881,21 @@ main {
   content: close-quote;
 }
 
-.related-stories {
+.related-funds {
   width: 90vw;
   margin: 0 auto;
 }
 
-.related-stories .cl-title {
+.related-funds .cl-title {
   width: 85vw;
 }
 
 @media (min-width: 719px) {
-  .related-stories {
+  .related-funds {
     width: 719px;
   }
 
-  .related-stories .cl-title {
+  .related-funds .cl-title {
     width: 694px;
   }
 }

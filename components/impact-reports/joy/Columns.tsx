@@ -63,7 +63,7 @@ function Column({children, sx, content = null}: ColumnProps) {
               <ContentListing title={comp.heading}
                               variant="links"
                               key={comp.id}
-                              sx={comp.styles}
+                              sx={comp.styles + ' related-funds'}
                               content={comp.content}/>
             );
           case 'youtube_video':

@@ -22,6 +22,10 @@
         transform: rotate(180deg);
     }
 
+    body {
+        @apply font-light;
+    }
+
     main {
         position: relative;
         /*z-index: 0;*/
@@ -90,21 +94,21 @@
         content: close-quote;
     }
 
-    .related-stories {
+    .related-funds {
         width: 90vw;
         margin: 0 auto;
     }
 
-    .related-stories .cl-title {
+    .related-funds .cl-title {
         width: 85vw;
     }
 
     @screen md {
-        .related-stories {
+        .related-funds {
             width: 719px;
         }
 
-        .related-stories .cl-title {
+        .related-funds .cl-title {
             width: 694px;
         }
     }
