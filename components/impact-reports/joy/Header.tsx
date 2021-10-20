@@ -18,7 +18,7 @@ export default function Header() {
                     <picture>
                       <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
                               media="(min-width: 1023px)"/>
-                      <Image src="/assets/ir21/cu-logo-small.png"
+                      <Image url="/assets/ir21/cu-logo-small.png"
                            sx={"p-2 lg:p-0 h-full"}
                            alt="University of Colorado Logo"/>
                     </picture>

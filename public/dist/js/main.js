@@ -16919,7 +16919,7 @@
 					if (src && src !== "none") {
 						ba = bs.split(" ");
 						ea = es.split(" ");
-						_tempImg.setAttribute("src", src); //set the temp IMG's src to the background-image so that we can measure its width/height
+						_tempImg.setAttribute("src", src); //set the temp IMG's url to the background-image so that we can measure its width/height
 						i = 2;
 						while (--i > -1) {
 							bs = ba[i];
@@ -18316,11 +18316,11 @@
 				 * <script>
 				 *     var gs = window.GreenSockGlobals = {}; //the newer version we're about to load could now be referenced in a "gs" object, like gs.TweenLite.to(...). Use whatever alias you want as long as it's unique, "gs" or "banner" or whatever.
 				 * </script>
-				 * <script src="js/greensock/v1.7/TweenMax.js"></script>
+				 * <script url="js/greensock/v1.7/TweenMax.js"></script>
 				 * <script>
 				 *     window.GreenSockGlobals = window._gsQueue = window._gsDefine = null; //reset it back to null (along with the special _gsQueue variable) so that the next load of TweenMax affects the window and we can reference things directly like TweenLite.to(...)
 				 * </script>
-				 * <script src="js/greensock/v1.6/TweenMax.js"></script>
+				 * <script url="js/greensock/v1.6/TweenMax.js"></script>
 				 * <script>
 				 *     gs.TweenLite.to(...); //would use v1.7
 				 *     TweenLite.to(...); //would use v1.6
@@ -22701,11 +22701,11 @@
 				 * <script>
 				 *     var gs = window.GreenSockGlobals = {}; //the newer version we're about to load could now be referenced in a "gs" object, like gs.TweenLite.to(...). Use whatever alias you want as long as it's unique, "gs" or "banner" or whatever.
 				 * </script>
-				 * <script src="js/greensock/v1.7/TweenMax.js"></script>
+				 * <script url="js/greensock/v1.7/TweenMax.js"></script>
 				 * <script>
 				 *     window.GreenSockGlobals = window._gsQueue = window._gsDefine = null; //reset it back to null (along with the special _gsQueue variable) so that the next load of TweenMax affects the window and we can reference things directly like TweenLite.to(...)
 				 * </script>
-				 * <script src="js/greensock/v1.6/TweenMax.js"></script>
+				 * <script url="js/greensock/v1.6/TweenMax.js"></script>
 				 * <script>
 				 *     gs.TweenLite.to(...); //would use v1.7
 				 *     TweenLite.to(...); //would use v1.6

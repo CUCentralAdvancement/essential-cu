@@ -52,7 +52,7 @@ export default function HtmlDocument({
         {/* Google Tag Manager /}
         <script dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.url=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KFCM644')};`}}
         />
@@ -61,15 +61,15 @@ export default function HtmlDocument({
 
       <body className={bodyClass}>
         {
-          /* 
-          
-          <noscript 
+          /*
+
+          <noscript
             dangerouslySetInnerHTML={{
-              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFCM644"
+              __html: `<iframe url="https://www.googletagmanager.com/ns.html?id=GTM-KFCM644"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             }}
           />
-          
+
           */
         }
         <CreditsModal />
@@ -83,7 +83,7 @@ export default function HtmlDocument({
       </body>
       <script src="/impact-reports/together/static/js/jquery-3.4.1.min.js"></script>
 
-      {bodyClass === "page-home" && 
+      {bodyClass === "page-home" &&
         <>
           <script src="/impact-reports/together/static/js/ScrollMagic.min.js"></script>
           <script src="/impact-reports/together/static/js/animation.gsap.min.js"></script>

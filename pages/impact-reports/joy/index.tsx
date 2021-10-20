@@ -32,7 +32,7 @@ export default function Index({cards}: HomepageProps) {
       </Head>
     <Layout>
       <Section type="1-col">
-        <Image src="/assets/ir21/circles-pic.png" alt="The Image"/>
+        <Image url="/assets/ir21/circles-pic.png" alt="The Image"/>
         <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28"}>
           <h1 className={"py-4 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
           <p className={"text-xl lg:text-lg py-3 lg:px-8"}>
@@ -82,7 +82,7 @@ export default function Index({cards}: HomepageProps) {
         </div>
       </div>
       <div className="lg:max-w-screen-lg space-y-4 text-center grid grid-cols-1 p-4 lg:mx-auto place-items-center lg:pb-12 lg:pt-8">
-        <Image src="/assets/ir21/circles-pic.png" alt="The Image" sx={"lg:px-12"}/>
+        <Image url="/assets/ir21/circles-pic.png" alt="The Image" sx={"lg:px-12"}/>
         <h3 className={"text-28 lg:text-38 font-bold lg:pt-3"}>352.2 million given last year</h3>
         <p className={"lg:px-16"}>
           Every dollar you give creates a positive impact. Giving helps students achieve their dreams, enables
@@ -94,10 +94,10 @@ export default function Index({cards}: HomepageProps) {
           <p className={"text-28 lg:text-38 order-2 lg:order-1 pt-8 px-8 lg:px-12"}>
             <strong>92%</strong> of gifts were less than <strong>$2,500</strong>
           </p>
-          <Image src="/assets/ir21/circles-pic.png" alt="The Image" sx={"order-1 lg:order-2 lg:pl-6"}/>
+          <Image url="/assets/ir21/circles-pic.png" alt="The Image" sx={"order-1 lg:order-2 lg:pl-6"}/>
       </div>
       <div className="text-center grid grid-cols-1 lg:grid-cols-2 place-items-center">
-          <Image src="/assets/ir21/circles-pic.png" alt="The Image" sx={"lg:pr-6"}/>
+          <Image url="/assets/ir21/circles-pic.png" alt="The Image" sx={"lg:pr-6"}/>
           <p className={"text-28 lg:text-38 pt-8 px-8 lg:px-12"}>
             The average size of a gift was <strong>$6,472</strong>
           </p>

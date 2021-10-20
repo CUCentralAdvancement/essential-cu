@@ -26,7 +26,7 @@ export default function Financials() {
         <div className={"space-y-12 lg:spacy-y-16"}>
 
           <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
-            <Image src={"/assets/ir21/circles-pic.png"} alt={"Financials image."} sx={"lg:w-3/5"}/>
+            <Image url={"/assets/ir21/circles-pic.png"} alt={"Financials image."} sx={"lg:w-3/5"}/>
             <div className={"lg:w-2/5 px-6 lg:px-0"}>
               <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center"}>

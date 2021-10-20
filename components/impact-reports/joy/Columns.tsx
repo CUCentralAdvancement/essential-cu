@@ -9,6 +9,7 @@ import SocialLinks from "./SocialLinks";
 import FeedbackButton from "./FeedbackButton";
 import ContentListing from "./ContentListing";
 import YouTubeVideo from "./YouTubeVideo";
+import FinancialsSnippet from "./FinancialsSnippet";
 
 interface ColumnProps {
   children?: ReactNode,
@@ -34,7 +35,7 @@ function Column({children, sx, content = null}: ColumnProps) {
             if (comp.styles.includes('with-caption')) {
               return <ImageWithCaption key={comp.id} src={comp.url} alt={comp.alt} caption={comp.caption}/>
             }
-            return <Image key={comp.id} src={comp.url} alt={comp.alt}/>
+            return <Image key={comp.id} url={comp.url} alt={comp.alt}/>
           case 'numeric_stat':
             return (
               <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
@@ -69,6 +70,15 @@ function Column({children, sx, content = null}: ColumnProps) {
           case 'youtube_video':
             return (
               <YouTubeVideo key={comp.id} video_id={comp.video_id} title={comp.title}/>
+            );
+          case 'financials_snippet':
+            return (
+              <FinancialsSnippet key={comp.id}
+                                 sx={"md:max-w-screen-lg mx-4 md:mx-auto"}
+                                 title={comp.title}
+                                 text={comp.text}
+                                 img={comp.image}
+                                 link={comp.link} />
             );
           case 'text_block':
           default:
