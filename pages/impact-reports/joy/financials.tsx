@@ -1,7 +1,6 @@
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
-import PieChart from "../../../components/impact-reports/joy/PieChart";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Head from "next/head";
@@ -30,7 +29,7 @@ export default function Financials() {
             <div className={"lg:w-2/5 px-6 lg:px-0"}>
               <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center"}>
-                  <strong>Philanthropy is transformative</strong> fueling passion, motivation, and joy
+                  <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation, and joy
                 </h1>
               </div>
             </div>
@@ -40,7 +39,7 @@ export default function Financials() {
             <h2 className={"text-25 lg:text-50"}>2021 fiscal year financials</h2>
             <p className={"lg:text-lg"}>
               When donors like you put good into the world, it ripples outward and magnifies exponentially, transforming communities, nations and the world.
-              <strong>Thank you for your generosity, vision and intent to create more joy in the world.</strong> 2021 was a year of breakthroughs.
+              <span className={"font-bold"}>Thank you for your generosity, vision and intent to create more joy in the world.</span> 2021 was a year of breakthroughs.
             </p>
             <p className={"lg:text-lg"}>
               Here’s how your contributions made an impact.
@@ -99,7 +98,7 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <h2 className={"text-25 lg:text-50 text-center"}><strong>53,485</strong> gifts</h2>
+            <h2 className={"text-25 lg:text-50 text-center"}><span className={"font-bold"}>53,485</span> gifts</h2>
             <p className={"lg:text-lg"}>
               Every gift is a good intention that was followed through. Big or small, each donation creates better
               outcomes for students, drives discovery and promotes innovative approaches to health care. Last year, you gave:
@@ -122,21 +121,21 @@ export default function Financials() {
               <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
               " lg:pr-4"}/>
               <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
-                <strong>92%</strong> of gifts were less than <strong>$2,500</strong>
+                <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
               </h3>
             </div>
             <div className={"lg:space-y-8"}>
               <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
               " lg:pl-4"}/>
               <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
-                The average size of a gift was <span>$6,472</span>
+                The average size of a gift was <span className={"font-bold"}>$6,472</span>
               </h3>
             </div>
           </div>
 
           <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto" +
           " text-center"}>
-            <h3 className={"text-25 lg:text-50"}><strong>29,294</strong> donors like you</h3>
+            <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you</h3>
             <p className={"lg:text-lg"}>
               Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
               the decision to give and give again.
@@ -193,10 +192,10 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
-            <div className={"w-full lg:w-3/5 h-64"}>
+            <div className={"chart-container the-bar-chart"}>
               <ResponsiveBarChart data={endowmentByYear}/>
             </div>
-            <div className={"lg:w-2/5 space-y-4 px-4 lg:px-12"}>
+            <div className={"chart-text-container"}>
               <h3 className={"font-bold"}>Last year we received gifts from:</h3>
               <p>
                 <span className={"lg:text-xl text-red-500 font-bold"}>130</span><br/>
@@ -214,25 +213,34 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
-            <div className={"space-y-4 px-4 lg:px-12 lg:w-2/5"}>
+            <div className={"chart-text-container"}>
               <h3 className={"font-bold text-xl lg:text-38 text-center"}>How is CU’s endowment invested?</h3>
               <p>
                 The endowment is invested in a diversified portfolio with a target of stable, long-term growth.
                 In fiscal year 2021, the Long-Term Investment Pool (LTIP) allocation was:
               </p>
             </div>
-            <div className={"w-3/5 lg:w-3/5 h-64"}>
-              {/*<div className={"aspect-w-6 aspect-h-9"}>*/}
-              <PieChart data={endowmentAllocation}/>
-              {/*</div>*/}
+            <div className={"chart-container flex flex-col place-items-center"}>
+              {/*<PieChart data={transferToCU}/>*/}
+              <Image url={"/assets/ir21/endowment-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
+              <div className={"grid grid-cols-2 gap-2 h-2/5 w-2/3 pt-4 text-sm lg:text-base"}>
+                {endowmentAllocation.map((el, ind) => {
+                  return (
+                    <div key={ind} className={"flex flex-row items-center"}>
+                      <div style={{background: el.fill}} className={"chart-legend-circle"} />
+                      <span className={"ml-4"}>{el.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
-            <div className={"w-full lg:w-3/5 h-64 order-2 lg:order-1"}>
+            <div className={"chart-container the-bar-chart order-2 lg:order-1"}>
               <ResponsiveGroupedBarChart data={returnsByYear}/>
             </div>
-            <div className={"lg:w-2/5 space-y-4 px-4 lg:px-12 order-1 lg:order-2"}>
+            <div className={"chart-text-container order-1 lg:order-2"}>
               <h3 className={"text-center lg:text-38"}>Investment return vs. policy benchmark</h3>
               <p className={"font-bold"}>
                 Our Long-Term Investment Pool consistently outperforms policy benchmarks.
@@ -244,18 +252,27 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
-            <div className={"space-y-4 px-4 lg:px-12 lg:w-2/5"}>
+          <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl" +
+          " lg:mx-auto"}>
+            <div className={"chart-text-container"}>
               <h3 className={"font-bold text-xl lg:text-38 text-center"}>$211.8 million</h3>
               <p>
                 That’s how much the CU Foundation transferred to CU last fiscal year:
               </p>
             </div>
-            <div className={"w-3/5 lg:w-3/5 h-64 relative"}>
-              {/*<div className={"aspect-w-6 aspect-h-9"}>*/}
-              <PieChart data={transferToCU}/>
-              {/*<span className={"absolute top-1/2 left-1/2"}>$211.8 million</span>*/}
-              {/*</div>*/}
+            <div className={"chart-container flex flex-col place-items-center"}>
+              {/*<PieChart data={transferToCU}/>*/}
+              <Image url={"/assets/ir21/transfer-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
+              <div className={"grid grid-cols-2 gap-2 h-2/5 w-2/3 pt-4 text-sm lg:text-base"}>
+                {transferToCU.map((el, ind) => {
+                  return (
+                    <div key={ind} className={"flex flex-row items-center"}>
+                      <div style={{background: el.fill}} className={"chart-legend-circle"} />
+                      <span className={"ml-4"}>{el.name}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

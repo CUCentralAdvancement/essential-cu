@@ -68,7 +68,7 @@ export default function Story({story}) {
             </div>
           </div>
         </div>
-        <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full text-base lg:mx-auto" +
+        <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full lg:mx-auto" +
         " lg:pt-12"}>
           <First content={story.layout}/>
         </div>

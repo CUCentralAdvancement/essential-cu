@@ -19,7 +19,7 @@ export default function NumericStat({label, variant, number}: NumericStatProps) 
             </span>
           <figcaption className="flex flex-col text-center">
             <span className={"text-28 lg:text-50 font-bold"}>${number}<span className={"text-gold"}>M</span></span>
-            <span className={"text-light-gray"}>{label}</span>
+            <span className={"text-light-gray px-4"}>{label}</span>
           </figcaption>
         </figure>
       );

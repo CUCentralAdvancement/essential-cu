@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -33,6 +34,7 @@ module.exports = {
       '3xl': ['2.64vh', '3.33vh'],
       '4xl': ['3.47vh', '4.44vh'],
       '5xl': ['4.58vh', '5.347vh'],
+      '18': ['18px', '26px'],
       '25': ['25px', '30px'],
       '28': ['28px', '38px'],
       '30': ['30px', '37px'],

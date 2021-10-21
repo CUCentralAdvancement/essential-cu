@@ -14,7 +14,7 @@
         left: 0;
         right: 0;
         padding-top: 57.25%;
-        background-image: linear-gradient(to top, transparent 90%, #fffaeb), url("/assets/ir21/top-bckgd-01.png");
+        background-image: linear-gradient(to top, transparent 90%, #fffaeb), url("/assets/ir21/Web-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
@@ -22,27 +22,23 @@
     }
 
     body {
-        @apply font-light;
+        @apply font-light text-18;
+    }
+
+    @screen md {
+        body {
+            @apply text-lg;
+        }
     }
 
     main {
         position: relative;
         /*z-index: 0;*/
-        background-image: url("/assets/ir21/top-bckgd-01.png");
+        background-image: url("/assets/ir21/Web-bckgd-01.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 100% auto;
         padding: 1px 0;
-    }
-
-    @screen lg {
-        /*footer {*/
-        /*    height: 403px;*/
-        /*}*/
-
-        /*footer .container {*/
-        /*    max-width: 1440px;*/
-        /*}*/
     }
 }
 
@@ -52,17 +48,26 @@
         @apply underline italic
     }
 
+    .button-link {
+        @apply rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max;
+        @apply bg-gold font-bold text-base;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+        transition: color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+
+    .button-link:hover {
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+    }
+
     /*.social-icon {*/
     /*    height: 33px;*/
     /*    width: 33px;*/
     /*}*/
-
     /*.social-icons-flex {*/
     /*    display: flex;*/
     /*    flex-direction: row;*/
     /*    gap: 19px;*/
     /*}*/
-
     @screen lg {
         /*.social-links-story {*/
         /*    position: absolute;*/
@@ -70,17 +75,58 @@
         /*}*/
     }
 
+    /* The social icons rendered with these classes,
+      and it caused the icons to shrink or blow up.*/
     .svg-inline--fa.fa-w-16,
     .svg-inline--fa.fa-w-14,
     .svg-inline--fa.fa-w-11 {
         width: auto;
+    }
+
+    /* Charts */
+
+    .the-pie-chart text,
+    .the-bar-chart text {
+        @apply font-bold text-18 lg:text-xl;
+    }
+
+    .chart-container {
+        @apply w-full h-full lg:w-3/5;
+    }
+
+    .the-pie-chart {
+        height: 350px;
+    }
+
+    .the-bar-chart {
+        height: 400px;
+    }
+
+    @screen lg {
+        .the-pie-chart {
+            height: 500px;
+        }
+
+        .the-bar-chart {
+            height: 400px;
+        }
+    }
+
+    .chart-text-container {
+        @apply w-full lg:w-2/5 space-y-4 px-4 lg:px-20;
+    }
+
+    .chart-legend-circle {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #000;
     }
 }
 
 @layer utilities {
 
     /* Stories pages. */
-
     .story-text-block p {
         @apply py-4;
     }
