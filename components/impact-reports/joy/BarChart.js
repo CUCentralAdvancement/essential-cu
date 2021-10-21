@@ -9,27 +9,23 @@ export function ResponsiveBarChart({data}) {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        // width={500}
-        // height={900}
+        barCategoryGap={'15%'}
         data={data}
         margin={{
-          top: 15,
+          top: 30,
           right: 20,
           left: 20,
-          bottom: 15,
+          bottom: 35,
         }}
       >
-        {/*<CartesianGrid strokeDasharray="3 3" />*/}
-        <XAxis dataKey="year" axisLine={false} tickLine={false}>
-          <Label value="(Value in billions)" offset={0} position="bottom" />
+        <XAxis dataKey="year" axisLine={false} tickLine={false}
+               tick={{fill: '#000'}}>
+          <Label value="(Value in billions)" offset={15} position="bottom" />
         </XAxis>
-        {/*<YAxis />*/}
-        {/*<Tooltip />*/}
-        {/*<Legend />*/}
         <Bar dataKey="value">
-          <LabelList dataKey="value" position="top" fill={"#000"} formatter={(label) => `$` + label} />
+          <LabelList dataKey="value" position="top" fill={"#000"} offset={15}
+          formatter={(label) => '$' + label}/>
         </Bar>
-        {/*<Bar dataKey="uv" fill="#82ca9d" />*/}
       </BarChart>
     </ResponsiveContainer>
   );
@@ -44,6 +40,7 @@ export function ResponsiveGroupedBarChart({data}) {
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
         data={data}
+        barGap={0}
         margin={{
           top: 15,
           right: 20,
@@ -51,15 +48,23 @@ export function ResponsiveGroupedBarChart({data}) {
           bottom: 15,
         }}
       >
-        <XAxis dataKey="year" axisLine={false} tickLine={false} />
-        <Legend iconType={"circle"} />
+        <XAxis dataKey="year" axisLine={false} tickLine={false}
+               tick={{fill: '#000'}} />
+        <Legend iconType={"circle"} formatter={renderColorfulLegendText}
+                wrapperStyle={{paddingTop: '10px', fontWeight: 700}} />
         <Bar dataKey="LTIP" fill={"#cfb87c"}>
-          <LabelList dataKey="LTIP" position="top" fill={"#000"} formatter={(label) => label + `%`} />
+          <LabelList dataKey="LTIP" position="top" fill={"#000"} offset={15}
+                     formatter={(label) => label + `%`} />
         </Bar>
         <Bar dataKey="Policy Benchmark">
-          <LabelList dataKey="Policy Benchmark" position="top" fill={"#000"} formatter={(label) => label + `%`} />
+          <LabelList dataKey="Policy Benchmark" position="top" fill={"#000"} offset={15}
+                     formatter={(label) => label + `%`} />
         </Bar>
       </BarChart>
     </ResponsiveContainer>
   );
+}
+
+function renderColorfulLegendText(value, entry) {
+  return <span style={{ color: '#000' }}>{value}</span>;
 }
