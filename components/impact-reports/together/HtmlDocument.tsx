@@ -61,15 +61,15 @@ export default function HtmlDocument({
 
       <body className={bodyClass}>
         {
-          /* 
-          
-          <noscript 
+          /*
+
+          <noscript
             dangerouslySetInnerHTML={{
               __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFCM644"
               height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             }}
           />
-          
+
           */
         }
         <CreditsModal />
@@ -83,7 +83,7 @@ export default function HtmlDocument({
       </body>
       <script src="/impact-reports/together/static/js/jquery-3.4.1.min.js"></script>
 
-      {bodyClass === "page-home" && 
+      {bodyClass === "page-home" &&
         <>
           <script src="/impact-reports/together/static/js/ScrollMagic.min.js"></script>
           <script src="/impact-reports/together/static/js/animation.gsap.min.js"></script>

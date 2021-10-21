@@ -1,11 +1,11 @@
-interface ImageProps {
-    src: string,
+export interface ImageProps {
+    url: string,
     alt: string,
     sx?: string,
 }
 
-export default function Image({src, alt, sx}: ImageProps) {
+export default function Image({url, alt, sx}: ImageProps) {
     return (
-        <img src={src} alt={alt} className={sx} />
+        <img src={url} alt={alt} className={sx} />
     );
 }
