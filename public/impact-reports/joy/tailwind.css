@@ -628,7 +628,7 @@ body::before {
 
 body {
   font-size: 18px;
-  line-height: 31px;
+  line-height: 26px;
   font-weight: 300;
 }
 
@@ -806,7 +806,7 @@ main {
 
 .the-pie-chart text, .the-bar-chart text {
   font-size: 18px;
-  line-height: 31px;
+  line-height: 26px;
   font-weight: 700;
 }
 
@@ -1401,11 +1401,6 @@ main {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pb-6 {
