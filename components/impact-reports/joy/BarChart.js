@@ -65,6 +65,6 @@ export function ResponsiveGroupedBarChart({data}) {
   );
 }
 
-function renderColorfulLegendText(value, entry) {
+function renderColorfulLegendText(value) {
   return <span style={{ color: '#000' }}>{value}</span>;
 }
