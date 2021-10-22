@@ -40,7 +40,7 @@ export default function SocialLinks({
               title={""}
               hashtags={[""]}
               className={iconStyles}>
-              <TwitterIcon size={32} round={true}/>
+              <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
             </TwitterShareButton>
             }
             {services.includes('facebook') &&
@@ -50,7 +50,7 @@ export default function SocialLinks({
               hashtag={""}
               url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
             >
-              <FacebookIcon size={32} round={true}/>
+              <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
             </FacebookShareButton>
             }
             {services.includes('instagram') &&
