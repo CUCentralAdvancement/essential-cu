@@ -3,7 +3,6 @@ import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-i
 import {
   FacebookShareButton,
   TwitterShareButton,
-  LinkedinShareButton,
   FacebookIcon,
   TwitterIcon
 } from "react-share";
@@ -13,7 +12,7 @@ import {useRouter} from "next/router";
 
 interface SocialLinksProps {
   variant?: string,
-  services?: Array<string>
+  services?: Array<string>,
   title?: string
 }
 
@@ -87,7 +86,7 @@ export default function SocialLinks({
             </FacebookShareButton>
             }
             {services.includes('instagram') &&
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>
             </a>
             }
