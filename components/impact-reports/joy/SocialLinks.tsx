@@ -3,8 +3,6 @@ import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-i
 import {
   FacebookShareButton,
   TwitterShareButton,
-  FacebookIcon,
-  TwitterIcon
 } from "react-share";
 import {defaultHostName} from '../../../data/impact-reports/joy/base';
 import React from "react";
