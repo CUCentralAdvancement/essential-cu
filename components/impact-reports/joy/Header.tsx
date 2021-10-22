@@ -11,15 +11,15 @@ export default function Header() {
       {({open}) => (
         <>
           <header className={`flex flex-col pb-2 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
-            <nav className="flex flex-row items-center justify-between bg-white rounded-b px-3">
-              <div className="h-16 md:h-24 pl-8">
+            <nav className="flex flex-row items-center justify-between bg-white rounded-b md:px-3">
+              <div className="h-16 md:h-24 md:pl-8">
                 <Link href={"/impact-reports/joy"}>
                   <a>
                     <picture>
                       <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
                               media="(min-width: 1023px)"/>
                       <Image url="/assets/ir21/cu-logo-small.png"
-                           sx={"p-2 lg:p-0 h-full"}
+                           sx={"p-2 md:p-0 h-full"}
                            alt="University of Colorado Logo"/>
                     </picture>
                   </a>

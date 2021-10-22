@@ -946,8 +946,8 @@ main {
 
 .chart-text-container > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .chart-text-container {
@@ -955,11 +955,19 @@ main {
   padding-right: 1rem;
 }
 
+@media (min-width: 719px) {
+  .chart-text-container > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+  }
+}
+
 @media (min-width: 1023px) {
   .chart-text-container {
     width: 40%;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -968,6 +976,26 @@ main {
   width: 20px;
   height: 20px;
   border: 1px solid #000;
+}
+
+.chart-legend-large-circle {
+  border-radius: 50%;
+  width: 44px;
+  height: 20px;
+  border: 1px solid #000;
+  place-self: start;
+}
+
+@media (min-width: 719px) {
+  .chart-legend-large-circle {
+    place-self: center;
+  }
+}
+
+@media (min-width: 719px) {
+  .chart-legend-large-circle {
+    width: 32px;
+  }
 }
 
 .sr-only {
