@@ -48,16 +48,6 @@
         @apply underline italic
     }
 
-    .button-link {
-        @apply rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max;
-        @apply bg-gold font-bold text-base;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
-        transition: color .2s ease, box-shadow .2s ease, background-color .2s ease;
-    }
-
-    .button-link:hover {
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
-    }
 
     /*.social-icon {*/
     /*    height: 33px;*/

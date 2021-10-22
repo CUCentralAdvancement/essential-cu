@@ -735,42 +735,6 @@ main {
   text-decoration: underline;
 }
 
-.button-link {
-  display: flex;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  flex-direction: row;
-  align-items: center;
-}
-
-.button-link > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.button-link {
-  border-radius: 9999px;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  --tw-bg-opacity: 1;
-  background-color: rgba(207, 184, 124, var(--tw-bg-opacity));
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
-  transition: color .2s ease, box-shadow .2s ease, background-color .2s ease;
-}
-
-.button-link:hover {
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
-}
-
 /*.social-icon {*/
 
 /*    height: 33px;*/
@@ -1055,6 +1019,12 @@ main {
   width: 100%;
 }
 
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .max-w-max {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
@@ -1181,6 +1151,12 @@ main {
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
+.space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1203,12 +1179,6 @@ main {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .place-self-start {
@@ -1506,6 +1476,11 @@ main {
   line-height: 48px;
 }
 
+.text-base {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .text-4xl {
   font-size: 3.47vh;
   line-height: 4.44vh;
@@ -1596,13 +1571,13 @@ main {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-inner {
-  --tw-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+.shadow {
+  --tw-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow {
-  --tw-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1712,6 +1687,11 @@ main {
 .hover\:text-gold:hover {
   --tw-text-opacity: 1;
   color: rgba(207, 184, 124, var(--tw-text-opacity));
+}
+
+.hover\:shadow-liddle:hover {
+  --tw-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 @media (min-width: 479px) {
