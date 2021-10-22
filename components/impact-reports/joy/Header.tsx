@@ -11,37 +11,39 @@ export default function Header() {
       {({open}) => (
         <>
           <header className={`flex flex-col pb-2 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
-            <nav className="flex flex-row items-center justify-between bg-white rounded-b md:px-3">
-              <div className="h-16 md:h-24 md:pl-8">
-                <Link href={"/impact-reports/joy"}>
-                  <a>
-                    <picture>
-                      <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
-                              media="(min-width: 1023px)"/>
-                      <Image url="/assets/ir21/cu-logo-small.png"
-                           sx={"p-2 md:p-0 h-full"}
-                           alt="University of Colorado Logo"/>
-                    </picture>
-                  </a>
-                </Link>
-              </div>
-              <div className="hidden lg:flex flex-row items-baseline space-x-12">
-                <ButtonLink label="View the financials page" href="/impact-reports/joy/financials">Financials</ButtonLink>
-                <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
-                <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
-              </div>
-              <div className="text-2xl pr-8 hidden lg:block">
-                <img src={"/assets/ir21/header-project-logo.png"}
+            <div className={"bg-white rounded-b md:px-3"}>
+              <nav className="flex flex-row items-center justify-between lg:max-w-screen-xl lg:mx-auto">
+                <div className="pr-4 lg:pr-0 h-16 lg:h-24">
+                  <Link href={"/impact-reports/joy"}>
+                    <a>
+                      <picture>
+                        <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
+                                media="(min-width: 1023px)"/>
+                        <Image url="/assets/ir21/cu-logo-small.png"
+                               sx={"p-2 lg:p-0 h-full"}
+                               alt="University of Colorado Logo"/>
+                      </picture>
+                    </a>
+                  </Link>
+                </div>
+                <div className="hidden lg:flex flex-row items-baseline space-x-12">
+                  <ButtonLink label="View the financials page" href="/impact-reports/joy/financials">Financials</ButtonLink>
+                  <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
+                  <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
+                </div>
+                <div className="text-2xl hidden lg:block">
+                  <img src={"/assets/ir21/header-project-logo.png"}
                        style={{height: '93px'}}
-                       alt={"2021 Impact Report Logo"} />
-              </div>
-              <div className={"pr-4 block lg:hidden"}>
-                <Menu.Button>
-                  <FontAwesomeIcon icon={open ? faTimes : faBars}
-                                   style={{height: '36px'}}/>
-                </Menu.Button>
-              </div>
-            </nav>
+                       alt={"2021 Impact Report Logo"}/>
+                </div>
+                <div className={"pr-4 lg:pr-0 block lg:hidden"}>
+                  <Menu.Button>
+                    <FontAwesomeIcon icon={open ? faTimes : faBars}
+                                     style={{height: '36px'}}/>
+                  </Menu.Button>
+                </div>
+              </nav>
+            </div>
           </header>
           <Transition show={open}
                       enter={"transform transition duration-100 ease-in"}

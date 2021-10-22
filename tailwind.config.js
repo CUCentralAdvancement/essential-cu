@@ -46,7 +46,9 @@ module.exports = {
     },
     screens: {
       sm: '479px',
+      ssm: '599px',
       md: '719px',
+      mmd: '839px',
       lg: '1023px',
       xl: '1279px',
     },
@@ -65,6 +67,7 @@ module.exports = {
         'dark-teal': '#065E62',
       },
       width: {
+        card: '263px',
         medium: '719px',
         '90vw': '90vw',
       }

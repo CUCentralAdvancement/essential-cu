@@ -35,14 +35,18 @@ function Column({children, sx, content = null}: ColumnProps) {
             if (comp.styles.includes('with-caption')) {
               return <ImageWithCaption key={comp.id} src={comp.url} alt={comp.alt} caption={comp.caption}/>
             }
-            return <Image key={comp.id} url={comp.url} alt={comp.alt}/>
+            return <Image key={comp.id}
+                          url={comp.url}
+                          width={comp.width}
+                          height={comp.height}
+                          alt={comp.alt}/>
           case 'numeric_stat':
             return (
               <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
             );
           case 'block_quote':
             return (
-              <BlockQuote key={comp.id} sx={"text-lg text-center font-bold md:max-w-screen-md" +
+              <BlockQuote key={comp.id} sx={"text-lg text-center font-bold ssm:max-w-screen-ssm" +
               " p-1 mx-6 md:mx-auto"}>
                 {comp.quote}
               </BlockQuote>
