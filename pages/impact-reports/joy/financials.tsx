@@ -5,8 +5,10 @@ import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Head from "next/head";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
+import {useWindowSize} from "usehooks-ts";
 
 export default function Financials() {
+  const {width} = useWindowSize();
   return (
     <>
       <Head>
@@ -196,17 +198,20 @@ export default function Financials() {
               <ResponsiveBarChart data={endowmentByYear}/>
             </div>
             <div className={"chart-text-container"}>
-              <h3 className={"font-bold"}>Last year we received gifts from:</h3>
+              <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
               <p>
-                <span className={"lg:text-xl text-red-500 font-bold"}>130</span><br/>
+                <span className={"pr-2 md:pr-0 text-xl md:text-38 text-red-500 font-bold"}>130</span>
+                {width > 719 && <br/>}
                 new endowments were created in the last fiscal year
               </p>
               <p>
-                <span className={"lg:text-xl text-yellow-500 font-bold"}>3,159</span><br/>
+                <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-yellow-500 font-bold"}>3,159</span>
+                {width > 719 && <br/>}
                 total endowments at CU are making a lasting impact
               </p>
               <p>
-                <span className={"lg:text-xl text-purple-500 font-bold"}>$76.4 million</span><br/>
+                <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-purple-500 font-bold"}>$76.4 million</span>
+                {width > 719 && <br/>}
                 was given in endowment support
               </p>
             </div>
@@ -223,12 +228,13 @@ export default function Financials() {
             <div className={"chart-container flex flex-col place-items-center"}>
               {/*<PieChart data={transferToCU}/>*/}
               <Image url={"/assets/ir21/endowment-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
-              <div className={"grid grid-cols-2 gap-2 h-2/5 w-2/3 pt-4 text-sm lg:text-base"}>
+              <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base lg:text-18" +
+              " font-bold"}>
                 {endowmentAllocation.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
                       <div style={{background: el.fill}} className={"chart-legend-circle"} />
-                      <span className={"ml-4"}>{el.name}</span>
+                      <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
                 })}
@@ -263,12 +269,14 @@ export default function Financials() {
             <div className={"chart-container flex flex-col place-items-center"}>
               {/*<PieChart data={transferToCU}/>*/}
               <Image url={"/assets/ir21/transfer-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
-              <div className={"grid grid-cols-2 gap-2 h-2/5 w-2/3 pt-4 text-sm lg:text-base"}>
+              <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base" +
+              " lg:text-18 font-bold"}>
                 {transferToCU.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
-                      <div style={{background: el.fill}} className={"chart-legend-circle"} />
-                      <span className={"ml-4"}>{el.name}</span>
+                      <div style={{background: el.fill}}
+                           className={ind == 4 || ind == 5 ? "chart-legend-large-circle h-min" : "chart-legend-circle"} />
+                      <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
                 })}
@@ -276,7 +284,8 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"flex flex-row sm:max-w-screen-sm sm:mx-auto bg-white p-4 rounded-tr rounded-br" +
+          <div className={"flex flex-row sm:max-w-screen-sm mx-4 sm:mx-auto bg-white p-4 rounded-tr" +
+          " rounded-br" +
           " border border-gold border-l-8 border-t-2 border-r-2 border-b-2"}>
             <div className={"w-1/4 lg:w-1/8"}>
               icon
