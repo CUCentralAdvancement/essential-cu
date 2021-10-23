@@ -66,8 +66,11 @@ module.exports = {
         'light-teal': '#4BB6AE',
         'dark-teal': '#065E62',
       },
+      height: {
+        cardImage: '206px',
+      },
       width: {
-        card: '263px',
+        card: '273px',
         medium: '719px',
         '90vw': '90vw',
       }

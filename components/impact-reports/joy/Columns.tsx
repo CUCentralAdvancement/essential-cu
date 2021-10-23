@@ -1,7 +1,6 @@
 import {ReactNode} from "react";
 import Image from "./Image";
 import TextBlock from "./TextBlock";
-import NumericStat from "./NumericStat";
 import ImageWithCaption from "./ImageWithCaption";
 import BlockQuote from "./BlockQuote";
 import CtaBlock from "./CtaBlock";
@@ -40,10 +39,6 @@ function Column({children, sx, content = null}: ColumnProps) {
                           width={comp.width}
                           height={comp.height}
                           alt={comp.alt}/>
-          case 'numeric_stat':
-            return (
-              <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
-            );
           case 'block_quote':
             return (
               <BlockQuote key={comp.id} sx={"text-lg text-center font-bold ssm:max-w-screen-ssm" +

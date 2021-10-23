@@ -12,9 +12,10 @@ interface FinancialsSnippetProps {
 }
 
 export default function FinancialsSnippet({title, text, img, link, sx}: FinancialsSnippetProps) {
+
   return (
     <div className={"flex flex-col md:flex-row p-8 shadow bg-white rounded-lg " + sx}>
-      <Image url={img.url} alt={img.alt} sx={"md:w-1/3 border"}/>
+      <Image url={img.url ?? '/assets/ir21/circles-pic.png'} alt={img.alt} sx={"md:w-1/3 border"}/>
       <div className={"flex flex-col md:w-2/3 md:pl-8 text-center"}>
         <h2 className={"font-bold text-28 pt-4"}>{title}</h2>
         <div className={"py-4"} dangerouslySetInnerHTML={{__html: text}}/>

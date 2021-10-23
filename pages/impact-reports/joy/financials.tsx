@@ -100,18 +100,32 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <h2 className={"text-25 lg:text-50 text-center"}><span className={"font-bold"}>53,485</span> gifts</h2>
+            <h2 className={"text-25 lg:text-50 text-center"}><span className={"font-bold"}>53,485</span> gifts
+            </h2>
             <p className={"lg:text-lg"}>
               Every gift is a good intention that was followed through. Big or small, each donation creates better
               outcomes for students, drives discovery and promotes innovative approaches to health care. Last year, you gave:
             </p>
           </div>
 
-          <div className={"grid grid-cols-2 md:grid-cols-4 gap-4 place-items-center"}>
-            <NumericStat variant="icon-top" number={53} label="to expand opportunities for students through scholarships"/>
-            <NumericStat variant="icon-top" number={127} label="to drive research and discovery"/>
-            <NumericStat variant="icon-top" number={28} label="to attract the best and brightest faculty to our campuses"/>
-            <NumericStat variant="icon-top" number={201} label="to transform health care and support lifesaving treatment"/>
+          <div className={"grid grid-cols-2 md:grid-cols-4 gap-4 place-items-center xl:max-w-screen-xl" +
+          " xl:mx-auto"}>
+            <NumericStat number={53} image={{
+              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
+              alt: 'Graduation Cap'
+            }} label="to expand opportunities for students through scholarships"/>
+            <NumericStat image={{
+              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
+              alt: 'Telescope'
+            }} number={127} label="to drive research and discovery"/>
+            <NumericStat image={{
+              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
+              alt: 'Trophy Star'
+            }} number={28} label="to attract the best and brightest faculty to our campuses"/>
+            <NumericStat image={{
+              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
+              alt: 'Heart-care DNA'
+            }} number={201} label="to transform health care and support lifesaving treatment"/>
           </div>
           <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
             <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
@@ -137,7 +151,8 @@ export default function Financials() {
 
           <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto" +
           " text-center"}>
-            <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you</h3>
+            <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you
+            </h3>
             <p className={"lg:text-lg"}>
               Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
               the decision to give and give again.
@@ -227,13 +242,15 @@ export default function Financials() {
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
               {/*<PieChart data={transferToCU}/>*/}
-              <Image url={"/assets/ir21/endowment-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
+              <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_516,q_auto,w_576/v1634948333/ir21/financials/endowment-chart_nbtcv8.png"}
+                     alt={"Funds transferred to CU"}
+                     sx={"the-pie-chart"}/>
               <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base lg:text-18" +
               " font-bold"}>
                 {endowmentAllocation.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
-                      <div style={{background: el.fill}} className={"chart-legend-circle"} />
+                      <div style={{background: el.fill}} className={"chart-legend-circle"}/>
                       <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
@@ -268,14 +285,16 @@ export default function Financials() {
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
               {/*<PieChart data={transferToCU}/>*/}
-              <Image url={"/assets/ir21/transfer-chart.png"} alt={"Funds transferred to CU"} sx={"the-pie-chart"}/>
+              <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_518,q_auto,w_576/v1634948333/ir21/financials/transfer-chart_lvlk3s.png"}
+                     alt={"Funds transferred to CU"}
+                     sx={"the-pie-chart"}/>
               <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base" +
               " lg:text-18 font-bold"}>
                 {transferToCU.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
                       <div style={{background: el.fill}}
-                           className={ind == 4 || ind == 5 ? "chart-legend-large-circle h-min" : "chart-legend-circle"} />
+                           className={ind == 4 || ind == 5 ? "chart-legend-large-circle h-min" : "chart-legend-circle"}/>
                       <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );

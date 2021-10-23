@@ -19,7 +19,7 @@ export default function Header() {
                       <picture>
                         <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
                                 media="(min-width: 1023px)"/>
-                        <Image url="/assets/ir21/cu-logo-small.png"
+                        <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_88,q_auto,w_490/v1634945747/ir21/global/cu-logo-small_lgwclv.png"
                                sx={"p-2 lg:p-0 h-full"}
                                alt="University of Colorado Logo"/>
                       </picture>
@@ -32,8 +32,7 @@ export default function Header() {
                   <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
                 </div>
                 <div className="text-2xl hidden lg:block">
-                  <img src={"/assets/ir21/header-project-logo.png"}
-                       style={{height: '93px'}}
+                  <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_93,q_auto,w_188/v1634945747/ir21/global/header-project-logo_bv3hde.png"}
                        alt={"2021 Impact Report Logo"}/>
                 </div>
                 <div className={"pr-4 lg:pr-0 block lg:hidden"}>

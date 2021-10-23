@@ -1,13 +1,13 @@
 import Layout from "../../../../components/impact-reports/joy/Layout";
 import Image from "../../../../components/impact-reports/joy/Image";
-import StoryLinkCards from "../../../../components/impact-reports/joy/StoryLinkCards";
 import {First} from "../../../../components/impact-reports/joy/Columns";
 import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
 import Head from "next/head";
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 import React from "react";
+import Link from "next/link";
 
 Story.propTypes = {
   story: PropTypes.object,
@@ -32,6 +32,9 @@ Story.defaultProps = {
         styles: []
       },
     ],
+    related_stories: {
+
+    },
   }
 };
 
@@ -54,9 +57,10 @@ export default function Story({story}) {
       </Head>
       <Layout>
         {/* @todo Add height/width to all images. */}
-        <Image url={'/assets/ir21/ir-21-mobile-story-logo.png'}
+        <Image url={'https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto,w_192/v1634945747/ir21/global/header-project-logo_bv3hde.png'}
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
-               alt={"We're having some fun now!"}/>
+               alt={"Welcome to the 2021 Impact Report!"}/>
+
         <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
           <Image url={story.main_image.url}
                  alt={story.main_image.alt}
@@ -72,13 +76,38 @@ export default function Story({story}) {
             </div>
           </div>
         </div>
+
         <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full lg:mx-auto" +
         " lg:pt-12"}>
           <First content={story.layout}/>
         </div>
-        <div className="md:max-w-screen-xl lg:mx-auto p-8 lg:px-8 lg:pt-8 ">
-          <StoryLinkCards title="Read more stories:" cards={story.related_stories}/>
+
+        <div className="lg:max-w-screen-lg mx-auto p-8 lg:px-8 lg:pt-8 ">
+          <h2 className={"text-lg lg:text-28 font-bold py-2"}>Read more stories:</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            {Object.keys(story.related_stories).map((el, index) => {
+              return (
+                <Link key={index}
+                      as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
+                      href="/impact-reports/joy/stories/[slug]">
+                  <a>
+                    <div className="rounded-lg bg-white flex flex-col shadow border h-full w-card">
+                      <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
+                           className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
+                                                <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
+                                                    {story.related_stories[el].campus}
+                                                </span>
+                      </div>
+                      <span className="px-4 py-2 font-bold">{story.related_stories[el].title}</span>
+                      <span className="px-4 pb-6 text-sm ">{story.related_stories[el].description}</span>
+                    </div>
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
         </div>
+
       </Layout>
     </>
   );
