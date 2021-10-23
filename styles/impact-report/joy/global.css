@@ -108,14 +108,14 @@
     }
 
     .chart-legend-circle {
-        border-radius: 50%;
+        border-radius: 9999px;
         width: 20px;
         height: 20px;
         border: 1px solid #000;
     }
 
     .chart-legend-large-circle {
-        border-radius: 50%;
+        border-radius: 9999px;
         width: 44px;
         height: 20px;
         border: 1px solid #000;
@@ -126,6 +126,12 @@
         .chart-legend-large-circle {
             width: 32px;
         }
+    }
+
+    /* End charts.*/
+
+    .numeric-stats-grid {
+        @apply grid grid-cols-2 md:grid-cols-4 gap-8 place-items-center xl:max-w-screen-xl xl:mx-auto;
     }
 }
 
@@ -173,7 +179,6 @@
         background-position: center bottom;
         background-size: 100% auto;
         padding: 1px 0;
-        background-color: #000100;
     }
 
     .homepage-two-col {

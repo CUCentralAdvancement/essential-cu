@@ -1,11 +1,13 @@
+import {useWindowSize} from "usehooks-ts";
+import Head from "next/head";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
-import Head from "next/head";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
-import {useWindowSize} from "usehooks-ts";
+import {twConfig} from '../../../data/impact-reports/joy/base';
+
 
 export default function Financials() {
   const {width} = useWindowSize();
@@ -108,8 +110,7 @@ export default function Financials() {
             </p>
           </div>
 
-          <div className={"grid grid-cols-2 md:grid-cols-4 gap-4 place-items-center xl:max-w-screen-xl" +
-          " xl:mx-auto"}>
+          <div className={"numeric-stats-grid"}>
             <NumericStat number={53} image={{
               url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
               alt: 'Graduation Cap'
@@ -216,17 +217,17 @@ export default function Financials() {
               <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
               <p>
                 <span className={"pr-2 md:pr-0 text-xl md:text-38 text-red-500 font-bold"}>130</span>
-                {width > 719 && <br/>}
+                {width > twConfig.theme.screens.md && <br/>}
                 new endowments were created in the last fiscal year
               </p>
               <p>
                 <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-yellow-500 font-bold"}>3,159</span>
-                {width > 719 && <br/>}
+                {width > twConfig.theme.screens.md && <br/>}
                 total endowments at CU are making a lasting impact
               </p>
               <p>
                 <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-purple-500 font-bold"}>$76.4 million</span>
-                {width > 719 && <br/>}
+                {width > twConfig.theme.screens.md && <br/>}
                 was given in endowment support
               </p>
             </div>
@@ -294,7 +295,7 @@ export default function Financials() {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
                       <div style={{background: el.fill}}
-                           className={ind == 4 || ind == 5 ? "chart-legend-large-circle h-min" : "chart-legend-circle"}/>
+                           className={"chart-legend-circle"}/>
                       <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
