@@ -32,6 +32,9 @@ Story.defaultProps = {
         styles: []
       },
     ],
+    related_stories: {
+
+    },
   }
 };
 
