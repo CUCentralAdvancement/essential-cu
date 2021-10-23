@@ -11,3 +11,6 @@ export const breakpoints = {
     medium: 768,
     large: 1024,
 }
+
+// Images.
+export const projectLogo = 'https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_345,q_auto,w_699/v1634945747/ir21/global/header-project-logo_bv3hde.png';

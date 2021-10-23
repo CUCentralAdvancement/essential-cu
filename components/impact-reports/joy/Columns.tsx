@@ -76,6 +76,7 @@ function Column({children, sx, content = null}: ColumnProps) {
               <YouTubeVideo key={comp.id} video_id={comp.video_id} title={comp.title}/>
             );
           case 'financials_snippet':
+            console.log(comp);
             return (
               <FinancialsSnippet key={comp.id}
                                  sx={"md:max-w-screen-lg mx-4 md:mx-auto"}

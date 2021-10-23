@@ -14,7 +14,8 @@
         left: 0;
         right: 0;
         padding-top: 57.25%;
-        background-image: linear-gradient(to top, transparent 90%, #fffaeb), url("/assets/ir21/Web-bckgd-01.png");
+        background-image: linear-gradient(to top, transparent 90%, #fffaeb),
+        url("https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_2257,q_auto:best,w_4000/v1634945747/ir21/global/Web-bckgd-01_cbxfi0.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
@@ -34,7 +35,7 @@
     main {
         position: relative;
         /*z-index: 0;*/
-        background-image: url("/assets/ir21/Web-bckgd-01.png");
+        background-image: url("https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_2257,q_auto:best,w_4000/v1634945747/ir21/global/Web-bckgd-01_cbxfi0.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 100% auto;
@@ -167,11 +168,16 @@
     .homepage-story-section {
         position: relative;
         z-index: 0;
-        background-image: url("/assets/ir21/confetti-bckgd-01.png");
+        background-image: url("https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634948530/ir21/homepage/confetti-bckgd-01_ldzhuo.png");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 100% auto;
         padding: 1px 0;
+        background-color: #000100;
+    }
+
+    .homepage-two-col {
+        @apply text-center grid grid-cols-1 lg:grid-cols-2 place-items-center lg:max-w-screen-xl mx-4 lg:mx-auto;
     }
 
     /* End Homepage */
