@@ -40,10 +40,6 @@ function Column({children, sx, content = null}: ColumnProps) {
                           width={comp.width}
                           height={comp.height}
                           alt={comp.alt}/>
-          case 'numeric_stat':
-            return (
-              <NumericStat key={comp.id} label={comp.label} number={comp.number}/>
-            );
           case 'block_quote':
             return (
               <BlockQuote key={comp.id} sx={"text-lg text-center font-bold ssm:max-w-screen-ssm" +
@@ -76,7 +72,6 @@ function Column({children, sx, content = null}: ColumnProps) {
               <YouTubeVideo key={comp.id} video_id={comp.video_id} title={comp.title}/>
             );
           case 'financials_snippet':
-            console.log(comp);
             return (
               <FinancialsSnippet key={comp.id}
                                  sx={"md:max-w-screen-lg mx-4 md:mx-auto"}
