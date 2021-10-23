@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {Menu, Transition} from '@headlessui/react'
 import Image from "./Image";
+import {twConfig} from '../../../data/impact-reports/joy/base';
 
 export default function Header() {
   return (
@@ -18,7 +19,7 @@ export default function Header() {
                     <a>
                       <picture>
                         <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,q_auto/v1614627443/ir-20/logo-cu-png-default2x_ia2y4g.png"
-                                media="(min-width: 1023px)"/>
+                                media={`(min-width: ${twConfig.theme.screens.lg})`}/>
                         <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_88,q_auto,w_490/v1634945747/ir21/global/cu-logo-small_lgwclv.png"
                                sx={"p-2 lg:p-0 h-full"}
                                alt="University of Colorado Logo"/>

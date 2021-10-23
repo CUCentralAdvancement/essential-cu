@@ -7,7 +7,7 @@ import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Link from "next/link";
-import {baseURL} from "../../../data/impact-reports/joy/base";
+import {baseURL, twConfig} from "../../../data/impact-reports/joy/base";
 import Head from "next/head";
 import React from "react";
 
@@ -34,9 +34,11 @@ export default function Index({cards}: HomepageProps) {
         <Section type="1-col">
           <picture>
             <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/HP-hero-desktop_xssk7k.png"
-                    media="(min-width: 719px)"/>
+                    media={`(min-width: ${twConfig.theme.screens.md})`}/>
             <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/HP-Hero-mobile_ul9f5a.png"
                    sx={""}
+                   width={'1254'}
+                   height={'516'}
                    alt="University of Colorado Logo"/>
           </picture>
           <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28"}>
@@ -47,8 +49,7 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </Section>
-        <div className={"grid grid-cols-2 md:grid-cols-4 gap-8 place-items-center xl:max-w-screen-xl" +
-        " xl:mx-auto"}>
+        <div className={"numeric-stats-grid"}>
           <NumericStat number={52}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
@@ -84,7 +85,7 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </div>
-        <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section"}>
+        <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
           <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-8"}>
             We asked our CU community: What brings you joy?
           </h2>
@@ -95,17 +96,37 @@ export default function Index({cards}: HomepageProps) {
                 <Link key={index}
                       as={`/impact-reports/joy/stories/${cards[el].slug}`}
                       href="/impact-reports/joy/stories/[slug]">
-                  <a className={"bg-blue-900"}>
-                    <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-44 md:pt-48"
-                         style={{backgroundImage: `url('${cards[el].main_image.url}')`}}>
-                      <span className="bg-gold text-center py-3 pr-4 w-44 rounded-tr-lg font-bold">{cards[el].campus}</span>
-                      <span className="px-6 pt-4 font-bold bg-white text-xl underline">{cards[el].title}</span>
-                      <span className="px-6 py-6 bg-white rounded-b-lg -mt-1 text-18">{cards[el].description}</span>
+                  <a>
+                    <div className="rounded-lg bg-white flex flex-col shadow border h-full">
+                      <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
+                           className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
+                                                <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
+                                                    {cards[el].campus}
+                                                </span>
+                      </div>
+                      <span className="px-4 py-2 font-bold">{cards[el].title}</span>
+                      <span className="px-4 pb-6 text-sm ">{cards[el].description}</span>
                     </div>
                   </a>
                 </Link>
               );
             })}
+            {/*{Object.keys(cards).map((el, index) => {*/}
+            {/*  return (*/}
+            {/*    <Link key={index}*/}
+            {/*          as={`/impact-reports/joy/stories/${cards[el].slug}`}*/}
+            {/*          href="/impact-reports/joy/stories/[slug]">*/}
+            {/*      <a className={"bg-almost-black"}>*/}
+            {/*        <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-44 md:pt-48"*/}
+            {/*             style={{backgroundImage: `url('${cards[el].main_image.url}')`}}>*/}
+            {/*          <span className="bg-gold text-center py-3 pr-4 w-44 rounded-tr-lg font-bold">{cards[el].campus}</span>*/}
+            {/*          <span className="px-6 pt-4 font-bold bg-white text-xl underline">{cards[el].title}</span>*/}
+            {/*          <span className="px-6 py-6 bg-white rounded-b-lg -mt-1 text-18">{cards[el].description}</span>*/}
+            {/*        </div>*/}
+            {/*      </a>*/}
+            {/*    </Link>*/}
+            {/*  );*/}
+            {/*})}*/}
           </div>
         </div>
         <div className="homepage-two-col pt-4 md:pt-8">
