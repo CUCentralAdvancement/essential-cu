@@ -1,7 +1,6 @@
 import {ReactNode} from "react";
 import Image from "./Image";
 import TextBlock from "./TextBlock";
-import NumericStat from "./NumericStat";
 import ImageWithCaption from "./ImageWithCaption";
 import BlockQuote from "./BlockQuote";
 import CtaBlock from "./CtaBlock";
