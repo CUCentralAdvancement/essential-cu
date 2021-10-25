@@ -62,12 +62,14 @@ export default function Story({story}) {
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"Welcome to the 2021 Impact Report!"}/>
 
-        <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 lg:-mt-4"}>
-          <Image url={story.main_image.url}
-                 alt={story.main_image.alt}
-                 width={story.main_image.width}
-                 height={story.main_image.height}
-                 sx={"lg:w-1/2"}/>
+        <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 lg:-mt-4 items-center"}>
+          <div className={"lg:w-1/2"}>
+            <Image url={story.main_image.url}
+                   alt={story.main_image.alt}
+                   width={story.main_image.width}
+                   height={story.main_image.height}
+                   sx={"min-w-full"}/>
+          </div>
           <div className={"lg:w-1/2 px-6 lg:px-0"}>
             <div className={"flex flex-col h-full lg:justify-center lg:w-3/4 md:mx-auto md:max-w-screen-md" +
             " lg:m-w-auto lg:mx-0"}>
