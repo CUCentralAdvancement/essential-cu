@@ -69,11 +69,11 @@ export default function Story({story}) {
                    width={story.main_image.width}
                    height={story.main_image.height} />
           </div>
-          <div className={"lg:w-1/2 px-6 lg:px-0"}>
-            <div className={"flex flex-col h-full lg:justify-center lg:w-3/4 md:mx-auto md:max-w-screen-md" +
+          <div className={"lg:w-1/2 px-6 lg:pr-4 lg:pl-0"}>
+            <div className={"flex flex-col h-full md:justify-center md:mx-auto md:max-w-prose" +
             " lg:m-w-auto lg:mx-0"}>
               <h1 className={"py-4 lg:py-12 text-28 lg:text-50 font-bold"}>{story.title}</h1>
-              <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
+              <p className={"pb-6 font-bold lg:text-lg "}>{story.body}</p>
               <SocialLinks title={story.title}/>
             </div>
           </div>
