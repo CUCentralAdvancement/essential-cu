@@ -71,8 +71,11 @@ module.exports = {
       height: {
         cardImage: '206px',
       },
+      maxWidth: {
+        card: '310px',
+      },
       width: {
-        card: '273px',
+        card: '310px',
         medium: '719px',
         '90vw': '90vw',
       }
@@ -84,4 +87,4 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
   ],
-}
+};
