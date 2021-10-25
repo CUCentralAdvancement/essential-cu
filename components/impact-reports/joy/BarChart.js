@@ -40,9 +40,9 @@ export function ResponsiveGroupedBarChart({data}) {
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
         data={data}
-        barGap={0}
+        barGap={4}
         margin={{
-          top: 15,
+          top: 30,
           right: 20,
           left: 20,
           bottom: 15,

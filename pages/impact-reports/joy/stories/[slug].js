@@ -93,7 +93,7 @@ export default function Story({story}) {
                 //       as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
                 //       href="/impact-reports/joy/stories/[slug]">
                   <a key={index} href={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}>
-                    <div className="rounded-lg bg-white flex flex-col shadow border h-full w-card">
+                    <div className="rounded-lg bg-white flex flex-col shadow border h-full max-w-card">
                       <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
                            className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
                                                 <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
