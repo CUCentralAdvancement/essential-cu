@@ -75,11 +75,11 @@ export default function Index({cards}: HomepageProps) {
                        }}
                        label="Transform Healthcare"/>
         </div>
-        <span id={"stories"}/>
-        <div className={"bg-blue-900 pb-4"}>
+        <div className={"bg-almost-blackpb-4"}>
           <div className={"p-3 bg-light-yellow rounded-b-lg -mt-1"}>
             <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold" +
-            " text-lg lg:text-28"}>
+            " text-lg lg:text-28"}
+               id={"stories"}>
               There are stories of true impact behind those numbers-stories of how giving pays dividends in joy.
               <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-1"}/>
             </p>
@@ -90,7 +90,8 @@ export default function Index({cards}: HomepageProps) {
             We asked our CU community: What brings you joy?
           </h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
-          " pb-12 lg:max-w-screen-xl lg:mx-auto"}>
+          " pb-12 lg:max-w-screen-lg lg:mx-auto"}>
+
             {Object.keys(cards).map((el, index) => {
               return (
                 <Link key={index}
@@ -111,6 +112,7 @@ export default function Index({cards}: HomepageProps) {
                 </Link>
               );
             })}
+
             {/*{Object.keys(cards).map((el, index) => {*/}
             {/*  return (*/}
             {/*    <Link key={index}*/}
@@ -120,13 +122,14 @@ export default function Index({cards}: HomepageProps) {
             {/*        <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-44 md:pt-48"*/}
             {/*             style={{backgroundImage: `url('${cards[el].main_image.url}')`}}>*/}
             {/*          <span className="bg-gold text-center py-3 pr-4 w-44 rounded-tr-lg font-bold">{cards[el].campus}</span>*/}
-            {/*          <span className="px-6 pt-4 font-bold bg-white text-xl underline">{cards[el].title}</span>*/}
-            {/*          <span className="px-6 py-6 bg-white rounded-b-lg -mt-1 text-18">{cards[el].description}</span>*/}
+            {/*          <span className="px-6 pt-4 font-bold bg-white text-xl underline lg:w-2/3 lg:rounded-tr-lg">{cards[el].title}</span>*/}
+            {/*          <span className="px-6 py-6 bg-white rounded-b-lg -mt-1 text-18 lg:w-2/3">{cards[el].description}</span>*/}
             {/*        </div>*/}
             {/*      </a>*/}
             {/*    </Link>*/}
             {/*  );*/}
             {/*})}*/}
+
           </div>
         </div>
         <div className="homepage-two-col pt-4 md:pt-8">
