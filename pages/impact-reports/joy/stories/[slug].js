@@ -7,7 +7,8 @@ import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
 import Head from "next/head";
 import {useRouter} from 'next/router';
 import React from "react";
-import Link from "next/link";
+// import Link from "next/link";
+
 
 Story.propTypes = {
   story: PropTypes.object,
@@ -79,7 +80,7 @@ export default function Story({story}) {
 
         <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full lg:mx-auto" +
         " lg:pt-12"}>
-          <First content={story.layout}/>
+          <First content={story.layout} />
         </div>
 
         <div className="lg:max-w-screen-lg mx-auto p-8 lg:px-8 lg:pt-8 ">
@@ -87,10 +88,10 @@ export default function Story({story}) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {Object.keys(story.related_stories).map((el, index) => {
               return (
-                <Link key={index}
-                      as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
-                      href="/impact-reports/joy/stories/[slug]">
-                  <a>
+                // <Link key={index}
+                //       as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
+                //       href="/impact-reports/joy/stories/[slug]">
+                  <a key={index} href={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}>
                     <div className="rounded-lg bg-white flex flex-col shadow border h-full w-card">
                       <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
                            className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
@@ -102,7 +103,7 @@ export default function Story({story}) {
                       <span className="px-4 pb-6 text-sm ">{story.related_stories[el].description}</span>
                     </div>
                   </a>
-                </Link>
+                // </Link>
               );
             })}
           </div>

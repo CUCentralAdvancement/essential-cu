@@ -251,7 +251,7 @@ export default function Financials() {
                 {endowmentAllocation.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
-                      <div style={{background: el.fill}} className={"chart-legend-circle"}/>
+                      <div style={{background: el.fill}} className={"chart-legend-circle flex-shrink-0"}/>
                       <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
@@ -295,8 +295,8 @@ export default function Financials() {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
                       <div style={{background: el.fill}}
-                           className={"chart-legend-circle"}/>
-                      <span className={"ml-2"}>{el.name}</span>
+                           className={"chart-legend-circle flex-shrink-0"}/>
+                      <span className={"ml-2 "}>{el.name}</span>
                     </div>
                   );
                 })}
