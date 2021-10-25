@@ -18,6 +18,7 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       return (
         <Link href={href}>
           <a role={"button"}
+             aria-label={label}
              className={"bg-white font-bold rounded-full py-3 px-6 shadow-md " +
              " max-w-max items-baseline " + (isActive ? 'bg-gold text-white' : '')}>
             {children}
@@ -29,8 +30,8 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       // @todo Deal with external links a different way. This doesn't use next/link but should.
       return (
         <a href={href}
+           role={"button"}
            aria-label={label}
-           // target={external ? '_blank' : '_self'}
            className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
            " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
           <span>{children}</span>

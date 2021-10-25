@@ -73,7 +73,7 @@ export default function Story({story}) {
             <div className={"flex flex-col h-full md:justify-center md:mx-auto md:max-w-prose" +
             " lg:m-w-auto lg:mx-0"}>
               <h1 className={"py-4 lg:py-12 text-28 lg:text-50 font-bold"}>{story.title}</h1>
-              <p className={"pb-6 font-bold lg:text-lg "}>{story.body}</p>
+              <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
               <SocialLinks title={story.title}/>
             </div>
           </div>
