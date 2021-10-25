@@ -246,7 +246,7 @@ export default function Financials() {
               <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_516,q_auto,w_576/v1634948333/ir21/financials/endowment-chart_nbtcv8.png"}
                      alt={"Funds transferred to CU"}
                      sx={"the-pie-chart"}/>
-              <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base lg:text-18" +
+              <div className={"grid grid-cols-2 gap-4 h-2/5 w-10/12 md:w-2/3 pt-4 text-legend lg:text-18" +
               " font-bold"}>
                 {endowmentAllocation.map((el, ind) => {
                   return (
@@ -289,7 +289,7 @@ export default function Financials() {
               <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_518,q_auto,w_576/v1634948333/ir21/financials/transfer-chart_lvlk3s.png"}
                      alt={"Funds transferred to CU"}
                      sx={"the-pie-chart"}/>
-              <div className={"grid grid-cols-2 gap-2 h-2/5 w-10/12 md:w-2/3 pt-4 text-base" +
+              <div className={"grid grid-cols-2 gap-4 h-2/5 w-10/12 md:w-2/3 pt-4 text-legend" +
               " lg:text-18 font-bold"}>
                 {transferToCU.map((el, ind) => {
                   return (
