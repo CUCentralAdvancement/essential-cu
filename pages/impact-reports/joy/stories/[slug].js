@@ -67,8 +67,7 @@ export default function Story({story}) {
             <Image url={story.main_image.url}
                    alt={story.main_image.alt}
                    width={story.main_image.width}
-                   height={story.main_image.height}
-                   sx={"min-w-full"}/>
+                   height={story.main_image.height} />
           </div>
           <div className={"lg:w-1/2 px-6 lg:px-0"}>
             <div className={"flex flex-col h-full lg:justify-center lg:w-3/4 md:mx-auto md:max-w-screen-md" +

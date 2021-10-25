@@ -12,6 +12,6 @@ export default function Image({url, alt, sx, width, height}: ImageProps) {
              alt={alt}
              width={width}
              height={height}
-             className={sx} />
+             className={sx + ' object-contain'} />
     );
 }
