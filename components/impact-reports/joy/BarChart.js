@@ -53,11 +53,11 @@ export function ResponsiveGroupedBarChart({data}) {
         <Legend iconType={"circle"} formatter={renderColorfulLegendText}
                 wrapperStyle={{paddingTop: '10px', fontWeight: 700}} />
         <Bar dataKey="LTIP" fill={"#cfb87c"}>
-          <LabelList dataKey="LTIP" position="top" fill={"#000"} offset={15}
+          <LabelList dataKey="LTIP" position="top" fill={"#000"} offset={20}
                      formatter={(label) => label + `%`} />
         </Bar>
         <Bar dataKey="Policy Benchmark">
-          <LabelList dataKey="Policy Benchmark" position="top" fill={"#000"} offset={15}
+          <LabelList dataKey="Policy Benchmark" position="top" fill={"#000"} offset={5}
                      formatter={(label) => label + `%`} />
         </Bar>
       </BarChart>
