@@ -3,11 +3,9 @@ import Head from "next/head";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
-import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import {twConfig} from '../../../data/impact-reports/joy/base';
-
 
 export default function Financials() {
   const {width} = useWindowSize();
@@ -313,7 +311,15 @@ export default function Financials() {
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
               <h2 className={"font-bold underline"}>Download our Financials</h2>
               <p>For more detail, see our audited financials for fiscal year 2021</p>
-              <ButtonLink href={"/"}>Download PDF</ButtonLink>
+                <a href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf"
+                   role={"button"}
+                   aria-label={"Download the financials content in PDF format"}
+                   target={"_blank"}
+                   rel={"noreferrer"}
+                   className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
+                   " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
+                  <span>Download PDF</span>
+                </a>
             </div>
           </div>
 
