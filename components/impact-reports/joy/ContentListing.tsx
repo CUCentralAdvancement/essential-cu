@@ -10,7 +10,7 @@ interface ContentListingProps {
   sx?: string,
 }
 
-export default function ContentListing({variant, content, title, sx}: ContentListingProps) {
+export default function ContentListing({variant, content, title, sx = ''}: ContentListingProps) {
   // const {width} = useWindowSize();
   // console.log(width);
 
@@ -42,7 +42,7 @@ export default function ContentListing({variant, content, title, sx}: ContentLis
                   <div className="flex flex-row p-2 hover:bg-muted-gold items-center">
                     <span>{el.title}</span>
                     <FontAwesomeIcon icon={faArrowRight}
-                                     className="text-gold pl-2 h-4"/>
+                                     className="text-gold pl-2 h-4 hidden md:inline"/>
                   </div>
                 </a>
               );

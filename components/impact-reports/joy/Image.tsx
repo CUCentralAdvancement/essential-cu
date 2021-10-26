@@ -6,12 +6,12 @@ export interface ImageProps {
     height?: string,
 }
 
-export default function Image({url, alt, sx, width, height}: ImageProps) {
+export default function Image({url, alt, sx = '', width, height}: ImageProps) {
     return (
         <img src={url}
              alt={alt}
              width={width}
              height={height}
-             className={sx + ' object-contain'} />
+             className={`${sx} object-contain`} />
     );
 }

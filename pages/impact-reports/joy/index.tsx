@@ -138,7 +138,7 @@ export default function Index({cards}: HomepageProps) {
                  sx={""}/>
           <div>
             <h3 className={"text-28 lg:text-38 font-bold py-4"}>352.2 million given last year</h3>
-            <p className={"lg:px-16"}>
+            <p className={"lg:px-16 max-w-prose"}>
               Every dollar you give creates a positive impact. Giving helps students achieve their dreams, enables
               deep satisfaction in one’s calling, sparks the giddy joy of discovery and magnifies the impact of
               innovative minds.
@@ -166,11 +166,12 @@ export default function Index({cards}: HomepageProps) {
             <a className={"text-lg lg:text-28 underline"}>
               <h2 className={"flex flex-row items-center font-bold"}>
                 Find out more about your investments in CU
-                <FontAwesomeIcon icon={faChevronRight} className={"h-8 lg:h-10 text-gold ml-3 inline"}/>
+                <FontAwesomeIcon icon={faChevronRight} className={"h-8 lg:h-10 text-gold ml-3" +
+                " hidden md:inline"}/>
               </h2>
             </a>
           </Link>
-          <p className={"pb-6"}>
+          <p className={"pb-6 max-w-prose"}>
             Despite a challenging year, donors like you advanced CU’s mission, with a record-breaking endowment
             figure, unparalleled return on investment and support from all corners of the CU community.
           </p>
