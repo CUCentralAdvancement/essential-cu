@@ -166,7 +166,7 @@ export default function Index({cards}: HomepageProps) {
             <Link href={"/impact-reports/joy/financials"}>
               <a className={"text-lg lg:text-28 underline"}>
                 Find out more about your investments in CU
-                <FontAwesomeIcon icon={faChevronRight} className={"h-10 lg:h-12 text-gold ml-3 pb-2 inline"}/>
+                <FontAwesomeIcon icon={faChevronRight} className={"h-8 lg:h-12 text-gold ml-3 inline"}/>
               </a>
             </Link>
           </h2>

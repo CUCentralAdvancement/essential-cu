@@ -10,7 +10,7 @@
         content: "";
         display: block;
         position: absolute;
-        top: 74px;
+        top: 55px;
         left: 0;
         right: 0;
         padding-top: 57.25%;
@@ -68,9 +68,7 @@
 
     /* The social icons rendered with these classes,
       and it caused the icons to shrink or blow up.*/
-    .svg-inline--fa.fa-w-16,
-    .svg-inline--fa.fa-w-14,
-    .svg-inline--fa.fa-w-11 {
+    .svg-inline--fa.fa-w-* {
         width: auto;
     }
 
