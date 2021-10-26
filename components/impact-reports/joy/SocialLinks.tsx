@@ -76,7 +76,7 @@ export default function SocialLinks({
             {services.includes('twitter') &&
             <TwitterShareButton
               url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
-              title={title + "\n\n"}
+              title={""}
               hashtags={[""]}>
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
