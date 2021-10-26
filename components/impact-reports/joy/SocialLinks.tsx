@@ -1,8 +1,9 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTwitter, faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import {faTwitter, faFacebook, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 import {
   FacebookShareButton,
   TwitterShareButton,
+  LinkedinShareButton,
 } from "react-share";
 import {defaultHostName} from '../../../data/impact-reports/joy/base';
 import React from "react";
@@ -14,8 +15,8 @@ interface SocialLinksProps {
   title?: string
 }
 
-const iconStyles = 'h-12 p-2 rounded-full hover:bg-black hover:text-gold' +
-  ' cursor-pointer bg-medium-gray';
+const iconContainerStyles = 'rounded-full bg-medium-gray hover:bg-black hover:text-gold cursor-pointer ';
+const iconStyles = 'h-12 p-2';
 
 export default function SocialLinks({
                                       variant,
@@ -36,25 +37,33 @@ export default function SocialLinks({
             <TwitterShareButton
               url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
               title={""}
-              hashtags={[""]}
-              className={iconStyles}>
-              <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
+              hashtags={[""]}>
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
+              </div>
             </TwitterShareButton>
             }
             {services.includes('facebook') &&
             <FacebookShareButton
-              className={iconStyles}
               quote={""}
               hashtag={""}
               url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
             >
-              <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
+              </div>
             </FacebookShareButton>
             }
             {services.includes('instagram') &&
-            <a href="https://instagram.com">
-              <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>
-            </a>
+            <LinkedinShareButton
+              title={""}
+              summary={""}
+              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+            >
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faLinkedinIn} className={iconStyles}/>
+              </div>
+            </LinkedinShareButton>
             }
           </div>
         </div>
@@ -66,27 +75,35 @@ export default function SocialLinks({
           <div className={`flex flex-row space-x-3`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton
-              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
               title={title + "\n\n"}
-              hashtags={[""]}
-              className={iconStyles}>
-              <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
+              hashtags={[""]}>
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>
+              </div>
             </TwitterShareButton>
             }
             {services.includes('facebook') &&
             <FacebookShareButton
-              className={iconStyles}
               quote={""}
               hashtag={""}
-              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
             >
-              <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
+              </div>
             </FacebookShareButton>
             }
             {services.includes('instagram') &&
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faInstagram} className={iconStyles}/>
-            </a>
+            <LinkedinShareButton
+              title={""}
+              summary={""}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+            >
+              <div className={iconContainerStyles}>
+                <FontAwesomeIcon icon={faLinkedinIn} className={iconStyles}/>
+              </div>
+            </LinkedinShareButton>
             }
           </div>
         </div>

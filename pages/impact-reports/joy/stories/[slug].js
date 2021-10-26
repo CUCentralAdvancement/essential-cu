@@ -89,6 +89,11 @@ export default function Story({story}) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {Object.keys(story.related_stories).map((el, index) => {
               return (
+                // @note next/link was taken out due to images from previous stories showing up on other
+                // story pages. Reloading the whole page clears the virtual DOM and prevents the issue from
+                // occurring. Who knows what the real issue is? But it seems like next.js/React diffing
+                // algorithm is screwing up.
+                //
                 // <Link key={index}
                 //       as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
                 //       href="/impact-reports/joy/stories/[slug]">
@@ -101,7 +106,7 @@ export default function Story({story}) {
                                                 </span>
                       </div>
                       <span className="px-4 py-2 font-bold">{story.related_stories[el].title}</span>
-                      <span className="px-4 pb-6 text-sm ">{story.related_stories[el].description}</span>
+                      <span className="px-4 pb-6 text-18 ">{story.related_stories[el].description}</span>
                     </div>
                   </a>
                 // </Link>
