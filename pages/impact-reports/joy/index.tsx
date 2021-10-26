@@ -90,7 +90,7 @@ export default function Index({cards}: HomepageProps) {
             We asked our CU community: What brings you joy?
           </h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
-          " pb-12 lg:max-w-screen-lg lg:mx-auto"}>
+          " pb-12 xl:max-w-screen-xl xl:mx-auto"}>
 
             {Object.keys(cards).map((el, index) => {
               return (
@@ -98,7 +98,7 @@ export default function Index({cards}: HomepageProps) {
                       as={`/impact-reports/joy/stories/${cards[el].slug}`}
                       href="/impact-reports/joy/stories/[slug]">
                   <a>
-                    <div className="rounded-lg bg-white flex flex-col shadow border h-full">
+                    <div className="rounded-lg bg-white flex flex-col shadow h-full">
                       <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                            className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
                                                 <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
@@ -106,7 +106,7 @@ export default function Index({cards}: HomepageProps) {
                                                 </span>
                       </div>
                       <span className="px-4 py-2 font-bold">{cards[el].title}</span>
-                      <span className="px-4 pb-6 text-sm ">{cards[el].description}</span>
+                      <span className="px-4 pb-6 text-18">{cards[el].description}</span>
                     </div>
                   </a>
                 </Link>
@@ -162,14 +162,14 @@ export default function Index({cards}: HomepageProps) {
           </p>
         </div>
         <div className="md:max-w-screen-md space-y-8 text-center grid grid-cols-1 py-8 place-items-center mx-4 md:mx-auto">
-          <h2 className={"flex flex-row items-center font-bold"}>
-            <Link href={"/impact-reports/joy/financials"}>
-              <a className={"text-lg lg:text-28 underline"}>
+          <Link href={"/impact-reports/joy/financials"}>
+            <a className={"text-lg lg:text-28 underline"}>
+              <h2 className={"flex flex-row items-center font-bold"}>
                 Find out more about your investments in CU
-                <FontAwesomeIcon icon={faChevronRight} className={"h-10 lg:h-12 text-gold ml-3 pb-2 inline"}/>
-              </a>
-            </Link>
-          </h2>
+                <FontAwesomeIcon icon={faChevronRight} className={"h-8 lg:h-10 text-gold ml-3 inline"}/>
+              </h2>
+            </a>
+          </Link>
           <p className={"pb-6"}>
             Despite a challenging year, donors like you advanced CU’s mission, with a record-breaking endowment
             figure, unparalleled return on investment and support from all corners of the CU community.
