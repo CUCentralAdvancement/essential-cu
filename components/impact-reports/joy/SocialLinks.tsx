@@ -26,6 +26,7 @@ export default function SocialLinks({
   const {asPath} = useRouter();
   const hostname = typeof window !== 'undefined' ? window.location.hostname : defaultHostName;
   const shareURL = 'https://' + hostname + asPath;
+  console.log(title);
 
   switch (variant) {
     case 'centered':
