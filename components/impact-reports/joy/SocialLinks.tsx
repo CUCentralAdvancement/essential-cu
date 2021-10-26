@@ -35,7 +35,7 @@ export default function SocialLinks({
           <div className={`flex flex-row space-x-5 justify-center`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton
-              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
               title={""}
               hashtags={[""]}>
               <div className={iconContainerStyles}>
@@ -47,7 +47,7 @@ export default function SocialLinks({
             <FacebookShareButton
               quote={""}
               hashtag={""}
-              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
@@ -58,7 +58,7 @@ export default function SocialLinks({
             <LinkedinShareButton
               title={""}
               summary={""}
-              url={shareURL + "?utm_campaign=2020ImpactReport&utm_source=IR20_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faLinkedinIn} className={iconStyles}/>
