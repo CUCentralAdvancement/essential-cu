@@ -211,21 +211,18 @@ export default function Financials() {
             <div className={"chart-text-container"}>
               <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
               <p>
-                <span className={"pr-2 lg:pr-0 text-xl md:text-38 font-bold"}
+                <span className={"pr-2 lg:pr-0 text-xl md:text-38 font-bold inline md:block"}
                       style={{color: '#dd3f70'}}>130</span>
-                <br className={"hidden md:block"}/>
                 new endowments were created in the last fiscal year
               </p>
               <p>
-                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold"}
+                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold inline md:block"}
                       style={{color: '#d94f29'}}>3,159</span>
-                <br className={"hidden md:block"}/>
                 total endowments at CU are making a lasting impact
               </p>
               <p>
-                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold"}
+                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold inline md:block"}
                       style={{color: '#554082'}}>$76.4 million</span>
-                <br className={"hidden md:block"} />
                 was given in endowment support
               </p>
             </div>
@@ -278,7 +275,7 @@ export default function Financials() {
           " lg:mx-auto"}>
             <div className={"chart-text-container "}>
               <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left"}>$211.8 million</h3>
-              <p className={""}>
+              <p>
                 That’s how much the CU Foundation transferred to CU last fiscal year:
               </p>
             </div>

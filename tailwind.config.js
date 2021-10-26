@@ -73,7 +73,6 @@ module.exports = {
       },
       maxWidth: {
         card: '310px',
-        halfProse: '33ch',
       },
       width: {
         card: '310px',
