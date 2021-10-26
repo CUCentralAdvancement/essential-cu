@@ -26,6 +26,7 @@ export default function SocialLinks({
   const {asPath} = useRouter();
   const hostname = typeof window !== 'undefined' ? window.location.hostname : defaultHostName;
   const shareURL = 'https://' + hostname + asPath;
+  console.log(title);
 
   switch (variant) {
     case 'centered':
@@ -76,7 +77,7 @@ export default function SocialLinks({
             {services.includes('twitter') &&
             <TwitterShareButton
               url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
-              title={title + "\n\n"}
+              title={""}
               hashtags={[""]}>
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faTwitter} className={iconStyles}/>

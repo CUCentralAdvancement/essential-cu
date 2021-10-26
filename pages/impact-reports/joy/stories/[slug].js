@@ -33,9 +33,7 @@ Story.defaultProps = {
         styles: []
       },
     ],
-    related_stories: {
-
-    },
+    related_stories: {},
   }
 };
 
@@ -62,26 +60,24 @@ export default function Story({story}) {
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"Welcome to the 2021 Impact Report!"}/>
 
-        <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 lg:-mt-4 items-center"}>
-          <div className={"lg:w-1/2"}>
+        <div className={"flex flex-col lg:flex-row  pb-6 lg:-mt-4 items-center"}>
+          <div className={"lg:w-3/5"}>
             <Image url={story.main_image.url}
                    alt={story.main_image.alt}
                    width={story.main_image.width}
-                   height={story.main_image.height} />
+                   height={story.main_image.height}/>
           </div>
-          <div className={"lg:w-1/2 px-6 lg:pr-4 lg:pl-0"}>
-            <div className={"flex flex-col h-full md:justify-center md:mx-auto md:max-w-prose" +
-            " lg:m-w-auto lg:mx-0"}>
-              <h1 className={"py-4 lg:py-12 text-28 lg:text-50 font-bold"}>{story.title}</h1>
-              <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
-              <SocialLinks title={story.title}/>
-            </div>
+          <div className={"lg:w-2/5 max-w-prose mx-4 md:mx-auto flex flex-col h-full md:justify-center" +
+          " lg:pr-8"}>
+            <h1 className={"py-4 lg:py-12 text-28 lg:text-50 font-bold"}>{story.title}</h1>
+            <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
+            <SocialLinks title={story.title}/>
           </div>
         </div>
 
         <div className={"grid grid-cols-1 space-y-10 lg:max-w-screen-lg w-full lg:mx-auto" +
         " lg:pt-12"}>
-          <First content={story.layout} />
+          <First content={story.layout}/>
         </div>
 
         <div className="lg:max-w-screen-lg mx-auto p-8 lg:px-8 lg:pt-8 ">
@@ -97,18 +93,18 @@ export default function Story({story}) {
                 // <Link key={index}
                 //       as={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}
                 //       href="/impact-reports/joy/stories/[slug]">
-                  <a key={index} href={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}>
-                    <div className="rounded-lg bg-white flex flex-col shadow border h-full max-w-card">
-                      <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
-                           className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
+                <a key={index} href={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}>
+                  <div className="rounded-lg bg-white flex flex-col shadow border h-full max-w-card">
+                    <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
+                         className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
                                                 <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
                                                     {story.related_stories[el].campus}
                                                 </span>
-                      </div>
-                      <span className="px-4 py-2 font-bold">{story.related_stories[el].title}</span>
-                      <span className="px-4 pb-6 text-18 ">{story.related_stories[el].description}</span>
                     </div>
-                  </a>
+                    <span className="px-4 py-2 font-bold">{story.related_stories[el].title}</span>
+                    <span className="px-4 pb-6 text-18 ">{story.related_stories[el].description}</span>
+                  </div>
+                </a>
                 // </Link>
               );
             })}
