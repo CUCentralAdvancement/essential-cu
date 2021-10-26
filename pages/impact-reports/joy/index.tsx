@@ -44,7 +44,7 @@ export default function Index({cards}: HomepageProps) {
           <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28"}>
             <h1 className={"py-4 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
             <p className={"text-xl lg:text-lg py-3 lg:px-8"}>
-              In 2021, nearly <strong>29,793 donors</strong> made <strong>53,485 gifts</strong> to support CU. In
+              In 2021, nearly <span className={"font-bold"}>29,793 donors</span> made <span className={"font-bold"}>53,485 gifts</span> to support CU. In
               a breakthrough year, CU&apos;s endowment is now valued at $2.16 billion.
             </p>
           </div>
@@ -147,7 +147,7 @@ export default function Index({cards}: HomepageProps) {
         </div>
         <div className={"homepage-two-col"}>
           <p className={"text-28 lg:text-38 order-2 lg:order-1 pt-8 px-8 lg:px-12"}>
-            <strong>92%</strong> of gifts were less than <strong>$2,500</strong>
+            <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
           </p>
           <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939580/ir21/homepage/92_of_gifts-1_hczbib.png"
                  alt="The Image"
@@ -158,7 +158,7 @@ export default function Index({cards}: HomepageProps) {
                  alt="The Image"
                  sx={""}/>
           <p className={"text-28 lg:text-38 pt-8 px-8 lg:px-12"}>
-            The average size of a gift was <strong>$6,472</strong>
+            The average size of a gift was <span className={"font-bold"}>$6,472</span>
           </p>
         </div>
         <div className="md:max-w-screen-md space-y-8 text-center grid grid-cols-1 py-8 place-items-center mx-4 md:mx-auto">
