@@ -1,14 +1,11 @@
-import {useWindowSize} from "usehooks-ts";
 import Head from "next/head";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
-import {twConfig} from '../../../data/impact-reports/joy/base';
 
 export default function Financials() {
-  const {width} = useWindowSize();
   return (
     <>
       <Head>
@@ -214,18 +211,18 @@ export default function Financials() {
             <div className={"chart-text-container"}>
               <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
               <p>
-                <span className={"pr-2 md:pr-0 text-xl md:text-38 text-red-500 font-bold"}>130</span>
-                {width > twConfig.theme.screens.md && <br/>}
+                <span className={"pr-2 lg:pr-0 text-xl md:text-38 font-bold inline md:block"}
+                      style={{color: '#dd3f70'}}>130</span>
                 new endowments were created in the last fiscal year
               </p>
               <p>
-                <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-yellow-500 font-bold"}>3,159</span>
-                {width > twConfig.theme.screens.md && <br/>}
+                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold inline md:block"}
+                      style={{color: '#d94f29'}}>3,159</span>
                 total endowments at CU are making a lasting impact
               </p>
               <p>
-                <span className={"pr-2 md:pr-0 text-xl lg:text-38 text-purple-500 font-bold"}>$76.4 million</span>
-                {width > twConfig.theme.screens.md && <br/>}
+                <span className={"pr-2 lg:pr-0 text-xl lg:text-38 font-bold inline md:block"}
+                      style={{color: '#554082'}}>$76.4 million</span>
                 was given in endowment support
               </p>
             </div>
@@ -263,7 +260,7 @@ export default function Financials() {
               <ResponsiveGroupedBarChart data={returnsByYear}/>
             </div>
             <div className={"chart-text-container order-1 lg:order-2"}>
-              <h3 className={"text-center lg:text-38"}>Investment return vs. policy benchmark</h3>
+              <h3 className={"text-center text-xl lg:text-38"}>Investment return vs. policy benchmark</h3>
               <p className={"font-bold"}>
                 Our Long-Term Investment Pool consistently outperforms policy benchmarks.
               </p>
@@ -276,8 +273,8 @@ export default function Financials() {
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl" +
           " lg:mx-auto"}>
-            <div className={"chart-text-container"}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center"}>$211.8 million</h3>
+            <div className={"chart-text-container "}>
+              <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left"}>$211.8 million</h3>
               <p>
                 That’s how much the CU Foundation transferred to CU last fiscal year:
               </p>
@@ -303,23 +300,22 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-row sm:max-w-screen-sm mx-4 sm:mx-auto bg-white p-4 rounded-tr" +
-          " rounded-br" +
-          " border border-gold border-l-8 border-t-2 border-r-2 border-b-2"}>
+          " rounded-br border border-gold border-l-8 border-t-2 border-r-2 border-b-2"}>
             <div className={"w-1/4 lg:w-1/8"}>
               icon
             </div>
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
               <h2 className={"font-bold underline"}>Download our Financials</h2>
               <p>For more detail, see our audited financials for fiscal year 2021</p>
-                <a href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf"
-                   role={"button"}
-                   aria-label={"Download the financials content in PDF format"}
-                   target={"_blank"}
-                   rel={"noreferrer"}
-                   className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
-                   " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
-                  <span>Download PDF</span>
-                </a>
+              <a href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf"
+                 role={"button"}
+                 aria-label={"Download the financials content in PDF format"}
+                 target={"_blank"}
+                 rel={"noreferrer"}
+                 className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
+                 " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
+                <span>Download PDF</span>
+              </a>
             </div>
           </div>
 
