@@ -24,53 +24,65 @@ export default function Financials() {
         <div className={"space-y-12 lg:spacy-y-16"}>
 
           <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
-            <Image url={"/assets/ir21/circles-pic.png"} alt={"Financials image."} sx={"lg:w-3/5"}/>
-            <div className={"lg:w-2/5 px-6 lg:px-0"}>
+            <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
+                   width={'1600'}
+                   height={'1200'}
+                   alt={"A red heart is held in a yellow hand, palm facing up. There is a green and purple pie chart and bronze bar chart backgrounded behind the hand. An arrow curves upward from behind the heart towards the top right of the image. Multicolored confetti is scattered across the image."}
+                   sx={"lg:w-3/5"}/>
+            <div className={"lg:w-2/5 mx-4 lg:mx-0"}>
               <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
-                <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center"}>
+                <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center lg:text-left"}>
                   <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation, and joy
                 </h1>
               </div>
             </div>
           </div>
 
-          <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <h2 className={"text-25 lg:text-50"}>2021 fiscal year financials</h2>
-            <p className={"lg:text-lg"}>
-              When donors like you put good into the world, it ripples outward and magnifies exponentially, transforming communities, nations and the world.
+          <div className={"flex flex-col space-y-8 mx-4  md:max-w-screen-md lg:mx-auto"}>
+            <h2 className={"text-25 lg:text-50 text-center"}>2021 fiscal year financials</h2>
+            <p className={"lg:text-lg lg:text-center"}>
+              When donors like you put good into the world, it ripples outward and magnifies exponentially, transforming communities, nations and the world.&nbsp;
               <span className={"font-bold"}>Thank you for your generosity, vision and intent to create more joy in the world.</span> 2021 was a year of breakthroughs.
             </p>
-            <p className={"lg:text-lg"}>
+            <p className={"lg:text-lg lg:text-center"}>
               Here’s how your contributions made an impact.
             </p>
           </div>
 
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:space-x-8 lg:max-w-screen-xl mx-4 lg:mx-auto" +
-          " place-items-center"}>
+          <div className={"homepage-two-col"}>
             <div className={"order-2 lg:order-1"}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left pb-4"}>
+              <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
                 CU’s endowment is now valued at $2.12 billion
               </h3>
-              <p className={"lg:text-lg"}>
+              <p className={"lg:text-lg text-left"}>
                 Your generosity has created an incredible legacy for generations to come. Thousands of donors in
                 Colorado and beyond have invested in what they believe in, such as a scholarship that is awarded
                 to students year after year, or funds to attract world-class faculty, or the creation of a program
-                to train fellows in critical <span className={"text-green-500 italic"}>doctor-patient communication skills</span>. And for the first
+                to train fellows in critical <span className={"a-link"}>doctor-patient communication skills</span>. And for the first
                 time, the collective value of individual endowments at CU has surpassed $2 billion, thanks to a
                 historic investment return and generous philanthropic contributions from donors.
               </p>
             </div>
-            <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2 lg:pl-4"}/>
+            <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/2B-endowment_ag4rmz.png"}
+                 width={'1600'}
+                 height={'1200'}
+                 alt={"A snowy mountain peak with the dollar amount $2.12B printed at its base in watermark. There is a red flag at the top of the mountain with exploding confetti around it, backgrounded against a five-pointed golden star."}
+                 className={"order-1 lg:order-2 lg:pl-4"}/>
           </div>
 
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:space-x-8 lg:max-w-screen-xl mx-4 lg:mx-auto" +
-          " place-items-center"}>
-            <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"lg:pr-4"}/>
+          <div className={"homepage-two-col"}>
+            <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/ROI_rugjqh.png"}
+                 width={'1600'}
+                 height={'1200'}
+                 alt={"A giant sunflower with a halo of light and green leaves dominates the top" +
+                 " two-thirds of the picture. At the bottom third of the image are stacks of purple coins." +
+                 " There are two human figures, one is atop a white ladder, placing a coin at the top of the pile. The other is pushing a wheel barrow. Confetti is scattered throughout the image."}
+                 className={"lg:pr-4"}/>
             <div className={""}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left pb-4"}>
+              <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
                 36.83% Return on Investment
               </h3>
-              <p className={"lg:text-lg"}>
+              <p className={"lg:text-lg text-left"}>
                 The CU Foundation’s investment strategy accelerates your generosity because it results in exceptional
                 returns. And that means more support for scholarships, research and attracting and retaining talented
                 faculty. Our goal is to maximize returns on that investment while effectively managing risk. CU’s Long
@@ -80,72 +92,81 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:space-x-8 lg:max-w-screen-xl mx-4 lg:mx-auto" +
-          " place-items-center"}>
+          <div className={"homepage-two-col"}>
             <div className={"order-2 lg:order-1"}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left pb-4"}>
+              <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
                 $371.2 million given last year
               </h3>
-              <p className={"lg:text-lg"}>
+              <p className={"lg:text-lg text-left"}>
                 Every dollar you give creates a positive impact. That might support <span className={"text-green-500 italic"}>a new assistive communication
               device for a non-speaking patient</span>, or a scholarship that opens doors for a <span className={"text-green-500 italic"}>first-generation college
               student</span>, or a chance for a young actor to <span className={"text-green-500 italic"}>share Shakespeare</span> with elementary school students across
                 Colorado.
               </p>
             </div>
-            <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2 lg:pl-4"}/>
+            <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"}
+                 alt={"An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."}
+                 className={"order-1 lg:order-2 lg:pl-4"}/>
           </div>
 
-          <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <h2 className={"text-25 lg:text-50 text-center"}><span className={"font-bold"}>53,485</span> gifts
-            </h2>
-            <p className={"lg:text-lg"}>
-              Every gift is a good intention that was followed through. Big or small, each donation creates better
-              outcomes for students, drives discovery and promotes innovative approaches to health care. Last year, you gave:
-            </p>
+          <div className={"bg-white"}>
+            <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
+              <h2 className={"text-25 lg:text-50 text-center"}>
+                <span className={"font-bold"}>53,485</span> gifts
+              </h2>
+              <p className={"lg:text-lg"}>
+                Every gift is a good intention that was followed through. Big or small, each donation creates better
+                outcomes for students, drives discovery and promotes innovative approaches to health care. Last year, you gave:
+              </p>
+            </div>
+
+            <div className={"numeric-stats-grid"}>
+              <NumericStat number={53} image={{
+                url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
+                alt: 'Graduation Cap'
+              }} label="to expand opportunities for students through scholarships"/>
+              <NumericStat image={{
+                url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
+                alt: 'Telescope'
+              }} number={127} label="to drive research and discovery"/>
+              <NumericStat image={{
+                url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
+                alt: 'Trophy Star'
+              }} number={28} label="to attract the best and brightest faculty to our campuses"/>
+              <NumericStat image={{
+                url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
+                alt: 'Heart-care DNA'
+              }} number={201} label="to transform health care and support lifesaving treatment"/>
+            </div>
+            <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md lg:mx-auto pt-8 pb-4"}>
+              <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
+            </div>
           </div>
 
-          <div className={"numeric-stats-grid"}>
-            <NumericStat number={53} image={{
-              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
-              alt: 'Graduation Cap'
-            }} label="to expand opportunities for students through scholarships"/>
-            <NumericStat image={{
-              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
-              alt: 'Telescope'
-            }} number={127} label="to drive research and discovery"/>
-            <NumericStat image={{
-              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
-              alt: 'Trophy Star'
-            }} number={28} label="to attract the best and brightest faculty to our campuses"/>
-            <NumericStat image={{
-              url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
-              alt: 'Heart-care DNA'
-            }} number={201} label="to transform health care and support lifesaving treatment"/>
-          </div>
-          <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
-          </div>
-
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto" +
-          " "}>
+          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto"}>
             <div className={"lg:space-y-8"}>
-              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
-              " lg:pr-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
+              <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/92_of_gifts-1_l3mqfr.png"}
+                   width={'1600'}
+                   height={'1200'}
+                   alt={"An illustration of two hands holding a square gift box wrapped in an orange ribbon. In the background is an illustrated pie chart indicating 92%."}
+                   className={"order-1 lg:order-2 lg:pr-4"}/>
+              <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
                 <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
               </h3>
             </div>
             <div className={"lg:space-y-8"}>
-              <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={"order-1 lg:order-2" +
-              " lg:pl-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center pb-4 lg:w-3/4 lg:mx-auto"}>
+              <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Avg-gift_o8tmcp.png"}
+                   width={'1600'}
+                   height={'1200'}
+                   alt={"Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."}
+                   className={"order-1 lg:order-2 lg:pl-4"}/>
+              <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
                 The average size of a gift was <span className={"font-bold"}>$6,472</span>
               </h3>
             </div>
           </div>
 
-          <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto" +
+          <div className={"flex flex-col space-y-4 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto" +
           " text-center"}>
             <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you
             </h3>
@@ -153,37 +174,37 @@ export default function Financials() {
               Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
               the decision to give and give again.
             </p>
-            <h4 className={"font-bold lg:text-xl"}>Last year we received gifts from:</h4>
+            <h4 className={"font-bold lg:text-xl pt-4"}>Last year we received gifts from:</h4>
             <div>
-              <span className={"lg:text-xl text-red-500 font-bold"}>
+              <span className={"text-xl md:text-38 font-bold"} style={{color: '#dd3f70'}}>
                 14,676
               </span>
               <br/>
               alumni
             </div>
             <div>
-              <span className={"lg:text-xl text-yellow-500 font-bold"}>
+              <span className={"text-xl md:text-38 font-bold"} style={{color: '#d94f29'}}>
                 9,102
               </span>
               <br/>
               friends
             </div>
             <div>
-              <span className={"lg:text-xl text-purple-500 font-bold"}>
+              <span className={"text-xl md:text-38 font-bold"} style={{color: '#554082'}}>
                 3,091
               </span>
               <br/>
               parents
             </div>
             <div>
-              <span className={"lg:text-xl text-green-500 font-bold"}>
+              <span className={"text-xl md:text-38 font-bold"} style={{color: '#075e62'}}>
                 2,047
               </span>
               <br/>
               corporations and foundations
             </div>
             <div>
-              <span className={"lg:text-xl text-blue-500 font-bold"}>
+              <span className={"text-xl md:text-38 font-bold"} style={{color: '#2a839c'}}>
                 1,018
               </span>
               <br/>
@@ -191,8 +212,12 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
-            <img src={"/assets/ir21/circles-pic.png"} alt={"Cirlces"} className={""}/>
+          <div className={"flex flex-col space-y-8 mx-4 md:max-w-screen-md md:mx-auto"}>
+            <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_600,q_auto,w_1600/v1635371541/ir21/financials/Confetti-spacer_dvah5z.png"}
+                 width={"1600"}
+                 height={"600"}
+                 alt={"Multicolored confetti in various shapes including stars, circles, squiggles, triangles, and hearts."}
+                 className={""}/>
             <h2 className={"text-28 lg:text-50 font-bold text-center"}>The meaning of legacy</h2>
             <p className={"lg:text-lg"}>
               An endowment is a gift that creates returns for tomorrow. An investment for the future, endowments
@@ -302,7 +327,9 @@ export default function Financials() {
           <div className={"flex flex-row sm:max-w-screen-sm mx-4 sm:mx-auto bg-white p-4 rounded-tr" +
           " rounded-br border border-gold border-l-8 border-t-2 border-r-2 border-b-2"}>
             <div className={"w-1/4 lg:w-1/8"}>
-              icon
+              <div style={{height: '40px', width: '44px'}}>
+                <DownloadIcon/>
+              </div>
             </div>
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
               <h2 className={"font-bold underline"}>Download our Financials</h2>
@@ -454,3 +481,16 @@ const transferToCU = [
     name: 'Athletics'
   },
 ];
+
+function DownloadIcon() {
+  return (
+    <svg width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path d="M41.72,38.4 L1.72,38.4 C0.891572875,38.4 0.22,37.7284271 0.22,36.9 C0.22,36.0715729 0.891572875,35.4 1.72,35.4 L41.72,35.4 C42.5484271,35.4 43.22,36.0715729 43.22,36.9 C43.22,37.7284271 42.5484271,38.4 41.72,38.4 Z" id="Shape" fill="#cfb87c"></path>
+        <path d="M11.72,19.4 L11.72,30.4 L7.72,30.4 L7.72,19.4 L11.72,19.4 L11.72,19.4 Z M11.72,16.4 L7.72,16.4 C6.06314575,16.4 4.72,17.7431458 4.72,19.4 L4.72,30.4 C4.72,32.0568542 6.06314575,33.4 7.72,33.4 L11.72,33.4 C13.3768542,33.4 14.72,32.0568542 14.72,30.4 L14.72,19.4 C14.72,17.7431458 13.3768542,16.4 11.72,16.4 L11.72,16.4 Z" id="Shape" fill="#cfb87c"></path>
+        <path d="M23.72,12.4 L23.72,30.4 L19.72,30.4 L19.72,12.4 L23.72,12.4 L23.72,12.4 Z M23.72,9.4 L19.72,9.4 C18.0631458,9.4 16.72,10.7431458 16.72,12.4 L16.72,30.4 C16.72,32.0568542 18.0631458,33.4 19.72,33.4 L23.72,33.4 C25.3768542,33.4 26.72,32.0568542 26.72,30.4 L26.72,12.4 C26.72,10.7431458 25.3768542,9.4 23.72,9.4 Z" id="Shape" fill="#cfb87c"></path>
+        <path d="M35.72,3.4 L35.72,30.4 L31.72,30.4 L31.72,3.4 L35.72,3.4 L35.72,3.4 Z M35.72,0.4 L31.72,0.4 C30.0631458,0.4 28.72,1.74314575 28.72,3.4 L28.72,30.4 C28.72,32.0568542 30.0631458,33.4 31.72,33.4 L35.72,33.4 C37.3768542,33.4 38.72,32.0568542 38.72,30.4 L38.72,3.4 C38.72,1.74314575 37.3768542,0.4 35.72,0.4 Z" id="Shape" fill="#cfb87c"></path>
+      </g>
+    </svg>
+  );
+}

@@ -20,13 +20,11 @@ const iconStyles = 'h-12 p-2';
 
 export default function SocialLinks({
                                       variant,
-                                      title,
                                       services = ['twitter', 'facebook', 'instagram']
                                     }: SocialLinksProps) {
   const {asPath} = useRouter();
   const hostname = typeof window !== 'undefined' ? window.location.hostname : defaultHostName;
   const shareURL = 'https://' + hostname + asPath;
-  console.log(title);
 
   switch (variant) {
     case 'centered':
