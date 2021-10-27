@@ -39,7 +39,7 @@ export default function Index({cards}: HomepageProps) {
                    sx={""}
                    width={'1254'}
                    height={'516'}
-                   alt="University of Colorado Logo"/>
+                   alt="An illustration of iconic buildings around Denver, Colorado Springs, and Boulder backgrounded against a sunset with confetti flying throughout the image."/>
           </picture>
           <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28"}>
             <h1 className={"py-4 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
@@ -53,36 +53,36 @@ export default function Index({cards}: HomepageProps) {
           <NumericStat number={52}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
-                         alt: 'Graduation Cap'
+                         alt: 'An illustration of a mortarboard hat and rolled up diploma against a pink textured background.'
                        }}
                        label="In scholarships"/>
           <NumericStat number={113}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
-                         alt: 'Telescope'
+                         alt: 'A illustration of a telescope pointing to the top left of the image against a blue background with a constellation pattern on it.'
                        }}
                        label="Research & Discovery"/>
           <NumericStat number={26}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
-                         alt: 'Trophy Star'
+                         alt: 'An illustration of a trophy with a star on it, backgrounded against a sketch of a prize ribbon on a green background.'
                        }}
                        label="Attract & Retain Talent"/>
           <NumericStat number={191}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
-                         alt: 'Heart-care DNA'
+                         alt: 'An illustration of a heart with a double helix DNA strand behind it, on a pink background.'
                        }}
                        label="Transform Healthcare"/>
         </div>
-        <div className={"bg-almost-blackpb-4"}>
+        <div className={"bg-almost-black pb-4"}>
           <div className={"p-3 bg-light-yellow rounded-b-lg -mt-1"}>
             <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold" +
-            " text-lg lg:text-28"}
-               id={"stories"}>
+            " text-lg lg:text-28"}>
               There are stories of true impact behind those numbers-stories of how giving pays dividends in joy.
               <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-1"}/>
             </p>
+            <div id="stories" />
           </div>
         </div>
         <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
@@ -134,7 +134,7 @@ export default function Index({cards}: HomepageProps) {
         </div>
         <div className="homepage-two-col pt-4 md:pt-8">
           <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"
-                 alt="The Image"
+                 alt="An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."
                  sx={""}/>
           <div>
             <h3 className={"text-28 lg:text-38 font-bold py-4"}>352.2 million given last year</h3>
@@ -145,22 +145,25 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </div>
+
         <div className={"homepage-two-col"}>
           <p className={"text-28 lg:text-38 order-2 lg:order-1 pt-8 px-8 lg:px-12"}>
             <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
           </p>
           <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939580/ir21/homepage/92_of_gifts-1_hczbib.png"
-                 alt="The Image"
+                 alt="An illustration of two hands holding a square gift box wrapped in an orange ribbon. In the background is an illustrated pie chart indicating 92%."
                  sx={"order-1 lg:order-2"}/>
         </div>
+
         <div className="homepage-two-col">
           <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939580/ir21/homepage/Avg-gift_djxsci.png"
-                 alt="The Image"
+                 alt="Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."
                  sx={""}/>
           <p className={"text-28 lg:text-38 pt-8 px-8 lg:px-12"}>
             The average size of a gift was <span className={"font-bold"}>$6,472</span>
           </p>
         </div>
+
         <div className="md:max-w-screen-md space-y-8 text-center grid grid-cols-1 py-8 place-items-center mx-4 md:mx-auto">
           <Link href={"/impact-reports/joy/financials"}>
             <a className={"text-lg lg:text-28 underline"}>
@@ -178,6 +181,7 @@ export default function Index({cards}: HomepageProps) {
           <ButtonLink href="/impact-reports/joy/financials">See Financials</ButtonLink>
           <SocialLinks variant={"centered"}/>
         </div>
+
         <h2 className={"text-center pt-8 pb-4 text-38 lg:text-50 font-bold"}>Our Mission</h2>
         <div className="max-w-screen-xl text-center grid grid-cols-1 md:grid-cols-2 gap-4 p-2 mx-auto pb-12 lg:pb-16">
           <div className={"px-4 lg:px-24 pb-6 lg:pb-0"}>
@@ -195,6 +199,7 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </div>
+
       </Layout>
     </>
   );

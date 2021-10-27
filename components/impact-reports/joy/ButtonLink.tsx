@@ -28,15 +28,29 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
       );
     default:
       // @todo Deal with external links a different way. This doesn't use next/link but should.
+      if (external) {
+        return (
+          <a href={href}
+             role={"button"}
+             aria-label={label}
+             className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
+             " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
+            <span>{children}</span>
+            {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
+          </a>
+        );
+      }
       return (
-        <a href={href}
-           role={"button"}
-           aria-label={label}
-           className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
-           " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
-          <span>{children}</span>
-          {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
-        </a>
+        <Link href={href}>
+          <a role={"button"}
+             aria-label={label}
+             className={"rounded-full py-3 px-6 shadow-md flex flex-row space-x-3 items-center w-max" +
+             " transform bg-gold font-bold text-base shadow hover:shadow-liddle hover:scale-105"}>
+            <span>{children}</span>
+            {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
+          </a>
+        </Link>
+
       );
   }
 }

@@ -20,7 +20,7 @@ export default function FinancialsSnippet({title, text, img, link, sx}: Financia
         <h2 className={"font-bold text-28 pt-4"}>{title}</h2>
         <div className={"py-4"} dangerouslySetInnerHTML={{__html: text}}/>
         <Link href={"/impact-reports/joy/financials"}>
-          <a className="flex flex-row items-center link-underline-italic font-bold mx-auto">
+          <a className="flex flex-row items-center font-bold mx-auto underline italic">
             <span>{link.title}</span>
             <FontAwesomeIcon icon={faArrowRight}
                              className="text-gold pl-2 h-4"/>
