@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 place-items-center md:place-items-start align-baseline">
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <a href="https://giving.cu.edu/fund-search"
-             className="py-3 px-6 text-black font-bold bg-gold text-sm rounded-md"
+             className="py-3 px-6 text-black font-bold bg-gold text-18 rounded-md"
              data-testid="footer-give-button">
             Give Now
           </a>

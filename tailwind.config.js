@@ -52,6 +52,7 @@ module.exports = {
       mmd: '839px',
       lg: '1023px',
       xl: '1279px',
+      xxl: '1680px',
     },
     extend: {
       boxShadow: {
