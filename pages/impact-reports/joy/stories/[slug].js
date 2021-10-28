@@ -60,7 +60,7 @@ export default function Story({story}) {
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"Welcome to the 2021 Impact Report!"}/>
 
-        <div className={"flex flex-col lg:flex-row pb-6 items-center xxl:max-w-screen-xl xxl:mx-auto"}>
+        <div className={"flex flex-col lg:flex-row pb-6 items-center xxl:max-w-screen-xxl xxl:mx-auto"}>
           <div className={"lg:w-3/5 lg:pt-4"}>
             <Image url={story.main_image.url}
                    alt={story.main_image.alt}
@@ -126,7 +126,7 @@ export async function getStaticProps({params}) {
     props: {
       story: storyData,
     },
-    revalidate: 1,
+    revalidate: 60,
   };
 }
 
