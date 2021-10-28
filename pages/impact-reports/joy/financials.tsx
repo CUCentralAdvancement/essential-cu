@@ -23,14 +23,14 @@ export default function Financials() {
       <Layout>
         <div className={"space-y-12 lg:spacy-y-16 pb-8"}>
 
-          <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
+          <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 mx-4 lg:mx-0"}>
             <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
                    width={'1600'}
                    height={'1200'}
                    alt={"A red heart is held in a yellow hand, palm facing up. There is a green and purple pie chart and bronze bar chart backgrounded behind the hand. An arrow curves upward from behind the heart towards the top right of the image. Multicolored confetti is scattered across the image."}
                    sx={"lg:w-3/5"}/>
-            <div className={"lg:w-2/5 mx-4 lg:mx-0"}>
-              <div className={"flex flex-col h-full lg:justify-center md:w-3/4"}>
+            <div className={"lg:w-2/5 px-4"}>
+              <div className={"flex flex-col h-full lg:justify-center"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center lg:text-left"}>
                   <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation, and joy
                 </h1>
@@ -38,7 +38,7 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"flex flex-col space-y-8 mx-4  md:max-w-screen-md lg:mx-auto"}>
+          <div className={"flex flex-col space-y-8 mx-4 md:max-w-screen-md md:mx-auto"}>
             <h2 className={"text-25 lg:text-50 text-center"}>2021 fiscal year financials</h2>
             <p className={"lg:text-lg lg:text-center"}>
               When donors like you put good into the world, it ripples outward and magnifies exponentially, transforming communities, nations and the world.&nbsp;
@@ -54,7 +54,7 @@ export default function Financials() {
               <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
                 CU’s endowment is now valued at $2.12 billion
               </h3>
-              <p className={"lg:text-lg text-left"}>
+              <p className={"lg:text-lg text-left max-w-prose"}>
                 Your generosity has created an incredible legacy for generations to come. Thousands of donors in
                 Colorado and beyond have invested in what they believe in, such as a scholarship that is awarded
                 to students year after year, or funds to attract world-class faculty, or the creation of a program
@@ -82,7 +82,7 @@ export default function Financials() {
               <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
                 36.83% Return on Investment
               </h3>
-              <p className={"lg:text-lg text-left"}>
+              <p className={"lg:text-lg text-left max-w-prose"}>
                 The CU Foundation’s investment strategy accelerates your generosity because it results in exceptional
                 returns. And that means more support for scholarships, research and attracting and retaining talented
                 faculty. Our goal is to maximize returns on that investment while effectively managing risk. CU’s Long
@@ -92,25 +92,30 @@ export default function Financials() {
             </div>
           </div>
 
-          <div className={"homepage-two-col"}>
-            <div className={"order-2 lg:order-1"}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
-                $371.2 million given last year
-              </h3>
-              <p className={"lg:text-lg text-left"}>
-                Every dollar you give creates a positive impact. That might support <span className={"text-green-500 italic"}>a new assistive communication
+          <div className={"pb-4 bg-white"}>
+            <div className={"bg-light-yellow rounded-b-lg shadow-bottom pb-12 lg:px-0"}>
+              <div className={"homepage-two-col"}>
+                <div className={"order-2 lg:order-1"}>
+                  <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
+                    $371.2 million given last year
+                  </h3>
+                  <p className={"lg:text-lg text-left max-w-prose"}>
+                    Every dollar you give creates a positive impact. That might support <span className={"text-green-500 italic"}>a new assistive communication
               device for a non-speaking patient</span>, or a scholarship that opens doors for a <span className={"text-green-500 italic"}>first-generation college
               student</span>, or a chance for a young actor to <span className={"text-green-500 italic"}>share Shakespeare</span> with elementary school students across
-                Colorado.
-              </p>
+                    Colorado.
+                  </p>
+                </div>
+                <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"}
+                     alt={"An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."}
+                     className={"order-1 lg:order-2 lg:pl-4"}/>
+              </div>
             </div>
-            <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"}
-                 alt={"An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."}
-                 className={"order-1 lg:order-2 lg:pl-4"}/>
           </div>
 
-          <div className={"bg-white"}>
-            <div className={"flex flex-col space-y-8 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto"}>
+          <div className={"bg-gradient-to-b from-white to-light-yellow financials-remove-y-spacing"}>
+
+            <div className={"flex flex-col space-y-8 py-8 mx-4 lg:text-center md:max-w-screen-md md:mx-auto"}>
               <h2 className={"text-25 lg:text-50 text-center"}>
                 <span className={"font-bold"}>53,485</span> gifts
               </h2>
@@ -138,78 +143,79 @@ export default function Financials() {
                 alt: 'Heart-care DNA'
               }} number={201} label="to transform health care and support lifesaving treatment"/>
             </div>
-            <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md lg:mx-auto pt-8 pb-4"}>
+            <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md md:mx-auto pt-8 pb-4"}>
               <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
             </div>
-          </div>
 
-          <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto"}>
-            <div className={"lg:space-y-8"}>
-              <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/92_of_gifts-1_l3mqfr.png"}
-                   width={'1600'}
-                   height={'1200'}
-                   alt={"An illustration of two hands holding a square gift box wrapped in an orange ribbon. In the background is an illustrated pie chart indicating 92%."}
-                   className={"order-1 lg:order-2 lg:pr-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
-                <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
-              </h3>
+            <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto"}>
+              <div className={"lg:space-y-8"}>
+                <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/92_of_gifts-1_l3mqfr.png"}
+                     width={'1600'}
+                     height={'1200'}
+                     alt={"An illustration of two hands holding a square gift box wrapped in an orange ribbon. In the background is an illustrated pie chart indicating 92%."}
+                     className={"order-1 lg:order-2 lg:pr-4"}/>
+                <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
+                  <span className={"font-bold"}>92%</span> of gifts were less than <span className={"font-bold"}>$2,500</span>
+                </h3>
+              </div>
+              <div className={"lg:space-y-8"}>
+                <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Avg-gift_o8tmcp.png"}
+                     width={'1600'}
+                     height={'1200'}
+                     alt={"Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."}
+                     className={"order-1 lg:order-2 lg:pl-4"}/>
+                <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
+                  The average size of a gift was <span className={"font-bold"}>$6,472</span>
+                </h3>
+              </div>
             </div>
-            <div className={"lg:space-y-8"}>
-              <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Avg-gift_o8tmcp.png"}
-                   width={'1600'}
-                   height={'1200'}
-                   alt={"Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."}
-                   className={"order-1 lg:order-2 lg:pl-4"}/>
-              <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
-                The average size of a gift was <span className={"font-bold"}>$6,472</span>
-              </h3>
-            </div>
-          </div>
 
-          <div className={"flex flex-col space-y-4 mx-4 lg:text-center md:max-w-screen-md lg:mx-auto" +
-          " text-center"}>
-            <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you
-            </h3>
-            <p className={"lg:text-lg"}>
-              Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
-              the decision to give and give again.
-            </p>
-            <h4 className={"font-bold lg:text-xl pt-4"}>Last year we received gifts from:</h4>
-            <div>
+            <div className={"flex flex-col space-y-4 mx-4 lg:text-center md:max-w-screen-md md:mx-auto" +
+            " text-center pt-8"}>
+              <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you
+              </h3>
+              <p className={"lg:text-lg"}>
+                Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
+                the decision to give and give again.
+              </p>
+              <h4 className={"font-bold lg:text-xl pt-4"}>Last year we received gifts from:</h4>
+              <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#dd3f70'}}>
                 14,676
               </span>
-              <br/>
-              alumni
-            </div>
-            <div>
+                <br/>
+                alumni
+              </div>
+              <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#d94f29'}}>
                 9,102
               </span>
-              <br/>
-              friends
-            </div>
-            <div>
+                <br/>
+                friends
+              </div>
+              <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#554082'}}>
                 3,091
               </span>
-              <br/>
-              parents
-            </div>
-            <div>
+                <br/>
+                parents
+              </div>
+              <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#075e62'}}>
                 2,047
               </span>
-              <br/>
-              corporations and foundations
-            </div>
-            <div>
+                <br/>
+                corporations and foundations
+              </div>
+              <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#2a839c'}}>
                 1,018
               </span>
-              <br/>
-              faculty and staff
+                <br/>
+                faculty and staff
+              </div>
             </div>
+
           </div>
 
           <div className={"flex flex-col space-y-8 mx-4 md:max-w-screen-md md:mx-auto"}>
@@ -219,11 +225,11 @@ export default function Financials() {
                  alt={"Multicolored confetti in various shapes including stars, circles, squiggles, triangles, and hearts."}
                  className={""}/>
             <h2 className={"text-28 lg:text-50 font-bold text-center"}>The meaning of legacy</h2>
-            <p className={"lg:text-lg"}>
+            <p className={"lg:text-lg max-w-prose"}>
               An endowment is a gift that creates returns for tomorrow. An investment for the future, endowments
               are gifts with longitudinal impact, creating positive change year after year.
             </p>
-            <p className={"lg:text-lg"}>
+            <p className={"lg:text-lg max-w-prose"}>
               The collective value of CU’s endowments grew by nearly 40% in the last fiscal year. Here’s how
               the endowment has grown in recent years:
             </p>
@@ -233,7 +239,8 @@ export default function Financials() {
             <div className={"chart-container the-bar-chart"}>
               <ResponsiveBarChart data={endowmentByYear}/>
             </div>
-            <div className={"chart-text-container"}>
+            <div className={"chart-text-container sm:text-left md:text-center lg:text-left max-w-screen-md" +
+            " mx-auto lg:mx-0"}>
               <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
               <p>
                 <span className={"pr-2 lg:pr-0 text-xl md:text-38 font-bold inline md:block"}
@@ -256,7 +263,7 @@ export default function Financials() {
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
             <div className={"chart-text-container"}>
               <h3 className={"font-bold text-xl lg:text-38 text-center"}>How is CU’s endowment invested?</h3>
-              <p>
+              <p className={"max-w-prose mx-auto lg:mx-0"}>
                 The endowment is invested in a diversified portfolio with a target of stable, long-term growth.
                 In fiscal year 2021, the Long-Term Investment Pool (LTIP) allocation was:
               </p>
@@ -286,10 +293,10 @@ export default function Financials() {
             </div>
             <div className={"chart-text-container order-1 lg:order-2"}>
               <h3 className={"text-center text-xl lg:text-38"}>Investment return vs. policy benchmark</h3>
-              <p className={"font-bold"}>
+              <p className={"font-bold max-w-prose mx-auto lg:mx-0"}>
                 Our Long-Term Investment Pool consistently outperforms policy benchmarks.
               </p>
-              <p>
+              <p className={"max-w-prose mx-auto lg:mx-0"}>
                 The LTIP’s longer-term results show a consistent track record of investment growth. Here is the
                 recent performance of the LTIP against the policy benchmark
               </p>
@@ -300,7 +307,7 @@ export default function Financials() {
           " lg:mx-auto"}>
             <div className={"chart-text-container "}>
               <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left"}>$211.8 million</h3>
-              <p>
+              <p className={"max-w-prose mx-auto lg:mx-0 text-center lg:text-left"}>
                 That’s how much the CU Foundation transferred to CU last fiscal year:
               </p>
             </div>
@@ -310,7 +317,7 @@ export default function Financials() {
                      alt={"Funds transferred to CU"}
                      sx={"the-pie-chart"}/>
               <div className={"grid grid-cols-2 gap-4 h-2/5 w-10/12 md:w-2/3 pt-4 text-legend" +
-              " lg:text-18 font-bold"}>
+              " lg:text-18 font-bold mx-auto max-w-screen-md"}>
                 {transferToCU.map((el, ind) => {
                   return (
                     <div key={ind} className={"flex flex-row items-center"}>
