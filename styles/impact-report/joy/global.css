@@ -176,10 +176,19 @@
     }
 
     .homepage-two-col {
-        @apply text-center grid grid-cols-1 lg:grid-cols-2 place-items-center lg:max-w-screen-xl mx-4 lg:mx-auto;
+        @apply text-center grid grid-cols-1 lg:grid-cols-2 place-items-center xl:max-w-screen-xl mx-4 xl:mx-auto;
     }
 
     /* End Homepage */
+
+
+    /* Financials  */
+
+    .financials-remove-y-spacing {
+        margin-top: 0 !important;
+    }
+
+    /* End Financials  */
 }
 
 
