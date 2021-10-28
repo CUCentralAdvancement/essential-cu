@@ -22,6 +22,8 @@ export default function Header() {
                                 media={`(min-width: ${twConfig.theme.screens.lg})`}/>
                         <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_88,q_auto,w_490/v1634945747/ir21/global/cu-logo-small_lgwclv.png"
                                sx={"p-2 lg:p-0 h-full"}
+                               width={"296"}
+                               height={"96"}
                                alt="University of Colorado Logo"/>
                       </picture>
                     </a>
@@ -34,6 +36,8 @@ export default function Header() {
                 </div>
                 <div className="text-2xl hidden lg:block">
                   <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_93,q_auto,w_188/v1634945747/ir21/global/header-project-logo_bv3hde.png"}
+                       height={"96"}
+                       width={"188"}
                        alt={"2021 Impact Report Logo"}/>
                 </div>
                 <div className={"pr-4 lg:pr-0 block lg:hidden"}>
