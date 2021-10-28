@@ -52,7 +52,7 @@ module.exports = {
       mmd: '839px',
       lg: '1023px',
       xl: '1279px',
-      xxl: '1680px',
+      xxl: '1540px',
     },
     extend: {
       boxShadow: {
@@ -61,6 +61,7 @@ module.exports = {
       colors: {
         gold: '#cfb87c',
         'muted-gold': '#f4ead0',
+        'dark-gold': '#7B6F4B',
         'cu-gray': '#C6C8C9',
         'light-yellow': '#FFFAEB',
         'light-gray': '#363636',

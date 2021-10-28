@@ -30,7 +30,7 @@ export default function SocialLinks({
     case 'centered':
       return (
         <div className={"flex flex-col items-center"}>
-          <span className="font-bold pl-1 py-1 text-sm">Share:</span>
+          <span className="font-bold pl-1 py-1 text-18">Share:</span>
           <div className={`flex flex-row space-x-5 justify-center`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton
@@ -70,7 +70,7 @@ export default function SocialLinks({
     default:
       return (
         <div className={""}>
-          <span className="font-bold pl-1">Share:</span>
+          <span className="font-bold pl-1 text-18">Share:</span>
           <div className={`flex flex-row space-x-3`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton

@@ -31,6 +31,7 @@ export default function Index({cards}: HomepageProps) {
         <meta property="twitter:card" content="summary_large_image"/>
       </Head>
       <Layout>
+
         <Section type="1-col">
           <picture>
             <source srcSet="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/HP-hero-desktop_xssk7k.png"
@@ -51,6 +52,7 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </Section>
+
         <div className={"numeric-stats-grid pb-8"}>
           <NumericStat number={52}
                        image={{
@@ -77,16 +79,18 @@ export default function Index({cards}: HomepageProps) {
                        }}
                        label="to transform healthcare"/>
         </div>
+
         <div className={"bg-almost-black pb-4"}>
           <div className={"p-3 bg-light-yellow rounded-b-lg -mt-1"}>
             <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold" +
             " text-lg lg:text-28"}>
-              There are stories of true impact behind those numbers &#8212; stories of how giving pays dividends in joy.
+              There are stories of true impact behind those numbers&#8212;stories of how giving pays dividends in joy.
               <div id="stories" />
               <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-4"}/>
             </p>
           </div>
         </div>
+
         <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
           <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-12"}>
             We asked our CU community: What brings you joy?
@@ -114,32 +118,15 @@ export default function Index({cards}: HomepageProps) {
                 </Link>
               );
             })}
-
-            {/*{Object.keys(cards).map((el, index) => {*/}
-            {/*  return (*/}
-            {/*    <Link key={index}*/}
-            {/*          as={`/impact-reports/joy/stories/${cards[el].slug}`}*/}
-            {/*          href="/impact-reports/joy/stories/[slug]">*/}
-            {/*      <a className={"bg-almost-black"}>*/}
-            {/*        <div className="flex flex-col justify-end h-full rounded-lg bg-cover pt-44 md:pt-48"*/}
-            {/*             style={{backgroundImage: `url('${cards[el].main_image.url}')`}}>*/}
-            {/*          <span className="bg-gold text-center py-3 pr-4 w-44 rounded-tr-lg font-bold">{cards[el].campus}</span>*/}
-            {/*          <span className="px-6 pt-4 font-bold bg-white text-xl underline lg:w-2/3 lg:rounded-tr-lg">{cards[el].title}</span>*/}
-            {/*          <span className="px-6 py-6 bg-white rounded-b-lg -mt-1 text-18 lg:w-2/3">{cards[el].description}</span>*/}
-            {/*        </div>*/}
-            {/*      </a>*/}
-            {/*    </Link>*/}
-            {/*  );*/}
-            {/*})}*/}
-
           </div>
         </div>
+
         <div className="homepage-two-col pt-4 md:pt-8">
           <Image url="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"
                  alt="An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."
                  sx={""}/>
           <div>
-            <h3 className={"text-28 lg:text-38 font-bold py-4"}>352.2 million given last year</h3>
+            <h3 className={"text-28 lg:text-38 font-bold py-4"}>371.2 million given last year</h3>
             <p className={"lg:px-16 max-w-prose"}>
               Every dollar you give creates a positive impact. Giving helps students achieve their dreams, enables
               deep satisfaction in one’s calling, sparks the giddy joy of discovery and magnifies the impact of
@@ -180,7 +167,7 @@ export default function Index({cards}: HomepageProps) {
             Despite a challenging year, donors like you advanced CU’s mission, with a record-breaking endowment
             figure, unparalleled return on investment and support from all corners of the CU community.
           </p>
-          <ButtonLink href="/impact-reports/joy/financials">See Financials</ButtonLink>
+          <ButtonLink href="/impact-reports/joy/financials">See Our Financials</ButtonLink>
           <SocialLinks variant={"centered"}/>
         </div>
 
