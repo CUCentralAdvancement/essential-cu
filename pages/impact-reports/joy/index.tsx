@@ -41,56 +41,58 @@ export default function Index({cards}: HomepageProps) {
                    height={'516'}
                    alt="An illustration of iconic buildings around Denver, Colorado Springs, and Boulder backgrounded against a sunset with confetti flying throughout the image."/>
           </picture>
-          <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28"}>
-            <h1 className={"py-4 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
-            <p className={"text-xl lg:text-lg py-3 lg:px-8"}>
-              In 2021, nearly <span className={"font-bold"}>29,793 donors</span> made <span className={"font-bold"}>53,485 gifts</span> to support CU. In
-              a breakthrough year, CU&apos;s endowment is now valued at $2.16 billion.
+          <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28 lg:pt-4"}>
+            <h1 className={"py-8 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
+            <p className={"text-xl lg:text-30 py-4 lg:px-8"}>
+              In 2021, <span className={"font-bold"}>29,284 donors</span> made <span className={"font-bold"}>53,485 gifts</span> to support CU.
+            </p>
+            <p className={"text-xl lg:text-30 pt-8 lg:px-8"}>
+              You invested:
             </p>
           </div>
         </Section>
-        <div className={"numeric-stats-grid"}>
+        <div className={"numeric-stats-grid pb-8"}>
           <NumericStat number={52}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
                          alt: 'An illustration of a mortarboard hat and rolled up diploma against a pink textured background.'
                        }}
-                       label="In scholarships"/>
+                       label="in scholarships"/>
           <NumericStat number={113}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
                          alt: 'A illustration of a telescope pointing to the top left of the image against a blue background with a constellation pattern on it.'
                        }}
-                       label="Research & Discovery"/>
+                       label="in research and discovery"/>
           <NumericStat number={26}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
                          alt: 'An illustration of a trophy with a star on it, backgrounded against a sketch of a prize ribbon on a green background.'
                        }}
-                       label="Attract & Retain Talent"/>
+                       label="to attract talented faculty"/>
           <NumericStat number={191}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
                          alt: 'An illustration of a heart with a double helix DNA strand behind it, on a pink background.'
                        }}
-                       label="Transform Healthcare"/>
+                       label="to transform healthcare"/>
         </div>
         <div className={"bg-almost-black pb-4"}>
           <div className={"p-3 bg-light-yellow rounded-b-lg -mt-1"}>
             <p className={"md:max-w-screen-md mx-auto text-center flex flex-col items-center font-bold" +
             " text-lg lg:text-28"}>
-              There are stories of true impact behind those numbers-stories of how giving pays dividends in joy.
-              <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-1"}/>
+              There are stories of true impact behind those numbers &#8212; stories of how giving pays dividends in joy.
+              <div id="stories" />
+              <FontAwesomeIcon icon={faChevronDown} className={"h-12 text-gold mt-4"}/>
             </p>
-            <div id="stories" />
           </div>
         </div>
         <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
-          <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-8"}>
+          <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-12"}>
             We asked our CU community: What brings you joy?
           </h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
-          " pb-12 xl:max-w-screen-xl xl:mx-auto"}>
+          " pb-12 lg:pb-16 xl:max-w-screen-xl xl:mx-auto"}>
 
             {Object.keys(cards).map((el, index) => {
               return (
@@ -101,7 +103,7 @@ export default function Index({cards}: HomepageProps) {
                     <div className="rounded-lg bg-white flex flex-col shadow h-full">
                       <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                            className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
-                                                <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
+                                                <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm lg:text-18">
                                                     {cards[el].campus}
                                                 </span>
                       </div>

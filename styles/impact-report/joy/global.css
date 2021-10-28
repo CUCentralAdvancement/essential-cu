@@ -144,14 +144,6 @@
         @apply py-4;
     }
 
-    .quote-text::before {
-        content: open-quote;
-    }
-
-    .quote-text::after {
-        content: close-quote;
-    }
-
     .related-funds {
         width: 90vw;
         margin: 0 auto;

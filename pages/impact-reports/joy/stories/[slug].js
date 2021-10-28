@@ -60,15 +60,15 @@ export default function Story({story}) {
                sx={"lg:hidden block pt-4 px-4 mx-auto"}
                alt={"Welcome to the 2021 Impact Report!"}/>
 
-        <div className={"flex flex-col lg:flex-row  pb-6 lg:-mt-4 items-center"}>
-          <div className={"lg:w-3/5"}>
+        <div className={"flex flex-col lg:flex-row pb-6 items-center xxl:max-w-screen-xl xxl:mx-auto"}>
+          <div className={"lg:w-3/5 lg:pt-4"}>
             <Image url={story.main_image.url}
                    alt={story.main_image.alt}
                    width={story.main_image.width}
                    height={story.main_image.height}/>
           </div>
           <div className={"lg:w-2/5 max-w-prose mx-4 md:mx-auto flex flex-col h-full md:justify-center" +
-          " lg:pr-8"}>
+          " lg:p-8"}>
             <h1 className={"py-4 lg:py-12 text-28 lg:text-50 font-bold"}>{story.title}</h1>
             <p className={"pb-6 font-bold lg:text-lg"}>{story.body}</p>
             <SocialLinks title={story.title}/>

@@ -21,7 +21,7 @@ export default function Financials() {
         <meta property="twitter:card" content="summary_large_image"/>
       </Head>
       <Layout>
-        <div className={"space-y-12 lg:spacy-y-16"}>
+        <div className={"space-y-12 lg:spacy-y-16 pb-8"}>
 
           <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6"}>
             <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
