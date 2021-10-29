@@ -111,7 +111,7 @@ export default function Index({cards}: HomepageProps) {
                                                     {cards[el].campus}
                                                 </span>
                       </div>
-                      <span className="px-4 py-2 font-bold">{cards[el].title}</span>
+                      <span className="px-4 pt-3 pb-2 font-bold">{cards[el].title}</span>
                       <span className="px-4 pb-6 text-18">{cards[el].description}</span>
                     </div>
                   </a>

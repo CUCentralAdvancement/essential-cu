@@ -126,7 +126,7 @@ export async function getStaticProps({params}) {
     props: {
       story: storyData,
     },
-    revalidate: 60,
+    revalidate: 60 * 5,
   };
 }
 
