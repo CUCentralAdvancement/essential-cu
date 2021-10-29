@@ -144,6 +144,10 @@
         @apply py-4;
     }
 
+    .story-text-block a {
+        @apply underline italic font-bold text-link;
+    }
+
     .related-funds {
         width: 90vw;
         margin: 0 auto;

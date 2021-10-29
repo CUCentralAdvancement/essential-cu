@@ -35,10 +35,10 @@ export default function ContentListing({variant, content, title, sx = ''}: Conte
       return (
         <div className={`${sx} `} >
           <h2 className={"text-lg lg:text-28 py-1 font-bold"}>{title}</h2>
-          <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold underline italic">
+          <div className="space-y-2 flex flex-col shadow-inner bg-white border-t-2 border-b-2 border-gold">
             {content.map((el, index) => {
               return (
-                <a key={index} href={`https://giving.cu.edu${el.path}`}>
+                <a key={index} href={el.path} className={"a-link"}>
                   <div className="flex flex-row p-2 hover:bg-muted-gold items-center">
                     <span>{el.title}</span>
                     <FontAwesomeIcon icon={faArrowRight}
