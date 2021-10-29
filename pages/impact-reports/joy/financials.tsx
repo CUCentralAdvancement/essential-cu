@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
@@ -23,7 +24,7 @@ export default function Financials() {
       <Layout>
         <div className={"space-y-12 lg:spacy-y-16 pb-8"}>
 
-          <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 mx-4 lg:mx-0"}>
+          <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 mx-4"}>
             <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
                    width={'1600'}
                    height={'1200'}
@@ -32,7 +33,7 @@ export default function Financials() {
             <div className={"lg:w-2/5 px-4"}>
               <div className={"flex flex-col h-full lg:justify-center"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center lg:text-left"}>
-                  <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation, and joy
+                  <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation and joy
                 </h1>
               </div>
             </div>
@@ -58,9 +59,13 @@ export default function Financials() {
                 Your generosity has created an incredible legacy for generations to come. Thousands of donors in
                 Colorado and beyond have invested in what they believe in, such as a scholarship that is awarded
                 to students year after year, or funds to attract world-class faculty, or the creation of a program
-                to train fellows in critical <span className={"a-link"}>doctor-patient communication skills</span>. And for the first
-                time, the collective value of individual endowments at CU has surpassed $2 billion, thanks to a
-                historic investment return and generous philanthropic contributions from donors.
+                to train fellows in critical&nbsp;
+                <Link href="/impact-reports/joy/stories/[slug]"
+                      as={'/impact-reports/joy/stories/joy-of-an-honest-conversation'}>
+                  <a className={"a-link"}>doctor-patient communication skills</a>
+                </Link>.
+                And for the first time, the collective value of individual endowments at CU has surpassed $2
+                billion, thanks to a historic investment return and generous philanthropic contributions from donors.
               </p>
             </div>
             <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/2B-endowment_ag4rmz.png"}
@@ -79,8 +84,8 @@ export default function Financials() {
                  " There are two human figures, one is atop a white ladder, placing a coin at the top of the pile. The other is pushing a wheel barrow. Confetti is scattered throughout the image."}
                  className={"lg:pr-4"}/>
             <div className={""}>
-              <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
-                36.83% Return on Investment
+              <h3 className={"text-xl lg:text-38 text-center py-4"}>
+                <span className={"font-bold"}>36.83%</span> return on investment
               </h3>
               <p className={"lg:text-lg text-left max-w-prose"}>
                 The CU Foundation’s investment strategy accelerates your generosity because it results in exceptional
@@ -96,14 +101,25 @@ export default function Financials() {
             <div className={"bg-light-yellow rounded-b-lg shadow-bottom pb-12 lg:px-0"}>
               <div className={"homepage-two-col"}>
                 <div className={"order-2 lg:order-1"}>
-                  <h3 className={"font-bold text-xl lg:text-38 text-center py-4"}>
-                    $371.2 million given last year
+                  <h3 className={"text-xl lg:text-38 text-center py-4"}>
+                    <span className={"font-bold"}>$371.2 million</span> given last year
                   </h3>
                   <p className={"lg:text-lg text-left max-w-prose"}>
-                    Every dollar you give creates a positive impact. That might support <span className={"text-green-500 italic"}>a new assistive communication
-              device for a non-speaking patient</span>, or a scholarship that opens doors for a <span className={"text-green-500 italic"}>first-generation college
-              student</span>, or a chance for a young actor to <span className={"text-green-500 italic"}>share Shakespeare</span> with elementary school students across
-                    Colorado.
+                    Every dollar you give creates a positive impact. It might support clinical assessment for&nbsp;
+                    <Link href="/impact-reports/joy/stories/[slug]"
+                          as={'/impact-reports/joy/stories/joy-of-independence'}>
+                      <a className={"a-link"}>a non-speaking patient</a>
+                    </Link>, or a scholarship that opens doors for a&nbsp;
+                    <Link href="/impact-reports/joy/stories/[slug]"
+                          as={'/impact-reports/joy/stories/joy-of-community'}>
+                      <a className={"a-link"}>first-generation college student</a>
+                    </Link>,
+                    or a chance for a young actor to&nbsp;
+                    <Link href="/impact-reports/joy/stories/[slug]"
+                          as={'/impact-reports/joy/stories/joy-of-theater'}>
+                      <a className={"a-link"}>share Shakespeare</a>
+                    </Link>
+                    &nbsp;with elementary school students across Colorado.
                   </p>
                 </div>
                 <img src={"https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Legacy_q93rek.png"}
@@ -143,7 +159,7 @@ export default function Financials() {
                 alt: 'Heart-care DNA'
               }} number={201} label="to transform health care and support lifesaving treatment"/>
             </div>
-            <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md md:mx-auto pt-8 pb-4"}>
+            <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md md:mx-auto pt-16 pb-8"}>
               <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
             </div>
 
@@ -172,10 +188,10 @@ export default function Financials() {
 
             <div className={"flex flex-col space-y-4 mx-4 lg:text-center md:max-w-screen-md md:mx-auto" +
             " text-center pt-8"}>
-              <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,294</span> donors like you
+              <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,284</span> donors like you
               </h3>
               <p className={"lg:text-lg"}>
-                Gave to help CU create change and positive impact. Averaging 149 gifts a day, many of you made
+                Helped CU create change and positive impact. Averaging 149 gifts a day, many of you made
                 the decision to give and give again.
               </p>
               <h4 className={"font-bold lg:text-xl pt-4"}>Last year we received gifts from:</h4>
@@ -230,7 +246,7 @@ export default function Financials() {
               are gifts with longitudinal impact, creating positive change year after year.
             </p>
             <p className={"lg:text-lg max-w-prose"}>
-              The collective value of CU’s endowments grew by nearly 40% in the last fiscal year. Here’s how
+              The collective value of CU’s endowments grew by nearly <span className={"font-bold"}>40%</span> in the last fiscal year. Here’s how
               the endowment has grown in recent years:
             </p>
           </div>
@@ -241,7 +257,7 @@ export default function Financials() {
             </div>
             <div className={"chart-text-container sm:text-left md:text-center lg:text-left max-w-screen-md" +
             " mx-auto lg:mx-0"}>
-              <h3 className={"font-bold text-xl"}>Last year we received gifts from:</h3>
+              <h3 className={"font-bold text-xl"}>CU&apos;s endowment over time</h3>
               <p>
                 <span className={"pr-2 lg:pr-0 text-xl md:text-38 font-bold inline md:block"}
                       style={{color: '#dd3f70'}}>130</span>
@@ -265,7 +281,7 @@ export default function Financials() {
               <h3 className={"font-bold text-xl lg:text-38 text-center"}>How is CU’s endowment invested?</h3>
               <p className={"max-w-prose mx-auto lg:mx-0"}>
                 The endowment is invested in a diversified portfolio with a target of stable, long-term growth.
-                In fiscal year 2021, the Long-Term Investment Pool (LTIP) allocation was:
+                In fiscal year 2021, the Long Term Investment Pool (LTIP) allocation was:
               </p>
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
@@ -294,7 +310,7 @@ export default function Financials() {
             <div className={"chart-text-container order-1 lg:order-2"}>
               <h3 className={"text-center text-xl lg:text-38"}>Investment return vs. policy benchmark</h3>
               <p className={"font-bold max-w-prose mx-auto lg:mx-0"}>
-                Our Long-Term Investment Pool consistently outperforms policy benchmarks.
+                Our Long Term Investment Pool consistently outperforms policy benchmarks.
               </p>
               <p className={"max-w-prose mx-auto lg:mx-0"}>
                 The LTIP’s longer-term results show a consistent track record of investment growth. Here is the
@@ -323,7 +339,7 @@ export default function Financials() {
                     <div key={ind} className={"flex flex-row items-center"}>
                       <div style={{background: el.fill}}
                            className={"chart-legend-circle flex-shrink-0"}/>
-                      <span className={"ml-2 "}>{el.name}</span>
+                      <span className={"ml-2"}>{el.name}</span>
                     </div>
                   );
                 })}
@@ -339,8 +355,8 @@ export default function Financials() {
               </div>
             </div>
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
-              <h2 className={"font-bold underline"}>Download our Financials</h2>
-              <p>For more detail, see our audited financials for fiscal year 2021</p>
+              <h2 className={"font-bold underline"}>Download Our Financials</h2>
+              <p>For more details, see our audited financials for fiscal year 2021</p>
               <a href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf"
                  role={"button"}
                  aria-label={"Download the financials content in PDF format"}
@@ -399,27 +415,27 @@ const endowmentAllocation = [
   {
     value: 48,
     fill: '#cfb87c',
-    name: 'Global Public Equities'
+    name: 'Global public equities'
   },
   {
     value: 26,
     fill: '#f4ead0',
-    name: 'Global Private Capital'
+    name: 'Global private capital'
   },
   {
     value: 14,
     fill: '#000',
-    name: 'Global Hedge Funds'
+    name: 'Global hedge funds'
   },
   {
     value: 8,
     fill: '#595b54',
-    name: 'Real Assets'
+    name: 'Real assets'
   },
   {
     value: 4,
     fill: '#9ca0a2',
-    name: 'Global Public Equities'
+    name: 'Global public equities'
   },
 ];
 
@@ -450,7 +466,7 @@ const transferToCU = [
   {
     value: 32,
     fill: '#cfb87c',
-    name: 'Academic Support'
+    name: 'Academic support'
   },
   {
     value: 14,
@@ -460,7 +476,7 @@ const transferToCU = [
   {
     value: 14,
     fill: '#7d714a',
-    name: 'Advancement Support'
+    name: 'Advancement support'
   },
   {
     value: 13,
@@ -470,17 +486,17 @@ const transferToCU = [
   {
     value: 10,
     fill: '#7d7f81',
-    name: 'Chairs, Professorships, and other faculty support'
+    name: 'Chairs, professorships and other faculty support'
   },
   {
     value: 9,
     fill: '#bfbfbf',
-    name: 'Public Service, Administration, Library, and Other Support'
+    name: 'Public service, administration, library and other support'
   },
   {
     value: 7,
     fill: '#000',
-    name: 'Capital Projects'
+    name: 'Capital projects'
   },
   {
     value: 1,
