@@ -324,7 +324,7 @@ export default function Financials() {
             <div className={"chart-text-container "}>
               <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left"}>$211.8 million</h3>
               <p className={"max-w-prose mx-auto lg:mx-0 text-center lg:text-left"}>
-                That’s how much the CU Foundation transferred to CU last fiscal year:
+                That’s how much the CU Foundation transferred to CU last fiscal year
               </p>
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
