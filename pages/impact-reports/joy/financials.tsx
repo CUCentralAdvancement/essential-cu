@@ -28,7 +28,7 @@ export default function Financials() {
             <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
                    width={'1600'}
                    height={'1200'}
-                   alt={"A red heart is held in a yellow hand, palm facing up. There is a green and purple pie chart and bronze bar chart backgrounded behind the hand. An arrow curves upward from behind the heart towards the top right of the image. Multicolored confetti is scattered across the image."}
+                   alt={"I changed this text. There is a green and purple pie chart and bronze bar chart backgrounded behind the hand. An arrow curves upward from behind the heart towards the top right of the image. Multicolored confetti is scattered across the image."}
                    sx={"lg:w-3/5"}/>
             <div className={"lg:w-2/5 px-4"}>
               <div className={"flex flex-col h-full lg:justify-center"}>
