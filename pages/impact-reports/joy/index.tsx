@@ -93,7 +93,7 @@ export default function Index({cards}: HomepageProps) {
 
         <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
           <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-12"}>
-            We asked our CU community: What brings you joy?
+            To understand how giving can bring joy to the lives of others around us, we asked our CU community: What brings you joy?  
           </h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
           " pb-12 lg:pb-16 xl:max-w-screen-xl xl:mx-auto"}>
