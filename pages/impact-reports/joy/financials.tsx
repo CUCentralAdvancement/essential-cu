@@ -357,7 +357,7 @@ export default function Financials() {
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
               <h2 className={"font-bold underline"}>Download Our Financials</h2>
               <p>For more details, see our audited financials for fiscal year 2021</p>
-              <a href="https://essential.cu.edu/r/index.html?doc=onward2020-pdf"
+              <a href="/r/index.html?doc=joy2021-pdf"
                  role={"button"}
                  aria-label={"Download the financials content in PDF format"}
                  target={"_blank"}
