@@ -246,7 +246,7 @@ export default function Financials() {
               are gifts with longitudinal impact, creating positive change year after year.
             </p>
             <p className={"lg:text-lg max-w-prose"}>
-              The collective value of CU’s endowments grew by nearly <span className={"font-bold"}>40%</span> in the last fiscal year. Here’s how
+              The collective value of CU’s endowments grew by nearly 40% in the last fiscal year. Here’s how
               the endowment has grown in recent years:
             </p>
           </div>
