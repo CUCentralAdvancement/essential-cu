@@ -204,14 +204,14 @@ export default function Financials() {
               </div>
               <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#d94f29'}}>
-                9,102
+                7,976
               </span>
                 <br/>
                 friends
               </div>
               <div>
               <span className={"text-xl md:text-38 font-bold"} style={{color: '#554082'}}>
-                3,091
+                2,740
               </span>
                 <br/>
                 parents
