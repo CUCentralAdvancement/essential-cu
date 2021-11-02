@@ -23,11 +23,11 @@ export default function Index({cards}: HomepageProps) {
         <meta property="og:url" content={`https://essential.cu.edu/impact-reports/joy`}/>
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="University of Colorado 2021 Donor Impact Report"/>
-        <meta property="og:description" content="Fill it in."/>
-        <meta property="og:image" content="fill in"/>
+        <meta property="og:description" content=""/>
+        <meta property="og:image" content="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/HP-hero-desktop_xssk7k.png"/>
         <meta property="twitter:title" content="University of Colorado 2021 Donor Impact Report"/>
-        <meta property="twitter:description" content="fill in"/>
-        <meta property="twitter:image" content="fill in"/>
+        <meta property="twitter:description" content=""/>
+        <meta property="twitter:image" content="https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/HP-hero-desktop_xssk7k.png"/>
         <meta property="twitter:card" content="summary_large_image"/>
       </Head>
       <Layout>
@@ -92,8 +92,9 @@ export default function Index({cards}: HomepageProps) {
         </div>
 
         <div className={"p-8 -mt-8 rounded-b-lg homepage-story-section bg-almost-black"}>
-          <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-12"}>
-            To understand how giving can bring joy to the lives of others around us, we asked our CU community: What brings you joy?  
+          <h2 className={"text-center text-white py-4 text-28 lg:text-38 font-bold lg:pb-16 lg:pt-12" +
+          " lg:max-w-prose lg:mx-auto"}>
+            To understand how giving can bring joy to the lives of others around us, we asked our CU community: What brings you joy?
           </h2>
           <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 place-items-stretch px-8 lg:px-24" +
           " pb-12 lg:pb-16 xl:max-w-screen-xl xl:mx-auto"}>
