@@ -33,7 +33,7 @@ export default function Financials() {
             <div className={"lg:w-2/5 px-4"}>
               <div className={"flex flex-col h-full lg:justify-center"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center lg:text-left"}>
-                  <span className={"font-bold"}>Philanthropy is transformative</span> fueling passion, motivation and joy
+                  <span className={"font-bold"}>Philanthropy is transformative.</span> It fuels passion, motivation and joy.
                 </h1>
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function Financials() {
                 CU’s endowment is now valued at $2.12 billion
               </h3>
               <p className={"lg:text-lg text-left max-w-prose"}>
-                Your generosity has created an incredible legacy for generations to come. Thousands of donors in
+                Your generosity has created an incredible legacy for generations to come. Tens of thousands of donors in
                 Colorado and beyond have invested in what they believe in, such as a scholarship that is awarded
                 to students year after year, or funds to attract world-class faculty, or the creation of a program
                 to train fellows in critical&nbsp;
@@ -105,7 +105,7 @@ export default function Financials() {
                     <span className={"font-bold"}>$371.2 million</span> given last year
                   </h3>
                   <p className={"lg:text-lg text-left max-w-prose"}>
-                    Every dollar you give creates a positive impact. It might support clinical assessment for&nbsp;
+                    Every dollar you give creates a positive impact. It might support clinical assessments for&nbsp;
                     <Link href="/impact-reports/joy/stories/[slug]"
                           as={'/impact-reports/joy/stories/joy-of-independence'}>
                       <a className={"a-link"}>a non-speaking patient</a>
@@ -133,10 +133,10 @@ export default function Financials() {
 
             <div className={"flex flex-col space-y-8 py-8 mx-4 lg:text-center md:max-w-screen-md md:mx-auto"}>
               <h2 className={"text-25 lg:text-50 text-center"}>
-                <span className={"font-bold"}>53,485</span> gifts
+                <span className={"font-bold"}>54,543</span> gifts
               </h2>
               <p className={"lg:text-lg"}>
-                Every gift is a good intention that was followed through. Big or small, each donation creates better
+                Every gift is a good intention that was followed through. Big or small, each contribution creates better
                 outcomes for students, drives discovery and promotes innovative approaches to health care. Last year, you gave:
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function Financials() {
               }} number={201} label="to transform health care and support lifesaving treatment"/>
             </div>
             <div className={"flex flex-col mx-4 lg:text-center md:max-w-screen-md md:mx-auto pt-16 pb-8"}>
-              <h3 className={"text-25 lg:text-50 text-center font-bold"}>When thousands invest in CU, their impact is mighty</h3>
+              <h3 className={"text-25 lg:text-50 text-center font-bold"}>When you invest in CU, your impact is mighty</h3>
             </div>
 
             <div className={"grid grid-cols-1 lg:grid-cols-2 lg:max-w-screen-xl mx-4 lg:mx-auto"}>
@@ -188,10 +188,10 @@ export default function Financials() {
 
             <div className={"flex flex-col space-y-4 mx-4 lg:text-center md:max-w-screen-md md:mx-auto" +
             " text-center pt-8"}>
-              <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,284</span> donors like you
+              <h3 className={"text-25 lg:text-50"}><span className={"font-bold"}>29,793</span> donors like you
               </h3>
               <p className={"lg:text-lg"}>
-                Helped CU create change and positive impact. Averaging 149 gifts a day, many of you made
+                Tens of thousands of donors helped CU create change and positive impact. Averaging 149 gifts a day, many of you made
                 the decision to give and give again.
               </p>
               <h4 className={"font-bold lg:text-xl pt-4"}>Last year we received gifts from:</h4>
@@ -314,7 +314,7 @@ export default function Financials() {
               </p>
               <p className={"max-w-prose mx-auto lg:mx-0"}>
                 The LTIP’s longer-term results show a consistent track record of investment growth. Here is the
-                recent performance of the LTIP against the policy benchmark
+                recent performance of the LTIP against the policy benchmark.
               </p>
             </div>
           </div>
@@ -324,7 +324,7 @@ export default function Financials() {
             <div className={"chart-text-container "}>
               <h3 className={"font-bold text-xl lg:text-38 text-center lg:text-left"}>$211.8 million</h3>
               <p className={"max-w-prose mx-auto lg:mx-0 text-center lg:text-left"}>
-                That’s how much the CU Foundation transferred to CU last fiscal year
+                That’s how much the CU Foundation transferred to CU last fiscal year.
               </p>
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
