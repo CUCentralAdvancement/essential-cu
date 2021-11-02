@@ -45,7 +45,7 @@ export default function Index({cards}: HomepageProps) {
           <div className={"md:max-w-screen-lg mx-auto text-center lg:px-28 lg:pt-4"}>
             <h1 className={"py-8 text-28 lg:text-50 font-bold"}>When you invest in CU, your impact is mighty</h1>
             <p className={"text-xl lg:text-30 py-4 lg:px-8"}>
-              In 2021, <span className={"font-bold"}>29,284 donors</span> made <span className={"font-bold"}>53,485 gifts</span> to support CU.
+              In fiscal year 2021, <span className={"font-bold"}>29,793 donors</span> made <span className={"font-bold"}>54,543 gifts</span> to support CU.
             </p>
             <p className={"text-xl lg:text-30 pt-8 lg:px-8"}>
               You invested:
@@ -54,30 +54,30 @@ export default function Index({cards}: HomepageProps) {
         </Section>
 
         <div className={"numeric-stats-grid pb-8"}>
-          <NumericStat number={52}
+          <NumericStat number={53}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,fl_lossy,q_auto/v1634939581/ir21/homepage/Scholarship-icon-400px_plgsuv.png',
                          alt: 'An illustration of a mortarboard hat and rolled up diploma against a pink textured background.'
                        }}
                        label="in scholarships"/>
-          <NumericStat number={113}
+          <NumericStat number={127}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Research-icon-400px_nffsbi.png',
                          alt: 'A illustration of a telescope pointing to the top left of the image against a blue background with a constellation pattern on it.'
                        }}
                        label="in research and discovery"/>
-          <NumericStat number={26}
+          <NumericStat number={28}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939582/ir21/homepage/Talent-icon-400px_sip0fc.png',
                          alt: 'An illustration of a trophy with a star on it, backgrounded against a sketch of a prize ribbon on a green background.'
                        }}
                        label="to attract talented faculty"/>
-          <NumericStat number={191}
+          <NumericStat number={201}
                        image={{
                          url: 'https://res.cloudinary.com/hs9mwpicm/image/upload/f_auto,q_auto/v1634939581/ir21/homepage/Health-icon-400px_pfucte.png',
                          alt: 'An illustration of a heart with a double helix DNA strand behind it, on a pink background.'
                        }}
-                       label="to transform healthcare"/>
+                       label="to transform health care"/>
         </div>
 
         <div className={"bg-almost-black pb-4"}>
@@ -126,7 +126,7 @@ export default function Index({cards}: HomepageProps) {
                  alt="An illustration that frames the a man sitting before a laptop, the laptop casts a light that shines towards his face. In the background are sketches representing research and discovery, including books, lightbulbs, graphs, and formulas."
                  sx={""}/>
           <div>
-            <h3 className={"text-28 lg:text-38 font-bold py-4"}>371.2 million given last year</h3>
+            <h3 className={"text-28 lg:text-38 font-bold py-4"}>$371.2 million given last fiscal year</h3>
             <p className={"lg:px-16 max-w-prose"}>
               Every dollar you give creates a positive impact. Giving helps students achieve their dreams, enables
               deep satisfaction in one’s calling, sparks the giddy joy of discovery and magnifies the impact of
@@ -149,7 +149,7 @@ export default function Index({cards}: HomepageProps) {
                  alt="Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."
                  sx={""}/>
           <p className={"text-28 lg:text-38 pt-8 px-8 lg:px-12"}>
-            The average size of a gift was <span className={"font-bold"}>$6,472</span>
+            The average size of a gift was <span className={"font-bold"}>$6,806</span>
           </p>
         </div>
 
@@ -164,8 +164,7 @@ export default function Index({cards}: HomepageProps) {
             </a>
           </Link>
           <p className={"pb-6 max-w-prose"}>
-            Despite a challenging year, donors like you advanced CU’s mission, with a record-breaking endowment
-            figure, unparalleled return on investment and support from all corners of the CU community.
+            Despite a challenging year, donors like you advanced CU’s mission with support from all corners of the CU community.
           </p>
           <ButtonLink href="/impact-reports/joy/financials">See Our Financials</ButtonLink>
           <SocialLinks variant={"centered"}/>
