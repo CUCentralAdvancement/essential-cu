@@ -15,7 +15,7 @@ interface SocialLinksProps {
   title?: string
 }
 
-const iconContainerStyles = 'h-12 rounded-full bg-medium-gray hover:bg-black hover:text-gold cursor-pointer ';
+const iconContainerStyles = 'h-12 rounded-full bg-medium-gray hover:bg-black hover:text-gold cursor-pointer btn-social';
 const iconStyles = 'h-12 p-2';
 
 export default function SocialLinks({
@@ -34,7 +34,7 @@ export default function SocialLinks({
           <div className={`flex flex-row space-x-5 justify-center`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=twitter&utm_medium=referral"}
               title={""}
               hashtags={[""]}>
               <div className={iconContainerStyles}>
@@ -46,7 +46,7 @@ export default function SocialLinks({
             <FacebookShareButton
               quote={""}
               hashtag={""}
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=twitter&utm_medium=referral"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
@@ -57,7 +57,7 @@ export default function SocialLinks({
             <LinkedinShareButton
               title={""}
               summary={""}
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=linkedin&utm_medium=referral"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faLinkedinIn} className={iconStyles}/>
@@ -74,7 +74,7 @@ export default function SocialLinks({
           <div className={`flex flex-row space-x-3`} style={{color: '#F5F1E5'}}>
             {services.includes('twitter') &&
             <TwitterShareButton
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=twitter&utm_medium=referral"}
               title={""}
               hashtags={[""]}>
               <div className={iconContainerStyles}>
@@ -86,7 +86,7 @@ export default function SocialLinks({
             <FacebookShareButton
               quote={""}
               hashtag={""}
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=facebook&utm_medium=referral"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faFacebook} className={iconStyles}/>
@@ -97,7 +97,7 @@ export default function SocialLinks({
             <LinkedinShareButton
               title={""}
               summary={""}
-              url={shareURL + "?utm_campaign=2021ImpactReport&utm_source=IR21_Share&utm_medium=Social"}
+              url={shareURL + "?utm_campaign=IR21&utm_source=linkedin&utm_medium=referral"}
             >
               <div className={iconContainerStyles}>
                 <FontAwesomeIcon icon={faLinkedinIn} className={iconStyles}/>

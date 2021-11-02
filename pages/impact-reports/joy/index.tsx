@@ -104,7 +104,7 @@ export default function Index({cards}: HomepageProps) {
                       as={`/impact-reports/joy/stories/${cards[el].slug}`}
                       href="/impact-reports/joy/stories/[slug]">
                   <a>
-                    <div className="rounded-lg bg-white flex flex-col shadow h-full">
+                    <div className="rounded-lg bg-white flex flex-col shadow h-full storycard">
                       <div style={{backgroundImage: `url('${cards[el].main_image.url}')`}}
                            className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
                                                 <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm lg:text-18">
