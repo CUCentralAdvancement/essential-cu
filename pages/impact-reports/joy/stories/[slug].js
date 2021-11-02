@@ -61,7 +61,7 @@ export default function Story({story}) {
                alt={"Welcome to the 2021 Impact Report!"}/>
 
         <div className={"flex flex-col lg:flex-row pb-6 items-center xxl:max-w-screen-xxl xxl:mx-auto"}>
-          <div className={"lg:w-3/5 lg:pt-4"}>
+          <div className={"lg:w-3/5"}>
             <Image url={story.main_image.url}
                    alt={story.main_image.alt}
                    width={story.main_image.width}

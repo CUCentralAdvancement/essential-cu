@@ -92,16 +92,16 @@
     }
 
     .the-bar-chart {
-        height: 400px;
+        height: 350px;
     }
 
     @screen lg {
         .the-pie-chart {
-            height: 500px;
+            height: 450px;
         }
 
         .the-bar-chart {
-            height: 400px;
+            height: 450px;
         }
     }
 
