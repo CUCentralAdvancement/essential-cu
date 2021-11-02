@@ -108,13 +108,13 @@ export default function Financials() {
                     Every dollar you give creates a positive impact. It might support clinical assessments for&nbsp;
                     <Link href="/impact-reports/joy/stories/[slug]"
                           as={'/impact-reports/joy/stories/joy-of-independence'}>
-                      <a className={"a-link"}>a non-speaking patient</a>
-                    </Link>, or a scholarship that opens doors for a&nbsp;
+                      <a className={"a-link"}>non-speaking patients</a>
+                    </Link>, or a scholarship that opens doors for&nbsp;
                     <Link href="/impact-reports/joy/stories/[slug]"
                           as={'/impact-reports/joy/stories/joy-of-community'}>
-                      <a className={"a-link"}>first-generation college student</a>
+                      <a className={"a-link"}>first-generation college students</a>
                     </Link>,
-                    or a chance for a young actor to&nbsp;
+                    or a chance young actors to&nbsp;
                     <Link href="/impact-reports/joy/stories/[slug]"
                           as={'/impact-reports/joy/stories/joy-of-theater'}>
                       <a className={"a-link"}>share Shakespeare</a>
@@ -181,7 +181,7 @@ export default function Financials() {
                      alt={"Two hands illustrated in pale green with the pointer fingers and thumbs touching to form a heart in the negative space. The heart is filled in pinkish red, there is multi-colored confetti against an orange background."}
                      className={"order-1 lg:order-2 lg:pl-4"}/>
                 <h3 className={"text-xl lg:text-38 text-center py-4 lg:w-3/4 lg:mx-auto"}>
-                  The average size of a gift was <span className={"font-bold"}>$6,472</span>
+                  The average size of a gift was <span className={"font-bold"}>$6,806</span>
                 </h3>
               </div>
             </div>
