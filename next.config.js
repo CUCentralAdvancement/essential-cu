@@ -27,18 +27,21 @@ module.exports = {
       // 2020 report.
       {
         source: "/onward2020",
-        destination: "/r/index.html?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
+        destination:
+          "/r/index.html?utm_campaign=2020ImpactReport&utm_source=IR20_Print&utm_medium=Print",
         permanent: true,
       },
       // 2021 report.
       {
         source: "/joy",
-        destination: "/impact-reports/joy?utm_campaign=IR21&utm_source=folder&utm_medium=web&utm_content=",
+        destination:
+          "/impact-reports/joy?utm_campaign=IR21&utm_source=folder&utm_medium=print&utm_content=general",
         permanent: true,
       },
       {
         source: "/QRJoy21",
-        destination: "/impact-reports/joy?utm_campaign=IR21&utm_source=folder&utm_medium=print&utm_content=qr-code",
+        destination:
+          "/impact-reports/joy?utm_campaign=IR21&utm_source=folder&utm_medium=qrcode&utm_content=general",
         permanent: true,
       },
     ];
