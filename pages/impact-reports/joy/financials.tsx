@@ -11,10 +11,12 @@ import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 
 export default function Financials() {
+  // Load the bar charts when they come into view.
+  // This fixes a bug with the legend rendering over the X-Axis.
+  // Lazy loading the component fixes the issue and provides a decent animation for the user.
   const returnsRef = useRef<HTMLDivElement | null>(null);
   const returnsEntry = useIntersectionObserver(returnsRef, {});
   const returnsChartisVisible = !!returnsEntry?.isIntersecting;
-
   const endowmentRef = useRef<HTMLDivElement | null>(null);
   const endowmentEntry = useIntersectionObserver(endowmentRef, {});
   const endowmentChartisVisible = !!endowmentEntry?.isIntersecting;
