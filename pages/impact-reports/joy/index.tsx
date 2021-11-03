@@ -189,7 +189,6 @@ export default function Index({cards}: HomepageProps) {
             </p>
           </div>
         </div>
-
       </Layout>
     </>
   );
