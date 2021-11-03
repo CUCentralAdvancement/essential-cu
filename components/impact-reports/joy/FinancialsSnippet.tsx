@@ -18,7 +18,7 @@ export default function FinancialsSnippet({title, text, img, link, sx}: Financia
       <Image url={img.url ?? '/assets/ir21/circles-pic.png'} alt={img.alt} sx={"md:w-1/3"}/>
       <div className={"flex flex-col md:w-2/3 md:pl-8 text-center"}>
         <h2 className={"font-bold text-28 pt-4"}>{title}</h2>
-        <div className={"py-4"} dangerouslySetInnerHTML={{__html: text}}/>
+        <div className={"py-4 financial-snippet-text"} dangerouslySetInnerHTML={{__html: text}}/>
         <Link href={"/impact-reports/joy/financials"}>
           <a className="flex flex-row items-center mx-auto a-link">
             <span>{link.title}</span>

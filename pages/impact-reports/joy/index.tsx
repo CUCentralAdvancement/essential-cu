@@ -16,6 +16,7 @@ interface HomepageProps {
 }
 
 export default function Index({cards}: HomepageProps) {
+
   return (
     <>
       <Head>
@@ -202,6 +203,7 @@ export async function getStaticProps() {
   return {
     props: {
       cards: storyData,
-    }
+    },
+    revalidate: 60,
   };
 }
