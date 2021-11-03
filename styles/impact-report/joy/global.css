@@ -144,7 +144,8 @@
         @apply py-4;
     }
 
-    .story-text-block a {
+    .story-text-block a,
+    .financial-snippet-text a {
         @apply underline italic font-bold text-link;
     }
 

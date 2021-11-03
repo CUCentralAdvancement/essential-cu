@@ -2,7 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
-import {ResponsiveBarChart, ResponsiveGroupedBarChart} from "../../../components/impact-reports/joy/BarChart";
+import {EndowmentByYear, ReturnsByYear} from "../../../components/impact-reports/joy/BarChart";
+import {endowmentAllocation, transferToCU} from "../../../components/impact-reports/joy/PieChart";
+import DownloadIcon from "../../../components/impact-reports/joy/DownloadIcon";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 
@@ -22,7 +24,7 @@ export default function Financials() {
         <meta property="twitter:card" content="summary_large_image"/>
       </Head>
       <Layout>
-        <div className={"space-y-16 lg:space-y-24 pb-8 lg:pb-20"}>
+        <div className={"space-y-16 lg:space-y-24 pb-8 lg:pb-16"}>
 
           <div className={"flex flex-col lg:flex-row lg:space-x-8 pb-6 mx-4"}>
             <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,h_1200,q_auto,w_1600/v1635371541/ir21/financials/Fin-hero-v2_2_vebbr3.png"}
@@ -254,7 +256,7 @@ export default function Financials() {
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl" +
           " lg:mx-auto"}>
             <div className={"chart-container the-bar-chart"}>
-              <ResponsiveBarChart data={endowmentByYear}/>
+              <EndowmentByYear/>
             </div>
             <div className={"chart-text-container sm:text-left md:text-center lg:text-left max-w-screen-md" +
             " mx-auto lg:mx-0"}>
@@ -286,7 +288,6 @@ export default function Financials() {
               </p>
             </div>
             <div className={"chart-container flex flex-col place-items-center"}>
-              {/*<PieChart data={transferToCU}/>*/}
               <Image url={"https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_516,q_auto,w_576/v1634948333/ir21/financials/endowment-chart_nbtcv8.png"}
                      alt={"Funds transferred to CU"}
                      sx={"the-pie-chart"}/>
@@ -306,7 +307,7 @@ export default function Financials() {
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
             <div className={"chart-container the-bar-chart order-2 lg:order-1"}>
-              <ResponsiveGroupedBarChart data={returnsByYear}/>
+              <ReturnsByYear/>
             </div>
             <div className={"chart-text-container order-1 lg:order-2"}>
               <h3 className={"text-center text-xl lg:text-38"}>Investment return vs. policy benchmark</h3>
@@ -356,7 +357,13 @@ export default function Financials() {
               </div>
             </div>
             <div className={"w-3/4 lg:w-7/8 space-y-8"}>
-              <h2 className={"font-bold underline"}>Download Our Financials</h2>
+              <a href="/r/index.html?doc=joy2021-pdf"
+                 role={"button"}
+                 aria-label={"Download the financials content in PDF format"}
+                 target={"_blank"}
+                 rel={"noreferrer"}>
+                <h2 className={"font-bold underline"}>Download Our Financials</h2>
+              </a>
               <p>For more details, see our audited financials for fiscal year 2021</p>
               <a href="/r/index.html?doc=joy2021-pdf"
                  role={"button"}
@@ -376,145 +383,6 @@ export default function Financials() {
       </Layout>
     </>
 
-  )
-}
-
-const endowmentByYear = [
-  {
-    year: 2016,
-    value: 1.06,
-    fill: '#000',
-  },
-  {
-    year: 2017,
-    value: 1.22,
-    fill: '#000',
-  },
-  {
-    year: 2018,
-    value: 1.36,
-    fill: '#000',
-  },
-  {
-    year: 2019,
-    value: 1.45,
-    fill: '#000',
-  },
-  {
-    year: 2020,
-    value: 1.52,
-    fill: '#000',
-  },
-  {
-    year: 2021,
-    value: 2.12,
-    fill: '#cfb87c',
-  },
-];
-
-const endowmentAllocation = [
-  {
-    value: 48,
-    fill: '#cfb87c',
-    name: 'Global public equities'
-  },
-  {
-    value: 26,
-    fill: '#f4ead0',
-    name: 'Global private capital'
-  },
-  {
-    value: 14,
-    fill: '#000',
-    name: 'Global hedge funds'
-  },
-  {
-    value: 8,
-    fill: '#595b54',
-    name: 'Real assets'
-  },
-  {
-    value: 4,
-    fill: '#9ca0a2',
-    name: 'Global public equities'
-  },
-];
-
-const returnsByYear = [
-  {
-    year: '3 year',
-    LTIP: 14.9,
-    "Policy Benchmark": 13.0,
-  },
-  {
-    year: '7 year',
-    LTIP: 10.1,
-    "Policy Benchmark": 8.7,
-  },
-  {
-    year: '10 year',
-    LTIP: 10.0,
-    "Policy Benchmark": 9.3,
-  },
-  {
-    year: '15 year',
-    LTIP: 7.4,
-    "Policy Benchmark": 7.3,
-  },
-];
-
-const transferToCU = [
-  {
-    value: 32,
-    fill: '#cfb87c',
-    name: 'Academic support'
-  },
-  {
-    value: 14,
-    fill: '#f4ead0',
-    name: 'Research'
-  },
-  {
-    value: 14,
-    fill: '#7d714a',
-    name: 'Advancement support'
-  },
-  {
-    value: 13,
-    fill: '#595a55',
-    name: 'Scholarships'
-  },
-  {
-    value: 10,
-    fill: '#7d7f81',
-    name: 'Chairs, professorships and other faculty support'
-  },
-  {
-    value: 9,
-    fill: '#bfbfbf',
-    name: 'Public service, administration, library and other support'
-  },
-  {
-    value: 7,
-    fill: '#000',
-    name: 'Capital projects'
-  },
-  {
-    value: 1,
-    fill: '#fff',
-    name: 'Athletics'
-  },
-];
-
-function DownloadIcon() {
-  return (
-    <svg width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <g fill={"#7B6F4B"}>
-        <path d="M41.72,38.4 L1.72,38.4 C0.891572875,38.4 0.22,37.7284271 0.22,36.9 C0.22,36.0715729 0.891572875,35.4 1.72,35.4 L41.72,35.4 C42.5484271,35.4 43.22,36.0715729 43.22,36.9 C43.22,37.7284271 42.5484271,38.4 41.72,38.4 Z" id="Shape"></path>
-        <path d="M11.72,19.4 L11.72,30.4 L7.72,30.4 L7.72,19.4 L11.72,19.4 L11.72,19.4 Z M11.72,16.4 L7.72,16.4 C6.06314575,16.4 4.72,17.7431458 4.72,19.4 L4.72,30.4 C4.72,32.0568542 6.06314575,33.4 7.72,33.4 L11.72,33.4 C13.3768542,33.4 14.72,32.0568542 14.72,30.4 L14.72,19.4 C14.72,17.7431458 13.3768542,16.4 11.72,16.4 L11.72,16.4 Z" id="Shape"></path>
-        <path d="M23.72,12.4 L23.72,30.4 L19.72,30.4 L19.72,12.4 L23.72,12.4 L23.72,12.4 Z M23.72,9.4 L19.72,9.4 C18.0631458,9.4 16.72,10.7431458 16.72,12.4 L16.72,30.4 C16.72,32.0568542 18.0631458,33.4 19.72,33.4 L23.72,33.4 C25.3768542,33.4 26.72,32.0568542 26.72,30.4 L26.72,12.4 C26.72,10.7431458 25.3768542,9.4 23.72,9.4 Z" id="Shape"></path>
-        <path d="M35.72,3.4 L35.72,30.4 L31.72,30.4 L31.72,3.4 L35.72,3.4 L35.72,3.4 Z M35.72,0.4 L31.72,0.4 C30.0631458,0.4 28.72,1.74314575 28.72,3.4 L28.72,30.4 C28.72,32.0568542 30.0631458,33.4 31.72,33.4 L35.72,33.4 C37.3768542,33.4 38.72,32.0568542 38.72,30.4 L38.72,3.4 C38.72,1.74314575 37.3768542,0.4 35.72,0.4 Z" id="Shape"></path>
-      </g>
-    </svg>
   );
 }
+

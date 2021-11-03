@@ -15,8 +15,9 @@ interface SocialLinksProps {
   title?: string
 }
 
-const iconContainerStyles = 'h-12 rounded-full bg-medium-gray hover:bg-black hover:text-gold cursor-pointer btn-social';
-const iconStyles = 'h-12 p-2';
+const iconContainerStyles = 'h-10 rounded-full bg-medium-gray hover:bg-black hover:text-gold' +
+  ' cursor-pointer btn-social';
+const iconStyles = 'h-10 p-2';
 
 export default function SocialLinks({
                                       variant,
