@@ -3,7 +3,7 @@ import Link from "next/link";
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {EndowmentByYear, ReturnsByYear} from "../../../components/impact-reports/joy/BarChart";
-import {endowmentAllocation, transferToCU} from "../../../components/impact-reports/joy/PieChart";
+import {endowmentAllocation, transferToCU} from "../../../data/impact-reports/joy/PieChart";
 import DownloadIcon from "../../../components/impact-reports/joy/DownloadIcon";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
