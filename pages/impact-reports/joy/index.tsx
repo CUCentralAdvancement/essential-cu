@@ -172,7 +172,7 @@ export default function Index({cards}: HomepageProps) {
           <SocialLinks variant={"centered"}/>
         </div>
 
-        <h2 className={"text-center pt-8 pb-4 text-38 lg:text-50 font-bold"}>Our Mission</h2>
+        <h2 className={"text-center py-8 text-38 lg:text-50 font-bold"}>Our Mission</h2>
         <div className="max-w-screen-xl text-center grid grid-cols-1 md:grid-cols-2 gap-4 p-2 mx-auto pb-12 lg:pb-16">
           <div className={"px-4 lg:px-24 pb-6 lg:pb-0"}>
             <h3 className={"py-2 lg:pb-6 text-28 lg:text-38 font-bold"}>CU Foundation</h3>
