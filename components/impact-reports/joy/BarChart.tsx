@@ -1,4 +1,4 @@
-import { BarChart, Bar, XAxis, LabelList, Label, Legend, ResponsiveContainer } from 'recharts';
+import {BarChart, Bar, XAxis, LabelList, Label, Legend, ResponsiveContainer} from 'recharts';
 
 const endowmentByYearData = [
   {
@@ -48,11 +48,11 @@ export function EndowmentByYear() {
       >
         <XAxis dataKey="year" axisLine={false} tickLine={false}
                tick={{fill: '#000'}}>
-          <Label value="(value in billions)" offset={15} position="bottom" />
+          <Label value="(value in billions)" offset={15} position="bottom"/>
         </XAxis>
         <Bar dataKey="value">
           <LabelList dataKey="value" position="top" fill={"#000"} offset={15}
-          formatter={(label) => '$' + label}/>
+                     formatter={(label) => '$' + label}/>
         </Bar>
       </BarChart>
     </ResponsiveContainer>
@@ -95,23 +95,29 @@ export function ReturnsByYear() {
           bottom: 15,
         }}
       >
-        <XAxis dataKey="year" axisLine={false} tickLine={false}
-               tick={{fill: '#000'}} />
-        <Legend iconType={"circle"} formatter={renderColorfulLegendText}
-                wrapperStyle={{paddingTop: '10px', fontWeight: 700}} />
+        <XAxis dataKey="year"
+               axisLine={false}
+               tickLine={false}
+               tick={{fill: '#000'}}/>
+        <Legend iconType={"circle"}
+                verticalAlign={"bottom"}
+                formatter={renderColorfulLegendText}
+                wrapperStyle={{paddingTop: '10px', fontWeight: 700}}
+        />
         <Bar dataKey="LTIP" fill={"#cfb87c"}>
           <LabelList dataKey="LTIP" position="top" fill={"#000"} offset={10}
-                     formatter={(label) => label + `%`} />
+                     formatter={(label) => label + `%`}/>
         </Bar>
         <Bar dataKey="Policy Benchmark">
           <LabelList dataKey="Policy Benchmark" position="top" fill={"#000"} offset={5}
-                     formatter={(label) => label + `%`} />
+                     formatter={(label) => label + `%`}/>
         </Bar>
+
       </BarChart>
     </ResponsiveContainer>
   );
 }
 
 function renderColorfulLegendText(value) {
-  return <span style={{ color: '#000' }}>{value}</span>;
+  return <span style={{color: '#000'}}>{value}</span>;
 }
