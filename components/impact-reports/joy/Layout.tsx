@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, {ReactNode} from "react";
 import Footer from "./Footer";
 import Header from './Header';
+import FooterCredits from "./FooterCredits";
 
 interface LayoutProps {
   children: ReactNode,
@@ -16,7 +17,10 @@ export default function Layout({children}: LayoutProps) {
       </Head>
       <div className="flex flex-col min-h-screen bg-light-yellow">
         <Header/>
-        <main className="flex-grow grid grid-cols-1 gap-4 pb-4 z-10">{children}</main>
+        <main className="flex-grow grid grid-cols-1 gap-4 z-10">
+          {children}
+          <FooterCredits />
+        </main>
         <Footer/>
       </div>
     </>
