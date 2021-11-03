@@ -80,7 +80,7 @@ export default function Story({story}) {
           <First content={story.layout}/>
         </div>
 
-        <div className="lg:max-w-screen-lg mx-auto p-8 lg:px-8 lg:pt-8 ">
+        <div className="lg:max-w-screen-lg mx-auto p-8 pb-12">
           <h2 className={"text-lg lg:text-28 font-bold py-2"}>Read more stories:</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {Object.keys(story.related_stories).map((el, index) => {
