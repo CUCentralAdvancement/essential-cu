@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import React, {useRef} from 'react'
+import {useIntersectionObserver} from 'usehooks-ts'
 import Layout from "../../../components/impact-reports/joy/Layout";
 import Image from "../../../components/impact-reports/joy/Image";
 import {EndowmentByYear, ReturnsByYear} from "../../../components/impact-reports/joy/BarChart";
@@ -9,6 +11,14 @@ import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 
 export default function Financials() {
+  const returnsRef = useRef<HTMLDivElement | null>(null);
+  const returnsEntry = useIntersectionObserver(returnsRef, {});
+  const returnsChartisVisible = !!returnsEntry?.isIntersecting;
+
+  const endowmentRef = useRef<HTMLDivElement | null>(null);
+  const endowmentEntry = useIntersectionObserver(endowmentRef, {});
+  const endowmentChartisVisible = !!endowmentEntry?.isIntersecting;
+
   return (
     <>
       <Head>
@@ -255,8 +265,9 @@ export default function Financials() {
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl" +
           " lg:mx-auto"}>
-            <div className={"chart-container the-bar-chart"}>
-              <EndowmentByYear/>
+            <div className={"chart-container the-bar-chart"}
+                 ref={endowmentRef}>
+              {endowmentChartisVisible ? <EndowmentByYear/> : <div>Loading...</div>}
             </div>
             <div className={"chart-text-container sm:text-left md:text-center lg:text-left max-w-screen-md" +
             " mx-auto lg:mx-0"}>
@@ -306,8 +317,10 @@ export default function Financials() {
           </div>
 
           <div className={"flex flex-col lg:flex-row place-items-center gap-8 lg:max-w-screen-xl lg:mx-auto"}>
-            <div className={"chart-container the-bar-chart order-2 lg:order-1"}>
-              <ReturnsByYear/>
+            <div className={"chart-container the-bar-chart order-2 lg:order-1"}
+                 ref={returnsRef}>
+              {returnsChartisVisible ? <ReturnsByYear/> : <div>Loading...</div>}
+
             </div>
             <div className={"chart-text-container order-1 lg:order-2"}>
               <h3 className={"text-center text-xl lg:text-38"}>Investment return vs. policy benchmark</h3>
