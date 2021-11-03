@@ -35,7 +35,7 @@ export default function Financials() {
             <div className={"lg:w-2/5 px-4"}>
               <div className={"flex flex-col h-full lg:justify-center"}>
                 <h1 className={"pt-12 lg:py-12 text-30 lg:text-58 text-center lg:text-left"}>
-                  <span className={"font-bold"}>Philanthropy is transformative.</span> It fuels passion, motivation and joy.
+                  <span className={"font-bold"}>Philanthropy is transformative</span> Fueling passion, motivation and joy.
                 </h1>
               </div>
             </div>
