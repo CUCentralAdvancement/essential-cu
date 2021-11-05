@@ -96,7 +96,7 @@ export default function Story({story}) {
                 <a key={index} href={`/impact-reports/joy/stories/${story.related_stories[el].slug}`}>
                   <div className="rounded-lg bg-white flex flex-col shadow h-full max-w-card storycard">
                     <div style={{backgroundImage: `url('${story.related_stories[el].main_image.url}')`}}
-                         className="flex flex-col justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
+                         className="flex flex-col bg-light-yellow justify-end bg-cover h-cardImage rounded-tr-lg rounded-tl-lg">
                                                 <span className="bg-gold text-center pr-2 py-2 w-36 font-bold rounded-tr-full text-sm">
                                                     {story.related_stories[el].campus}
                                                 </span>
@@ -126,7 +126,7 @@ export async function getStaticProps({params}) {
     props: {
       story: storyData,
     },
-    revalidate: 60 * 5,
+    revalidate: 60,
   };
 }
 
