@@ -44,6 +44,12 @@ module.exports = {
           "/impact-reports/joy?utm_campaign=IR21&utm_source=folder&utm_medium=qrcode&utm_content=general",
         permanent: true,
       },
+      {
+        source: "/ucdjoy",
+        destination:
+          "/impact-reports/joy?utm_campaign=IR21&utm_source=ucd_odder&utm_medium=print&utm_content=general",
+        permanent: true,
+      },
     ];
   },
   eslint: {

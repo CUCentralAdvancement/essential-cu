@@ -30,7 +30,7 @@ export default function Header() {
                   </Link>
                 </div>
                 <div className="hidden lg:flex flex-row items-baseline space-x-12">
-                  <ButtonLink label="View the financials page" href="/impact-reports/joy/financials">Financials</ButtonLink>
+                  <ButtonLink label="View the financials page" href="/impact-reports/joy/financials" trackingClass="financial-nav">Financials</ButtonLink>
                   <ButtonLink label="View this year's stories" href="/impact-reports/joy#stories">Stories</ButtonLink>
                   <ButtonLink label="Make an impact and donate today" href="https://giving.cu.edu" external={true}>Giving At CU</ButtonLink>
                 </div>
@@ -63,6 +63,7 @@ export default function Header() {
                   <ButtonLink label="View the financials page"
                               href="/impact-reports/joy/financials"
                               variant={"mobile-menu"}
+                              trackingClass="financial-nav"
                               isActive={active}>Financials</ButtonLink>
                 )}
               </Menu.Item>

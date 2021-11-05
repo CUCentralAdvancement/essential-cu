@@ -66,6 +66,7 @@
                     mid = cookiecase[1];
                     SetCookie("STYXKEY-MemberID", mid, ExpireDays);
                     break;
+                /*
                 case "utm_content":
                     utmContent = cookiecase[1];
                     if (utmContent.indexOf("_")) {
@@ -75,6 +76,21 @@
                       break;
                     }
                     SetCookie("STYXKEY-Campus", utmContent, ExpireDays);
+                    break;
+                */
+                case "utm_term":
+                    var campus = "UNK";
+                    var interest = "UNK";
+                    utmContent = cookiecase[1];
+                    if (utmContent.indexOf("_")) {
+                      var contentParts = utmContent.split("_");
+                      if (contentParts.length > 2) {
+                        campus = contentParts[1];
+                        interest = contentParts[2];
+                      }
+                    }
+                    SetCookie("STYXKEY-Campus", campus, ExpireDays);
+                    SetCookie("STYXKEY-Interest", interest, ExpireDays);
                     break;
                 default:
                     break;
@@ -130,6 +146,7 @@
   <script type="text/javascript">
     var urlParams = new URLSearchParams(window.location.search);
     var doc = urlParams.get('doc');
+
     if (doc == 'onward2020-pdf') {
       // add conversion tracking for both GA and MC here
       window.location.replace("/files/cuf-audited-financial-statements-fy-2020.pdf");
@@ -138,7 +155,7 @@
       // add conversion tracking for both GA and MC here
       window.location.replace("/files/cuf-audited-financial-statements-fy-2021.pdf");
     } else {
-      window.location.replace(window.location.origin + "/impact-reports/onward" + window.location.search);
+      window.location.replace(window.location.origin + "/impact-reports/joy" + window.location.search);
     }
   </script>
 </body>

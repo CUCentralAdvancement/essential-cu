@@ -168,7 +168,7 @@ export default function Index({cards}: HomepageProps) {
           <p className={"pb-6 max-w-prose"}>
             Despite a challenging year, donors like you advanced CU’s mission with support from all corners of the CU community.
           </p>
-          <ButtonLink href="/impact-reports/joy/financials">See Our Financials</ButtonLink>
+          <ButtonLink href="/impact-reports/joy/financials" trackingClass="financial-more">See Our Financials</ButtonLink>
           <SocialLinks variant={"centered"}/>
         </div>
 

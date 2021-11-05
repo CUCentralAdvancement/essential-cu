@@ -10,17 +10,18 @@ interface ButtonLinkProps {
   variant?: string,
   external?: boolean,
   isActive?: boolean,
+  trackingClass?: string,
 }
 
-export default function ButtonLink({href, children, variant, label, isActive, external}: ButtonLinkProps) {
+export default function ButtonLink({href, children, variant, label, trackingClass, isActive, external}: ButtonLinkProps) {
   switch (variant) {
     case 'mobile-menu':
       return (
         <Link href={href}>
           <a role={"button"}
              aria-label={label}
-             className={"bg-white font-bold rounded-full py-3 px-6 shadow-md " +
-             " max-w-max items-baseline " + (isActive ? 'bg-gold text-white' : '')}>
+             className={["bg-white font-bold rounded-full py-3 px-6 shadow-md",
+             "max-w-max items-baseline", (isActive ? 'bg-gold text-white' : ''), (trackingClass ?? '')].join(" ")}>
             {children}
             {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-2 pb-1"}/>}
           </a>
@@ -45,7 +46,7 @@ export default function ButtonLink({href, children, variant, label, isActive, ex
           <a role={"button"}
              aria-label={label}
              className={"rounded-full py-3 px-6 flex flex-row space-x-3 items-center w-max" +
-             " transform bg-gold font-bold text-18 shadow hover:shadow-liddle hover:scale-105"}>
+             " transform bg-gold font-bold text-18 shadow hover:shadow-liddle hover:scale-105" + (trackingClass ?? '')}>
             <span>{children}</span>
             {external && <FontAwesomeIcon icon={faExternalLinkAlt} className={"h-5 inline ml-1 pb-1"}/>}
           </a>
