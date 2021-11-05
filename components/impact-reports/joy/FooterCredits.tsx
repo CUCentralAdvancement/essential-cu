@@ -8,7 +8,7 @@ export default function FooterCredits() {
     <Disclosure>
       {({open}) => (
         <div>
-          <div className={"py-4 rounded-t-lg bg-gold text-center shadow-md w-full"}>
+          <div className={"py-4 rounded-t-lg bg-gold text-center shadow-credits w-full"}>
             <Disclosure.Button>
               <h3 className={"text-xl font-bold flex flex-row items-center"}>
                 <span>Project Credits</span>

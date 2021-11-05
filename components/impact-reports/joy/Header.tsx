@@ -11,8 +11,8 @@ export default function Header() {
     <Menu as={"div"} className={"relative sticky top-0 z-20"}>
       {({open}) => (
         <>
-          <header className={`flex flex-col pb-2 shadow-md bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
-            <div className={"bg-white rounded-b md:px-3"}>
+          <header className={`flex flex-col pb-2 shadow-header bg-gold ${open ? 'rounded-none' : 'rounded-b'}`}>
+            <div className={"bg-white rounded-b md:px-3 shadow-subHeader z-10"}>
               <nav className="flex flex-row items-center justify-between lg:max-w-screen-xl lg:mx-auto">
                 <div className="pr-4 lg:pr-0 h-16 lg:h-24">
                   <Link href={"/impact-reports/joy"}>
