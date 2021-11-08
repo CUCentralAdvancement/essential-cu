@@ -14,8 +14,7 @@
         left: 0;
         right: 0;
         padding-top: 57.25%;
-        background-image: linear-gradient(to top, transparent 90%, #fffaeb),
-        url("https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_2257,q_auto:best,w_4000/v1634945747/ir21/global/Web-bckgd-01_cbxfi0.png");
+        background-image: url("https://res.cloudinary.com/hs9mwpicm/image/upload/c_scale,f_auto,fl_lossy,h_2257,q_auto:best,w_4000/v1634945747/ir21/global/Web-bckgd-01_cbxfi0.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
