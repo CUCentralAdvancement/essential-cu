@@ -22,7 +22,7 @@ export const endowmentAllocation = [
   {
     value: 4,
     fill: '#9ca0a2',
-    name: 'Global public equities'
+    name: 'Fixed income and cash'
   },
 ];
 
