@@ -37,7 +37,7 @@
     "react-share": "^4.4.0",
     "recharts": "^2.1.5",
     "styled-jsx": "^4.0.1",
-    "usehooks-ts": "^1.0.4"
+    "usehooks-ts": "^2.0.2"
   },
   "engines": {
     "node": "14.x"
