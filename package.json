@@ -43,7 +43,7 @@
     "node": "16.x"
   },
   "devDependencies": {
-    "@types/node": "^16.10.5",
+    "@types/node": "^17.0.4",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.3.7",
     "babel-eslint": "^10.1.0",
