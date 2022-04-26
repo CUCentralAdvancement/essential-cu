@@ -4473,10 +4473,10 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
-usehooks-ts@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.1.1.tgz#0415d0e9e55e5f675b6f7161d0c5b105084ed2c0"
-  integrity sha512-tyG2D2tUVb8V3eJ4b34dyiAdUHFjXg/Sphqu4jtm2B46fbZbsKCvLgZIfIm0X8GtXJituuXxcRIvU4Bk8QI52g==
+usehooks-ts@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.5.1.tgz#25fda2a5ada0fb9f6ccba5f7b56eb6ba4a1a4042"
+  integrity sha512-vGIl/r7SMey3Uwe/YykLTJ5AmrlBe02MwQxsUBxNWDmfegEdHXXQaJ2VoOEayKW85Zwr+NyIhfVG+xrQYjtXVg==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
