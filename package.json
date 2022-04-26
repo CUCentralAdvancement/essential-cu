@@ -20,7 +20,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@headlessui/react": "^1.4.3",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "cloudinary-core": "^2.12.0",
