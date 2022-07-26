@@ -21,8 +21,6 @@ https.get(`${baseURL}/api/stories`, (res) => {
     });
 
     body = JSON.parse(body);
-    // console.log(body);
-    // const stories = helpers.formatStoryData(body);
     const paths = body.map((el) => el.slug);
 
     paths.forEach((slug) => {
@@ -35,8 +33,6 @@ https.get(`${baseURL}/api/stories`, (res) => {
             body2 += data;
           });
           res.on("end", () => {
-            // console.log(body2);
-
             fs.writeFile(`./data/impact-reports/joy/stories/${slug}.json`, body2, (err) => {
               if (err) console.log(err);
               else {
