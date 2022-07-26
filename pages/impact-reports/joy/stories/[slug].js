@@ -1,7 +1,7 @@
 import Layout from "../../../../components/impact-reports/joy/Layout";
 import Image from "../../../../components/impact-reports/joy/Image";
 import {First} from "../../../../components/impact-reports/joy/Columns";
-import {baseURL} from '../../../../data/impact-reports/joy/base';
+// import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
 import Head from "next/head";
@@ -118,22 +118,22 @@ export default function Story({story}) {
 
 export async function getStaticProps({params}) {
   const slug = params.slug || '';
-  const res = await fetch(new Request(baseURL + '/api/stories/' + slug));
-  const storyData = await res.json();
-  // const storyData = require("../../../../data/impact-reports/2021/story-one.json");
+  // const res = await fetch(new Request(baseURL + '/api/stories/' + slug));
+  // const storyData = await res.json();
+  const storyData = require('../../../../data/impact-reports/joy/stories/' + slug + '.json');
 
   return {
     props: {
       story: storyData,
     },
-    revalidate: 60,
+    // revalidate: 60,
   };
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${baseURL}/api/paths/impact_story`);
-  const data = await res.json();
-  // const data = require("../../../../data/impact-reports/2021/story-paths.json");
+  // const res = await fetch(`${baseURL}/api/paths/impact_story`);
+  // const data = await res.json();
+  const data = require('../../../../data/impact-reports/joy/story-paths.json');
 
   return {
     paths: data.map((el) => `/impact-reports/joy/stories/${el}`),

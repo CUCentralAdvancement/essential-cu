@@ -195,9 +195,9 @@ export default function Index({cards}: HomepageProps) {
 }
 
 export async function getStaticProps() {
-  // const rawStoryData = require('../../../data/impact-reports/joy/stories.json');
-  const res = await fetch(new Request(baseURL + '/api/stories/'));
-  const storyData = await res.json();
+  const storyData = require('../../../data/impact-reports/joy/stories.json');
+  // const res = await fetch(new Request(baseURL + '/api/stories/'));
+  // const storyData = await res.json();
 
   return {
     props: {
