@@ -1,13 +1,11 @@
 import Layout from "../../../../components/impact-reports/joy/Layout";
 import Image from "../../../../components/impact-reports/joy/Image";
 import {First} from "../../../../components/impact-reports/joy/Columns";
-// import {baseURL} from '../../../../data/impact-reports/joy/base';
 import PropTypes from "prop-types";
 import SocialLinks from "../../../../components/impact-reports/joy/SocialLinks";
 import Head from "next/head";
 import {useRouter} from 'next/router';
 import React from "react";
-// import Link from "next/link";
 
 
 Story.propTypes = {
@@ -126,7 +124,6 @@ export async function getStaticProps({params}) {
     props: {
       story: storyData,
     },
-    // revalidate: 60,
   };
 }
 

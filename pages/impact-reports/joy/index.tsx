@@ -7,7 +7,7 @@ import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Link from "next/link";
-import {baseURL, twConfig} from "../../../data/impact-reports/joy/base";
+import {twConfig} from "../../../data/impact-reports/joy/base";
 import Head from "next/head";
 import React from "react";
 
@@ -202,7 +202,6 @@ export async function getStaticProps() {
   return {
     props: {
       cards: storyData,
-    },
-    revalidate: 60,
+    }
   };
 }
