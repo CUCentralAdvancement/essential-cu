@@ -6,7 +6,7 @@
     "dev": "node server.js -p $PORT",
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
-    "capture": "node data/impact-reports/onward/capture-data.js",
+    "capture": "node data/impact-reports/joy/capture-data.js",
     "styles:onward": "node-sass ./styles/impact-report/onward/styles.scss ./public/impact-reports/onward/styles.css --output-style compressed",
     "styles:2021": "tailwindcss -w -i ./styles/impact-report/joy/global.css  -o ./public/impact-reports/joy/tailwind.css",
     "styles:2022": "NODE_ENV=production tailwindcss -i ./styles/impact-report/joy/global.css  -o ./public/impact-reports/joy/tailwind.css --minify",
@@ -37,10 +37,10 @@
     "react-share": "^4.4.0",
     "recharts": "^2.1.8",
     "styled-jsx": "^4.0.1",
-    "usehooks-ts": "^2.5.1"
+    "usehooks-ts": "^2.6.0"
   },
   "engines": {
-    "node": "16.x"
+    "node": ">=16.x"
   },
   "devDependencies": {
     "@types/node": "^18.6.1",
@@ -50,7 +50,7 @@
     "cypress": "^9.6.0",
     "eslint": "^7.32.0",
     "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.2.0",
     "node-sass": "^7.0.0",
