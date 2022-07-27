@@ -7,7 +7,7 @@ import SocialLinks from "../../../components/impact-reports/joy/SocialLinks";
 import ButtonLink from "../../../components/impact-reports/joy/ButtonLink";
 import NumericStat from "../../../components/impact-reports/joy/NumericStat";
 import Link from "next/link";
-import {baseURL, twConfig} from "../../../data/impact-reports/joy/base";
+import {twConfig} from "../../../data/impact-reports/joy/base";
 import Head from "next/head";
 import React from "react";
 
@@ -195,14 +195,13 @@ export default function Index({cards}: HomepageProps) {
 }
 
 export async function getStaticProps() {
-  // const rawStoryData = require('../../../data/impact-reports/joy/stories.json');
-  const res = await fetch(new Request(baseURL + '/api/stories/'));
-  const storyData = await res.json();
+  const storyData = require('../../../data/impact-reports/joy/stories.json');
+  // const res = await fetch(new Request(baseURL + '/api/stories/'));
+  // const storyData = await res.json();
 
   return {
     props: {
       cards: storyData,
-    },
-    revalidate: 60,
+    }
   };
 }

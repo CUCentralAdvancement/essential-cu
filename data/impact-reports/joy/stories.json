@@ -1,22 +1,66 @@
 [
   {
-    "id": 1,
-    "title": "Apart, but not alone",
-    "subTitle": "kljlkjljlkj"
+    "title": "What Are We Fighting For? Cancer Patients Take Back Their Joy",
+    "slug": "joy-of-an-honest-conversation",
+    "body": "Dr. Carolyn Lefkowits supports gynecological oncology patients through their cancer journeys\u2014from diagnosis to cure and beyond.",
+    "main_image": {
+      "alt": "Dr. Carolyn Lefkowits hero image with confetti in the background",
+      "caption": "",
+      "width": 1600,
+      "height": 1200,
+      "url": "https:\/\/res.cloudinary.com\/hjd85w7ny\/image\/upload\/v1\/2021-11\/1636151896-AMC-story-hero?_a=AAAEuGX",
+      "id": "RHIuIENhcm9seW4gTGVm",
+      "type": "image"
+    },
+    "campus": "CU Anschutz",
+    "description": "Dr. Carolyn Lefkowits supports gynecological oncology patients through their cancer journeys\u2014from diagnosis to cure and beyond.\n"
   },
   {
-    "id": 2,
-    "title": "Together At Last",
-    "subTitle": "oiuoiuoioui"
+    "title": "Joy Is Helping the People Who Come Up After Me",
+    "slug": "joy-of-community",
+    "body": "First-generation college senior Johnathan Gachuzo Gonzalez is lifting up his community as he prepares for a career in health care.",
+    "main_image": {
+      "alt": "Johnathan Gachuzo Gonzalez stands in front of the Garden of the Gods park wearing the stethoscope his mother gave him.",
+      "caption": "",
+      "width": 1600,
+      "height": 1200,
+      "url": "https:\/\/res.cloudinary.com\/hjd85w7ny\/image\/upload\/v1\/2021-11\/1636152094-UCCS-story-hero?_a=AAAEuGX",
+      "id": "Sm9obmF0aGFuIEdhY2h1",
+      "type": "image"
+    },
+    "campus": "UCCS",
+    "description": "First-generation college senior Johnathan Gachuzo Gonzalez is lifting up his community as he prepares for a career in health care.\n"
   },
   {
-    "id": 3,
-    "title": "Where did you go?",
-    "subTitle": "oiuoiuoioui"
+    "title": "Reframing the Bully Through Joyful, Transformative Theater ",
+    "slug": "joy-of-theater",
+    "body": "Stephanie Saltis, survivor of bullying, uses Shakespeare to help break the cycle of violence in Colorado schools.\r\n ",
+    "main_image": {
+      "alt": "A portrait of Stephanie Saltis grinning broadly, behind her is illustrated confetti",
+      "caption": "",
+      "width": 1600,
+      "height": 1200,
+      "url": "https:\/\/res.cloudinary.com\/hjd85w7ny\/image\/upload\/v1\/2021-11\/1636151960-CUBou-story-hero?_a=AAAEuGX",
+      "id": "QSBwb3J0cmFpdCBvZiBT",
+      "type": "image"
+    },
+    "campus": "CU Boulder",
+    "description": "Stephanie Saltis, survivor of bullying, uses Shakespeare to help break the cycle of violence in Colorado schools.\n"
   },
   {
-    "id": 4,
-    "title": "I think I found them",
-    "subTitle": "oiuoiuoioui"
+    "title": "When Joy Is the Ability to Say \u0022No, Thank You\u0022",
+    "slug": "joy-of-independence",
+    "body": "Speech pathologist Aleaza Goldberg helps patients like Graham Saiz communicate and live more independent lives.",
+    "main_image": {
+      "alt": "Aleaza Goldberg and Graham Saiz sit facing each other, Aleaza holds Graham\u0027s communication device, Graham is wearing headphones and looking at the device. Aleaza smiles at Graham.",
+      "caption": "",
+      "width": 1600,
+      "height": 1200,
+      "url": "https:\/\/res.cloudinary.com\/hjd85w7ny\/image\/upload\/v1\/2021-11\/1636152028-CUDen-story-hero?_a=AAAEuGX",
+      "id": "QWxlYXphIEdvbGRiZXJn",
+      "type": "image"
+    },
+    "campus": "CU Denver",
+    "description": "Speech pathologist Aleaza Goldberg helps patients like Graham Saiz communicate and live more independent lives.\n"
   }
 ]
