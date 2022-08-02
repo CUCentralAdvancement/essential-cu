@@ -14,15 +14,16 @@ Hosted at: https://essential-cu.herokuapp.com/
 - Update permalink redirect in `next.config.js`. `/impact` should redirect to the current year's impact report
   page. For 2020 this is redirecting `/impact` to `/impact-reports/onward`.
 - Ensure UptimeRobot monitor is enabled. Shared password in LastPass and located
-  on https://uptimerobot.com/dashboard.
-- ...maybe more...
+  on https://uptimerobot.com/dashboard. 
 
 **Audience:** Unauthenticated - All traffic is public. No routes are protected.
 
 **Dependencies: ...other than Heroku**
 
-- Drupal 9 API. This API is now deprecated and data from it in this codebase under `/data` directory.
-- Fastly. Fastly sits in front of the Heroku load balancers. TTL is set to 1 day for most content.
+- Drupal 9 API - This API is now deprecated and data from it in this codebase under `/data` directory.
+- Fastly - Fastly sits in front of the Heroku load balancers. TTL is set to 1 day for most content.
+- Cloudinary - There are two Cloudinary instances in Heroku, one on the essential-cu project and one on the-cms. Most images 
+  are in the essential-cu Cloudinary addon except the inline images in IR21.
 
 **Status:** Deployed - People are going to https://essential.cu.edu via emails, organic traffic, etc. The "
 campaign" is over but the content will be public forever.
