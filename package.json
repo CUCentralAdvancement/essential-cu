@@ -35,7 +35,7 @@
     "react-player": "^2.9.0",
     "react-responsive": "^8.2.0",
     "react-share": "^4.4.0",
-    "recharts": "^2.1.8",
+    "recharts": "^2.4.3",
     "styled-jsx": "^4.0.1",
     "usehooks-ts": "^2.6.0"
   },
