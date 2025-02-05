@@ -29,7 +29,7 @@
     "next": "12.2.5",
     "react": "17.0.2",
     "react-circular-progressbar": "^2.1.0",
-    "react-cookie": "^4.1.1",
+    "react-cookie": "^7.2.2",
     "react-dom": "17.0.2",
     "react-gtm-module": "^2.0.11",
     "react-player": "^2.9.0",
